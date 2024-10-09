@@ -64,6 +64,7 @@ body {
 
         &__img {
             fill: $color-black;
+            width: 5rem;
         }
 
         &__title {
@@ -534,6 +535,10 @@ body {
     background-color: $color-black;
 }
 
+.input {
+    font-size: inherit;
+}
+
 
 // KEYFRAMES
 @keyframes reveal-left {
@@ -608,6 +613,17 @@ body {
 @media only screen and (max-width: $breakpoint-small) {
     body {
         font-size: 10px;
+    }
+
+    
+    .logo {
+        &__img {
+            width: 4rem !important;
+        }
+
+        &__title {
+            display: none;
+        }
     }
 
     .work-section {
