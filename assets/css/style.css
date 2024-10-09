@@ -390,3 +390,17 @@ body {
     display: none; }
   .work-section .cards__container .card {
     width: calc(90% - 2rem); } }
+
+@media only screen and (max-width: 600px) {
+  .above-the-fold__title {
+    font-size: 4rem; }
+  .above-the-fold__subtitle {
+    font-size: 6rem; }
+  .about-me,
+  .new-section,
+  .contacts,
+  .work-section,
+  .above-the-fold {
+    padding: 0; }
+  .wrapper {
+    margin: 0; } }
