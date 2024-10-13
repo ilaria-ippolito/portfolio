@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Ilaria Ippolito">
+
+  <link rel="icon" href="assets/img/favicon.ico" sizes="any" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <title>Portfolio Ilaria Ippolito</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- Header -->
+    <header class="d-flex justify-content-between align-items-center header mb-3">
+      <!-- Logo -->
+      <div class="logo d-inline">
+        <img src="assets/img/lizard-logo.svg" alt="logo" class="logo__img" />
+        <span class="logo__title">Ilaria.</span>
+      </div>
+
+      <!-- Checkbox Input at the top for sibling selector to work -->
+      <input type="checkbox" id="check" class="checkbox__input" />
+      <label for="check" class="checkbox__label">
+        <i class="fa-solid fa-bars checkbox__icon"></i>
+      </label>
+
+      <!-- Navigation -->
+      <nav class="navigation">
+        <ul class="navigation__list">
+          <li>
+            <a class="navigation__item" href="index.html#work-section">lavori.</a>
+          </li>
+          <li>
+            <a class="navigation__item" href="cv.html">chi sono.</a>
+          </li>
+          <li>
+            <a class="navigation__item" href="index.html#contacts">contatti.</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="go-to-home">
+        <a href="/">
+          <button class="above-the-fold__cta">← Torna alla home</button>
+        </a>
+      </div>
+      <!-- About me -->
+      <section id="about me" class="about-me custom-padding-x mb-5">
+        <div class="profile-picture-container">
+          <img src="assets/img/profile-picture-2.jpg" alt="profile picture""
+              class=" profile-picture-container__img" />
+        </div>
+        <div class="about-me-container">
+          <h3 class="about-me-title">chi sono.</h3>
+          <div class="about-me-description">
+            <p>
+              <b>Ilaria</b>, aspirante <b>UX/UI Designer</b>, con una vena creativa che mi accompagna da
+              sempre. <br>
+              <br>
+              Mi piace osservare il mondo che mi circonda e lasciarmi ispirare dall'<b>arte</b>,
+              passando volentieri interi pomeriggi tra cinema e mostre. <br>
+              <br>
+              Ho dovuto mettere da parte le mie vocazioni e inclinazioni per esigenze lavorative,
+              accettando ruoli che non rispecchiavano pienamente chi sono.<br>
+              <br>
+              A 28 anni, ho deciso di dare una svolta alla mia carriera frequentando un <b>master in UX/UI Design
+                su
+                <a class="custom-link" target="_blank" href="https://www.start2impact.it/">Start2impact.</a></b><br>
+              <br>
+              Non vedo l'ora di mettere in pratica le competenze acquisite e sono entusiasta di iniziare questa
+              nuova avventura!
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Formazione -->
+      <section class="new-section custom-padding-x mb-5">
+        <div class="new-section__grid">
+          <div class="left-column">
+            <!-- Parte superiore della colonna di sinistra -->
+            <div class="up">
+              <div class="highlighted-heading">
+                <h3>Formazione.</h3>
+              </div>
+              <div class="experience">
+                <h4>Start2impact | Master UX / UI Design</h4>
+                <div class="body-large">Sett 2024 - In Corso</div>
+                <p class="body">Discovery, wireframing, HTML & CSS, Prototyping, user testing
+                </p>
+              </div>
+              <div class="experience">
+                <h4>PhotoLux | Fotografia</h4>
+                <div class="body-large">Ott 2022 - Feb 2022</div>
+                <p class="body">Diploma in fotografia di base.</p>
+              </div>
+              <div class="experience">
+                <h4>Università degli Studi di Pisa | Laurea triennale</h4>
+                <div class="body-large">2019</div>
+                <p class="body">Laurea triennale in Discipline dello Spettacolo e della Comunicazione</p>
+              </div>
+              <div class="experience">
+                <h4>Accademia d'Arte Bianca Cappello | Diploma</h4>
+                <div class="body-large">2015</div>
+                <p class="body">Diploma in illustrazione</p>
+              </div>
+              <!-- Parte inferiore della colonna di sinistra: Skills -->
+              <div class="highlighted-heading">
+                <h3>Skills.</h3>
+              </div>
+              <div class="skills">
+                <div class="skill">Discovery</div>
+                <div class="skill">Wireframing</div>
+                <div class="skill">HTML - CSS</div>
+                <div class="skill">UX - UI Design</div>
+                <div class="skill">Prototyping</div>
+                <div class="skill">User testing</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="right-column d-flex">
+            <div class="highlighted-heading">
+              <h3>Esperienze.</h3>
+            </div>
+            <div class="experience">
+              <h4>Giulio Martini Servizi Aziendali | Impiegata Amministrativa</h4>
+              <div class="body-large">Giu 2023 - In Corso</div>
+              <p class="body">Gestione Front office e Back office, gestione mailing, inserimento e analisi dati .</p>
+            </div>
+            <div class="experience">
+              <h4>Logilux | Assistente concorsuale</h4>
+              <div class="body-large">Set 2020 - Ott 2020</div>
+              <p class="body">Mi sono occupata dell’organizzazione e della vigilanza durante i test di ammissione
+                universitari svolti presso le sedi dell’Università di Pisa.</p>
+            </div>
+            <div class="experience">
+              <h4>Lucca Film Festival | Tirocinio</h4>
+              <div class="body-large">Apr 2019</div>
+              <p class="body">Stage universitario in cui ho lavorato come fotografa e reporter, al fine di creare
+                contenuti per il sito web e per i profili social presso gli eventi del festival.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Footer section -->
+  <footer class="footer">
+    <div class="footer__left">Ilaria Ippolito.</div>
+    <div class="footer__right">
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/ilaria-ippolito-61928019a/" target="_blank">
+          <img src="assets/img//linkedin logo.svg" alt="Linkedin">
+        </a>
+        <!-- <a href="" target="_blank"> 
+                <img src="assets/img//behance logo.svg" alt="Behance">
+            </a> -->
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
