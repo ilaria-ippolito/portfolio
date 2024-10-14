@@ -389,6 +389,21 @@ body {
     padding-bottom: 2rem;
     letter-spacing: 1px;
   }
+
+  &__feedback {
+    display: none;
+    color: green;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 1rem;
+  }
+
+  /* Show the feedback message after form submission */
+  :target {
+    &__feedback {
+      display: block;
+    }
+  }
 }
 
 /* ///////////////////////////// GO BACK HOME ////////////////////////// */

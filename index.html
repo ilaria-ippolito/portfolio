@@ -122,34 +122,35 @@
 
       <!-- Contatti -->
       <section id="contacts" class="contacts py-5 custom-padding-x">
-        <h3 class="contacts__title mb-5">contatti.</h2>
+        <h3 class="contacts__title mb-5">contatti.</h3>
 
-          <div class="container">
-            <div class="row form-row">
-              <div class="col-xl-6 col-sm-10">
-                <p class="mb-4">Per collaborazioni, progetti, idee e curiosità compila il form!.</p>
-                <form id="contact-form">
-                  <div class="form-group mb-4">
-                    <label for="name" class="mb-1">Nome:</label>
-                    <input type="text" class="form-control input" id="name" name="from_name"
-                      placeholder="Inserisci il tuo nome">
-                  </div>
-                  <div class="form-group mb-4">
-                    <label for="email" class="mb-1">Email:</label>
-                    <input type="email" class="form-control input" id="email" name="from_email"
-                      placeholder="Inserisci la tua email">
-                  </div>
-                  <div class="form-group mb-4">
-                    <label for="message" class="mb-1">Messaggio:</label>
-                    <textarea class="form-control input" id="message" name="message" rows="3"
-                      placeholder="Scrivi il tuo messaggio"></textarea>
-                  </div>
+        <div class="container">
+          <div class="row form-row">
+            <div class="col-xl-6 col-sm-10">
+              <p class="mb-4">Per collaborazioni, progetti, idee e curiosità compila il form!.</p>
 
-                  <button type="submit" class="above-the-fold__cta">Invia</button>
-                </form>
-              </div>
+              <!-- Contact Form -->
+              <form id="contact-form" action="#form-sent" method="post">
+                <div class="form-group mb-4">
+                  <label for="name" class="mb-1">Nome:</label>
+                  <input type="text" class="form-control input" id="name" name="from_name" placeholder="Inserisci il tuo nome" required>
+                </div>
+                <div class="form-group mb-4">
+                  <label for="email" class="mb-1">Email:</label>
+                  <input type="email" class="form-control input" id="email" name="from_email" placeholder="Inserisci la tua email" required>
+                </div>
+                <div class="form-group mb-4">
+                  <label for="message" class="mb-1">Messaggio:</label>
+                  <textarea class="form-control input" id="message" name="message" rows="3" placeholder="Scrivi il tuo messaggio" required></textarea>
+                </div>
+                <button type="submit" class="above-the-fold__cta">Invia</button>
+              </form>
+
+              <!-- Feedback Message -->
+              <p id="form-sent" class="contacts__feedback">Messaggio inviato con successo!</p>
             </div>
           </div>
+        </div>
       </section>
     </main>
   </div>
