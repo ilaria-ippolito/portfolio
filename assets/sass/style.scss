@@ -392,17 +392,14 @@ body {
 
   &__feedback {
     display: none;
-    color: green;
+    color: $color-black;
     font-size: 1.2rem;
-    font-weight: bold;
+    font-weight: 700;
     margin-top: 1rem;
-  }
 
-  /* Show the feedback message after form submission */
-  :target {
-    &__feedback {
-      display: block;
-    }
+    &:target {
+        display: block;
+      }
   }
 }
 
