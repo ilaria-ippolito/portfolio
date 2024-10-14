@@ -268,26 +268,6 @@ body {
   padding-bottom: 2rem;
   letter-spacing: 1px; }
 
-.contacts #contact-form .form-group {
-  margin-bottom: 20px; }
-
-.contacts #contact-form .input {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px; }
-  .contacts #contact-form .input:required {
-    box-shadow: none; }
-
-.contacts #contact-form .feedback-message {
-  display: none;
-  color: #000000;
-  margin-top: 2rem; }
-
-.contacts #contact-form:valid + .feedback-message {
-  display: block; }
-
 /* ///////////////////////////// GO BACK HOME ////////////////////////// */
 .go-to-home {
   margin-top: 7rem; }
