@@ -396,10 +396,12 @@ body {
     font-size: 1.2rem;
     font-weight: 700;
     margin-top: 1rem;
+  }
 
-    &:target {
-        display: block;
-      }
+  :target {
+    &__feedback {
+      display: block;  // Mostra il messaggio quando l'ancoraggio è attivato
+    }
   }
 }
 

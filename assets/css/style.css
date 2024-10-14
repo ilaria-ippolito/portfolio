@@ -274,8 +274,9 @@ body {
   font-size: 1.2rem;
   font-weight: 700;
   margin-top: 1rem; }
-  .contacts__feedback:target {
-    display: block; }
+
+.contacts :target__feedback {
+  display: block; }
 
 /* ///////////////////////////// GO BACK HOME ////////////////////////// */
 .go-to-home {
