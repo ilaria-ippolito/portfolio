@@ -389,20 +389,6 @@ body {
     padding-bottom: 2rem;
     letter-spacing: 1px;
   }
-
-  &__feedback {
-    display: none;
-    color: $color-black;
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin-top: 1rem;
-  }
-
-  :target {
-    &__feedback {
-      display: block;  // Mostra il messaggio quando l'ancoraggio è attivato
-    }
-  }
 }
 
 /* ///////////////////////////// GO BACK HOME ////////////////////////// */

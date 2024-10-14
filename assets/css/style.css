@@ -268,16 +268,6 @@ body {
   padding-bottom: 2rem;
   letter-spacing: 1px; }
 
-.contacts__feedback {
-  display: none;
-  color: #000000;
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-top: 1rem; }
-
-.contacts :target__feedback {
-  display: block; }
-
 /* ///////////////////////////// GO BACK HOME ////////////////////////// */
 .go-to-home {
   margin-top: 7rem; }
