@@ -14,7 +14,7 @@
   <meta property="og:title" content="Ilaria Ippolito Portfolio" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://ilaria-ippolito.github.io/portfolio/" />
-  <meta property="og:image" content="https://ilaria-ippolito.github.io/portfolio/assets/img/image-opengraph.png" />
+  <meta property="og:image" content="https://ilaria-ippolito.github.io/portfolio/assets/img/image-opengraph-2.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="portfolio cover image." /> 
@@ -175,10 +175,11 @@
     })();
 
     document.getElementById('contact-form').addEventListener('submit', function (event) {
-
+      event.preventDefault();
       emailjs.sendForm('service_sqv3spq', 'template_lc1zibt', this)
         .then(function () {
-          alert('Messaggio inviato con successo!'); 
+          alert('Messaggio inviato con successo!');
+          document.getElementById('contact-form').reset();
         }, function (error) {
           alert('Errore: ' + JSON.stringify(error));
         });
