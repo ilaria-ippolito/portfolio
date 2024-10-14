@@ -389,7 +389,35 @@ body {
     padding-bottom: 2rem;
     letter-spacing: 1px;
   }
+
+  #contact-form {
+    .form-group {
+      margin-bottom: 20px;
+    }
+  
+    .input {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      &:required {
+        box-shadow: none; // Rimuove l'ombreggiatura rossa automatica di browser su campi required non validi
+      }
+    }    
+  
+    .feedback-message {
+      display: none;
+      color: $color-black;
+      margin-top: 2rem;
+    }
+    
+    &:valid + .feedback-message {
+      display: block;
+    }
+  }
 }
+
 /* ///////////////////////////// GO BACK HOME ////////////////////////// */
 .go-to-home {
   margin-top: 7rem;
