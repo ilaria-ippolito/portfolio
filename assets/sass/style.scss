@@ -6,15 +6,16 @@ $color-white: #ffffff;
 $color-grey: #f5f5f5;
 $color-dark-grey: #333333;
 $color-light-grey: #e5e5e5;
+$color-ghost-white: #f8f8ff;
 
 $color-primary: #20f94b;
 $color-secondary: #e25fda;
 
 $color-complementary: #f920ce;
 
+$breakpoint-extra-small: 600px;
 $breakpoint-small: 1024px;
 $breakpoint-medium: 1300px;
-$breakpoint-extra-small: 600px;
 
 $box-shadow-light: 0 0 0.5rem rgba(0, 0, 0, 0.1);
 $box-shadow-medium: 0 0 1rem rgba(0, 0, 0, 0.2);
@@ -28,15 +29,34 @@ $box-shadow-dark: 0 0 2rem rgba(0, 0, 0, 0.3);
   box-sizing: border-box;
 }
 
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  line-height: 1.6;
+  font-size: 16px;
+  font-weight: normal;
+  font-kerning: normal;
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  input, button, textarea, select {
+    font: inherit;
+  }
+  
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+}
+
+
 body {
   font-size: 16px;
   font-family: "DM Serif Display", sans-serif;
-  background-image: linear-gradient(
-    to bottom,
-    $color-primary 0%,
-    $color-primary 70%,
-    $color-secondary 100%
-  );
+  background-color: $color-ghost-white;
 }
 
 .wrapper {
@@ -184,7 +204,6 @@ body {
   .cards__container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
 
     .card {
       background-color: $color-white;
@@ -194,6 +213,22 @@ body {
       padding: 1rem;
       width: calc(33.33% - 2rem);
       box-shadow: $box-shadow-light;
+
+      &__tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+      }
+      
+      &__tag {
+        color: #f920ce;
+        font-size: 0.8rem;
+        font-weight: 600;
+        padding: 0.5rem 1rem;
+        border-radius: 1rem;
+        border: 1px solid #f920ce;
+      }
 
       &__img {
         margin-bottom: 1rem;
@@ -214,6 +249,7 @@ body {
         font-size: 1.2rem;
         letter-spacing: 1px;
         margin-bottom: 1rem;
+        height: 100%;
       }
 
       &__cta {
@@ -225,6 +261,7 @@ body {
         border-radius: 0.25rem;
         cursor: pointer;
         display: inline-block;
+        width: fit-content;
 
         &:link,
         &:visited {
@@ -233,8 +270,8 @@ body {
 
         &:hover,
         &:active {
-          background-color: $color-primary;
-          color: $color-black;
+          background-color: $color-black;
+          color: $color-white;
           text-decoration: none;
         }
       }

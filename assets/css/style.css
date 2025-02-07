@@ -7,10 +7,25 @@
   padding: 0;
   box-sizing: border-box; }
 
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  font-size: 16px;
+  font-weight: normal;
+  font-kerning: normal; }
+  html body {
+    margin: 0;
+    padding: 0; }
+  html input, html button, html textarea, html select {
+    font: inherit; }
+  html p, html h1, html h2, html h3, html h4, html h5, html h6 {
+    overflow-wrap: break-word; }
+
 body {
   font-size: 16px;
   font-family: "DM Serif Display", sans-serif;
-  background-image: linear-gradient(to bottom, #20f94b 0%, #20f94b 70%, #e25fda 100%); }
+  background-color: #f8f8ff; }
 
 .wrapper {
   margin: 2rem 2rem 2rem 2rem; }
@@ -117,8 +132,7 @@ body {
     letter-spacing: 1px; }
   .work-section .cards__container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center; }
+    flex-wrap: wrap; }
     .work-section .cards__container .card {
       background-color: #ffffff;
       border: 1px solid #e5e5e5;
@@ -127,6 +141,18 @@ body {
       padding: 1rem;
       width: calc(33.33% - 2rem);
       box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1); }
+      .work-section .cards__container .card__tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1rem; }
+      .work-section .cards__container .card__tag {
+        color: #f920ce;
+        font-size: 0.8rem;
+        font-weight: 600;
+        padding: 0.5rem 1rem;
+        border-radius: 1rem;
+        border: 1px solid #f920ce; }
       .work-section .cards__container .card__img {
         margin-bottom: 1rem;
         width: 100%;
@@ -141,7 +167,8 @@ body {
       .work-section .cards__container .card__description {
         font-size: 1.2rem;
         letter-spacing: 1px;
-        margin-bottom: 1rem; }
+        margin-bottom: 1rem;
+        height: 100%; }
       .work-section .cards__container .card__cta {
         text-decoration: none;
         background-color: #f920ce;
@@ -150,12 +177,13 @@ body {
         padding: 0.5rem 1rem;
         border-radius: 0.25rem;
         cursor: pointer;
-        display: inline-block; }
+        display: inline-block;
+        width: fit-content; }
         .work-section .cards__container .card__cta:link, .work-section .cards__container .card__cta:visited {
           color: #ffffff; }
         .work-section .cards__container .card__cta:hover, .work-section .cards__container .card__cta:active {
-          background-color: #20f94b;
-          color: #000000;
+          background-color: #000000;
+          color: #ffffff;
           text-decoration: none; }
 
 /*//////////////////// ABOUT ME ///////////////// */

@@ -13,6 +13,7 @@
     "node-sass": "^9.0.0"
   },
   "dependencies": {
-    "bootstrap": "^5.3.3"
+    "bootstrap": "^5.3.3",
+    "live-server": "^1.2.2"
   }
 }
