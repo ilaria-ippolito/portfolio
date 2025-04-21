@@ -52,35 +52,7 @@
   <body>
     <div class="wrapper">
       <!-- Header -->
-      <header
-        class="header d-flex justify-content-between align-items-center mb-3"
-      >
-        <!-- Logo -->
-        <div class="logo d-inline">
-          <span class="logo__title">ilaria.</span>
-        </div>
-
-        <!-- Checkbox Input at the top for sibling selector to work -->
-        <input type="checkbox" id="check" class="checkbox__input" />
-        <label for="check" class="checkbox__label">
-          <i class="fa-solid fa-bars checkbox__icon"></i>
-        </label>
-
-        <!-- Navigation -->
-        <nav class="navigation">
-          <ul class="navigation__list">
-            <li>
-              <a class="navigation__item" href="#work-section">lavori.</a>
-            </li>
-            <li>
-              <a class="navigation__item" href="cv.html">chi sono.</a>
-            </li>
-            <li>
-              <a class="navigation__item" href="#contacts">contatti.</a>
-            </li>
-          </ul>
-        </nav>
-      </header>
+      <div data-include="assets/components/header.html"></div>
 
       <main>
         <!-- Hero section -->
@@ -235,8 +207,8 @@
         <section id="work-section" class="work-section custom-padding-x mb-5">
           <h3 class="work-section__title">i miei lavori.</h3>
           <div class="cards__container">
-            <!--Card 1-->
-            <div class="card">
+            <!--Card Orizon -->
+            <a class="card" href="project-detail.html?project=orizon">
               <img
                 class="card__img"
                 src="assets/img/copertina-progetto-grafica.jpg"
@@ -254,47 +226,23 @@
                 <span class="card__tag">Affinity Designer</span>
                 <span class="card__tag">Affinity Publisher</span>
               </div>
-              <a
+              <!-- <a
                 href="assets/documents/progetto-grafica.pdf"
                 download="Progetto Grafica di Ilaria Ippolito.pdf"
                 class="card__cta"
               >
                 <i class="fas fa-download"></i> Scarica PDF
-              </a>
-            </div>
-            <!--Card 2-->
-            <div class="card">
-              <img
-                class="card__img"
-                src="assets/img/copertina-progetto-copywriting.jpg"
-                alt="Copertina IncluDO"
-                class="project-image2"
-              />
-              <h4 class="card__title">IncluDO</h4>
-              <p class="card__description">
-                Creazione di un blog post per un'azienda a impatto sociale che
-                combatte le disuguaglianze.
-              </p>
-              <div class="card__tags">
-                <span class="card__tag">Copywriting</span>
-              </div>
-              <a
-                href="assets/documents/progetto-copywriting.pdf"
-                download="Progetto Copywriting di Ilaria Ippolito.pdf"
-                class="card__cta"
-              >
-                <i class="fas fa-download"></i> Scarica PDF
-              </a>
-            </div>
-            <!--Card 3-->
-            <div class="card">
+              </a> -->
+            </a>
+            <!--Card Discovery -->
+            <a class="card" href="project-detail.html?project=ivegan_discovery">
               <img
                 class="card__img"
                 src="assets/img/copertina-discovery_1.png"
-                alt="Copertina iVegan Discovery 1"
+                alt="Copertina iVegan Discovery"
                 class="project-image3"
               />
-              <h4 class="card__title">iVegan Discovery Parte 1</h4>
+              <h4 class="card__title">iVegan Discovery</h4>
               <p class="card__description">
                 Analisi as is e ricerca utente per un brand di prodotti
                 vegetali.
@@ -304,213 +252,44 @@
                 <span class="card__tag">Miro</span>
                 <span class="card__tag">Survey</span>
                 <span class="card__tag">Sitemap</span>
-              </div>
-              <a
-                href="assets/documents/progetto-discovery_1.pdf"
-                download="Progetto Discovery 1 di Ilaria Ippolito.pdf"
-                class="card__cta"
-              >
-                <i class="fas fa-download"></i> Scarica PDF
-              </a>
-            </div>
-            <!--Card 4-->
-            <div class="card">
-              <img
-                class="card__img"
-                src="assets/img/copertina_discovery_2.png"
-                alt="Copertina iVegan Discovery 2"
-                class="project-image3"
-              />
-              <h4 class="card__title">iVegan Discovery Parte 2</h4>
-              <p class="card__description">
-                Ho lavorato su personas e user journey per un'azienda di
-                prodotti vegetali.
-              </p>
-              <div class="card__tags">
                 <span class="card__tag">User Personas</span>
                 <span class="card__tag">User Journey Mapping</span>
                 <span class="card__tag">Information Architecture</span>
                 <span class="card__tag">E-commerce UX</span>
               </div>
-              <a
-                href="assets/documents/progetto-discovery_2.pdf"
-                download="Progetto Discovery 2 di Ilaria Ippolito.pdf"
-                class="card__cta"
-              >
-                <i class="fas fa-download"></i> Scarica PDF
-              </a>
-            </div>
-            <!--Card 5-->
-            <div class="card">
+            </a>
+            <!--Card  Accessibilità -->
+            <a class="card" href="project-detail.html?project=ivegan_a11y">
               <img
                 class="card__img"
                 src="assets/img/copertina-accessibilità_1.jpg"
-                alt="Copertina iVegan Analisi Accessibilità 1"
+                alt="Copertina iVegan Analisi Accessibilità"
                 class="project-image3"
               />
-              <h4 class="card__title">iVegan Accessibilità Parte 1</h4>
-              <p class="card__description">Ricerca dei bisogni di persone con disabilità.</p>
+              <h4 class="card__title">iVegan Accessibilità</h4>
+              <p class="card__description">
+                Ricerca dei bisogni di persone con disabilità.
+              </p>
               <div class="card__tags">
                 <span class="card__tag">UX Research</span>
                 <span class="card__tag">User Personas</span>
                 <span class="card__tag">User Journey Mapping</span>
                 <span class="card__tag">Accessibility</span>
-              </div>
-              <a
-                href="assets/documents/progetto-accessibilità_1.pdf"
-                download="Progetto Accessibilità 1 di Ilaria Ippolito.pdf"
-                class="card__cta"
-              >
-                <i class="fas fa-download"></i> Scarica PDF
-              </a>
-            </div>
-            <!--Card 6-->
-            <div class="card">
-              <img
-                class="card__img"
-                src="assets/img/copertina-accessibilità_2.jpg"
-                alt="Copertina iVegan Analisi Accessibilità 2"
-                class="project-image3"
-              />
-              <h4 class="card__title">iVegan Accessibilità Parte 2</h4>
-              <p class="card__description">Analisi dell'accessibilità del sito iVegan.</p>
-              <div class="card__tags">
                 <span class="card__tag">a11y</span>
                 <span class="card__tag">WCAG 2.1</span>
                 <span class="card__tag">Wave Accessibility tool</span>
                 <span class="card__tag">NVDA</span>
                 <span class="card__tag">Talkback</span>
               </div>
-              <a
-                href="assets/documents/progetto-accessibilità_2.pdf"
-                download="Progetto Accessibilità 2 di Ilaria Ippolito.pdf"
-                class="card__cta"
-              >
-                <i class="fas fa-download"></i> Scarica PDF
-              </a>
-            </div>
-            <!--Card 7-->
-            <div class="card">
-              <img
-                class="card__img"
-                src="assets/img/copertina-portfolio.png"
-                alt="Copertina Portfolio"
-                class="project-image3"
-              />
-              <h4 class="card__title">Portfolio</h4>
-              <p class="card__description">Creazione di un sito personale.</p>
-              <div class="card__tags">
-                <span class="card__tag">HTML</span>
-                <span class="card__tag">CSS</span>
-              </div>
-              <a
-                href="assets/documents/progetto-html-css.pdf"
-                download="Progetto HTML e CSS di Ilaria Ippolito.pdf"
-                class="card__cta"
-              >
-                <i class="fas fa-download"></i> Scarica PDF
-              </a>
-            </div>
-          </div>
-        </section>
-
-        <!-- Contatti -->
-        <section id="contacts" class="contacts py-5 custom-padding-x">
-          <h3 class="contacts__title mb-5">contatti.</h3>
-
-          <div class="container">
-            <div class="row form-row">
-              <div class="col-xl-6 col-sm-10">
-                <p class="mb-4">
-                  Per collaborazioni, progetti, idee e curiosità compila il
-                  form!.
-                </p>
-
-                <!-- Contact Form -->
-                <form id="contact-form">
-                  <div class="form-group mb-4">
-                    <label for="name" class="mb-1">Nome:</label>
-                    <input
-                      type="text"
-                      class="form-control input"
-                      id="name"
-                      name="from_name"
-                      placeholder="Inserisci il tuo nome"
-                    />
-                  </div>
-                  <div class="form-group mb-4">
-                    <label for="email" class="mb-1">Email:</label>
-                    <input
-                      type="email"
-                      class="form-control input"
-                      id="email"
-                      name="from_email"
-                      placeholder="Inserisci la tua email"
-                    />
-                  </div>
-                  <div class="form-group mb-4">
-                    <label for="message" class="mb-1">Messaggio:</label>
-                    <textarea
-                      class="form-control input"
-                      id="message"
-                      name="message"
-                      rows="3"
-                      placeholder="Scrivi il tuo messaggio"
-                    ></textarea>
-                  </div>
-                  <button type="submit" class="above-the-fold__cta">
-                    Invia
-                  </button>
-                </form>
-              </div>
-            </div>
+            </a>
           </div>
         </section>
       </main>
     </div>
 
     <!-- Footer section -->
-    <footer class="footer">
-      <div class="footer__left">ilaria ippolito.</div>
-      <div class="footer__right">
-        <div class="social-icons">
-          <a
-            href="https://www.linkedin.com/in/ilaria-ippolito-61928019a/"
-            target="_blank"
-          >
-            <img src="assets/img//linkedin logo.svg" alt="Linkedin" />
-          </a>
-          <!-- <a href="" target="_blank"> 
-                <img src="assets/img//behance logo.svg" alt="Behance">
-            </a> -->
-        </div>
-      </div>
-    </footer>
+    <div data-include="assets/components/footer.html"></div>
 
-    <script
-      type="text/javascript"
-      src="https://cdn.emailjs.com/dist/email.min.js"
-    ></script>
-
-    <script type="text/javascript">
-      (function () {
-        emailjs.init("S-IIjDjPVv91PbaTC");
-      })();
-
-      document
-        .getElementById("contact-form")
-        .addEventListener("submit", function (event) {
-          event.preventDefault();
-          emailjs.sendForm("service_sqv3spq", "template_lc1zibt", this).then(
-            function () {
-              alert("Messaggio inviato con successo!");
-              document.getElementById("contact-form").reset();
-            },
-            function (error) {
-              alert("Errore: " + JSON.stringify(error));
-            }
-          );
-        });
-    </script>
+    <script src="assets/js/includes.js"></script>
   </body>
 </html>
