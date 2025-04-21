@@ -19,33 +19,7 @@
 <body>
   <div class="wrapper">
     <!-- Header -->
-    <header class="d-flex justify-content-between align-items-center header mb-3">
-      <!-- Logo -->
-      <div class="logo d-inline">
-        <span class="logo__title">Ilaria.</span>
-      </div>
-
-      <!-- Checkbox Input at the top for sibling selector to work -->
-      <input type="checkbox" id="check" class="checkbox__input" />
-      <label for="check" class="checkbox__label">
-        <i class="fa-solid fa-bars checkbox__icon"></i>
-      </label>
-
-      <!-- Navigation -->
-      <nav class="navigation">
-        <ul class="navigation__list">
-          <li>
-            <a class="navigation__item" href="index.html#work-section">lavori.</a>
-          </li>
-          <li>
-            <a class="navigation__item" href="cv.html">chi sono.</a>
-          </li>
-          <li>
-            <a class="navigation__item" href="index.html#contacts">contatti.</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <div data-include="assets/components/header.html"></div>
 
     <main>
       <div class="go-to-home">
@@ -157,19 +131,9 @@
   </div>
 
   <!-- Footer section -->
-  <footer class="footer">
-    <div class="footer__left">Ilaria Ippolito.</div>
-    <div class="footer__right">
-      <div class="social-icons">
-        <a href="https://www.linkedin.com/in/ilaria-ippolito-61928019a/" target="_blank">
-          <img src="assets/img//linkedin logo.svg" alt="Linkedin">
-        </a>
-        <a href="https://www.behance.net/ilariaippolito1" target="_blank"> 
-          <img src="assets/img//behance logo.svg" alt="Behance">
-        </a>
-      </div>
-    </div>
-  </footer>
+  <div data-include="assets/components/footer.html"></div>
+
+  <script src="assets/js/includes.js"></script>
 </body>
 
 </html>
