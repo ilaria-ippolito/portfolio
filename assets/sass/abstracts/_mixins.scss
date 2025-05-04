@@ -1,0 +1,49 @@
+// Hover and active effect for links
+@mixin hover-active-links($hover-color, $active-color: $hover-color) {
+  &:hover {
+    color: $hover-color;
+  }
+  &:active {
+    color: $active-color;
+  }
+}
+
+// Mixins
+@mixin flex($direction: row, $justify: flex-start, $align: stretch) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin responsive-grid($min-width: 250px) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($min-width, 1fr));
+  gap: 2rem;
+}
+
+// Button hover and active effects
+@mixin button-interaction {
+  transition: all 0.2s;
+  
+  &:hover {
+    transform: translateY(-0.3rem);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Media queries
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == extra-small {
+    @media only screen and (max-width: $breakpoint-extra-small) { @content; }
+  }
+  @else if $breakpoint == small {
+    @media only screen and (max-width: $breakpoint-small) { @content; }
+  }
+  @else if $breakpoint == medium {
+    @media only screen and (max-width: $breakpoint-medium) { @content; }
+  }
+}
