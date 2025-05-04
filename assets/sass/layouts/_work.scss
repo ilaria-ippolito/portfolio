@@ -1,0 +1,42 @@
+#work-section:before {
+  content: "";
+  display: block;
+  height: 21vh;
+  margin-top: -21vh;
+}
+
+.work-section {
+  padding: 2rem 0;
+
+  &__title {
+    text-align: center;
+    font-size: 4rem;
+    padding-bottom: 2rem;
+    letter-spacing: 1px;
+  }
+
+  .cards__container {
+    display: flex;
+  }
+}
+
+// Responsive
+@include respond-to(small) {
+  .work-section {
+    .cards__container {
+      flex-direction: column;
+      align-items: center;
+      gap: 3rem;
+      
+      .card {
+        width: calc(90% - 2rem);
+      }
+    }
+  }
+}
+
+@include respond-to(extra-small) {
+  .work-section {
+    padding: 0;
+  }
+}

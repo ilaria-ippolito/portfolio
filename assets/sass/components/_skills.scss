@@ -1,0 +1,17 @@
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skill {
+  font-size: 1.2rem;
+  color: $color-white;
+  font-weight: 400;
+  letter-spacing: 1px;
+  background-color: $color-black;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 100px;
+  border: 1px solid $color-black;
+}
