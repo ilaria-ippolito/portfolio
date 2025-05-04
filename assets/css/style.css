@@ -178,9 +178,9 @@ body {
 
 .card__tag {
   color: #f920ce;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  padding: 0.5rem 1rem;
+  padding: 0.4rem 0.8rem;
   border-radius: 1rem;
   border: 1px solid #f920ce;
 }
@@ -194,16 +194,17 @@ body {
 }
 
 .card__title {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   margin-bottom: 0.5rem;
 }
 
 .card__description {
-  font-size: 1.2rem;
-  letter-spacing: 1px;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
   margin-bottom: 1rem;
+  line-height: 1.4;
   height: 100%;
 }
 
@@ -227,6 +228,43 @@ body {
   background-color: #000000;
   color: #ffffff;
   text-decoration: none;
+}
+
+@media only screen and (max-width: 1300px) {
+  .card {
+    width: calc(50% - 2rem);
+    padding: 0.9rem;
+  }
+  .card__title {
+    font-size: 1.6rem;
+  }
+  .card__description {
+    font-size: 1rem;
+  }
+  .card__img {
+    height: 13rem;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .card {
+    width: 100%;
+    margin: 1rem 0;
+    padding: 0.8rem;
+  }
+  .card__title {
+    font-size: 1.5rem;
+  }
+  .card__description {
+    font-size: 0.95rem;
+  }
+  .card__img {
+    height: 12rem;
+  }
+  .card__cta {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
 }
 
 .skills {
@@ -527,7 +565,7 @@ body {
 
 .about-me .about-me-container .about-me-description {
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 400;
   padding: 0;
   margin: 0;
   letter-spacing: 1px;
@@ -539,7 +577,7 @@ body {
   color: #f920ce;
 }
 
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: 1024px) {
   .about-me {
     flex-direction: column;
     align-items: center;
@@ -553,7 +591,11 @@ body {
     height: 30rem;
   }
   .about-me .about-me-container {
-    margin: 0 6rem;
+    margin-left: 0;
+  }
+  .new-section__grid .left-column,
+  .new-section__grid .right-column {
+    padding: 0 !important;
   }
 }
 
@@ -568,6 +610,10 @@ body {
   .about-me .about-me-container {
     margin: 0 2.5rem !important;
   }
+}
+
+.new-section .experience .body {
+  font-weight: 400;
 }
 
 #work-section:before {
@@ -739,7 +785,7 @@ body {
 }
 
 .project-details .project-meta {
-  background-color: white;
+  background-color: #ffffff;
   border-radius: 8px;
   padding: 2rem;
   margin-bottom: 3rem;
@@ -754,7 +800,7 @@ body {
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 0.5rem;
-  color: #777;
+  color: #333333;
 }
 
 .project-details .project-meta .meta-item p {
@@ -813,11 +859,6 @@ body {
 .project-details .project-content .project-section .content-grid .image-content img {
   width: 100%;
   border-radius: 8px;
-  transition: all 0.3s ease;
-}
-
-.project-details .project-content .project-section .content-grid .image-content img:hover {
-  transform: scale(1.02);
 }
 
 .project-details .project-content .project-images {
@@ -832,12 +873,6 @@ body {
   height: 300px;
   object-fit: cover;
   border-radius: 8px;
-  transition: all 0.3s ease;
-}
-
-.project-details .project-content .project-images img:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .project-details .project-content .process-steps {
@@ -848,22 +883,17 @@ body {
 }
 
 .project-details .project-content .process-steps .process-step {
-  background-color: white;
+  background-color: #ffffff;
   border-radius: 8px;
   padding: 1.5rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
 }
 
-.project-details .project-content .process-steps .process-step:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
 .project-details .project-content .process-steps .process-step .step-number {
   display: inline-block;
   background-color: #e260d9;
-  color: white;
+  color: #ffffff;
   width: 36px;
   height: 36px;
   text-align: center;
@@ -881,7 +911,8 @@ body {
 
 .project-details .project-content .project-download {
   text-align: center;
-  background-color: #e5e5e5;
+  background-color: #ffffff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   padding: 3rem;
   border-radius: 8px;
   margin: 3rem 0;
@@ -892,7 +923,7 @@ body {
   align-items: center;
   gap: 0.5rem;
   background-color: #e260d9;
-  color: white;
+  color: #ffffff;
   padding: 0.75rem 1.5rem;
   border-radius: 2rem;
   font-weight: 600;

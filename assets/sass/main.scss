@@ -16,12 +16,10 @@
 @import 'layouts/header';
 @import 'layouts/footer';
 @import 'layouts/hero';
-@import 'layouts/about';
-@import 'layouts/work';
-@import 'layouts/experience';
 
 // Pages
 @import 'pages/project-detail';
+@import 'pages/cv';
 
 // Utilities
 @import 'utilities/helpers';
