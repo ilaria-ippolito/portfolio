@@ -46,11 +46,11 @@
   }
   
   .project-meta {
-    background-color: white;
+    background-color: $color-white;
     border-radius: $border-radius;
     padding: 2rem;
     margin-bottom: 3rem;
-    box-shadow: $box-shadow;
+    box-shadow: $box-shadow-very-light;
     @include responsive-grid(200px);
     
     .meta-item {
@@ -59,7 +59,7 @@
         text-transform: uppercase;
         letter-spacing: 1px;
         margin-bottom: 0.5rem;
-        color: #777;
+        color: $color-dark-grey;
       }
       
       p {
@@ -121,11 +121,6 @@
           img {
             width: 100%;
             border-radius: $border-radius;
-            transition: $transition;
-            
-            &:hover {
-              transform: scale(1.02);
-            }
           }
         }
       }
@@ -140,12 +135,6 @@
         height: 300px;
         object-fit: cover;
         border-radius: $border-radius;
-        transition: $transition;
-        
-        &:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
       }
     }
     
@@ -154,21 +143,16 @@
       margin: 2rem 0;
       
       .process-step {
-        background-color: white;
+        background-color: $color-white;
         border-radius: $border-radius;
         padding: 1.5rem;
         box-shadow: $box-shadow;
         transition: $transition;
         
-        &:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-        
         .step-number {
           display: inline-block;
           background-color: $color-secondary;
-          color: white;
+          color: $color-white;
           width: 36px;
           height: 36px;
           text-align: center;
@@ -188,7 +172,8 @@
     
     .project-download {
       text-align: center;
-      background-color: $color-light-grey;
+      background-color: $color-white;
+      box-shadow: $box-shadow-very-light;
       padding: 3rem;
       border-radius: $border-radius;
       margin: 3rem 0;
@@ -198,7 +183,7 @@
         align-items: center;
         gap: 0.5rem;
         background-color: $color-secondary;
-        color: white;
+        color: $color-white;
         padding: 0.75rem 1.5rem;
         border-radius: 2rem;
         font-weight: 600;

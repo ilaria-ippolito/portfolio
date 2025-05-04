@@ -55,11 +55,15 @@ const projects = {
         description: "Elementi visivi che esprimono autenticità e impegno ambientale."
       }
     ],
-    images: [
-      "assets/img/copertina-progetto-grafica.jpg",
-      "assets/img/orizon-process-1.jpg",
-      "assets/img/orizon-process-2.jpg",
-    ],
+    images: {
+      hero: "assets/img/copertina-accessibilità.png",
+      overview: "assets/img/overview-accessibility.png",
+      results: "assets/img/results-accessibility.png",
+      gallery: [
+        "assets/img/image-opengraph.png",
+        "assets/img/image-opengraph-2.png",
+      ]
+    },
     pdfUrl: "assets/documents/progetto-grafica.pdf",
   },
   ivegan_discovery: {
@@ -111,11 +115,15 @@ const projects = {
         description: "Base strategica per guidare le decisioni di redesign."
       }
     ],
-    images: [
-      "assets/img/copertina-discovery.png",
-      "assets/img/ivegan-research.jpg",
-      "assets/img/ivegan-personas.jpg",
-    ],
+    images: {
+      hero: "assets/img/copertina-accessibilità.png",
+      overview: "assets/img/overview-accessibility.png",
+      results: "assets/img/results-accessibility.png",
+      gallery: [
+        "assets/img/image-opengraph.png",
+        "assets/img/image-opengraph-2.png",
+      ]
+    },
     pdfUrl: "assets/documents/progetto-discovery.pdf",
   },
   ivegan_a11y: {
@@ -150,10 +158,10 @@ const projects = {
         title: "Testing",
         description: "Valutazione dell'esperienza con screen reader e altre tecnologie assistive."
       },
-      {
-        title: "Soluzioni",
-        description: "Proposta di interventi concreti per migliorare l'accessibilità."
-      }
+      // {
+      //   title: "Soluzioni",
+      //   description: "Proposta di interventi concreti per migliorare l'accessibilità."
+      // }
     ],
     resultsHighlights: [
       {
@@ -165,11 +173,16 @@ const projects = {
         description: "Design che non discrimina in base alle capacità degli utenti."
       }
     ],
-    images: [
-      "assets/img/copertina-accessibilità.jpg",
-      "assets/img/ivegan-accessibility-research.jpg",
-      "assets/img/ivegan-accessibility-personas.jpg",
-    ],
+    images: {
+      hero: "assets/img/copertina-accessibilità.png",
+      overview: "assets/img/a11y-overview.png",
+      results: "assets/img/a11y-result.png",
+      gallery: [
+        "assets/img/a11y-project_1.png",
+        "assets/img/a11y-project_2.png",
+        // "assets/img/a11y-project_3.png",
+      ]
+    },
     pdfUrl: "assets/documents/progetto-accessibilità.pdf",
   },
 };
@@ -205,13 +218,41 @@ if (projectId && projects[projectId]) {
     .map((tag) => `<span class="card__tag">${tag}</span>`)
     .join("");
 
-  // Update hero image if it exists
-  if (project.images && project.images.length > 0) {
+  // HERO IMAGE
+  if (project.images?.hero) {
     const heroImg = document.querySelector(".project-hero-img");
     if (heroImg) {
-      heroImg.src = project.images[0];
+      heroImg.src = project.images.hero;
       heroImg.alt = `${project.title} - Hero image`;
     }
+  }
+
+  // OVERVIEW IMAGE
+  if (project.images?.overview) {
+    const overviewImg = document.querySelector(".overview-section .image-content img");
+    if (overviewImg) {
+      overviewImg.src = project.images.overview;
+      overviewImg.alt = `${project.title} - Overview image`;
+    }
+  }
+
+  // RESULTS IMAGE
+  if (project.images?.results) {
+    const resultsImg = document.querySelector(".results-section .image-content img");
+    if (resultsImg) {
+      resultsImg.src = project.images.results;
+      resultsImg.alt = `${project.title} - Results image`;
+    }
+  }
+
+  // GALLERY / PROCESS IMAGES
+  if (project.images?.gallery?.length > 0) {
+    const imagesContainer = document.querySelector(".project-images");
+    imagesContainer.innerHTML = project.images.gallery
+      .map((img) => `<img src="${img}" alt="Project process image" />`)
+      .join("");
+  } else {
+    document.querySelector(".project-images").style.display = "none";
   }
 
   // Update process steps if available
@@ -248,22 +289,6 @@ if (projectId && projects[projectId]) {
       <p class="results-content">${project.results}</p>
       ${highlights}
     `;
-  }
-
-  // Update project images
-  if (project.images && project.images.length > 0) {
-    const imagesContainer = document.querySelector(".project-images");
-    // Skip the first image as it's used for the hero
-    const processImages = project.images.slice(1);
-    
-    if (processImages.length > 0) {
-      imagesContainer.innerHTML = processImages
-        .map((img) => `<img src="${img}" alt="Project process image" />`)
-        .join("");
-    } else {
-      // Hide the container if no additional images
-      imagesContainer.style.display = "none";
-    }
   }
 
   // Update download link
