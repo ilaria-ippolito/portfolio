@@ -1,10 +1,128 @@
-import React from 'react';
+// Styled-component for CTA button
+const ProjectCtaButton = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #e260d9;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  &:hover {
+    background-color: #da34cf;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(218, 52, 207, 0.2);
+  }
+  i {
+    font-size: 1.1rem;
+  }
+`;
+// Styled-component for horizontal padding
+const CustomPaddingX = styled.section`
+  padding: 0 5rem;
+`;
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import MetaItem from '../components/MetaItem';
 import ProcessStep from '../components/ProcessStep';
 import Section from '../components/Section';
+import styled from 'styled-components';
+// Styled-components for GoToHome (reuse from CvPage)
+const GoToHome = styled.div`
+  margin: 2rem 0 4rem 0;
+  display: flex;
+  align-items: center;
+`;
+
+const HomeButton = styled.button`
+  background: none;
+  border: 2px solid #f920ce;
+  color: #f920ce;
+  font-size: 1.5rem;
+  font-weight: 700;
+  border-radius: 2rem;
+  padding: 0.7rem 2.2rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  &:hover {
+    background: #f920ce;
+    color: #fff;
+  }
+`;
+
+const ProjectDetailsWrapper = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%;
+`;
+
+const ProjectHeader = styled.div`
+  position: relative;
+  margin-bottom: 3rem;
+`;
+
+const ProjectHero = styled.img`
+  width: 100%;
+  height: 450px;
+  border-radius: 8px;
+  object-fit: cover;
+  overflow: hidden;
+  margin-bottom: 3rem;
+`;
+
+const ProjectMeta = styled.div`
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+`;
+
+const ProjectContent = styled.div``;
+
+const ProjectSection = styled.div`
+  margin-bottom: 4rem;
+`;
+
+const ProjectPdfLink = styled.a`
+  display: inline-block;
+`;
+
+const HighlightedHeading = styled.div`
+  margin-bottom: 2rem;
+  display: inline-block;
+`;
+
+const SectionTitle = styled.h3`
+  font-size: 2.5rem;
+  color: #e5e5e5;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+  padding-left: 20px;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #000000;
+  }
+`;
 
 const meta = [
   { label: 'Cliente:', value: 'Start2impact' },
@@ -42,61 +160,61 @@ const results = [
   'Sito responsive e ottimizzato per dispositivi mobili.',
 ];
 
+
 const ProjectDetailPage = () => (
-  <div className="project-details">
+  <ProjectDetailsWrapper>
     <Header />
     <main>
-      <div className="go-to-home">
+      <GoToHome>
         <a href="/">
-          <button className="above-the-fold__cta">← Torna alla home</button>
+          <HomeButton>← Torna alla home</HomeButton>
         </a>
-      </div>
-      <section className="custom-padding-x mb-5">
-        <div className="project-header">
-          <img
+      </GoToHome>
+  <CustomPaddingX className="mb-5">
+        <ProjectHeader>
+          <ProjectHero
             src="assets/img/copertina-accessibilità.png"
             alt="Copertina progetto accessibilità"
-            className="project-hero"
           />
-          <div className="project-meta">
+          <ProjectMeta>
             {meta.map((item, i) => (
               <MetaItem key={i} label={item.label} value={item.value} />
             ))}
-          </div>
-        </div>
-        <div className="project-content">
-          <div className="project-section">
-            <Section title="Processo.">
-              {processSteps.map((step, i) => (
-                <ProcessStep key={i} {...step} />
+          </ProjectMeta>
+        </ProjectHeader>
+        <ProjectContent>
+          <ProjectSection>
+            <HighlightedHeading>
+              <SectionTitle>Processo.</SectionTitle>
+            </HighlightedHeading>
+            {processSteps.map((step, i) => (
+              <ProcessStep key={i} {...step} />
+            ))}
+          </ProjectSection>
+          <ProjectSection>
+            <HighlightedHeading>
+              <SectionTitle>Risultati.</SectionTitle>
+            </HighlightedHeading>
+            <ul>
+              {results.map((result, i) => (
+                <li key={i}>{result}</li>
               ))}
-            </Section>
-          </div>
-          <div className="project-section">
-            <Section title="Risultati.">
-              <ul>
-                {results.map((result, i) => (
-                  <li key={i}>{result}</li>
-                ))}
-              </ul>
-            </Section>
-          </div>
-          <div className="project-section">
-            <a
+            </ul>
+          </ProjectSection>
+          <ProjectSection>
+            <ProjectCtaButton
               href="assets/documents/progetto-accessibilità.pdf"
-              className="project-pdf-link above-the-fold__cta"
               target="_blank"
               rel="noopener noreferrer"
             >
               Scarica il progetto completo (PDF)
-            </a>
-          </div>
-        </div>
-      </section>
+            </ProjectCtaButton>
+          </ProjectSection>
+        </ProjectContent>
+  </CustomPaddingX>
     </main>
     <Footer />
-  </div>
-
+  </ProjectDetailsWrapper>
 );
 
 export default ProjectDetailPage;

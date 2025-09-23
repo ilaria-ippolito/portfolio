@@ -1,30 +1,189 @@
-import React from 'react';
+import styled from 'styled-components';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Card from '../components/Card';
+
+// Styled-components for Work section
+const WorkSection = styled.section`
+  padding: 2rem 0;
+  margin-bottom: 5rem;
+  @media (max-width: 600px) {
+    padding: 0;
+  }
+`;
+
+const CardsContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  justify-content: center;
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+`;
+
+const HighlightedHeading = styled.div`
+  margin-bottom: 2rem;
+  display: inline-block;
+`;
+
+const SectionTitle = styled.h3`
+  font-size: 2.5rem;
+  color: #e5e5e5;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+  padding-left: 20px;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #000000;
+  }
+`;
+
+const HeroSection = styled.section`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  margin-top: 0;
+  margin-bottom: 0;
+  gap: 2rem;
+  padding: 0 5rem;
+  @media (max-width: 600px) {
+    flex-direction: column-reverse;
+    gap: 1rem;
+    height: auto;
+    margin-top: 5rem;
+    margin-bottom: 15rem;
+    padding: 0;
+  }
+`;
+
+const HeroText = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3rem;
+  animation: reveal-left 1.5s ease-out;
+  @media (max-width: 600px) {
+    flex: none;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
+`;
+
+const HeroTitle = styled.h1`
+  color: #000;
+  font-size: 5.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-align: left;
+  margin-bottom: -2rem;
+  @media (max-width: 600px) {
+    font-size: 4rem;
+    margin-bottom: -1rem;
+    text-align: center;
+  }
+`;
+
+const HeroSubtitle = styled.span`
+  text-align: left;
+  letter-spacing: 2px;
+  font-weight: 200;
+  font-size: 3.5rem;
+  opacity: 0.9;
+  color: #000;
+  @media (max-width: 600px) {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+  p {
+    margin: 0;
+    @media (max-width: 600px) {
+      text-align: center;
+    }
+  }
+`;
+
+const HeroSvg = styled.div`
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: reveal-right 1.5s ease-out;
+  @media (max-width: 600px) {
+    flex: none;
+    width: 100%;
+    svg {
+      max-height: 350px;
+      transform: scale(0.7);
+    }
+  }
+`;
+
+const HeroCtaContainer = styled.div``;
+
+const HeroCta = styled.button`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #e260d9;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.3rem;
+  @media (max-width: 600px) {
+    font-size: 1rem;
+    padding: 0.8rem 1.6rem;
+  }
+  &:hover {
+    background-color: #da34cf;
+    transform: translateY(-2px);
+  }
+`;
 
 const HomePage = () => (
   <div className="min-h-screen flex flex-col bg-ghostWhite">
     <Header />
     <main className="flex-1">
       {/* Hero section */}
-      <section className="above-the-fold custom-padding-x">
-        <div className="above-the-fold__text">
-          <h1 className="above-the-fold__title">ilaria ippolito</h1>
+      <HeroSection>
+        <HeroText>
+          <HeroTitle>ilaria ippolito</HeroTitle>
           <h2>
-            <span className="above-the-fold__subtitle">
+            <HeroSubtitle>
               <p>UX/UI designer</p>
-            </span>
+            </HeroSubtitle>
           </h2>
-          <div className="above-the-fold__cta-container">
+          <HeroCtaContainer>
             <a href="#work-section">
-              <button className="above-the-fold__cta">
+              <HeroCta>
                 guarda i miei lavori
-              </button>
+              </HeroCta>
             </a>
-          </div>
-        </div>
-        <div className="above-the-fold__svg">
+          </HeroCtaContainer>
+        </HeroText>
+        <HeroSvg>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             version="1.1"
@@ -74,15 +233,15 @@ const HomePage = () => (
               <polygon points="400,385.375 380.5,414.625 419.5,414.625" opacity="0.05" />
             </g>
           </svg>
-        </div>
-      </section>
+        </HeroSvg>
+      </HeroSection>
 
       {/* Work section */}
-      <section id="work-section" className="work-section px-8 md:px-[5%] mb-20">
-        <div className="highlighted-heading" style={{ display: 'inline-block' }}>
-          <h3 className="section-title mb-8">i miei lavori.</h3>
-        </div>
-        <div className="cards__container flex flex-wrap gap-4 justify-center">
+      <WorkSection id="work-section">
+        <HighlightedHeading>
+          <SectionTitle>i miei lavori.</SectionTitle>
+        </HighlightedHeading>
+        <CardsContainer>
           <Card
             href="/project-detail?project=orizon"
             imgSrc="assets/img/copertina-progetto-grafica.jpg"
@@ -117,8 +276,8 @@ const HomePage = () => (
             description={'Ricerca dei bisogni di persone con disabilità.'}
             tags={['WCAG', 'Inclusive Design', 'WAVE Evaluation', 'NVDA/Talkback Testing']}
           />
-        </div>
-      </section>
+        </CardsContainer>
+      </WorkSection>
     </main>
     <Footer />
   </div>

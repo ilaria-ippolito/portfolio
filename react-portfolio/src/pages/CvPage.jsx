@@ -1,10 +1,169 @@
-import React from 'react';
+// Styled-component for horizontal padding
+const CustomPaddingX = styled.div`
+  padding: 0 5rem;
+`;
+// Styled-components for Skills section
+const SkillsContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 2.5rem;
+`;
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Experience from '../components/Experience';
 import Section from '../components/Section';
 import Skill from '../components/Skill';
+import styled from 'styled-components';
+
+const AboutMeSection = styled.section`
+  display: flex;
+  margin-top: 10rem;
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+  @media (max-width: 600px) {
+    padding: 0;
+  }
+`;
+
+const ProfilePictureContainer = styled.div`
+  display: flex;
+  align-items: center;
+  margin-left: 4rem;
+  @media (max-width: 1024px) {
+    margin: 0 0 6rem 0;
+  }
+`;
+
+const ProfilePicture = styled.img`
+  width: 35rem;
+  height: 35rem;
+  border-radius: 500px;
+  @media (max-width: 1024px) {
+    width: 30rem;
+    height: 30rem;
+  }
+  @media (max-width: 600px) {
+    width: 25rem !important;
+    height: 25rem !important;
+  }
+`;
+
+const AboutMeContainer = styled.div`
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin-left: 12rem;
+  @media (max-width: 1024px) {
+    margin-left: 0;
+  }
+  @media (max-width: 600px) {
+    margin: 0 2.5rem !important;
+  }
+`;
+
+const AboutMeTitle = styled.h3`
+  font-size: 4rem;
+  padding: 0;
+  margin: 0;
+  letter-spacing: 1px;
+`;
+
+const AboutMeDescription = styled.div`
+  font-size: 1.5rem;
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  b, a {
+    color: #f920ce;
+  }
+`;
+
+const NewSection = styled.section`
+  margin-bottom: 5rem;
+`;
+
+const NewSectionGrid = styled.div`
+  display: flex;
+  @media (max-width: 1024px) {
+    flex-direction: column;
+  }
+`;
+
+const LeftColumn = styled.div`
+  flex: 1;
+  padding: 0 2rem 0 0;
+  @media (max-width: 1024px) {
+    padding: 0;
+  }
+`;
+
+const RightColumn = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 0 2rem;
+  @media (max-width: 1024px) {
+    padding: 0;
+  }
+`;
+
+const HighlightedHeading = styled.div`
+  margin-bottom: 2rem;
+  display: inline-block;
+`;
+
+const SectionTitle = styled.h3`
+  font-size: 2.5rem;
+  color: #e5e5e5;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+  padding-left: 20px;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #000000;
+  }
+`;
+
+// Styled-components for GoToHome
+const GoToHome = styled.div`
+  margin: 2rem 0 4rem 0;
+  display: flex;
+  align-items: center;
+`;
+
+const HomeButton = styled.button`
+  background: none;
+  border: 2px solid #f920ce;
+  color: #f920ce;
+  font-size: 1.5rem;
+  font-weight: 700;
+  border-radius: 2rem;
+  padding: 0.7rem 2.2rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  &:hover {
+    background: #f920ce;
+    color: #fff;
+  }
+`;
 
 
 const education = [
@@ -65,24 +224,24 @@ const workExperiences = [
 const CvPage = () => (
   <div className="wrapper">
     <Header />
-  <main style={{ marginBottom: '4rem' }}>
-      <div className="go-to-home">
+    <main style={{ marginBottom: '4rem' }}>
+      <GoToHome>
         <a href="/">
-          <button className="above-the-fold__cta">← Torna alla home</button>
+          <HomeButton>← Torna alla home</HomeButton>
         </a>
-      </div>
+      </GoToHome>
       {/* About me */}
-      <section id="about-me" className="about-me custom-padding-x mb-5">
-        <div className="profile-picture-container">
-          <img
+      <CustomPaddingX className="mb-5">
+        <AboutMeSection id="about-me">
+        <ProfilePictureContainer>
+          <ProfilePicture
             src="assets/img/avatar.webp"
             alt="profile"
-            className="profile-picture-container__img"
           />
-        </div>
-        <div className="about-me-container">
-          <h3 className="about-me-title">chi sono.</h3>
-          <div className="about-me-description">
+        </ProfilePictureContainer>
+        <AboutMeContainer>
+          <AboutMeTitle>chi sono.</AboutMeTitle>
+          <AboutMeDescription>
             <p>
               <b>Ilaria</b>, aspirante <b>UX/UI Designer</b>, con una vena creativa che mi accompagna da sempre. <br />
               <br />
@@ -95,36 +254,42 @@ const CvPage = () => (
               <br />
               Non vedo l'ora di mettere in pratica le competenze acquisite e sono entusiasta di iniziare questa nuova avventura!
             </p>
-          </div>
-        </div>
-      </section>
-      <section className="new-section custom-padding-x mb-5">
-        <div className="new-section__grid">
-          <div className="left-column">
+          </AboutMeDescription>
+        </AboutMeContainer>
+        </AboutMeSection>
+      </CustomPaddingX>
+      <CustomPaddingX>
+        <NewSection>
+        <NewSectionGrid>
+          <LeftColumn>
             <div className="up">
-              <Section title="Formazione.">
-                {education.map((exp, i) => (
-                  <Experience key={i} {...exp} />
-                ))}
-              </Section>
-              <Section title="Skills.">
-                <div className="skills">
-                  {skills.map((skill, i) => (
-                    <Skill key={i}>{skill}</Skill>
-                  ))}
-                </div>
-              </Section>
-            </div>
-          </div>
-          <div className="right-column d-flex">
-            <Section title="Esperienze.">
-              {workExperiences.map((exp, i) => (
+              <HighlightedHeading>
+                <SectionTitle>Formazione.</SectionTitle>
+              </HighlightedHeading>
+              {education.map((exp, i) => (
                 <Experience key={i} {...exp} />
               ))}
-            </Section>
-          </div>
-        </div>
-      </section>
+              <HighlightedHeading>
+                <SectionTitle>Skills.</SectionTitle>
+              </HighlightedHeading>
+              <SkillsContainer>
+                {skills.map((skill, i) => (
+                  <Skill key={i}>{skill}</Skill>
+                ))}
+              </SkillsContainer>
+            </div>
+          </LeftColumn>
+          <RightColumn>
+            <HighlightedHeading>
+              <SectionTitle>Esperienze.</SectionTitle>
+            </HighlightedHeading>
+            {workExperiences.map((exp, i) => (
+              <Experience key={i} {...exp} />
+            ))}
+          </RightColumn>
+        </NewSectionGrid>
+        </NewSection>
+      </CustomPaddingX>
     </main>
     <Footer />
   </div>
