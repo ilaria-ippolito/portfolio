@@ -10,15 +10,12 @@ const CardWrapper = styled.a`
   padding: 1rem;
   width: calc(33.33% - 2rem);
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  transition: none;
   display: flex;
   flex-direction: column;
   height: 100%;
   color: inherit;
-  &:hover {
-    transform: translateY(-0.5rem);
-    text-decoration: none;
-  }
+  /* hover disabled */
   @media (max-width: 1300px) {
     width: calc(50% - 2rem);
     padding: 0.9rem;

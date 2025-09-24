@@ -2,16 +2,22 @@ import React from 'react';
 import styled from 'styled-components';
 
 const FooterWrapper = styled.footer`
+  /* make footer full-bleed across the viewport even when inside a centered root */
+  position: relative;
   width: 100%;
   height: 72px;
+  box-sizing: border-box;
   background-color: #000;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 60px;
-  @media (max-width: 600px) {
-    padding: 0 2rem;
+  overflow-x: hidden;
+  /* responsive horizontal padding to avoid overflow */
+  padding-inline: 16px;
+  @media (min-width: 900px) {
+    padding-inline: 60px;
   }
+  padding-block: 0;
 `;
 
 const FooterLeft = styled.div`
@@ -35,14 +41,14 @@ const SocialLink = styled.a`
   margin-right: 10px;
   text-decoration: none;
   color: #f920ce;
-  &:hover, &:active {
-    color: #1ff94b;
-  }
+  transition: none;
 `;
 
 const SocialImg = styled.img`
   width: 48px;
   height: 48px;
+  max-width: 100%;
+  display: block;
   vertical-align: middle;
 `;
 

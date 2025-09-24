@@ -1,22 +1,15 @@
-// Styled-component for horizontal padding
-const CustomPaddingX = styled.div`
-  padding: 0 5rem;
-`;
-// Styled-components for Skills section
-const SkillsContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.2rem;
-  margin-top: 1.5rem;
-  margin-bottom: 2.5rem;
-`;
-
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Layout from '../components/Layout';
 import Experience from '../components/Experience';
 import Section from '../components/Section';
 import Skill from '../components/Skill';
 import styled from 'styled-components';
+import {
+  HighlightedHeading,
+  SectionTitle,
+  CustomPaddingX,
+  GoToHome,
+  HomeButton,
+} from '../components/SharedStyles';
 
 const AboutMeSection = styled.section`
   display: flex;
@@ -115,56 +108,19 @@ const RightColumn = styled.div`
   }
 `;
 
-const HighlightedHeading = styled.div`
-  margin-bottom: 2rem;
-  display: inline-block;
-`;
 
-const SectionTitle = styled.h3`
-  font-size: 2.5rem;
-  color: #e5e5e5;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  letter-spacing: 1px;
-  position: relative;
-  display: inline-block;
-  padding-left: 20px;
-  &::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: #000000;
-  }
-`;
 
-// Styled-components for GoToHome
-const GoToHome = styled.div`
-  margin: 2rem 0 4rem 0;
+// using CustomPaddingX from SharedStyles
+
+const SkillsContainer = styled.div`
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 2.5rem;
 `;
 
-const HomeButton = styled.button`
-  background: none;
-  border: 2px solid #f920ce;
-  color: #f920ce;
-  font-size: 1.5rem;
-  font-weight: 700;
-  border-radius: 2rem;
-  padding: 0.7rem 2.2rem;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s;
-  &:hover {
-    background: #f920ce;
-    color: #fff;
-  }
-`;
-
+// using GoToHome and HomeButton from SharedStyles
 
 const education = [
   {
@@ -222,9 +178,8 @@ const workExperiences = [
 ];
 
 const CvPage = () => (
-  <div className="wrapper">
-    <Header />
-    <main style={{ marginBottom: '4rem' }}>
+    <Layout>
+      <main style={{ marginBottom: '4rem' }}>
       <GoToHome>
         <a href="/">
           <HomeButton>← Torna alla home</HomeButton>
@@ -290,9 +245,8 @@ const CvPage = () => (
         </NewSectionGrid>
         </NewSection>
       </CustomPaddingX>
-    </main>
-    <Footer />
-  </div>
+      </main>
+    </Layout>
 );
 
 export default CvPage;

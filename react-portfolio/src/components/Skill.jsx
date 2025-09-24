@@ -13,10 +13,7 @@ const StyledSkill = styled.div`
 	margin-bottom: 0.5rem;
 	transition: background 0.2s, color 0.2s;
 	user-select: none;
-	&:hover {
-		background: #f920ce;
-		color: #fff;
-	}
+	/* hover disabled */
 `;
 
 const Skill = ({ children }) => <StyledSkill>{children}</StyledSkill>;
