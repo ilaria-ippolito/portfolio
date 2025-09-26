@@ -2,32 +2,11 @@ import styled from 'styled-components';
 import Layout from '../components/Layout';
 import Card from '../components/Card';
 import BigSvg from '../components/BigSvg';
-import {
-  HighlightedHeading,
-  SectionTitle,
-  PrimaryButton,
-} from '../components/SharedStyles';
-
-const WorkSection = styled.section`
-  padding: 2rem 0;
-  margin-bottom: 5rem;
-  @media (max-width: 600px) {
-    padding: 0;
-  }
-`;
-
-const CardsContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem 2rem;
-  justify-content: center;
-  @media (max-width: 1024px) {
-    flex-direction: column;
-    align-items: center;
-    gap: 3rem;
-  }
-`;
-
+import { HighlightedHeading, SectionTitle, PrimaryButton } from '../components/SharedStyles';
+import StackSection from '../components/StackSection';
+import ServicesSection from '../components/ServicesSection';
+import FeaturedProjects from '../components/FeaturedProjects';
+import AboutSection from '../components/AboutSection';
 
 const HeroSection = styled.section`
   display: flex;
@@ -118,9 +97,8 @@ const HeroCtaContainer = styled.div``;
 const HeroCta = PrimaryButton;
 
 const HomePage = () => (
-    <Layout>
-      <div className="flex-1">
-      {/* Hero section */}
+  <Layout>
+    <div className="flex-1">
       <HeroSection>
         <HeroText>
           <HeroTitle>ilaria ippolito</HeroTitle>
@@ -131,9 +109,7 @@ const HomePage = () => (
           </h2>
           <HeroCtaContainer>
             <a href="#work-section">
-              <HeroCta>
-                guarda i miei lavori
-              </HeroCta>
+              <HeroCta>guarda i miei lavori</HeroCta>
             </a>
           </HeroCtaContainer>
         </HeroText>
@@ -141,51 +117,12 @@ const HomePage = () => (
           <BigSvg />
         </HeroSvg>
       </HeroSection>
-
-      {/* Work section */}
-      <WorkSection id="work-section">
-        <HighlightedHeading>
-          <SectionTitle>i miei lavori.</SectionTitle>
-        </HighlightedHeading>
-        <CardsContainer>
-          <Card
-            href="/project-detail?project=orizon"
-            imgSrc="assets/img/copertina-progetto-grafica.jpg"
-            imgAlt="Copertina Orizon"
-            title="Orizon"
-            description={"Creazione di una brand identity per un'agenzia di viaggi ecosostenibile."}
-            tags={[
-              'Adobe Illustrator',
-              'Adobe Photoshop',
-              'Affinity Designer',
-              'Affinity Publisher',
-            ]}
-          />
-          <Card
-            href="/project-detail?project=ivegan_discovery"
-            imgSrc="assets/img/copertina-discovery.png"
-            imgAlt="Copertina iVegan Discovery"
-            title="iVegan Discovery"
-            description={'Analisi as is e ricerca utente per un brand di prodotti vegetali.'}
-            tags={[
-              'User Experience Design',
-              'User Research',
-              'Journey Mapping',
-              'Information Architecture',
-            ]}
-          />
-          <Card
-            href="/project-detail?project=ivegan_a11y"
-            imgSrc="assets/img/copertina-accessibilità.png"
-            imgAlt="Copertina iVegan Analisi Accessibilità"
-            title="iVegan Accessibilità"
-            description={'Ricerca dei bisogni di persone con disabilità.'}
-            tags={['WCAG', 'Inclusive Design', 'WAVE Evaluation', 'NVDA/Talkback Testing']}
-          />
-        </CardsContainer>
-      </WorkSection>
-      </div>
-    </Layout>
+      <FeaturedProjects id="work-section" />
+      <StackSection id="stack-section" />
+      <ServicesSection id="services-section" />
+      <AboutSection id="about-section" />
+    </div>
+  </Layout>
 );
 
 export default HomePage;

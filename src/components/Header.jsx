@@ -133,6 +133,21 @@ const Header = () => {
     }
   };
 
+  const handleScrollTo = (e, id) => {
+    e.preventDefault();
+    setMenuOpen(false);
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    } else {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <HeaderWrapper>
       <HeaderInner>
@@ -151,24 +166,18 @@ const Header = () => {
         <StyledNav open={menuOpen}>
           <ul>
             <li>
-              <a
-                href="#work-section"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setMenuOpen(false);
-                  if (location.pathname !== '/') {
-                    navigate('/');
-                    setTimeout(() => {
-                      const el = document.getElementById('work-section');
-                      if (el) el.scrollIntoView({ behavior: 'smooth' });
-                    }, 100);
-                  } else {
-                    const el = document.getElementById('work-section');
-                    if (el) el.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
-              >
-                lavori.
+              <a href="#work-section" onClick={(e) => handleScrollTo(e, 'work-section')}>
+                Progetti
+              </a>
+            </li>
+            <li>
+              <a href="#stack-section" onClick={(e) => handleScrollTo(e, 'stack-section')}>
+                Stack
+              </a>
+            </li>
+            <li>
+              <a href="#services-section" onClick={(e) => handleScrollTo(e, 'services-section')}>
+                Servizi
               </a>
             </li>
             <li>

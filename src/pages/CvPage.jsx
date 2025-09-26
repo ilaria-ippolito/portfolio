@@ -179,7 +179,6 @@ const workExperiences = [
 
 const CvPage = () => (
     <Layout>
-      <main style={{ marginBottom: '4rem' }}>
       <GoToHome>
         <a href="/">
           <HomeButton>← Torna alla home</HomeButton>
@@ -245,7 +244,6 @@ const CvPage = () => (
         </NewSectionGrid>
         </NewSection>
       </CustomPaddingX>
-      </main>
     </Layout>
 );
 
