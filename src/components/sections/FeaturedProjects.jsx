@@ -43,30 +43,30 @@ const FeaturedProjects = ({ id }) => (
       <AreaFull>
         <FullBleedCard
           img="assets/img/copertina-progetto-grafica.jpg"
-          title="Orizon Brand Identity"
-          tags={['Illustrator', 'Branding']}
-          dateRange="Gen 2022 — Apr 2022"
-          href="/project-detail?project=orizon"
+          title="Ticketone redesign"
+          tags={['Figma', 'Wave', 'Maze']}
+          dateRange="Set 2025 — Ott 2025"
+          href="/project-detail?project=ticketone"
         />
       </AreaFull>
 
       <AreaSplit1>
         <SplitCard
           img="assets/img/copertina-discovery.png"
-          title="iVegan Discovery"
-          tags={['User Research', 'IA']}
-          dateRange="Mar 2021 — Jun 2021"
-          href="/project-detail?project=ivegan_discovery"
+          title="iVegan redesign"
+          tags={['Figma', 'Wave', 'Maze']}
+          dateRange="Ago 2025 — Set 2025"
+          href="/project-detail?project=ivegan"
         />
       </AreaSplit1>
 
       <AreaSplit2>
         <SplitCard
           img="assets/img/copertina-accessibilità.png"
-          title="iVegan Accessibilità"
-          tags={['WCAG', 'Audit']}
-          dateRange="Nov 2020 — Feb 2021"
-          href="/project-detail?project=ivegan_a11y"
+          title="Orizion Brand Identity"
+          tags={['Illustrator', 'Photoshop']}
+          dateRange="Nov 2024 — Dic 2024"
+          href="/project-detail?project=orizon"
         />
       </AreaSplit2>
     </Container>

@@ -28,18 +28,24 @@ const Wrapper = styled.a`
     transform: scale(1.08);
   }
 
-  /* slightly blurred panel at the bottom to improve contrast for bottom-aligned text */
+  /* black overlay for text visibility */
   &::after {
     content: '';
     position: absolute;
     inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  /* gradient overlay for extra contrast at the bottom */
+  &::after {
     background: linear-gradient(
       180deg,
-      rgba(0, 0, 0, 0) 0%,
-      rgba(0, 0, 0, 0.15) 60%,
-      rgba(0, 0, 0, 0.5) 100%
+      rgba(0, 0, 0, 0.45) 0%,
+      rgba(0, 0, 0, 0.55) 60%,
+      rgba(0, 0, 0, 0.7) 100%
     );
-    z-index: 1;
   }
 `;
 
@@ -77,13 +83,15 @@ const Meta = styled.div`
 `;
 
 const Tag = styled.span`
-  font-size: 0.72rem;
-  color: #e260d9;
-  background: rgba(226, 96, 217, 0.06);
-  border: 1px solid rgba(226, 96, 217, 0.12);
-  padding: 0.2rem 0.5rem;
+  font-size: 0.78rem;
+  color: #fff;
+  background: rgba(226, 96, 217, 0.85);
+  border: 1px solid #fff;
+  padding: 0.22rem 0.6rem;
   border-radius: 0.8rem;
   line-height: 1;
+  font-weight: 600;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.12);
 `;
 
 const FullBleedCard = ({ img, title, tags = [], tools = [], dateRange, href = '#' }) => {

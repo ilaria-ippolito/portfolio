@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Panda } from 'lucide-react';
+import { scrollToSection } from '../../utils/scrollToSection';
 
 const HeaderWrapper = styled.header`
   position: fixed;
@@ -62,8 +63,8 @@ const StyledNav = styled.nav`
   }
   a {
     margin-right: 0;
-    padding: 1.5rem;
-    font-size: 1.3rem;
+    padding: 1.2rem;
+    font-size: 1.05rem;
     font-weight: 700;
     letter-spacing: 1px;
     color: #f920ce;
@@ -100,8 +101,8 @@ const StyledNav = styled.nav`
       display: block;
       width: 100%;
       max-width: 100%;
-      font-size: 2.4rem;
-      padding: 1.2rem 0;
+      font-size: 1.5rem;
+      padding: 1rem 0;
       text-align: center;
     }
   }
@@ -133,42 +134,14 @@ const Header = () => {
     }
   };
 
-  const handleScrollTo = (e, id) => {
-    e.preventDefault();
-    setMenuOpen(false);
-    if (location.pathname !== '/') {
-      navigate('/');
-      setTimeout(() => {
-        const el = document.getElementById(id);
-        if (el) {
-          const header = document.querySelector('header');
-          const headerHeight = header ? header.offsetHeight : 0;
-          const top = Math.max(
-            0,
-            el.getBoundingClientRect().top + window.pageYOffset - headerHeight - 8
-          );
-          window.scrollTo({ top, behavior: 'smooth' });
-        }
-      }, 100);
-    } else {
-      const el = document.getElementById(id);
-      if (el) {
-        const header = document.querySelector('header');
-        const headerHeight = header ? header.offsetHeight : 0;
-        const top = Math.max(
-          0,
-          el.getBoundingClientRect().top + window.pageYOffset - headerHeight - 8
-        );
-        window.scrollTo({ top, behavior: 'smooth' });
-      }
-    }
-  };
+
 
   return (
     <HeaderWrapper>
       <HeaderInner>
         <div className="logo d-inline">
           <LogoTitle href="/" onClick={handleLogoClick}>
+            <Panda size={26} style={{ verticalAlign: 'middle', marginRight: '0.5rem' }} />
             ilaria
           </LogoTitle>
         </div>
@@ -182,22 +155,22 @@ const Header = () => {
         <StyledNav open={menuOpen}>
           <ul>
             <li>
-              <a href="#work-section" onClick={(e) => handleScrollTo(e, 'work-section')}>
+              <a href="#work-section" onClick={(e) => scrollToSection({ event: e, id: 'work-section', setMenuOpen, location, navigate })}>
                 Progetti
               </a>
             </li>
             <li>
-              <a href="#stack-section" onClick={(e) => handleScrollTo(e, 'stack-section')}>
+              <a href="#stack-section" onClick={(e) => scrollToSection({ event: e, id: 'stack-section', setMenuOpen, location, navigate })}>
                 Stack
               </a>
             </li>
             <li>
-              <a href="#services-section" onClick={(e) => handleScrollTo(e, 'services-section')}>
+              <a href="#services-section" onClick={(e) => scrollToSection({ event: e, id: 'services-section', setMenuOpen, location, navigate })}>
                 Servizi
               </a>
             </li>
             <li>
-              <a href="#about-section" onClick={(e) => handleScrollTo(e, 'about-section')}>
+              <a href="#about-section" onClick={(e) => scrollToSection({ event: e, id: 'about-section', setMenuOpen, location, navigate })}>
                 About me
               </a>
             </li>

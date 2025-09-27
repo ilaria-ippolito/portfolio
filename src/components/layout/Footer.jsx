@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { scrollToSection } from '../../utils/scrollToSection';
 
 const FooterWrapper = styled.footer`
   /* make footer full-bleed across the viewport even when inside a centered root */
@@ -168,19 +169,7 @@ const Footer = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const handleScrollTo = (e, id) => {
-    e.preventDefault();
-    if (location.pathname !== '/') {
-      navigate('/');
-      setTimeout(() => {
-        const el = document.getElementById(id);
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
-    } else {
-      const el = document.getElementById(id);
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+
 
   return (
     <FooterWrapper>
@@ -193,25 +182,25 @@ const Footer = () => {
           <ColTitle>Scopri</ColTitle>
           <ColList>
             <ColItem>
-              <NavLink href="#work-section" onClick={(e) => handleScrollTo(e, 'work-section')}>
+              <NavLink href="#work-section" onClick={(e) => scrollToSection({ event: e, id: 'work-section', location, navigate })}>
                 Progetti
               </NavLink>
             </ColItem>
             <ColItem>
-              <NavLink href="#stack-section" onClick={(e) => handleScrollTo(e, 'stack-section')}>
+              <NavLink href="#stack-section" onClick={(e) => scrollToSection({ event: e, id: 'stack-section', location, navigate })}>
                 Stack
               </NavLink>
             </ColItem>
             <ColItem>
               <NavLink
                 href="#services-section"
-                onClick={(e) => handleScrollTo(e, 'services-section')}
+                onClick={(e) => scrollToSection({ event: e, id: 'services-section', location, navigate })}
               >
                 Servizi
               </NavLink>
             </ColItem>
             <ColItem>
-              <NavLink href="#about-section" onClick={(e) => handleScrollTo(e, 'about-section')}>
+              <NavLink href="#about-section" onClick={(e) => scrollToSection({ event: e, id: 'about-section', location, navigate })}>
                 About me
               </NavLink>
             </ColItem>

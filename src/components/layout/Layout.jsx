@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from './layout/Header';
-import Footer from './layout/Footer';
-import { CustomPaddingX } from './SharedStyles';
+import Header from './Header';
+import Footer from './Footer';
+import { CustomPaddingX } from '../SharedStyles';
 
 const Layout = ({ children }) => (
   <>

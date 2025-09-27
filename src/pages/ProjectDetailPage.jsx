@@ -1,4 +1,4 @@
-import Layout from '../components/Layout';
+import Layout from '../components/layout/Layout';
 import ProjectHeader from '../components/ProjectHeader';
 import ProjectOverview from '../components/ProjectOverview';
 import ProjectProcess from '../components/ProjectProcess';
@@ -26,6 +26,7 @@ const ProjectHero = styled.img`
   height: 450px;
   object-fit: cover;
   overflow: hidden;
+  margin-top: 7rem;
   margin-bottom: 3rem;
 `;
 
@@ -119,12 +120,6 @@ const projectImages = [
 
 const ProjectDetailPage = () => (
   <Layout>
-    <GoToHome>
-      <a href="/">
-        <HomeButton>← Torna alla home</HomeButton>
-      </a>
-    </GoToHome>
-
     {/* full-bleed hero */}
     <ProjectHero
       src="assets/img/copertina-accessibilità.png"
@@ -184,6 +179,11 @@ const ProjectDetailPage = () => (
           </ProjectDownload>
         </ProjectSection>
       </ProjectContent>
+      <GoToHome>
+        <a href="/">
+          <HomeButton>← Torna alla home</HomeButton>
+        </a>
+      </GoToHome>
     </ProjectDetailsWrapper>
   </Layout>
 );

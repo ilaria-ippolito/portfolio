@@ -1,13 +1,14 @@
 import styled from 'styled-components';
-import Layout from '../components/Layout';
-import Card from '../components/Card';
+import Layout from '../components/layout/Layout';
 import BigSvg from '../components/BigSvg';
-import { HighlightedHeading, SectionTitle, PrimaryButton } from '../components/SharedStyles';
+import { PrimaryButton } from '../components/SharedStyles';
 import StackSection from '../components/sections/StackSection';
 import ServicesSection from '../components/sections/ServicesSection';
 import FeaturedProjects from '../components/sections/FeaturedProjects';
 import AboutSection from '../components/sections/AboutSection';
 import CollabSection from '../components/sections/CollabSection';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { scrollToSection } from '../utils/scrollToSection';
 
 const HeroSection = styled.section`
   display: flex;
@@ -96,34 +97,42 @@ const HeroCtaContainer = styled.div``;
 
 const HeroCta = PrimaryButton;
 
-const HomePage = () => (
-  <Layout>
-    <div className="flex-1">
-      <HeroSection>
-        <HeroText>
-          <HeroTitle>ilaria ippolito</HeroTitle>
-          <h2>
-            <HeroSubtitle>
-              <p>UX/UI designer</p>
-            </HeroSubtitle>
-          </h2>
-          <HeroCtaContainer>
-            <a href="#work-section">
-              <HeroCta>guarda i miei progetti</HeroCta>
-            </a>
-          </HeroCtaContainer>
-        </HeroText>
-        <HeroSvg>
-          <BigSvg />
-        </HeroSvg>
-      </HeroSection>
-      <FeaturedProjects id="work-section" />
-      <StackSection id="stack-section" />
-      <AboutSection id="about-section" />
-      <ServicesSection id="services-section" />
-      <CollabSection id="collab-section" />
-    </div>
-  </Layout>
-);
+
+const HomePage = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  return (
+    <Layout>
+      <div className="flex-1">
+        <HeroSection>
+          <HeroText>
+            <HeroTitle>ilaria ippolito</HeroTitle>
+            <h2>
+              <HeroSubtitle>
+                <p>UX/UI designer</p>
+              </HeroSubtitle>
+            </h2>
+            <HeroCtaContainer>
+              <a
+                href="#work-section"
+                onClick={e => scrollToSection({ event: e, id: 'work-section', location, navigate })}
+              >
+                <HeroCta>guarda i miei progetti</HeroCta>
+              </a>
+            </HeroCtaContainer>
+          </HeroText>
+          <HeroSvg>
+            <BigSvg />
+          </HeroSvg>
+        </HeroSection>
+        <FeaturedProjects id="work-section" />
+        <StackSection id="stack-section" />
+        <AboutSection id="about-section" />
+        <ServicesSection id="services-section" />
+        <CollabSection id="collab-section" />
+      </div>
+    </Layout>
+  );
+};
 
 export default HomePage;
