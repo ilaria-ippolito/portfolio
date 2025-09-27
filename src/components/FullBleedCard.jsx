@@ -9,7 +9,7 @@ const Wrapper = styled.a`
   text-decoration: none;
   color: inherit;
   height: 100%;
-  min-height: 18rem;
+  min-height: 20rem;
 
   /* main image as background (for zoom effect) */
   &::before {
@@ -86,11 +86,9 @@ const Tag = styled.span`
   font-size: 0.78rem;
   color: #fff;
   background: rgba(226, 96, 217, 0.85);
-  border: 1px solid #fff;
   padding: 0.22rem 0.6rem;
   border-radius: 0.8rem;
   line-height: 1;
-  font-weight: 600;
   box-shadow: 0 1px 4px rgba(0,0,0,0.12);
 `;
 

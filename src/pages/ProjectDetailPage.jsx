@@ -10,10 +10,9 @@ import {
   HomeButton,
   PrimaryLinkButton,
 } from '../components/SharedStyles';
+import { projectDetails } from '../data/projectDetailData';
 
 const ProjectDetailsWrapper = styled.div`
-  max-width: 1200px;
-  margin: 0 auto;
 `;
 
 const ProjectHero = styled.img`
@@ -67,125 +66,116 @@ const ProjectDownload = styled.div`
   margin-top: 2rem;
 `;
 
-const meta = [
-  { label: 'Durata', value: '3 mesi' },
-  { label: 'Ruolo', value: 'Brand Designer' },
-  { label: 'Cliente', value: 'Orizon Travel' },
-  { label: 'Anno', value: '2024' },
-];
+import { useLocation } from 'react-router-dom';
 
-const processSteps = [
-  {
-    number: 1,
-    title: 'Ricerca e analisi',
-    description:
-      'Analisi del sito esistente, benchmark di competitor, raccolta di feedback dagli utenti.',
-  },
-  {
-    number: 2,
-    title: 'Wireframing',
-    description: 'Creazione di wireframe a bassa fedeltà per definire la nuova struttura del sito.',
-  },
-  {
-    number: 3,
-    title: 'Prototyping',
-    description:
-      'Sviluppo di prototipi interattivi ad alta fedeltà per testare la user experience.',
-  },
-  {
-    number: 4,
-    title: 'Sviluppo',
-    description: 'Implementazione del sito con HTML e CSS, ottimizzazione per l’accessibilità.',
-  },
-];
+function useQuery() {
+  return new URLSearchParams(useLocation().search);
+}
 
-const results = [
-  'Miglioramento dell’accessibilità e della navigazione per utenti con disabilità visive.',
-  'Incremento del punteggio Lighthouse Accessibility da 60 a 100.',
-  'Sito responsive e ottimizzato per dispositivi mobili.',
-];
+const ProjectDetailPage = () => {
+  const query = useQuery();
+  const projectId = query.get('project') || 'a11y';
+  const selectedProject = projectDetails[projectId];
 
-const projectTitle = 'Nome Progetto';
-const projectTags = ['Branding', 'UI', 'Accessibilità'];
-const overviewText =
-  'Descrizione dettagliata del progetto e degli obiettivi. Qui viene raccontato il contesto, gli utenti target e cosa si voleva raggiungere con il progetto.';
-const overviewImage = 'assets/img/a11y-overview.png';
-const challengeText =
-  'Descrizione delle sfide affrontate durante il progetto e delle restrizioni tecniche o di progetto.';
-const projectImages = [
-  'assets/img/a11y-project_1.png',
-  'assets/img/a11y-project_2.png',
-  'assets/img/a11y-project_3.png',
-];
+  if (!selectedProject) {
+    return (
+      <Layout>
+        <ProjectDetailsWrapper>
+          <h2>Progetto non trovato</h2>
+          <GoToHome>
+            <a href="/">
+              <HomeButton>← Torna alla home</HomeButton>
+            </a>
+          </GoToHome>
+        </ProjectDetailsWrapper>
+      </Layout>
+    );
+  }
 
-const ProjectDetailPage = () => (
-  <Layout>
-    {/* full-bleed hero */}
-    <ProjectHero
-      src="assets/img/copertina-accessibilità.png"
-      alt="Copertina progetto accessibilità"
-    />
-    <ProjectDetailsWrapper>
-      <ProjectHeader
-        title={projectTitle}
-        tags={projectTags}
-        meta={meta}
-        timeRange={'Feb - Mar 2024'}
+  const {
+    projectTitle,
+    projectTags,
+    meta,
+    overviewText,
+    overviewImage,
+    challengeText,
+    processSteps,
+    projectImages,
+    results,
+    resultsImage,
+    downloadUrl,
+    timeRange,
+  } = selectedProject;
+
+  return (
+    <Layout>
+      {/* full-bleed hero */}
+      <ProjectHero
+        src="assets/img/copertina-accessibilità.png"
+        alt="Copertina progetto accessibilità"
       />
-      <ProjectContent>
-        <ProjectOverview overviewText={overviewText} overviewImage={overviewImage} />
+      <ProjectDetailsWrapper>
+        <ProjectHeader
+          title={projectTitle}
+          tags={projectTags}
+          meta={meta}
+          timeRange={timeRange}
+        />
+        <ProjectContent>
+          <ProjectOverview overviewText={overviewText} overviewImage={overviewImage} />
 
-        <ProjectSection>
-          <HighlightedHeading>
-            <SectionTitle>La Sfida</SectionTitle>
-          </HighlightedHeading>
-          <TextContent>
-            <p className="challenge-content">{challengeText}</p>
-          </TextContent>
-        </ProjectSection>
-
-        <ProjectProcess steps={processSteps} images={projectImages} />
-
-        {/* Results */}
-        <ProjectSection>
-          <HighlightedHeading>
-            <SectionTitle>Risultati</SectionTitle>
-          </HighlightedHeading>
-          <ContentGrid>
+          <ProjectSection>
+            <HighlightedHeading>
+              <SectionTitle>La Sfida</SectionTitle>
+            </HighlightedHeading>
             <TextContent>
-              <p className="results-content">Qui i risultati principali del progetto:</p>
-              {results.map((r, i) => (
-                <ResultItem key={i}>
-                  <h3>{r.split(' ')[0]}</h3>
-                  <p>{r}</p>
-                </ResultItem>
-              ))}
+              <p className="challenge-content">{challengeText}</p>
             </TextContent>
-            <ImageContent>
-              <img src="assets/img/a11y-result.png" alt="Results visual" />
-            </ImageContent>
-          </ContentGrid>
-        </ProjectSection>
+          </ProjectSection>
 
-        <ProjectSection>
-          <ProjectDownload>
-            <PrimaryLinkButton
-              href="assets/documents/progetto-accessibilità.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Scarica il progetto completo (PDF)
-            </PrimaryLinkButton>
-          </ProjectDownload>
-        </ProjectSection>
-      </ProjectContent>
-      <GoToHome>
-        <a href="/">
-          <HomeButton>← Torna alla home</HomeButton>
-        </a>
-      </GoToHome>
-    </ProjectDetailsWrapper>
-  </Layout>
-);
+          <ProjectProcess steps={processSteps} images={projectImages} />
+
+          {/* Results */}
+          <ProjectSection>
+            <HighlightedHeading>
+              <SectionTitle>Risultati</SectionTitle>
+            </HighlightedHeading>
+            <ContentGrid>
+              <TextContent>
+                <p className="results-content">Qui i risultati principali del progetto:</p>
+                {results.map((r, i) => (
+                  <ResultItem key={i}>
+                    <h3>{r.split(' ')[0]}</h3>
+                    <p>{r}</p>
+                  </ResultItem>
+                ))}
+              </TextContent>
+              <ImageContent>
+                <img src={resultsImage} alt="Results visual" />
+              </ImageContent>
+            </ContentGrid>
+          </ProjectSection>
+
+          <ProjectSection>
+            <ProjectDownload>
+              <PrimaryLinkButton
+                href={downloadUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Scarica il progetto completo (PDF)
+              </PrimaryLinkButton>
+            </ProjectDownload>
+          </ProjectSection>
+        </ProjectContent>
+        <GoToHome>
+          <a href="/">
+            <HomeButton>← Torna alla home</HomeButton>
+          </a>
+        </GoToHome>
+      </ProjectDetailsWrapper>
+    </Layout>
+  );
+};
 
 export default ProjectDetailPage;

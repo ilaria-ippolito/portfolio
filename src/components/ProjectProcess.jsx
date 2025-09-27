@@ -8,8 +8,12 @@ const Section = styled.section`
 
 const StepsWrapper = styled.div`
   display: grid;
-  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem 2rem;
   margin-bottom: 1rem;
+  @media (max-width: 700px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const ImagesGrid = styled.div`

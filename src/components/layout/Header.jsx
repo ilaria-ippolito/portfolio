@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { Menu, X, Panda } from 'lucide-react';
 import { scrollToSection } from '../../utils/scrollToSection';
+import { CustomPaddingX } from '../SharedStyles';
 
 const HeaderWrapper = styled.header`
   position: fixed;
@@ -11,7 +12,8 @@ const HeaderWrapper = styled.header`
   width: 100%;
   z-index: 100;
   background-color: #000;
-  padding: 1rem 0;
+  padding: 0;
+  min-height: 64px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 `;
 
@@ -21,7 +23,8 @@ const HeaderInner = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100%;
+  min-height: 64px;
+  padding: 0.5rem 0;
 `;
 
 const LogoTitle = styled.a`
@@ -47,10 +50,20 @@ const MenuToggleBtn = styled.button`
   border: none;
   padding: 0;
   display: none;
+  position: static;
+  z-index: 200;
   @media (max-width: 600px) {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: fixed;
+    top: 1.2rem;
+    right: 1.2rem;
+    background: rgba(0,0,0,0.85);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
   }
 `;
 
@@ -77,14 +90,12 @@ const StyledNav = styled.nav`
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     background-color: #000;
-    /* slide in/out via transform to avoid relying on viewport calculations */
     transform: translateX(${({ open }) => (open ? '0' : '100%')});
     transition: transform 0.3s ease;
-    margin-top: 5rem;
-    z-index: 99;
+    z-index: 150;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -138,45 +149,47 @@ const Header = () => {
 
   return (
     <HeaderWrapper>
-      <HeaderInner>
-        <div className="logo d-inline">
-          <LogoTitle href="/" onClick={handleLogoClick}>
-            <Panda size={26} style={{ verticalAlign: 'middle', marginRight: '0.5rem' }} />
-            ilaria
-          </LogoTitle>
-        </div>
-        <MenuToggleBtn
-          aria-label={menuOpen ? 'Chiudi menu' : 'Apri menu'}
-          onClick={() => setMenuOpen((open) => !open)}
-          type="button"
-        >
-          {menuOpen ? <X size={32} color="#f920ce" /> : <Menu size={32} color="#f920ce" />}
-        </MenuToggleBtn>
-        <StyledNav open={menuOpen}>
-          <ul>
-            <li>
-              <a href="#work-section" onClick={(e) => scrollToSection({ event: e, id: 'work-section', setMenuOpen, location, navigate })}>
-                Progetti
-              </a>
-            </li>
-            <li>
-              <a href="#stack-section" onClick={(e) => scrollToSection({ event: e, id: 'stack-section', setMenuOpen, location, navigate })}>
-                Stack
-              </a>
-            </li>
-            <li>
-              <a href="#services-section" onClick={(e) => scrollToSection({ event: e, id: 'services-section', setMenuOpen, location, navigate })}>
-                Servizi
-              </a>
-            </li>
-            <li>
-              <a href="#about-section" onClick={(e) => scrollToSection({ event: e, id: 'about-section', setMenuOpen, location, navigate })}>
-                About me
-              </a>
-            </li>
-          </ul>
-        </StyledNav>
-      </HeaderInner>
+      <CustomPaddingX>
+        <HeaderInner>
+          <div className="logo d-inline">
+            <LogoTitle href="/" onClick={handleLogoClick}>
+              <Panda size={26} style={{ verticalAlign: 'middle', marginRight: '0.5rem' }} />
+              ilaria
+            </LogoTitle>
+          </div>
+          <MenuToggleBtn
+            aria-label={menuOpen ? 'Chiudi menu' : 'Apri menu'}
+            onClick={() => setMenuOpen((open) => !open)}
+            type="button"
+          >
+            {menuOpen ? <X size={32} color="#f920ce" /> : <Menu size={32} color="#f920ce" />}
+          </MenuToggleBtn>
+          <StyledNav open={menuOpen}>
+            <ul>
+              <li>
+                <a href="#work-section" onClick={(e) => scrollToSection({ event: e, id: 'work-section', setMenuOpen, location, navigate })}>
+                  Progetti
+                </a>
+              </li>
+              <li>
+                <a href="#stack-section" onClick={(e) => scrollToSection({ event: e, id: 'stack-section', setMenuOpen, location, navigate })}>
+                  Stack
+                </a>
+              </li>
+              <li>
+                <a href="#services-section" onClick={(e) => scrollToSection({ event: e, id: 'services-section', setMenuOpen, location, navigate })}>
+                  Servizi
+                </a>
+              </li>
+              <li>
+                <a href="#about-section" onClick={(e) => scrollToSection({ event: e, id: 'about-section', setMenuOpen, location, navigate })}>
+                  About me
+                </a>
+              </li>
+            </ul>
+          </StyledNav>
+        </HeaderInner>
+      </CustomPaddingX>
     </HeaderWrapper>
   );
 };

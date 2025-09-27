@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import MetaItem from './MetaItem';
+import { Tag } from './SharedStyles';
 
 const HeaderWrapper = styled.header`
   margin-bottom: 2rem;
@@ -24,22 +25,12 @@ const TimeRange = styled.div`
   margin-bottom: 1rem;
 `;
 
-const Tag = styled.span`
-  padding: 0.4rem 0.8rem;
-  border-radius: 1rem;
-  background: #fff;
-  border: 1px solid #f0f0f0;
-  color: #e260d9;
-  font-weight: 700;
-  font-size: 0.9rem;
-`;
-
 const MetaGrid = styled.div`
   background-color: #fff;
   border-radius: 8px;
   padding: 1.5rem;
   margin-top: 1.5rem;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+  border: 1px solid #eee;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 1rem;

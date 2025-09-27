@@ -7,6 +7,7 @@ const Section = styled.section`
   color: #fff;
   padding: 4rem 5rem;
   margin-top: 4.5rem;
+  border-radius: 1.2rem;
   @media (max-width: 900px) {
     padding: 3rem 2rem;
     margin-top: 2.5rem;

@@ -10,11 +10,15 @@ const Wrapper = styled.a`
   overflow: hidden;
   border: 1px solid #eee;
   height: 100%;
+  min-height: 20rem;
+  @media (max-width: 900px) {
+    min-height: 20rem;
+  }
 `;
 
 const ImageSide = styled.div`
   position: relative;
-  flex: 0 0 45%;
+  flex: 0 0 60%;
   overflow: hidden;
   &::before {
     content: '';
@@ -62,7 +66,7 @@ const Tag = styled.span`
   font-size: 0.72rem;
   color: #e260d9;
   background: rgba(226, 96, 217, 0.06);
-  border: 1px solid rgba(226, 96, 217, 0.12);
+  border: 1px solid rgba(226, 96, 217, 0.6);
   padding: 0.2rem 0.5rem;
   border-radius: 0.8rem;
   line-height: 1;

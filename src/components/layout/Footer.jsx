@@ -119,6 +119,8 @@ const ColList = styled.ul`
 const ColItem = styled.li`
   color: #9aa0a6;
   font-size: 0.95rem;
+  display: flex;
+  align-items: center;
 `;
 
 const SocialIcons = styled.div`
@@ -135,15 +137,19 @@ const SocialLink = styled.a`
 `;
 
 const SocialImg = styled.img`
-  width: 56px;
-  height: 56px;
+  width: 36px;
+  height: 36px;
   max-width: 100%;
   display: block;
   vertical-align: middle;
+  object-fit: contain;
+  padding: 0;
+  margin: 0;
+  background: none;
 
   @media (max-width: 600px) {
-    width: 44px;
-    height: 44px;
+    width: 28px;
+    height: 28px;
   }
 `;
 

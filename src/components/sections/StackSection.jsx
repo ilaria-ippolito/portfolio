@@ -11,17 +11,19 @@ const Grid = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 1rem 2rem;
   align-items: center;
-  margin-top: 1rem;
 `;
 
 const Item = styled.div`
   display: flex;
   align-items: center;
   gap: 1rem;
-  background: #fff;
-  border: 1px solid #f1f1f1;
+  background: #181818;
+  border: 1px solid #222;
   padding: 0.8rem 1rem;
   border-radius: 0.8rem;
+  color: #fff;
+  min-width: 160px;
+  max-width: 180px;
 `;
 
 const Icon = styled.img`
@@ -33,7 +35,7 @@ const Icon = styled.img`
 const Label = styled.span`
   font-size: 1.05rem;
   font-weight: 600;
-  color: #222;
+  color: #fff;
 `;
 
 const tools = [

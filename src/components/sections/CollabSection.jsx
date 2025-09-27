@@ -5,6 +5,7 @@ import { Mail, Linkedin } from 'lucide-react';
 
 const Section = styled.section`
   background: #0b0b0b;
+  border-radius: 1.2rem;
   color: #fff;
   padding: 4rem 5rem;
   margin-top: 4.5rem;

@@ -16,6 +16,9 @@ export const SectionTitle = styled.h3`
 
 export const CustomPaddingX = styled.section`
   padding: 0 5rem;
+    @media (max-width: 600px) {
+      padding: 0 1rem;
+  }
 `;
 
 export const GoToHome = styled.div`
@@ -49,7 +52,6 @@ export const PrimaryButton = styled.button`
   cursor: pointer;
   transition: none;
   font-size: 1.3rem;
-  /* hover disabled */
 `;
 
 export const PrimaryLinkButton = styled.a`
@@ -66,7 +68,14 @@ export const PrimaryLinkButton = styled.a`
   border: none;
   cursor: pointer;
   font-size: 1rem;
-  /* hover disabled */
 `;
 
-export default {};
+export const Tag = styled.span`
+  font-size: 0.78rem;
+  color: #fff;
+  background: rgba(226, 96, 217, 0.85);
+  padding: 0.22rem 0.6rem;
+  border-radius: 0.8rem;
+  line-height: 1;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+`;
