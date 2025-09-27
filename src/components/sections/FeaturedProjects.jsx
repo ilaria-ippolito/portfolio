@@ -4,7 +4,6 @@ import FullBleedCard from '../FullBleedCard';
 import SplitCard from '../SplitCard';
 import { HighlightedHeading, SectionTitle } from '../SharedStyles';
 
-
 const Section = styled.section`
   margin-top: 3rem;
 `;
@@ -44,7 +43,7 @@ const FeaturedProjects = ({ id }) => (
       <AreaFull>
         <FullBleedCard
           img="assets/img/copertina-progetto-grafica.jpg"
-          title="Orizon — Brand Identity"
+          title="Orizon Brand Identity"
           tags={['Illustrator', 'Branding']}
           dateRange="Gen 2022 — Apr 2022"
           href="/project-detail?project=orizon"

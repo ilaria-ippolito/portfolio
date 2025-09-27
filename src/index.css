@@ -41,17 +41,17 @@
 
   /* Type scale */
   --type-xxs: 0.65rem; /* 10.4px */
-  --type-xs: 0.75rem;  /* 12px */
+  --type-xs: 0.75rem; /* 12px */
   --type-sm: 0.875rem; /* 14px */
-  --type-base: 1rem;   /* 16px */
+  --type-base: 1rem; /* 16px */
   --type-md: 1.125rem; /* 18px */
   --type-lg: 1.375rem; /* 22px */
-  --type-xl: 1.75rem;  /* 28px */
+  --type-xl: 1.75rem; /* 28px */
 
   /* Shadows */
-  --shadow-sm: 0 4px 10px rgba(11,11,11,0.08);
-  --shadow-md: 0 8px 20px rgba(11,11,11,0.12);
-  --shadow-lg: 0 14px 40px rgba(11,11,11,0.18);
+  --shadow-sm: 0 4px 10px rgba(11, 11, 11, 0.08);
+  --shadow-md: 0 8px 20px rgba(11, 11, 11, 0.12);
+  --shadow-lg: 0 14px 40px rgba(11, 11, 11, 0.18);
 }
 
 body {
@@ -60,7 +60,3 @@ body {
   margin: 0;
   padding: 0;
 }
-
-
-
-

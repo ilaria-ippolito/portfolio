@@ -74,7 +74,8 @@ const AboutMeDescription = styled.div`
   margin: 0;
   letter-spacing: 1px;
   line-height: 1.5;
-  b, a {
+  b,
+  a {
     color: #f920ce;
   }
 `;
@@ -108,8 +109,6 @@ const RightColumn = styled.div`
   }
 `;
 
-
-
 // using CustomPaddingX from SharedStyles
 
 const SkillsContainer = styled.div`
@@ -139,9 +138,7 @@ const education = [
     description: 'Laurea triennale in Discipline dello Spettacolo e della Comunicazione',
   },
   {
-    title: 
-      
-      "Accademia d'Arte Bianca Cappello | Diploma",
+    title: "Accademia d'Arte Bianca Cappello | Diploma",
     date: '2015',
     description: 'Diploma in illustrazione',
   },
@@ -167,7 +164,7 @@ const workExperiences = [
     title: 'Logilux | Assistente concorsuale',
     date: 'Set 2020 - Ott 2020',
     description:
-      "Mi sono occupata dell\u2019organizzazione e della vigilanza durante i test di ammissione universitari svolti presso le sedi dell\u2019Universit\u00e0 di Pisa.",
+      'Mi sono occupata dell\u2019organizzazione e della vigilanza durante i test di ammissione universitari svolti presso le sedi dell\u2019Universit\u00e0 di Pisa.',
   },
   {
     title: 'Lucca Film Festival | Tirocinio',
@@ -178,42 +175,54 @@ const workExperiences = [
 ];
 
 const CvPage = () => (
-    <Layout>
-      <GoToHome>
-        <a href="/">
-          <HomeButton>\u2190 Torna alla home</HomeButton>
-        </a>
-      </GoToHome>
-      {/* About me */}
-      <CustomPaddingX className="mb-5">
-        <AboutMeSection id="about-me">
+  <Layout>
+    <GoToHome>
+      <a href="/">
+        <HomeButton>\u2190 Torna alla home</HomeButton>
+      </a>
+    </GoToHome>
+    {/* About me */}
+    <CustomPaddingX className="mb-5">
+      <AboutMeSection id="about-me">
         <ProfilePictureContainer>
-          <ProfilePicture
-            src="assets/img/avatar.webp"
-            alt="profile"
-          />
+          <ProfilePicture src="assets/img/avatar.webp" alt="profile" />
         </ProfilePictureContainer>
         <AboutMeContainer>
           <AboutMeTitle>chi sono.</AboutMeTitle>
           <AboutMeDescription>
             <p>
-              <b>Ilaria</b>, aspirante <b>UX/UI Designer</b>, con una vena creativa che mi accompagna da sempre. <br />
+              <b>Ilaria</b>, aspirante <b>UX/UI Designer</b>, con una vena creativa che mi
+              accompagna da sempre. <br />
               <br />
-              Mi piace osservare il mondo che mi circonda e lasciarmi ispirare dall'<b>arte</b>, passando volentieri interi pomeriggi tra cinema e mostre. <br />
+              Mi piace osservare il mondo che mi circonda e lasciarmi ispirare dall'<b>arte</b>,
+              passando volentieri interi pomeriggi tra cinema e mostre. <br />
               <br />
-              Ho dovuto mettere da parte le mie vocazioni e inclinazioni per esigenze lavorative, accettando ruoli che non rispecchiavano pienamente chi sono.
+              Ho dovuto mettere da parte le mie vocazioni e inclinazioni per esigenze lavorative,
+              accettando ruoli che non rispecchiavano pienamente chi sono.
               <br />
-              <br />A 28 anni, ho deciso di dare una svolta alla mia carriera frequentando un <b>master in UX/UI Design su <a className="custom-link" target="_blank" rel="noopener noreferrer" href="https://www.start2impact.it/">Start2impact.</a></b>
+              <br />A 28 anni, ho deciso di dare una svolta alla mia carriera frequentando un{' '}
+              <b>
+                master in UX/UI Design su{' '}
+                <a
+                  className="custom-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://www.start2impact.it/"
+                >
+                  Start2impact.
+                </a>
+              </b>
               <br />
               <br />
-              Non vedo l'ora di mettere in pratica le competenze acquisite e sono entusiasta di iniziare questa nuova avventura!
+              Non vedo l'ora di mettere in pratica le competenze acquisite e sono entusiasta di
+              iniziare questa nuova avventura!
             </p>
           </AboutMeDescription>
         </AboutMeContainer>
-        </AboutMeSection>
-      </CustomPaddingX>
-      <CustomPaddingX>
-        <NewSection>
+      </AboutMeSection>
+    </CustomPaddingX>
+    <CustomPaddingX>
+      <NewSection>
         <NewSectionGrid>
           <LeftColumn>
             <div className="up">
@@ -242,9 +251,9 @@ const CvPage = () => (
             ))}
           </RightColumn>
         </NewSectionGrid>
-        </NewSection>
-      </CustomPaddingX>
-    </Layout>
+      </NewSection>
+    </CustomPaddingX>
+  </Layout>
 );
 
 export default CvPage;

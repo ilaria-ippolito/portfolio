@@ -11,35 +11,34 @@ const Wrapper = styled.a`
   height: 100%;
   min-height: 18rem;
 
-  /* main image as background */
-  background-image: url(${(p) => p.img});
-  background-size: cover;
-  background-position: center;
-
-  /* slightly blurred panel at the bottom to improve contrast for bottom-aligned text */
+  /* main image as background (for zoom effect) */
   &::before {
     content: '';
     position: absolute;
     inset: 0;
     background-image: url(${(p) => p.img});
     background-size: cover;
-    background-position: center bottom;
-    /* stronger blur for improved legibility behind text */
-    filter: blur(10px) saturate(0.95);
-    transform: scale(1.06);
-    /* clip the blurred layer to the bottom portion */
-    /* 60% here leaves the top 60% clear, bottom 40% is blurred */
-    clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
-    opacity: 0.95;
+    background-position: center;
     z-index: 0;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+    transform: scale(1);
+  }
+  &:hover::before {
+    transform: scale(1.08);
   }
 
-  /* vertical gradient overlay to further darken the bottom for text legibility */
+  /* slightly blurred panel at the bottom to improve contrast for bottom-aligned text */
   &::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.15) 60%, rgba(0,0,0,0.5) 100%);
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.15) 60%,
+      rgba(0, 0, 0, 0.5) 100%
+    );
     z-index: 1;
   }
 `;
@@ -67,7 +66,7 @@ const DateRange = styled.span`
   display: block;
   margin-top: 0.25rem;
   font-size: 0.95rem;
-  color: rgba(255,255,255,0.9);
+  color: rgba(255, 255, 255, 0.9);
 `;
 
 const Meta = styled.div`
@@ -80,8 +79,8 @@ const Meta = styled.div`
 const Tag = styled.span`
   font-size: 0.72rem;
   color: #e260d9;
-  background: rgba(226,96,217,0.06);
-  border: 1px solid rgba(226,96,217,0.12);
+  background: rgba(226, 96, 217, 0.06);
+  border: 1px solid rgba(226, 96, 217, 0.12);
   padding: 0.2rem 0.5rem;
   border-radius: 0.8rem;
   line-height: 1;

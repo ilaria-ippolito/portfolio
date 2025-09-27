@@ -40,7 +40,7 @@ const IconWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(226,96,217,0.09);
+  background: rgba(226, 96, 217, 0.09);
   border-radius: 0.6rem;
   color: #e260d9;
   flex: 0 0 48px;
@@ -107,7 +107,7 @@ const services = [
     icon: Users,
     desc: 'Ricerche qualitative e quantitative per comprendere utenti e bisogni.',
     bullets: [
-      "Interviste utente",
+      'Interviste utente',
       'Test di usabilità',
       'Survey e analytics',
       'Personas e user journeys',
@@ -128,12 +128,7 @@ const services = [
     name: 'User Interface & Prototyping',
     icon: Monitor,
     desc: 'Design di interfacce e prototipi interattivi ad alta fedeltà.',
-    bullets: [
-      'Wireframes',
-      'Mockup ad alta fedeltà',
-      'Prototipi interattivi',
-      'Design systems',
-    ],
+    bullets: ['Wireframes', 'Mockup ad alta fedeltà', 'Prototipi interattivi', 'Design systems'],
   },
 ];
 

@@ -55,7 +55,7 @@ const NeonCard = styled.div`
   border-radius: 16px;
   padding: 2.25rem 2.25rem;
   width: 100%;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
@@ -94,9 +94,10 @@ const IconLink = styled.a`
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  border: 2px solid rgba(0,0,0,0.25);
+  border: 2px solid rgba(0, 0, 0, 0.25);
 
-  img, svg {
+  img,
+  svg {
     width: 22px;
     height: 22px;
     display: block;
@@ -115,7 +116,10 @@ const CollabSection = ({ id = 'collab-section' }) => (
       <Left>
         <Headline>Parliamo del tuo progetto</Headline>
         <Intro>Offro supporto UX/UI per startup, team e progetti personali.</Intro>
-        <Intro>Posso aiutarti con discovery, prototipi e test utenti — iniziamo con una breve chiacchierata.</Intro>
+        <Intro>
+          Posso aiutarti con discovery, prototipi e test utenti — iniziamo con una breve
+          chiacchierata.
+        </Intro>
       </Left>
 
       <Right>
@@ -126,7 +130,12 @@ const CollabSection = ({ id = 'collab-section' }) => (
 
           <div className="actions">
             <IconActions>
-              <IconLink href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <IconLink
+                href="https://www.linkedin.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+              >
                 <Linkedin color="#fff" size={20} />
               </IconLink>
               <IconLink href="mailto:info@example.com" aria-label="Email">
@@ -136,7 +145,6 @@ const CollabSection = ({ id = 'collab-section' }) => (
           </div>
         </NeonCard>
       </Right>
-
     </Grid>
   </Section>
 );

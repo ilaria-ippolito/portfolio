@@ -13,10 +13,24 @@ const Wrapper = styled.a`
 `;
 
 const ImageSide = styled.div`
-  background-image: url(${(p) => p.img});
-  background-size: cover;
-  background-position: center;
+  position: relative;
   flex: 0 0 45%;
+  overflow: hidden;
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url(${(p) => p.img});
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+    transform: scale(1);
+    z-index: 0;
+  }
+  ${Wrapper}:hover &::before {
+    transform: scale(1.08);
+  }
 `;
 
 const InfoSide = styled.div`
@@ -35,7 +49,6 @@ const Title = styled.h3`
   color: #111;
 `;
 
-
 const Meta = styled.div`
   margin-top: 0.25rem;
   display: flex;
@@ -46,8 +59,8 @@ const Meta = styled.div`
 const Tag = styled.span`
   font-size: 0.72rem;
   color: #e260d9;
-  background: rgba(226,96,217,0.06);
-  border: 1px solid rgba(226,96,217,0.12);
+  background: rgba(226, 96, 217, 0.06);
+  border: 1px solid rgba(226, 96, 217, 0.12);
   padding: 0.2rem 0.5rem;
   border-radius: 0.8rem;
   line-height: 1;

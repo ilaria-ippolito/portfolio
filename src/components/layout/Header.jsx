@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from './LucideIcons';
 import { useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import { Menu, X } from 'lucide-react';
 
 const HeaderWrapper = styled.header`
   position: fixed;
@@ -143,7 +143,10 @@ const Header = () => {
         if (el) {
           const header = document.querySelector('header');
           const headerHeight = header ? header.offsetHeight : 0;
-          const top = Math.max(0, el.getBoundingClientRect().top + window.pageYOffset - headerHeight - 8);
+          const top = Math.max(
+            0,
+            el.getBoundingClientRect().top + window.pageYOffset - headerHeight - 8
+          );
           window.scrollTo({ top, behavior: 'smooth' });
         }
       }, 100);
@@ -152,7 +155,10 @@ const Header = () => {
       if (el) {
         const header = document.querySelector('header');
         const headerHeight = header ? header.offsetHeight : 0;
-        const top = Math.max(0, el.getBoundingClientRect().top + window.pageYOffset - headerHeight - 8);
+        const top = Math.max(
+          0,
+          el.getBoundingClientRect().top + window.pageYOffset - headerHeight - 8
+        );
         window.scrollTo({ top, behavior: 'smooth' });
       }
     }
@@ -163,7 +169,7 @@ const Header = () => {
       <HeaderInner>
         <div className="logo d-inline">
           <LogoTitle href="/" onClick={handleLogoClick}>
-            ilaria.
+            ilaria
           </LogoTitle>
         </div>
         <MenuToggleBtn

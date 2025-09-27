@@ -55,11 +55,11 @@ const SecondaryButton = styled.a`
   gap: 0.6rem;
   padding: 0.65rem 1rem;
   border-radius: 10px;
-  background: rgba(255,255,255,0.04);
+  background: rgba(255, 255, 255, 0.04);
   color: #e6e6e6;
   text-decoration: none;
   font-size: 0.95rem;
-  border: 1px solid rgba(255,255,255,0.04);
+  border: 1px solid rgba(255, 255, 255, 0.04);
 `;
 
 const Right = styled.div`
@@ -76,7 +76,7 @@ const StatCard = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
 `;
 
 const StatNumber = styled.div`
@@ -87,12 +87,12 @@ const StatNumber = styled.div`
 
 const StatText = styled.div`
   font-size: 0.85rem;
-  color: rgba(0,0,0,0.7);
+  color: rgba(0, 0, 0, 0.7);
 `;
 
 const StatMuted = styled.div`
   font-size: 0.86rem;
-  color: rgba(0,0,0,0.7);
+  color: rgba(0, 0, 0, 0.7);
 `;
 
 const StatMuted2 = styled.div`
@@ -114,7 +114,9 @@ const Pink = styled(StatCard)`
   color: #0b0b0b;
   /* offset to the right to create a staggered look */
   margin-left: 2.4rem;
-  transition: margin 220ms ease, transform 220ms ease;
+  transition:
+    margin 220ms ease,
+    transform 220ms ease;
   @media (min-width: 1200px) {
     margin-left: 3.2rem;
   }
@@ -126,7 +128,7 @@ const Pink = styled(StatCard)`
 
 const Outlined = styled(StatCard)`
   background: transparent;
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   color: #e6e6e6;
 `;
 
@@ -134,19 +136,30 @@ const AboutSection = ({ id = 'about-section' }) => (
   <Section id={id}>
     <Grid>
       <Left>
-           <Headline>Ilaria — aspirante UX/UI Designer</Headline>
+        <Headline>Ilaria — aspirante UX/UI Designer</Headline>
         <Intro>
-             Sono in formazione come UX/UI Designer e porto con me un percorso creativo che passa dall'illustrazione
-             e dalla fotografia fino alla comunicazione. Ho una laurea triennale in Discipline dello Spettacolo e della
-             Comunicazione e un diploma in illustrazione; più recentemente ho approfondito la fotografia.
+          Sono in formazione come UX/UI Designer e porto con me un percorso creativo che passa
+          dall'illustrazione e dalla fotografia fino alla comunicazione. Ho una laurea triennale in
+          Discipline dello Spettacolo e della Comunicazione e un diploma in illustrazione; più
+          recentemente ho approfondito la fotografia.
         </Intro>
         <Intro>
-             Attualmente sto frequentando un master in UX/UI presso <a href="https://www.start2impact.it/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>Start2impact</a> (in corso).
-             Mi appassiona progettare esperienze utili e accessibili: dal discovery al wireframing, fino a prototipi testabili.
+          Attualmente sto frequentando un master in UX/UI presso{' '}
+          <a
+            href="https://www.start2impact.it/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: 'inherit' }}
+          >
+            Start2impact
+          </a>{' '}
+          (in corso). Mi appassiona progettare esperienze utili e accessibili: dal discovery al
+          wireframing, fino a prototipi testabili.
         </Intro>
         <Intro>
-             Ho esperienza pratica in contesti amministrativi e come fotografa per eventi, e sto cercando ruoli che mi
-             permettano di mettere in pratica le competenze UX appena acquisite e crescere come designer.
+          Ho esperienza pratica in contesti amministrativi e come fotografa per eventi, e sto
+          cercando ruoli che mi permettano di mettere in pratica le competenze UX appena acquisite e
+          crescere come designer.
         </Intro>
 
         <Ctas>
@@ -161,19 +174,21 @@ const AboutSection = ({ id = 'about-section' }) => (
 
       <Right>
         <Neon>
-             <StatNumber>Master</StatNumber>
-             <StatMuted>UX/UI Design — Start2impact (in corso)</StatMuted>
+          <StatNumber>Master</StatNumber>
+          <StatMuted>UX/UI Design — Start2impact (in corso)</StatMuted>
         </Neon>
 
         <Pink>
-             <StatNumber>Diploma</StatNumber>
-             <StatMuted>Illustrazione — Accademia d'Arte Bianca Cappello</StatMuted>
+          <StatNumber>Diploma</StatNumber>
+          <StatMuted>Illustrazione — Accademia d'Arte Bianca Cappello</StatMuted>
         </Pink>
 
         <Outlined>
-             <StatNumber>Laurea</StatNumber>
-             
-             <StatMuted2>Discipline dello Spettacolo e della Comunicazione — Università di Pisa</StatMuted2>
+          <StatNumber>Laurea</StatNumber>
+
+          <StatMuted2>
+            Discipline dello Spettacolo e della Comunicazione — Università di Pisa
+          </StatMuted2>
         </Outlined>
       </Right>
     </Grid>

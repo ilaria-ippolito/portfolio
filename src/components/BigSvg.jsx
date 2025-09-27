@@ -11,26 +11,12 @@ const BigSvg = ({ className, gradientId = 'gggyrate-grad', ...props }) => (
     {...props}
   >
     <defs>
-      <linearGradient
-        x1="50%"
-        y1="0%"
-        x2="50%"
-        y2="100%"
-        id={gradientId}
-      >
-        <stop
-          stopColor="hsl(132, 95%, 55%)"
-          stopOpacity="1"
-          offset="0%"
-        />
-        <stop
-          stopColor="hsl(304, 69%, 63%)"
-          stopOpacity="1"
-          offset="100%"
-        />
+      <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id={gradientId}>
+        <stop stopColor="hsl(132, 95%, 55%)" stopOpacity="1" offset="0%" />
+        <stop stopColor="hsl(304, 69%, 63%)" stopOpacity="1" offset="100%" />
       </linearGradient>
     </defs>
-  <g strokeWidth="5.5" stroke={`url(#${gradientId})`} fill="none">
+    <g strokeWidth="5.5" stroke={`url(#${gradientId})`} fill="none">
       <polygon points="400,122.125 29.5,677.875 770.5,677.875" opacity="1.00" />
       <polygon points="400,136.75 49,663.25 751,663.25" opacity="0.95" />
       <polygon points="400,151.375 68.5,648.625 731.5,648.625" opacity="0.89" />
