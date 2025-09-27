@@ -166,9 +166,6 @@ const AboutSection = ({ id = 'about-section' }) => (
           <a href="/documents/progetto-accessibilità.pdf" style={{ textDecoration: 'none' }}>
             <PrimaryButton as="span">CV completo</PrimaryButton>
           </a>
-          <a href="#work-section">
-            <SecondaryButton>Progetti</SecondaryButton>
-          </a>
         </Ctas>
       </Left>
 

@@ -18,7 +18,7 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: 1fr 420px;
   gap: 3rem;
-  align-items: center;
+  align-items: start;
   @media (max-width: 900px) {
     grid-template-columns: 1fr;
   }
@@ -26,6 +26,9 @@ const Grid = styled.div`
 
 const Left = styled.div`
   max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 `;
 
 const Headline = styled.h3`

@@ -40,13 +40,15 @@ const InfoSide = styled.div`
   gap: 0.4rem;
   justify-content: flex-start;
   flex: 1 1 auto;
+  background: #000;
+  color: #fff;
 `;
 
 const Title = styled.h3`
   margin: 0;
   font-size: 1.1rem;
   line-height: 1.2;
-  color: #111;
+  color: #fff;
 `;
 
 const Meta = styled.div`
@@ -68,7 +70,7 @@ const Tag = styled.span`
 
 const DateRange = styled.span`
   font-size: 0.85rem;
-  color: #666;
+  color: #e0e0e0;
   margin-top: 0.25rem;
 `;
 

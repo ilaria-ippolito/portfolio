@@ -21,13 +21,14 @@ const Grid = styled.div`
 `;
 
 const Card = styled.div`
-  background: #fff;
-  border: 1px solid #eaeaea;
+  background: #181818;
+  border: 1px solid #222;
   border-radius: 0.8rem;
   padding: 1.2rem;
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
+  color: #fff;
 `;
 
 const IconWrapper = styled.div`
@@ -61,14 +62,14 @@ const Title = styled.h4`
 
 const Desc = styled.p`
   margin: 0;
-  color: #444;
+  color: #e0e0e0;
   font-size: 0.95rem;
 `;
 
 const Bullets = styled.ul`
   margin: 0.5rem 0 0 0;
   padding: 0;
-  color: #333;
+  color: #fff;
   font-size: 0.95rem;
   list-style: none;
   display: flex;
