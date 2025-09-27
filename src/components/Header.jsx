@@ -140,11 +140,21 @@ const Header = () => {
       navigate('/');
       setTimeout(() => {
         const el = document.getElementById(id);
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
+        if (el) {
+          const header = document.querySelector('header');
+          const headerHeight = header ? header.offsetHeight : 0;
+          const top = Math.max(0, el.getBoundingClientRect().top + window.pageYOffset - headerHeight - 8);
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
       }, 100);
     } else {
       const el = document.getElementById(id);
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
+      if (el) {
+        const header = document.querySelector('header');
+        const headerHeight = header ? header.offsetHeight : 0;
+        const top = Math.max(0, el.getBoundingClientRect().top + window.pageYOffset - headerHeight - 8);
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
     }
   };
 
@@ -181,8 +191,8 @@ const Header = () => {
               </a>
             </li>
             <li>
-              <a href="/cv" onClick={() => setMenuOpen(false)}>
-                chi sono.
+              <a href="#about-section" onClick={(e) => handleScrollTo(e, 'about-section')}>
+                About me
               </a>
             </li>
           </ul>

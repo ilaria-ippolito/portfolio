@@ -6,6 +6,54 @@
 @import './tailwind-utilities.css';
 @import '../public/assets/css/style.css';
 
+/* Design tokens (CSS variables) available across the app */
+:root {
+  /* Palette scale */
+  --color-primary-50: #fff0fb;
+  --color-primary-100: #fde6f6;
+  --color-primary-300: #f4a6e0;
+  --color-primary-500: #e260d9; /* main primary */
+  --color-primary-700: #b02a9f;
+
+  --color-accent-50: #f6fff1;
+  --color-accent-100: #e6ffd9;
+  --color-accent-300: #b7ff8f;
+  --color-accent-500: #8cfb3a; /* accent/positive */
+  --color-accent-700: #54d200;
+
+  --color-neutral-50: #fafafa;
+  --color-neutral-100: #f0f2f4;
+  --color-neutral-300: #c9d1d6;
+  --color-neutral-500: #8f99a3; /* muted text */
+  --color-neutral-700: #343a40; /* main neutral */
+
+  /* Semantic */
+  --color-success: #16a34a;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+  --color-info: #0ea5e9;
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+
+  /* Type scale */
+  --type-xxs: 0.65rem; /* 10.4px */
+  --type-xs: 0.75rem;  /* 12px */
+  --type-sm: 0.875rem; /* 14px */
+  --type-base: 1rem;   /* 16px */
+  --type-md: 1.125rem; /* 18px */
+  --type-lg: 1.375rem; /* 22px */
+  --type-xl: 1.75rem;  /* 28px */
+
+  /* Shadows */
+  --shadow-sm: 0 4px 10px rgba(11,11,11,0.08);
+  --shadow-md: 0 8px 20px rgba(11,11,11,0.12);
+  --shadow-lg: 0 14px 40px rgba(11,11,11,0.18);
+}
+
 body {
   font-family: 'Inter', sans-serif;
   box-sizing: border-box;
@@ -13,35 +61,6 @@ body {
   padding: 0;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-/* hover disabled */
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  /* hover disabled */
-  button {
-    background-color: #f9f9f9;
-  }
-}
+

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { HighlightedHeading, SectionTitle } from './SharedStyles';
-import { Compass, Users, Eye, Monitor } from 'lucide-react';
+import { HighlightedHeading, SectionTitle } from '../SharedStyles';
+import { Compass, Users, Eye, Monitor, Check } from 'lucide-react';
 
 const ServicesWrapper = styled.section`
   margin-top: 3rem;
@@ -66,10 +66,28 @@ const Desc = styled.p`
 `;
 
 const Bullets = styled.ul`
-  margin: 0.5rem 0 0 1rem;
+  margin: 0.5rem 0 0 0;
   padding: 0;
   color: #333;
   font-size: 0.95rem;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0;
+  }
+
+  svg {
+    width: 16px;
+    height: 16px;
+    flex: 0 0 16px;
+    color: #10b981; /* green check */
+  }
 `;
 
 const services = [
@@ -138,7 +156,10 @@ const ServicesSection = ({ id }) => (
             <Desc>{s.desc}</Desc>
             <Bullets>
               {s.bullets.map((b) => (
-                <li key={b}>{b}</li>
+                <li key={b}>
+                  <Check />
+                  {b}
+                </li>
               ))}
             </Bullets>
           </Card>

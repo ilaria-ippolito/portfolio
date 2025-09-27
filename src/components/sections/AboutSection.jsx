@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { PrimaryButton } from './SharedStyles';
+import { PrimaryButton } from '../SharedStyles';
 
 const Section = styled.section`
   background: #0b0b0b;
@@ -92,6 +92,11 @@ const StatText = styled.div`
 
 const StatMuted = styled.div`
   font-size: 0.86rem;
+  color: rgba(0,0,0,0.7);
+`;
+
+const StatMuted2 = styled.div`
+  font-size: 0.86rem;
   color: #d6d6d6;
 `;
 
@@ -129,16 +134,19 @@ const AboutSection = ({ id = 'about-section' }) => (
   <Section id={id}>
     <Grid>
       <Left>
-        <Headline>Una designer con la passione per i dinosauri, il 3D e i Lego</Headline>
+           <Headline>Ilaria — aspirante UX/UI Designer</Headline>
         <Intro>
-          Sono una UX/UI designer freelance, nata nel design industriale e cresciuta nel fantastico mondo digital.
+             Sono in formazione come UX/UI Designer e porto con me un percorso creativo che passa dall'illustrazione
+             e dalla fotografia fino alla comunicazione. Ho una laurea triennale in Discipline dello Spettacolo e della
+             Comunicazione e un diploma in illustrazione; più recentemente ho approfondito la fotografia.
         </Intro>
         <Intro>
-          Vivo di progettazione. Mi piace il bello, soprattutto se funzionale. Dal 2012 mi occupo della progettazione di
-          esperienze e interfacce utente e ho lavorato in progetti di diversi settori.
+             Attualmente sto frequentando un master in UX/UI presso <a href="https://www.start2impact.it/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>Start2impact</a> (in corso).
+             Mi appassiona progettare esperienze utili e accessibili: dal discovery al wireframing, fino a prototipi testabili.
         </Intro>
         <Intro>
-          Non mi limito alla progettazione: tengo corsi di UX/UI Design e faccio mentoring per designer junior.
+             Ho esperienza pratica in contesti amministrativi e come fotografa per eventi, e sto cercando ruoli che mi
+             permettano di mettere in pratica le competenze UX appena acquisite e crescere come designer.
         </Intro>
 
         <Ctas>
@@ -153,18 +161,19 @@ const AboutSection = ({ id = 'about-section' }) => (
 
       <Right>
         <Neon>
-          <StatNumber>+ 13 anni</StatNumber>
-          <StatMuted>come UX/UI Designer Freelance (NON sono "il Grafico") 👋</StatMuted>
+             <StatNumber>Master</StatNumber>
+             <StatMuted>UX/UI Design — Start2impact (in corso)</StatMuted>
         </Neon>
 
         <Pink>
-          <StatNumber>+ 200 articoli</StatNumber>
-          <StatMuted>scritti per Read the f*cking manual ✏️</StatMuted>
+             <StatNumber>Diploma</StatNumber>
+             <StatMuted>Illustrazione — Accademia d'Arte Bianca Cappello</StatMuted>
         </Pink>
 
         <Outlined>
-          <StatNumber>+ 4 anni</StatNumber>
-          <StatMuted>docente presso scuole online & mentor privato di UX/UI</StatMuted>
+             <StatNumber>Laurea</StatNumber>
+             
+             <StatMuted2>Discipline dello Spettacolo e della Comunicazione — Università di Pisa</StatMuted2>
         </Outlined>
       </Right>
     </Grid>

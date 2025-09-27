@@ -1,7 +1,4 @@
 import Layout from '../components/Layout';
-import MetaItem from '../components/MetaItem';
-import ProcessStep from '../components/ProcessStep';
-import Section from '../components/Section';
 import ProjectHeader from '../components/ProjectHeader';
 import ProjectOverview from '../components/ProjectOverview';
 import ProjectProcess from '../components/ProjectProcess';
@@ -9,7 +6,6 @@ import styled from 'styled-components';
 import {
   HighlightedHeading,
   SectionTitle,
-  CustomPaddingX,
   GoToHome,
   HomeButton,
   PrimaryLinkButton,
@@ -18,11 +14,11 @@ import {
 const ProjectDetailsWrapper = styled.div`
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 5%;
 `;
 
 const ProjectHero = styled.img`
-  /* hero image that stretches to the parent container width (no viewport units) */
+  border-radius: 8px;
+  border: 1px solid #ddd;
   display: block;
   width: 100%;
   max-width: 100%;
@@ -33,16 +29,10 @@ const ProjectHero = styled.img`
   margin-bottom: 3rem;
 `;
 
-/* Project meta is handled inside the extracted ProjectHeader component */
-
 const ProjectContent = styled.div``;
 
 const ProjectSection = styled.div`
   margin-bottom: 4rem;
-`;
-
-const ProjectPdfLink = styled.a`
-  display: inline-block;
 `;
 
 const ContentGrid = styled.div`
@@ -65,26 +55,6 @@ const ImageContent = styled.div`
     width: 100%;
     height: auto;
     border-radius: 8px;
-  }
-`;
-
-const ProjectImagesGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  margin-top: 1.5rem;
-
-  > div {
-    overflow: hidden;
-    border-radius: 8px;
-  }
-
-  img {
-    display: block;
-    max-width: 100%;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
   }
 `;
 
@@ -160,58 +130,61 @@ const ProjectDetailPage = () => (
       src="assets/img/copertina-accessibilità.png"
       alt="Copertina progetto accessibilità"
     />
-    <CustomPaddingX className="mb-5">
-      <ProjectDetailsWrapper>
-        <ProjectHeader title={projectTitle} tags={projectTags} meta={meta} />
-        <ProjectContent>
-          <ProjectOverview overviewText={overviewText} overviewImage={overviewImage} />
+    <ProjectDetailsWrapper>
+      <ProjectHeader
+        title={projectTitle}
+        tags={projectTags}
+        meta={meta}
+        timeRange={'Feb - Mar 2024'}
+      />
+      <ProjectContent>
+        <ProjectOverview overviewText={overviewText} overviewImage={overviewImage} />
 
-          <ProjectSection>
-            <HighlightedHeading>
-              <SectionTitle>La Sfida</SectionTitle>
-            </HighlightedHeading>
+        <ProjectSection>
+          <HighlightedHeading>
+            <SectionTitle>La Sfida</SectionTitle>
+          </HighlightedHeading>
+          <TextContent>
+            <p className="challenge-content">{challengeText}</p>
+          </TextContent>
+        </ProjectSection>
+
+        <ProjectProcess steps={processSteps} images={projectImages} />
+
+        {/* Results */}
+        <ProjectSection>
+          <HighlightedHeading>
+            <SectionTitle>Risultati</SectionTitle>
+          </HighlightedHeading>
+          <ContentGrid>
             <TextContent>
-              <p className="challenge-content">{challengeText}</p>
+              <p className="results-content">Qui i risultati principali del progetto:</p>
+              {results.map((r, i) => (
+                <ResultItem key={i}>
+                  <h3>{r.split(' ')[0]}</h3>
+                  <p>{r}</p>
+                </ResultItem>
+              ))}
             </TextContent>
-          </ProjectSection>
+            <ImageContent>
+              <img src="assets/img/a11y-result.png" alt="Results visual" />
+            </ImageContent>
+          </ContentGrid>
+        </ProjectSection>
 
-          <ProjectProcess steps={processSteps} images={projectImages} />
-
-          {/* Results */}
-          <ProjectSection>
-            <HighlightedHeading>
-              <SectionTitle>Risultati</SectionTitle>
-            </HighlightedHeading>
-            <ContentGrid>
-              <TextContent>
-                <p className="results-content">Qui i risultati principali del progetto:</p>
-                {results.map((r, i) => (
-                  <ResultItem key={i}>
-                    <h3>{r.split(' ')[0]}</h3>
-                    <p>{r}</p>
-                  </ResultItem>
-                ))}
-              </TextContent>
-              <ImageContent>
-                <img src="assets/img/a11y-result.png" alt="Results visual" />
-              </ImageContent>
-            </ContentGrid>
-          </ProjectSection>
-
-          <ProjectSection>
-            <ProjectDownload>
-              <PrimaryLinkButton
-                href="assets/documents/progetto-accessibilità.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Scarica il progetto completo (PDF)
-              </PrimaryLinkButton>
-            </ProjectDownload>
-          </ProjectSection>
-        </ProjectContent>
-      </ProjectDetailsWrapper>
-    </CustomPaddingX>
+        <ProjectSection>
+          <ProjectDownload>
+            <PrimaryLinkButton
+              href="assets/documents/progetto-accessibilità.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Scarica il progetto completo (PDF)
+            </PrimaryLinkButton>
+          </ProjectDownload>
+        </ProjectSection>
+      </ProjectContent>
+    </ProjectDetailsWrapper>
   </Layout>
 );
 

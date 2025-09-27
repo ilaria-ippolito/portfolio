@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { HighlightedHeading, SectionTitle } from './SharedStyles';
+import { HighlightedHeading, SectionTitle } from '../SharedStyles';
 
 const StackWrapper = styled.section`
   margin-top: 3rem;
@@ -37,20 +37,20 @@ const Label = styled.span`
 `;
 
 const tools = [
-  { name: 'Figma', src: 'assets/img/tool 1.svg' },
-  { name: 'HTML', src: 'assets/img/tool 2.svg' },
-  { name: 'CSS', src: 'assets/img/tool 4.svg' },
-  { name: 'Miro', src: 'assets/img/tool 5.svg' },
-  { name: 'FigJam', src: 'assets/img/tool 6.svg' },
-  { name: 'WAVE', src: 'assets/img/a11y-result.png' },
-  { name: 'Illustrator', src: 'assets/img/behance logo.svg' },
-  { name: 'Photoshop', src: 'assets/img/avatar.webp' },
+  { name: 'Figma', src: 'assets/img/icons/Figma.svg' },
+  { name: 'HTML', src: 'assets/img/icons/HTML5.svg' },
+  { name: 'CSS', src: 'assets/img/icons/CSS3.svg' },
+  // { name: 'Miro', src: 'assets/img/icons/Miro.svg' },
+  // { name: 'FigJam', src: 'assets/img/icons/FigJam.svg' },
+  // { name: 'WAVE', src: 'assets/img/icons/WAVE.svg' },
+  { name: 'Illustrator', src: 'assets/img/icons/Adobe_Illustrator.svg' },
+  { name: 'Photoshop', src: 'assets/img/icons/Adobe_Photoshop.svg' },
 ];
 
 const StackSection = ({ id }) => (
   <StackWrapper id={id}>
     <HighlightedHeading>
-      <SectionTitle>Stack.</SectionTitle>
+      <SectionTitle>Stack</SectionTitle>
     </HighlightedHeading>
     <Grid>
       {tools.map((t) => (

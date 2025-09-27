@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import FullBleedCard from './FullBleedCard';
-import SplitCard from './SplitCard';
-import { HighlightedHeading, SectionTitle } from './SharedStyles';
+import FullBleedCard from '../FullBleedCard';
+import SplitCard from '../SplitCard';
+import { HighlightedHeading, SectionTitle } from '../SharedStyles';
 
 
 const Section = styled.section`

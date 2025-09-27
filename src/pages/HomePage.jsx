@@ -3,10 +3,11 @@ import Layout from '../components/Layout';
 import Card from '../components/Card';
 import BigSvg from '../components/BigSvg';
 import { HighlightedHeading, SectionTitle, PrimaryButton } from '../components/SharedStyles';
-import StackSection from '../components/StackSection';
-import ServicesSection from '../components/ServicesSection';
-import FeaturedProjects from '../components/FeaturedProjects';
-import AboutSection from '../components/AboutSection';
+import StackSection from '../components/sections/StackSection';
+import ServicesSection from '../components/sections/ServicesSection';
+import FeaturedProjects from '../components/sections/FeaturedProjects';
+import AboutSection from '../components/sections/AboutSection';
+import CollabSection from '../components/sections/CollabSection';
 
 const HeroSection = styled.section`
   display: flex;
@@ -16,7 +17,6 @@ const HeroSection = styled.section`
   margin-top: 0;
   margin-bottom: 0;
   gap: 2rem;
-  padding: 0 5rem;
   @media (max-width: 600px) {
     flex-direction: column-reverse;
     gap: 1rem;
@@ -109,7 +109,7 @@ const HomePage = () => (
           </h2>
           <HeroCtaContainer>
             <a href="#work-section">
-              <HeroCta>guarda i miei lavori</HeroCta>
+              <HeroCta>guarda i miei progetti</HeroCta>
             </a>
           </HeroCtaContainer>
         </HeroText>
@@ -119,8 +119,9 @@ const HomePage = () => (
       </HeroSection>
       <FeaturedProjects id="work-section" />
       <StackSection id="stack-section" />
-      <ServicesSection id="services-section" />
       <AboutSection id="about-section" />
+      <ServicesSection id="services-section" />
+      <CollabSection id="collab-section" />
     </div>
   </Layout>
 );

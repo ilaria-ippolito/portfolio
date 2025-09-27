@@ -39,10 +39,19 @@ const TopGrid = styled.div`
 
 const BottomRow = styled.div`
   width: 100%;
-  margin-top: 12px;
+  margin-top: 48px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,0.04);
   color: rgba(249,32,206,0.9);
   font-size: 0.95rem;
   text-align: center;
+  @media (max-width: 900px) {
+    margin-top: 36px;
+  }
+  @media (max-width: 600px) {
+    margin-top: 28px;
+    padding-top: 8px;
+  }
 `;
 
 const FooterLeft = styled.div`
@@ -186,26 +195,26 @@ const Footer = () => {
             <ColItem><NavLink href="#work-section" onClick={(e) => handleScrollTo(e, 'work-section')}>Progetti</NavLink></ColItem>
             <ColItem><NavLink href="#stack-section" onClick={(e) => handleScrollTo(e, 'stack-section')}>Stack</NavLink></ColItem>
             <ColItem><NavLink href="#services-section" onClick={(e) => handleScrollTo(e, 'services-section')}>Servizi</NavLink></ColItem>
+            <ColItem>
+              <NavLink href="#about-section" onClick={(e) => handleScrollTo(e, 'about-section')}>About me</NavLink>
+            </ColItem>
           </ColList>
         </Col>
 
         <Col>
           <ColTitle>Info & contatti</ColTitle>
           <ColList>
-            <ColItem>Chi sono</ColItem>
-            <ColItem>Contattami</ColItem>
-            <ColItem>Supporta Rtfm</ColItem>
+            <ColItem>
+              <SocialIcons>
+                <SocialLink href="https://www.linkedin.com/in/ilaria-ippolito-61928019a/" target="_blank" rel="noopener noreferrer">
+                  <SocialImg src="/assets/img/linkedin logo.svg" alt="Linkedin" />
+                </SocialLink>
+                <SocialLink href="https://www.behance.net/ilariaippolito1" target="_blank" rel="noopener noreferrer">
+                  <SocialImg src="/assets/img/behance logo.svg" alt="Behance" />
+                </SocialLink>
+              </SocialIcons>
+            </ColItem>
           </ColList>
-          <FooterCols>
-            <SocialIcons>
-              <SocialLink href="https://www.linkedin.com/in/ilaria-ippolito-61928019a/" target="_blank" rel="noopener noreferrer">
-                <SocialImg src="/assets/img/linkedin logo.svg" alt="Linkedin" />
-              </SocialLink>
-              <SocialLink href="https://www.behance.net/ilariaippolito1" target="_blank" rel="noopener noreferrer">
-                <SocialImg src="/assets/img/behance logo.svg" alt="Behance" />
-              </SocialLink>
-            </SocialIcons>
-          </FooterCols>
         </Col>
       </TopGrid>
       <BottomRow>

@@ -8,14 +8,20 @@ const HeaderWrapper = styled.header`
 
 const Title = styled.h1`
   font-size: 3rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
 `;
 
 const Tags = styled.div`
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
-  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+`;
+
+const TimeRange = styled.div`
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 1rem;
 `;
 
 const Tag = styled.span`
@@ -45,14 +51,16 @@ const MetaGrid = styled.div`
  * - tags: array of strings
  * - meta: array of { label, value }
  */
-const ProjectHeader = ({ title, tags = [], meta = [] }) => (
+const ProjectHeader = ({ title, tags = [], meta = [], timeRange }) => (
   <HeaderWrapper>
-    <Title>{title}</Title>
     <Tags>
       {tags.map((t, i) => (
         <Tag key={i}>{t}</Tag>
       ))}
     </Tags>
+
+    <Title>{title}</Title>
+    {timeRange && <TimeRange>{timeRange}</TimeRange>}
 
     <MetaGrid>
       {meta.map((m, i) => (

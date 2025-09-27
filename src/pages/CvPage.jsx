@@ -134,7 +134,7 @@ const education = [
     description: 'Diploma in fotografia di base.',
   },
   {
-    title: 'Università degli Studi di Pisa | Laurea triennale',
+    title: 'Universit\u00e0 degli Studi di Pisa | Laurea triennale',
     date: '2019',
     description: 'Laurea triennale in Discipline dello Spettacolo e della Comunicazione',
   },
@@ -167,7 +167,7 @@ const workExperiences = [
     title: 'Logilux | Assistente concorsuale',
     date: 'Set 2020 - Ott 2020',
     description:
-      "Mi sono occupata dell’organizzazione e della vigilanza durante i test di ammissione universitari svolti presso le sedi dell’Università di Pisa.",
+      "Mi sono occupata dell\u2019organizzazione e della vigilanza durante i test di ammissione universitari svolti presso le sedi dell\u2019Universit\u00e0 di Pisa.",
   },
   {
     title: 'Lucca Film Festival | Tirocinio',
@@ -181,7 +181,7 @@ const CvPage = () => (
     <Layout>
       <GoToHome>
         <a href="/">
-          <HomeButton>← Torna alla home</HomeButton>
+          <HomeButton>\u2190 Torna alla home</HomeButton>
         </a>
       </GoToHome>
       {/* About me */}
