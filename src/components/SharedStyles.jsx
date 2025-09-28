@@ -50,8 +50,14 @@ export const PrimaryButton = styled.button`
   font-weight: 600;
   border: none;
   cursor: pointer;
-  transition: none;
+  transition: background 0.18s, color 0.18s;
   font-size: 1.3rem;
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--color-primary-700);
+    color: var(--color-accent-50);
+  }
 `;
 
 export const PrimaryLinkButton = styled.a`
@@ -64,10 +70,16 @@ export const PrimaryLinkButton = styled.a`
   border-radius: var(--radius-lg);
   font-weight: 600;
   text-decoration: none;
-  transition: none;
+  transition: background 0.18s, color 0.18s;
   border: none;
   cursor: pointer;
   font-size: 1rem;
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--color-primary-700);
+    color: var(--color-accent-50);
+  }
 `;
 
 export const Tag = styled.span`

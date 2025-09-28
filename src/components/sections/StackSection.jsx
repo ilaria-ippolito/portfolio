@@ -18,11 +18,11 @@ const Item = styled.div`
   align-items: center;
   gap: 1rem;
   background: var(--color-neutral-700);
-  border: 1px solid var(--color-neutral-500);
+  box-shadow: var(--shadow-sm);
   padding: 0.8rem 1rem;
   border-radius: var(--radius-md);
   color: var(--color-neutral-50);
-  min-width: 160px;
+  min-width: 180px;
   max-width: 180px;
 `;
 
@@ -42,9 +42,9 @@ const tools = [
   { name: 'Figma', src: 'assets/img/icons/Figma.svg' },
   { name: 'HTML', src: 'assets/img/icons/HTML5.svg' },
   { name: 'CSS', src: 'assets/img/icons/CSS3.svg' },
-  // { name: 'Miro', src: 'assets/img/icons/Miro.svg' },
-  // { name: 'FigJam', src: 'assets/img/icons/FigJam.svg' },
-  // { name: 'WAVE', src: 'assets/img/icons/WAVE.svg' },
+  { name: 'Miro', src: 'assets/img/icons/Miro.svg' },
+  { name: 'Maze', src: 'assets/img/icons/Maze.svg' },
+  { name: 'WAVE', src: 'assets/img/icons/Wave.svg' },
   { name: 'Illustrator', src: 'assets/img/icons/Adobe_Illustrator.svg' },
   { name: 'Photoshop', src: 'assets/img/icons/Adobe_Photoshop.svg' },
 ];

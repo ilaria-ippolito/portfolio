@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { PrimaryButton } from '../SharedStyles';
+import { Download } from 'lucide-react';
 
 const Section = styled.section`
   background: var(--color-neutral-700);
@@ -165,7 +166,10 @@ const AboutSection = ({ id = 'about-section' }) => (
 
         <Ctas>
           <a href="/documents/progetto-accessibilità.pdf" style={{ textDecoration: 'none' }}>
-            <PrimaryButton as="span">CV completo</PrimaryButton>
+            <PrimaryButton as="span">
+              CV completo
+              <Download size={18} style={{ marginLeft: 8 }} />
+            </PrimaryButton>
           </a>
         </Ctas>
       </Left>

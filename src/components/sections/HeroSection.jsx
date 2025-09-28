@@ -39,7 +39,6 @@ const HeroSection = styled.section`
 
 const HeroContent = styled.div`
   width: 100%;
-  max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
   display: flex;
@@ -50,7 +49,8 @@ const HeroContent = styled.div`
   @media (max-width: 600px) {
     flex-direction: column-reverse;
     gap: 1rem;
-    padding: 0 1rem;
+    padding: 0;
+    padding-bottom: 4rem;
   }
 `;
 
