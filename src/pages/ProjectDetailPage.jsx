@@ -6,13 +6,27 @@ import styled from 'styled-components';
 import {
   HighlightedHeading,
   SectionTitle,
-  GoToHome,
   HomeButton,
   PrimaryLinkButton,
 } from '../components/SharedStyles';
 import { projectDetails } from '../data/projectDetailData';
+const ProjectDetailsWrapper = styled.div``;
 
-const ProjectDetailsWrapper = styled.div`
+const TitleRow = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+`;
+
+const CenteredHomeButtonWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
 `;
 
 const ProjectHero = styled.img`
@@ -62,10 +76,6 @@ const ResultItem = styled.div`
   margin-bottom: 1rem;
 `;
 
-const ProjectDownload = styled.div`
-  margin-top: 2rem;
-`;
-
 import { useLocation } from 'react-router-dom';
 
 function useQuery() {
@@ -82,11 +92,11 @@ const ProjectDetailPage = () => {
       <Layout>
         <ProjectDetailsWrapper>
           <h2>Progetto non trovato</h2>
-          <GoToHome>
-            <a href="/">
-              <HomeButton>← Torna alla home</HomeButton>
-            </a>
-          </GoToHome>
+        <CenteredHomeButtonWrapper>
+          <a href="/">
+            <HomeButton>← Torna alla home</HomeButton>
+          </a>
+        </CenteredHomeButtonWrapper>
         </ProjectDetailsWrapper>
       </Layout>
     );
@@ -115,12 +125,21 @@ const ProjectDetailPage = () => {
         alt="Copertina progetto accessibilità"
       />
       <ProjectDetailsWrapper>
-        <ProjectHeader
-          title={projectTitle}
-          tags={projectTags}
-          meta={meta}
-          timeRange={timeRange}
-        />
+        <TitleRow>
+          <ProjectHeader
+            title={projectTitle}
+            tags={projectTags}
+            meta={meta}
+            timeRange={timeRange}
+          />
+          <PrimaryLinkButton
+            href={downloadUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Scarica il progetto completo (PDF)
+          </PrimaryLinkButton>
+        </TitleRow>
         <ProjectContent>
           <ProjectOverview overviewText={overviewText} overviewImage={overviewImage} />
 
@@ -155,24 +174,12 @@ const ProjectDetailPage = () => {
               </ImageContent>
             </ContentGrid>
           </ProjectSection>
-
-          <ProjectSection>
-            <ProjectDownload>
-              <PrimaryLinkButton
-                href={downloadUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Scarica il progetto completo (PDF)
-              </PrimaryLinkButton>
-            </ProjectDownload>
-          </ProjectSection>
         </ProjectContent>
-        <GoToHome>
+        <CenteredHomeButtonWrapper>
           <a href="/">
             <HomeButton>← Torna alla home</HomeButton>
           </a>
-        </GoToHome>
+        </CenteredHomeButtonWrapper>
       </ProjectDetailsWrapper>
     </Layout>
   );

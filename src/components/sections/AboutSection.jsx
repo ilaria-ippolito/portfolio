@@ -78,7 +78,7 @@ const StatCard = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
 `;
 
 const StatNumber = styled.div`

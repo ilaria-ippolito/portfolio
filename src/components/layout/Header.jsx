@@ -11,10 +11,16 @@ const HeaderWrapper = styled.header`
   left: 0;
   width: 100%;
   z-index: 100;
-  background-color: var(--color-neutral-700);
   padding: 0;
-  min-height: 64px;
-  // box-shadow: var(--shadow-sm);
+  background: ${({ scrolled }) =>
+    scrolled
+      ? 'rgba(255,255,255,0.95)'
+      : 'transparent'};
+  box-shadow: ${({ scrolled }) =>
+    scrolled
+      ? '0 2px 16px 0 rgba(0,0,0,0.06)'
+      : 'none'};
+  transition: background 0.25s, box-shadow 0.25s;
 `;
 
 const HeaderInner = styled.div`
@@ -23,7 +29,7 @@ const HeaderInner = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 64px;
+  min-height: 80px;
   padding: 0.5rem 0;
 `;
 
@@ -63,7 +69,7 @@ const MenuToggleBtn = styled.button`
     border-radius: var(--radius-pill);
     width: 44px;
     height: 44px;
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-sm);
   }
 `;
 
@@ -119,8 +125,10 @@ const StyledNav = styled.nav`
   }
 `;
 
+
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -135,6 +143,15 @@ const Header = () => {
     };
   }, [menuOpen]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const handleLogoClick = (e) => {
     e.preventDefault();
     setMenuOpen(false);
@@ -145,10 +162,8 @@ const Header = () => {
     }
   };
 
-
-
   return (
-    <HeaderWrapper>
+    <HeaderWrapper scrolled={scrolled}>
       <CustomPaddingX>
         <HeaderInner>
           <div className="logo d-inline">

@@ -10,7 +10,7 @@ const StepsWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 4rem;
   @media (max-width: 700px) {
     grid-template-columns: 1fr;
   }

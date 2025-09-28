@@ -2,10 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ProcessStepContainer = styled.div`
-  background-color: var(--color-accent-50);
   border-radius: var(--radius-md);
+  border: 1px solid var(--color-neutral-300);
   padding: 1.5rem;
-  box-shadow: var(--shadow-md);
   transition: all 0.3s ease;
 `;
 

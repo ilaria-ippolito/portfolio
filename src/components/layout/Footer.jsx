@@ -83,7 +83,7 @@ const Col = styled.div`
   align-items: flex-start;
 
   @media (max-width: 900px) {
-    align-items: center;
+    // align-items: center;
   }
 `;
 

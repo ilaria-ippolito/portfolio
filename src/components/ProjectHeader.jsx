@@ -20,7 +20,7 @@ const Tags = styled.div`
 `;
 
 const TimeRange = styled.div`
-  color: var(--color-accent-700);
+  color: var(--color-neutral-500);
   font-size: 1rem;
   margin-bottom: 1rem;
 `;

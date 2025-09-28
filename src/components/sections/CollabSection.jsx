@@ -3,9 +3,8 @@ import styled from 'styled-components';
 import { Mail, Linkedin } from 'lucide-react';
 
 const Section = styled.section`
-  background: var(--color-neutral-700);
+  // background: var(--color-neutral-700);
   border-radius: var(--radius-lg);
-  color: var(--color-neutral-50);
   padding: 4rem 5rem;
   margin-top: 4.5rem;
   @media (max-width: 900px) {
@@ -16,7 +15,7 @@ const Section = styled.section`
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: 1fr 420px;
+  grid-template-columns: 1fr 500px;
   gap: 3rem;
   align-items: start;
   @media (max-width: 900px) {
@@ -35,12 +34,12 @@ const Headline = styled.h3`
   font-size: var(--type-title-lg);
   line-height: 1.15;
   margin: 0 0 1rem 0;
-  color: var(--color-neutral-50);
+  color: var(--color-neutral-700);
   font-weight: 700;
 `;
 
 const Intro = styled.p`
-  color: var(--color-neutral-300);
+  color: var(--color-neutral-700);
   margin: 0 0 0.75rem 0;
   font-size: var(--type-body);
   line-height: 1.6;
@@ -58,7 +57,7 @@ const NeonCard = styled.div`
   border-radius: var(--radius-lg);
   padding: 2.25rem 2.25rem;
   width: 100%;
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
@@ -127,7 +126,7 @@ const CollabSection = ({ id = 'collab-section' }) => (
           <div className="actions">
             <IconActions>
               <IconLink
-                href="https://www.linkedin.com/"
+                href="https://www.linkedin.com/in/ilaria-ippolito/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"

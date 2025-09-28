@@ -12,11 +12,22 @@ const Grid = styled.div`
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
   margin-top: 1rem;
+
+  & > :nth-child(1) { margin-top: 0; }
+  & > :nth-child(2) { margin-top: 2.5rem; }
+  & > :nth-child(3) { margin-top: 5rem; }
+  & > :nth-child(4) { margin-top: 7.5rem; }
+
   @media (max-width: 1024px) {
     grid-template-columns: repeat(2, 1fr);
+    & > :nth-child(1) { margin-top: 0; }
+    & > :nth-child(2) { margin-top: 2rem; }
+    & > :nth-child(3) { margin-top: 0; }
+    & > :nth-child(4) { margin-top: 2rem; }
   }
   @media (max-width: 600px) {
     grid-template-columns: 1fr;
+    & > * { margin-top: 0 !important; }
   }
 `;
 
@@ -24,13 +35,12 @@ const Card = styled.div`
   background: var(--color-neutral-700);
   border: 1px solid var(--color-neutral-500);
   border-radius: var(--radius-lg);
-  padding: 2rem 1.5rem 1.5rem 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
+  padding: 1.2rem 1.2rem 1.1rem 1.2rem;
+  display: block;
   color: var(--color-neutral-50);
   box-shadow: var(--shadow-sm);
-  align-items: flex-start;
+  height: 300px;
+  overflow: hidden;
 `;
 
 const IconWrapper = styled.div`
