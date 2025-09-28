@@ -23,7 +23,7 @@ const Visual = styled.div`
     display: block;
     width: 100%;
     height: auto;
-    border-radius: 8px;
+    border-radius: var(--radius-md);
   }
 `;
 

@@ -8,7 +8,7 @@ const FooterWrapper = styled.footer`
   position: relative;
   width: 100%;
   box-sizing: border-box;
-  background-color: #000;
+  background-color: var(--color-neutral-700);
   overflow-x: hidden;
   /* responsive horizontal padding to avoid overflow */
   padding-inline: 16px;
@@ -42,9 +42,8 @@ const BottomRow = styled.div`
   width: 100%;
   margin-top: 48px;
   padding-top: 12px;
-  border-top: 1px solid rgba(255, 255, 255, 0.04);
-  color: #ffffff;
-  font-size: 0.95rem;
+  color: var(--color-neutral-50);
+  font-size: var(--type-sm);
   text-align: center;
   @media (max-width: 900px) {
     margin-top: 36px;
@@ -56,7 +55,7 @@ const BottomRow = styled.div`
 `;
 
 const FooterLeft = styled.div`
-  color: #f920ce;
+  color: var(--color-primary-500);
   text-decoration: none;
   display: flex;
   flex-direction: column;
@@ -70,23 +69,11 @@ const FooterLeft = styled.div`
 `;
 
 const BigText = styled.span`
-  color: #ffffff;
-  font-size: 1.6rem;
+  color: var(--color-neutral-50);
+  font-size: var(--type-title-md);
   font-weight: 800;
   letter-spacing: 1px;
   line-height: 1;
-`;
-
-const FooterCols = styled.div`
-  display: flex;
-  gap: 2rem;
-  justify-content: flex-end;
-  align-items: flex-start;
-
-  @media (max-width: 900px) {
-    justify-content: center;
-    gap: 1.25rem;
-  }
 `;
 
 const Col = styled.div`
@@ -102,8 +89,8 @@ const Col = styled.div`
 
 const ColTitle = styled.h4`
   margin: 0 0 0.5rem 0;
-  color: #f920ce; /* use brand accent instead of yellow */
-  font-size: 0.95rem;
+  color: var(--color-primary-500); /* use brand accent instead of yellow */
+  font-size: var(--type-body-sm);
   font-weight: 700;
 `;
 
@@ -117,8 +104,8 @@ const ColList = styled.ul`
 `;
 
 const ColItem = styled.li`
-  color: #9aa0a6;
-  font-size: 0.95rem;
+  color: var(--color-neutral-500);
+  font-size: var(--type-body);
   display: flex;
   align-items: center;
 `;
@@ -132,7 +119,7 @@ const SocialIcons = styled.div`
 const SocialLink = styled.a`
   margin-right: 10px;
   text-decoration: none;
-  color: #f920ce;
+  color: var(--color-primary-500);
   transition: none;
 `;
 
@@ -153,19 +140,11 @@ const SocialImg = styled.img`
   }
 `;
 
-const FooterNav = styled.nav`
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  align-items: flex-start;
-  margin-left: 0.75rem; /* space between icons and nav */
-`;
-
 const NavLink = styled.a`
-  color: #9aa0a6;
+  color: var(--color-neutral-500);
   text-decoration: none;
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: var(--type-body-sm);
   &:hover {
     opacity: 0.9;
   }
@@ -174,8 +153,6 @@ const NavLink = styled.a`
 const Footer = () => {
   const location = useLocation();
   const navigate = useNavigate();
-
-
 
   return (
     <FooterWrapper>

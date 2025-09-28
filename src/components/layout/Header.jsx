@@ -11,10 +11,10 @@ const HeaderWrapper = styled.header`
   left: 0;
   width: 100%;
   z-index: 100;
-  background-color: #000;
+  background-color: var(--color-neutral-700);
   padding: 0;
   min-height: 64px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  // box-shadow: var(--shadow-sm);
 `;
 
 const HeaderInner = styled.div`
@@ -30,14 +30,14 @@ const HeaderInner = styled.div`
 const LogoTitle = styled.a`
   padding-inline: 1rem;
   vertical-align: middle;
-  color: #f920ce;
-  font-size: 2rem;
+  color: var(--color-primary-500);
+  font-size: var(--type-title-lg);
   font-weight: 700;
   letter-spacing: 1px;
   text-decoration: none;
   cursor: pointer;
   &:focus {
-    outline: 2px solid rgba(249, 32, 206, 0.15);
+    outline: 2px solid rgba(226, 96, 217, 0.15);
     outline-offset: 2px;
   }
   @media (max-width: 1024px) {
@@ -59,11 +59,11 @@ const MenuToggleBtn = styled.button`
     position: fixed;
     top: 1.2rem;
     right: 1.2rem;
-    background: rgba(0,0,0,0.85);
-    border-radius: 50%;
+    background: var(--color-neutral-700, rgba(0,0,0,0.85));
+    border-radius: var(--radius-pill);
     width: 44px;
     height: 44px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    box-shadow: var(--shadow-md);
   }
 `;
 
@@ -77,10 +77,10 @@ const StyledNav = styled.nav`
   a {
     margin-right: 0;
     padding: 1.2rem;
-    font-size: 1.05rem;
+    font-size: var(--type-body);
     font-weight: 700;
     letter-spacing: 1px;
-    color: #f920ce;
+    color: var(--color-primary-500);
     text-decoration: none;
     transition: none;
     box-sizing: border-box;
@@ -92,7 +92,7 @@ const StyledNav = styled.nav`
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: #000;
+    background-color: var(--color-neutral-700);
     transform: translateX(${({ open }) => (open ? '0' : '100%')});
     transition: transform 0.3s ease;
     z-index: 150;
@@ -112,7 +112,7 @@ const StyledNav = styled.nav`
       display: block;
       width: 100%;
       max-width: 100%;
-      font-size: 1.5rem;
+      font-size: var(--type-title-md);
       padding: 1rem 0;
       text-align: center;
     }
@@ -154,7 +154,6 @@ const Header = () => {
           <div className="logo d-inline">
             <LogoTitle href="/" onClick={handleLogoClick}>
               <Panda size={26} style={{ verticalAlign: 'middle', marginRight: '0.5rem' }} />
-              ilaria
             </LogoTitle>
           </div>
           <MenuToggleBtn
@@ -162,7 +161,7 @@ const Header = () => {
             onClick={() => setMenuOpen((open) => !open)}
             type="button"
           >
-            {menuOpen ? <X size={32} color="#f920ce" /> : <Menu size={32} color="#f920ce" />}
+            {menuOpen ? <X size={32} color="var(--color-primary-500)" /> : <Menu size={32} color="var(--color-primary-500)" />}
           </MenuToggleBtn>
           <StyledNav open={menuOpen}>
             <ul>

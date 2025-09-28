@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledSkill = styled.div`
-  background: rgba(249, 32, 206, 0.08);
-  color: #f920ce;
-  border: 1.5px solid #f920ce;
-  border-radius: 2.5rem;
+  background: rgba(226, 96, 217, 0.08); /* matches --color-primary-500 with alpha */
+  color: var(--color-primary-500);
+  border: 1.5px solid var(--color-primary-500);
+  border-radius: var(--radius-pill);
   padding: 0.7rem 2.2rem;
   font-size: 1.3rem;
   font-weight: 600;

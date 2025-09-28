@@ -1,12 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import { PrimaryButton } from '../SharedStyles';
 import { Mail, Linkedin } from 'lucide-react';
 
 const Section = styled.section`
-  background: #0b0b0b;
-  border-radius: 1.2rem;
-  color: #fff;
+  background: var(--color-neutral-700);
+  border-radius: var(--radius-lg);
+  color: var(--color-neutral-50);
   padding: 4rem 5rem;
   margin-top: 4.5rem;
   @media (max-width: 900px) {
@@ -33,17 +32,17 @@ const Left = styled.div`
 `;
 
 const Headline = styled.h3`
-  font-size: 2.2rem;
+  font-size: var(--type-title-lg);
   line-height: 1.15;
   margin: 0 0 1rem 0;
-  color: #ffffff;
+  color: var(--color-neutral-50);
   font-weight: 700;
 `;
 
 const Intro = styled.p`
-  color: #bfc6c9;
+  color: var(--color-neutral-300);
   margin: 0 0 0.75rem 0;
-  font-size: 1rem;
+  font-size: var(--type-body);
   line-height: 1.6;
 `;
 
@@ -54,12 +53,12 @@ const Right = styled.div`
 `;
 
 const NeonCard = styled.div`
-  background: #d8ff00;
-  color: #0b0b0b;
-  border-radius: 16px;
+  background: var(--color-accent-500);
+  color: var(--color-neutral-700);
+  border-radius: var(--radius-lg);
   padding: 2.25rem 2.25rem;
   width: 100%;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  box-shadow: var(--shadow-lg);
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
@@ -69,13 +68,13 @@ const NeonCard = styled.div`
 
   h4 {
     margin: 0;
-    font-size: 1.9rem;
+    font-size: var(--type-title-md);
     font-weight: 700;
   }
 
   p {
     margin: 0;
-    font-size: 1.02rem;
+    font-size: var(--type-body);
     line-height: 1.6;
   }
 
@@ -93,12 +92,11 @@ const IconLink = styled.a`
   display: inline-flex;
   width: 56px;
   height: 56px;
-  border-radius: 999px;
-  background: #0b0b0b;
+  border-radius: var(--radius-pill);
+  background: var(--color-neutral-700);
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  border: 2px solid rgba(0, 0, 0, 0.25);
 
   img,
   svg {
@@ -106,12 +104,6 @@ const IconLink = styled.a`
     height: 22px;
     display: block;
   }
-`;
-
-const MailSvg = styled.svg`
-  width: 22px;
-  height: 22px;
-  display: block;
 `;
 
 const CollabSection = ({ id = 'collab-section' }) => (
@@ -140,10 +132,10 @@ const CollabSection = ({ id = 'collab-section' }) => (
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
               >
-                <Linkedin color="#fff" size={20} />
+                <Linkedin color="var(--color-accent-50)" size={20} />
               </IconLink>
               <IconLink href="mailto:info@example.com" aria-label="Email">
-                <Mail color="#fff" size={20} />
+                <Mail color="var(--color-accent-50)" size={20} />
               </IconLink>
             </IconActions>
           </div>

@@ -2,22 +2,22 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ProcessStepContainer = styled.div`
-  background-color: #fff;
-  border-radius: 8px;
+  background-color: var(--color-accent-50);
+  border-radius: var(--radius-md);
   padding: 1.5rem;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow-md);
   transition: all 0.3s ease;
 `;
 
 const StepNumber = styled.span`
   display: inline-block;
-  background-color: #e260d9;
-  color: #fff;
+  background-color: var(--color-primary-500);
+  color: var(--color-accent-50);
   width: 36px;
   height: 36px;
   text-align: center;
   line-height: 36px;
-  border-radius: 50%;
+  border-radius: var(--radius-pill);
   font-size: 1.1rem;
   font-weight: 700;
   margin-bottom: 1rem;

@@ -12,8 +12,8 @@ const HeroSection = styled.section`
   margin: 0;
   padding: 0;
   gap: 2rem;
-  background: #000;
-  color: #fff;
+  background: var(--color-neutral-700);
+  color: var(--color-neutral-50);
   position: relative;
   z-index: 1;
   width: 100vw;
@@ -71,14 +71,14 @@ const HeroText = styled.div`
 `;
 
 const HeroTitle = styled.h1`
-  color: #fff;
-  font-size: 5.5rem;
+  color: var(--color-neutral-50);
+  font-size: 3.5rem;
   font-weight: 700;
   letter-spacing: 1px;
   text-align: left;
   margin-bottom: -2rem;
   @media (max-width: 600px) {
-    font-size: 4rem;
+    font-size: 2.5rem;
     margin-bottom: -1rem;
     text-align: center;
   }
@@ -88,11 +88,11 @@ const HeroSubtitle = styled.span`
   text-align: left;
   letter-spacing: 2px;
   font-weight: 200;
-  font-size: 3.5rem;
+  font-size: var(--type-title-md);
   opacity: 0.9;
-  color: #fff;
+  color: var(--color-neutral-50);
   @media (max-width: 600px) {
-    font-size: 2.5rem;
+    font-size: var(--type-title-md);
     text-align: center;
   }
   p {

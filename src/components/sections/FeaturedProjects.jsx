@@ -6,6 +6,7 @@ import { HighlightedHeading, SectionTitle } from '../SharedStyles';
 
 const Section = styled.section`
   margin-top: 3rem;
+  /* Example: use a variable for spacing if available */
 `;
 
 const Container = styled.div`
@@ -20,6 +21,7 @@ const Container = styled.div`
     grid-template-areas: 'full' 'split1' 'split2';
     grid-auto-rows: auto;
   }
+  /* Example: use a variable for border-radius if used in children */
 `;
 
 const AreaFull = styled.div`

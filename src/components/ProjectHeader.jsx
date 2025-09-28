@@ -20,17 +20,17 @@ const Tags = styled.div`
 `;
 
 const TimeRange = styled.div`
-  color: #666;
+  color: var(--color-accent-700);
   font-size: 1rem;
   margin-bottom: 1rem;
 `;
 
 const MetaGrid = styled.div`
-  background-color: #fff;
-  border-radius: 8px;
+  background-color: var(--color-accent-50);
+  border-radius: var(--radius-md);
   padding: 1.5rem;
   margin-top: 1.5rem;
-  border: 1px solid #eee;
+  border: 1px solid var(--color-accent-100);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 1rem;

@@ -16,8 +16,8 @@ const ProjectDetailsWrapper = styled.div`
 `;
 
 const ProjectHero = styled.img`
-  border-radius: 8px;
-  border: 1px solid #ddd;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-neutral-300);
   display: block;
   width: 100%;
   max-width: 100%;
@@ -54,7 +54,7 @@ const ImageContent = styled.div`
     max-width: 100%;
     width: 100%;
     height: auto;
-    border-radius: 8px;
+    border-radius: var(--radius-md);
   }
 `;
 

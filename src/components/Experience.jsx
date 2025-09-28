@@ -15,14 +15,14 @@ const ExperienceTitle = styled.h4`
 
 const ExperienceDate = styled.div`
   display: inline-block;
-  color: #ffffff;
+  color: var(--color-accent-50);
   font-size: 1.2rem;
   font-weight: 400;
   letter-spacing: 1px;
-  background-color: #000000;
+  background-color: var(--color-neutral-700);
   text-decoration: none;
   padding: 5px 20px;
-  border-radius: 100px;
+  border-radius: var(--radius-pill);
   margin-bottom: 16px;
 `;
 

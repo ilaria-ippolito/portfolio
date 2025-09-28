@@ -6,9 +6,9 @@ const Wrapper = styled.a`
   flex-direction: column;
   text-decoration: none;
   color: inherit;
-  border-radius: 0.8rem;
+  border-radius: var(--radius-md);
   overflow: hidden;
-  border: 1px solid #eee;
+  border: 1px solid var(--color-neutral-300);
   height: 100%;
   min-height: 20rem;
   @media (max-width: 900px) {
@@ -44,15 +44,15 @@ const InfoSide = styled.div`
   gap: 0.4rem;
   justify-content: flex-start;
   flex: 1 1 auto;
-  background: #000;
-  color: #fff;
+  background: var(--color-neutral-700);
+  color: var(--color-neutral-50);
 `;
 
 const Title = styled.h3`
   margin: 0;
-  font-size: 1.1rem;
+  font-size: var(--type-title-md);
   line-height: 1.2;
-  color: #fff;
+  color: var(--color-neutral-50);
 `;
 
 const Meta = styled.div`
@@ -63,18 +63,18 @@ const Meta = styled.div`
 `;
 
 const Tag = styled.span`
-  font-size: 0.72rem;
-  color: #e260d9;
-  background: rgba(226, 96, 217, 0.06);
-  border: 1px solid rgba(226, 96, 217, 0.6);
+  font-size: var(--type-label);
+  color: var(--color-primary-500);
+  background: trasparent;
+  border: 1px solid var(--color-primary-500);
   padding: 0.2rem 0.5rem;
-  border-radius: 0.8rem;
+  border-radius: var(--radius-md);
   line-height: 1;
 `;
 
 const DateRange = styled.span`
-  font-size: 0.85rem;
-  color: #e0e0e0;
+  font-size: var(--type-body-sm);
+  color: var(--color-neutral-300);
   margin-top: 0.25rem;
 `;
 

@@ -21,15 +21,15 @@ const Grid = styled.div`
 `;
 
 const Card = styled.div`
-  background: #181818;
-  border: 1px solid #222;
-  border-radius: 1.1rem;
+  background: var(--color-neutral-700);
+  border: 1px solid var(--color-neutral-500);
+  border-radius: var(--radius-lg);
   padding: 2rem 1.5rem 1.5rem 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
-  color: #fff;
-  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.08);
+  color: var(--color-neutral-50);
+  box-shadow: var(--shadow-sm);
   align-items: flex-start;
 `;
 
@@ -44,8 +44,8 @@ const IconWrapper = styled.div`
   align-items: center;
   justify-content: center;
   background: rgba(226, 96, 217, 0.09);
-  border-radius: 0.6rem;
-  color: #e260d9;
+  border-radius: var(--radius-md);
+  color: var(--color-primary-500);
   flex: 0 0 48px;
 
   /* Ensure SVG icons are constrained to the wrapper */
@@ -57,25 +57,25 @@ const IconWrapper = styled.div`
 `;
 
 const Title = styled.h4`
-  font-size: 1.25rem;
+  font-size: var(--type-title-md);
   font-weight: 800;
   margin: 0;
   letter-spacing: -0.01em;
-  color: #fff;
+  color: var(--color-neutral-50);
 `;
 
 const Desc = styled.p`
   margin: 0.2rem 0 0.2rem 0;
-  color: #e0e0e0;
-  font-size: 1.05rem;
+  color: var(--color-neutral-300);
+  font-size: var(--type-body-sm);
   line-height: 1.6;
 `;
 
 const Bullets = styled.ul`
   margin: 0.7rem 0 0 0;
   padding: 0;
-  color: #fff;
-  font-size: 1rem;
+  color: var(--color-neutral-50);
+  font-size: var(--type-body);
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -93,7 +93,7 @@ const Bullets = styled.ul`
     width: 18px;
     height: 18px;
     flex: 0 0 18px;
-    color: #10b981; /* green check */
+    color: var(--color-success); /* green check */
     margin-top: 2px;
   }
 `;

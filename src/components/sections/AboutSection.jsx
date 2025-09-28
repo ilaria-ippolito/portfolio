@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import { PrimaryButton } from '../SharedStyles';
 
 const Section = styled.section`
-  background: #0b0b0b;
-  color: #fff;
+  background: var(--color-neutral-700);
+  color: var(--color-neutral-50);
   padding: 4rem 5rem;
   margin-top: 4.5rem;
-  border-radius: 1.2rem;
+  border-radius: var(--radius-lg);
   @media (max-width: 900px) {
     padding: 3rem 2rem;
     margin-top: 2.5rem;
@@ -29,17 +29,17 @@ const Left = styled.div`
 `;
 
 const Headline = styled.h2`
-  font-size: 2.2rem;
+  font-size: var(--type-title-lg);
   line-height: 1.15;
   margin: 0 0 1.25rem 0;
-  color: #ffffff;
+  color: var(--color-neutral-50);
   font-weight: 700;
 `;
 
 const Intro = styled.p`
-  color: #bfc6c9;
+  color: var(--color-neutral-300);
   margin: 0 0 0.75rem 0;
-  font-size: 0.98rem;
+  font-size: var(--type-body-sm);
   line-height: 1.6;
 `;
 
@@ -55,9 +55,9 @@ const SecondaryButton = styled.a`
   align-items: center;
   gap: 0.6rem;
   padding: 0.65rem 1rem;
-  border-radius: 10px;
+  border-radius: var(--radius-md);
   background: rgba(255, 255, 255, 0.04);
-  color: #e6e6e6;
+  color: var(--color-accent-100);
   text-decoration: none;
   font-size: 0.95rem;
   border: 1px solid rgba(255, 255, 255, 0.04);
@@ -71,39 +71,39 @@ const Right = styled.div`
 `;
 
 const StatCard = styled.div`
-  border-radius: 12px;
+  border-radius: var(--radius-md);
   padding: 1.25rem 1.5rem;
   min-height: 72px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow-md);
 `;
 
 const StatNumber = styled.div`
   font-weight: 700;
-  font-size: 1.15rem;
+  font-size: var(--type-body-lg);
   margin-bottom: 0.25rem;
 `;
 
 const StatText = styled.div`
-  font-size: 0.85rem;
+  font-size: var(--type-label);
   color: rgba(0, 0, 0, 0.7);
 `;
 
 const StatMuted = styled.div`
-  font-size: 0.86rem;
+  font-size: var(--type-label);
   color: rgba(0, 0, 0, 0.7);
 `;
 
 const StatMuted2 = styled.div`
-  font-size: 0.86rem;
-  color: #d6d6d6;
+  font-size: var(--type-label);
+  color: var(--color-neutral-300);
 `;
 
 const Neon = styled(StatCard)`
-  background: #d8ff00; /* neon-ish */
-  color: #0b0b0b;
+  background: var(--color-accent-500); /* neon-ish */
+  color: var(--color-neutral-700);
   transition: transform 220ms ease;
   @media (min-width: 901px) {
     transform: translateY(-6px);
@@ -111,8 +111,8 @@ const Neon = styled(StatCard)`
 `;
 
 const Pink = styled(StatCard)`
-  background: #f4b6f0;
-  color: #0b0b0b;
+  background: var(--color-primary-500);
+  color: var(--color-neutral-700);
   /* offset to the right to create a staggered look */
   margin-left: 2.4rem;
   transition:
@@ -129,8 +129,8 @@ const Pink = styled(StatCard)`
 
 const Outlined = styled(StatCard)`
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  color: #e6e6e6;
+  border: 1px solid var(--color-neutral-100);
+  color: var(--color-neutral-100);
 `;
 
 const AboutSection = ({ id = 'about-section' }) => (
@@ -183,7 +183,6 @@ const AboutSection = ({ id = 'about-section' }) => (
 
         <Outlined>
           <StatNumber>Laurea</StatNumber>
-
           <StatMuted2>
             Discipline dello Spettacolo e della Comunicazione — Università di Pisa
           </StatMuted2>

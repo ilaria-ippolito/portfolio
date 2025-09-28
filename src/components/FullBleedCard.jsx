@@ -5,7 +5,7 @@ const Wrapper = styled.a`
   display: block;
   position: relative;
   overflow: hidden;
-  border-radius: 0.8rem;
+  border-radius: var(--radius-md);
   text-decoration: none;
   color: inherit;
   height: 100%;
@@ -59,19 +59,19 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  color: #fff;
+  color: var(--color-accent-50);
 `;
 
 const Title = styled.h3`
   margin: 0 0 0.4rem 0;
-  font-size: 2rem;
+  font-size: var(--type-title-md);
   line-height: 1.05;
 `;
 
 const DateRange = styled.span`
   display: block;
   margin-top: 0.25rem;
-  font-size: 0.95rem;
+  font-size: var(--type-body-sm);
   color: rgba(255, 255, 255, 0.9);
 `;
 
@@ -83,13 +83,13 @@ const Meta = styled.div`
 `;
 
 const Tag = styled.span`
-  font-size: 0.78rem;
-  color: #fff;
-  background: rgba(226, 96, 217, 0.85);
+  font-size: var(--type-label);
+  color: var(--color-neutral-50);
+  background: var(--color-primary-500, rgba(226, 96, 217, 0.85));
   padding: 0.22rem 0.6rem;
-  border-radius: 0.8rem;
+  border-radius: var(--radius-md);
   line-height: 1;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+  box-shadow: var(--shadow-sm);
 `;
 
 const FullBleedCard = ({ img, title, tags = [], tools = [], dateRange, href = '#' }) => {

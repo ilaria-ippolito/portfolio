@@ -17,11 +17,11 @@ const Item = styled.div`
   display: flex;
   align-items: center;
   gap: 1rem;
-  background: #181818;
-  border: 1px solid #222;
+  background: var(--color-neutral-700);
+  border: 1px solid var(--color-neutral-500);
   padding: 0.8rem 1rem;
-  border-radius: 0.8rem;
-  color: #fff;
+  border-radius: var(--radius-md);
+  color: var(--color-neutral-50);
   min-width: 160px;
   max-width: 180px;
 `;
@@ -33,9 +33,9 @@ const Icon = styled.img`
 `;
 
 const Label = styled.span`
-  font-size: 1.05rem;
+  font-size: var(--type-body);
   font-weight: 600;
-  color: #fff;
+  color: var(--color-neutral-50);
 `;
 
 const tools = [

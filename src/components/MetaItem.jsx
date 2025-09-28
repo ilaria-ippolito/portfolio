@@ -13,7 +13,7 @@ const MetaItemLabel = styled.h4`
 
 const MetaItemValue = styled.p`
   font-size: 1rem;
-  color: #333;
+  color: var(--color-accent-700);
 `;
 
 const MetaItem = ({ label, value }) => (

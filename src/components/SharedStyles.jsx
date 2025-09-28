@@ -29,11 +29,11 @@ export const GoToHome = styled.div`
 
 export const HomeButton = styled.button`
   background: none;
-  border: 2px solid #f920ce;
-  color: #f920ce;
+  border: 2px solid var(--color-primary-500);
+  color: var(--color-primary-500);
   font-size: 1.5rem;
   font-weight: 700;
-  border-radius: 2rem;
+  border-radius: var(--radius-lg);
   padding: 0.7rem 2.2rem;
   cursor: pointer;
   transition: none;
@@ -43,10 +43,10 @@ export const PrimaryButton = styled.button`
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background-color: #e260d9;
+  background-color: var(--color-primary-500);
   color: white;
   padding: 0.75rem 1.5rem;
-  border-radius: 2rem;
+  border-radius: var(--radius-lg);
   font-weight: 600;
   border: none;
   cursor: pointer;
@@ -58,10 +58,10 @@ export const PrimaryLinkButton = styled.a`
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background-color: #e260d9;
-  color: #fff;
+  background-color: var(--color-primary-500);
+  color: var(--color-accent-50);
   padding: 0.75rem 1.5rem;
-  border-radius: 2rem;
+  border-radius: var(--radius-lg);
   font-weight: 600;
   text-decoration: none;
   transition: none;
@@ -72,10 +72,10 @@ export const PrimaryLinkButton = styled.a`
 
 export const Tag = styled.span`
   font-size: 0.78rem;
-  color: #fff;
-  background: rgba(226, 96, 217, 0.85);
+  color: var(--color-accent-50);
+  background: var(--color-primary-500);
   padding: 0.22rem 0.6rem;
-  border-radius: 0.8rem;
+  border-radius: var(--radius-md);
   line-height: 1;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+  box-shadow: var(--shadow-sm);
 `;

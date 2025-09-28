@@ -23,7 +23,7 @@ const ImagesGrid = styled.div`
 
   > div {
     overflow: hidden;
-    border-radius: 8px;
+    border-radius: var(--radius-md);
   }
   img {
     display: block;
