@@ -30,4 +30,3 @@ Ho scelto il font **DM Serif Display** per i titoli, che conferisce un aspetto e
 Se desideri contattarmi per collaborazioni, progetti o domande, puoi farlo compilando il modulo nella sezione "Contatti" del sito.
 
 Grazie per aver visitato il mio portfolio! Spero che ti piaccia!
-

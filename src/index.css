@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './tailwind-utilities.css';
+@import '../public/assets/css/style.css';
+
+/* Design tokens (CSS variables) available across the app */
+:root {
+  /* Palette scale */
+  --color-primary-50: #fff0fb;
+  --color-primary-100: #fde6f6;
+  --color-primary-300: #f4a6e0;
+  --color-primary-500: #e260d9; /* main primary */
+  --color-primary-700: #b02a9f;
+
+  --color-accent-50: #f6fff1;
+  --color-accent-100: #e6ffd9;
+  --color-accent-300: #b7ff8f;
+  --color-accent-500: #8cfb3a; /* accent/positive */
+  --color-accent-700: #54d200;
+
+  --color-neutral-50: #fafafa;
+  --color-neutral-100: #f0f2f4;
+  --color-neutral-300: #c9d1d6;
+  --color-neutral-500: #8f99a3; /* muted text */
+  --color-neutral-700: #343a40; /* main neutral */
+
+  /* Semantic */
+  --color-success: #16a34a;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+  --color-info: #0ea5e9;
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+
+  /* Type scale */
+  --type-caption: 0.65rem; /* 10.4px, was xxs */
+  --type-label: 0.75rem; /* 12px, was xs */
+  --type-body-sm: 0.875rem; /* 14px, was sm */
+  --type-body: 1rem; /* 16px, was base */
+  --type-body-lg: 1.125rem; /* 18px, was md */
+  --type-title-md: 1.375rem; /* 22px, was lg */
+  --type-title-lg: 1.75rem; /* 28px, was xl */
+
+  /* Shadows */
+  --shadow-color: 218deg 49% 7%;
+  --shadow-sm: 0.4px 0.5px 0.7px hsl(var(--shadow-color) / 0.33),
+    0.7px 0.8px 1.2px -1.2px hsl(var(--shadow-color) / 0.33),
+    1.6px 1.8px 2.7px -2.5px hsl(var(--shadow-color) / 0.33);
+  --shadow-md: 0.4px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
+    1.3px 1.5px 2.2px -0.8px hsl(var(--shadow-color) / 0.34),
+    3.4px 3.8px 5.7px -1.7px hsl(var(--shadow-color) / 0.34),
+    8.1px 9.2px 13.8px -2.5px hsl(var(--shadow-color) / 0.34);
+  --shadow-lg: 0.4px 0.5px 0.7px hsl(var(--shadow-color) / 0.36),
+    2.6px 3px 4.5px -0.4px hsl(var(--shadow-color) / 0.36),
+    5.1px 5.8px 8.7px -0.8px hsl(var(--shadow-color) / 0.36),
+    9px 10.2px 15.3px -1.2px hsl(var(--shadow-color) / 0.36),
+    15.3px 17.3px 26px -1.7px hsl(var(--shadow-color) / 0.36),
+    25.2px 28.4px 42.7px -2.1px hsl(var(--shadow-color) / 0.36),
+    39.7px 44.8px 67.3px -2.5px hsl(var(--shadow-color) / 0.36);
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
