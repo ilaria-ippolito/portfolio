@@ -26,7 +26,7 @@ const ImageSide = styled.div`
     inset: 0;
     background-image: url(${(p) => p.img});
     background-size: cover;
-    background-position: center;
+    background-position: top;
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform;
     transform: scale(1);

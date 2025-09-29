@@ -55,7 +55,6 @@ const NeonCard = styled.div`
   border-radius: var(--radius-lg);
   padding: 2.25rem 2.25rem;
   width: 100%;
-  box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
   gap: 0.9rem;

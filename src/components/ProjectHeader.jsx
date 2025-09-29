@@ -85,7 +85,7 @@ const ProjectHeader = ({ title, tags = [], meta = [], timeRange, behanceUrl }) =
           rel="noopener noreferrer"
         >
           <ExternalLink size={18} style={{ marginRight: '0.5rem' }} />
-          Versione completa su Behance
+          Versione completa
         </PrimaryLinkButton>
       )}
     </TitleRow>

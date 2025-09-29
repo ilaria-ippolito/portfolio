@@ -18,7 +18,7 @@ const Wrapper = styled.a`
     inset: 0;
     background-image: url(${(p) => p.img});
     background-size: cover;
-    background-position: center;
+    background-position: top;
     z-index: 0;
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform;
@@ -89,7 +89,6 @@ const Tag = styled.span`
   padding: 0.22rem 0.6rem;
   border-radius: var(--radius-md);
   line-height: 1;
-  box-shadow: var(--shadow-sm);
 `;
 
 const FullBleedCard = ({ img, title, tags = [], tools = [], dateRange, href = '#' }) => {

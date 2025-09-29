@@ -39,9 +39,14 @@ const ProjectHero = styled.img`
   max-height: 650px;
   height: 450px;
   object-fit: cover;
+  object-position: center;
   overflow: hidden;
   margin-top: 7rem;
   margin-bottom: 3rem;
+
+   @media (max-width: 700px) {
+    object-position: right;
+  }
 `;
 
 const ProjectContent = styled.div``;
@@ -65,6 +70,11 @@ const ContentGrid = styled.div`
 const TextContent = styled.div`
   p {
     line-height: 1.6;
+    max-width: 50%;
+
+    @media (max-width: 700px) {
+      max-width: 100%;
+    }
   }
 `;
 
@@ -72,6 +82,7 @@ const ImageContent = styled.div`
   img {
     display: block;
     max-width: 100%;
+    object-fit: contain;
     width: 100%;
     height: auto;
     border-radius: var(--radius-md);
@@ -98,14 +109,14 @@ const ProjectDetailPage = () => {
       <Layout>
         <ProjectDetailsWrapper>
           <h2>Progetto non trovato</h2>
-        <CenteredHomeButtonWrapper>
-          <a href="/">
-            <HomeButton>
-              <ArrowLeft size={20} />
-              Torna alla home
-            </HomeButton>
-          </a>
-        </CenteredHomeButtonWrapper>
+          <CenteredHomeButtonWrapper>
+            <a href="/">
+              <HomeButton>
+                <ArrowLeft size={20} />
+                Torna alla home
+              </HomeButton>
+            </a>
+          </CenteredHomeButtonWrapper>
         </ProjectDetailsWrapper>
       </Layout>
     );
@@ -130,10 +141,7 @@ const ProjectDetailPage = () => {
   return (
     <Layout>
       {/* full-bleed hero */}
-      <ProjectHero
-        src={coverImage}
-        alt=""
-      />
+      <ProjectHero src={coverImage} alt="" />
       <ProjectDetailsWrapper>
         <TitleRow>
           <ProjectHeader
