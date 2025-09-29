@@ -158,7 +158,7 @@ const Footer = () => {
     <FooterWrapper>
       <TopGrid>
         <FooterLeft>
-          <BigText>design e strategia per prodotti digitali</BigText>
+          <BigText>Making Every Click Feels Just Right</BigText>
         </FooterLeft>
 
         <Col>
@@ -214,7 +214,7 @@ const Footer = () => {
           </ColList>
         </Col>
       </TopGrid>
-      <BottomRow>© {new Date().getFullYear()} Tutti i diritti riservati Ilaria Ippolito.</BottomRow>
+      <BottomRow>© {new Date().getFullYear()} Tutti i diritti riservati - Ilaria Ippolito.</BottomRow>
     </FooterWrapper>
   );
 };

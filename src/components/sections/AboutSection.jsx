@@ -68,6 +68,14 @@ const Right = styled.div`
   align-items: stretch;
 `;
 
+import { keyframes } from 'styled-components';
+
+const float = keyframes`
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+`;
+
 const StatCard = styled.div`
   border-radius: var(--radius-md);
   padding: 1.25rem 1.5rem;
@@ -76,6 +84,7 @@ const StatCard = styled.div`
   flex-direction: column;
   justify-content: center;
   box-shadow: var(--shadow-sm);
+  animation: ${float} 2.2s ease-in-out infinite;
 `;
 
 const StatNumber = styled.div`
@@ -133,30 +142,30 @@ const AboutSection = ({ id = 'about-section' }) => (
   <Section id={id}>
     <Grid>
       <Left>
-        <Headline>Ilaria — aspirante UX/UI Designer</Headline>
+        <Headline><strong>Ilaria</strong> — <strong>UX/UI Designer</strong></Headline>
         <Intro>
-          Sono in formazione come UX/UI Designer e porto con me un percorso creativo che passa
-          dall'illustrazione e dalla fotografia fino alla comunicazione. Ho una laurea triennale in
-          Discipline dello Spettacolo e della Comunicazione e un diploma in illustrazione; più
-          recentemente ho approfondito la fotografia.
+          Sono una <strong>UX/UI Designer</strong> e porto con me un percorso creativo che passa
+          dall'<strong>illustrazione</strong> e dalla <strong>fotografia</strong> fino alla comunicazione. Ho una laurea triennale in
+           Discipline dello Spettacolo e della Comunicazione e un diploma in illustrazione; più
+          recentemente ho approfondito lo studio della fotografia.
         </Intro>
         <Intro>
-          Attualmente sto frequentando un master in UX/UI presso{' '}
+          Ho da poco terminato un master intensivodella durata di <strong>900 ore</strong> in UX/UI presso{' '}
           <a
             href="https://www.start2impact.it/"
             target="_blank"
             rel="noopener noreferrer"
             style={{ color: 'inherit' }}
           >
-            Start2impact
+            <strong>Start2impact</strong>
           </a>{' '}
-          (in corso). Mi appassiona progettare esperienze utili e accessibili: dal discovery al
-          wireframing, fino a prototipi testabili.
+          . Mi appassiona progettare esperienze utili e accessibili: dalla fase di <strong>discovery</strong> al
+          <strong> wireframing</strong>, fino al <strong>prototipo</strong>.
         </Intro>
         <Intro>
-          Ho esperienza pratica in contesti amministrativi e come fotografa per eventi, e sto
-          cercando ruoli che mi permettano di mettere in pratica le competenze UX appena acquisite e
-          crescere come designer.
+          Ho esperienza in contesti amministrativi e come fotografa per eventi, e sto
+          cercando ruoli che mi permettano di mettere in pratica le competenze UX e
+          <strong> crescere come designer</strong>.
         </Intro>
 
         <Ctas>
@@ -172,18 +181,18 @@ const AboutSection = ({ id = 'about-section' }) => (
       <Right>
         <Neon>
           <StatNumber>Master</StatNumber>
-          <StatMuted>UX/UI Design — Start2impact (in corso)</StatMuted>
+          <StatMuted>UX/UI Design — Start2impact</StatMuted>
         </Neon>
 
         <Pink>
-          <StatNumber>Diploma</StatNumber>
-          <StatText>Illustrazione — Accademia d'Arte Bianca Cappello</StatText>
+          <StatNumber>Laurea</StatNumber>
+          <StatText>Discipline dello Spettacolo e della Comunicazione — Università di Pisa</StatText>
         </Pink>
 
         <Outlined>
-          <StatNumber>Laurea</StatNumber>
+          <StatNumber>Diploma</StatNumber>
           <StatMuted2>
-            Discipline dello Spettacolo e della Comunicazione — Università di Pisa
+            Illustrazione — Accademia d'Arte Bianca Cappello
           </StatMuted2>
         </Outlined>
       </Right>

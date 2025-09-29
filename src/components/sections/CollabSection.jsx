@@ -107,23 +107,21 @@ const CollabSection = ({ id = 'collab-section' }) => (
   <Section id={id}>
     <Grid>
       <Left>
-        <Headline>Parliamo del tuo progetto</Headline>
+        <Headline>Incontra la tua prossima UX/UI Designer</Headline>
         <Intro>
-          Offro supporto UX/UI per startup, team e progetti personali. 
-          Collaboro con realtà innovative per trasformare idee in esperienze digitali efficaci e coinvolgenti. 
-          Credo nella forza del design centrato sull’utente e nella comunicazione chiara tra team multidisciplinari.
+          Sono alla ricerca di una realtà aziendale dove poter crescere come professionista UX/UI, contribuendo con passione e competenze a progetti innovativi e di valore. 
+          Mi rivolgo a recruiter, CEO e team leader che desiderano rafforzare il proprio team con una figura orientata all’utente, alla collaborazione e al miglioramento continuo.
         </Intro>
         <Intro>
-          Posso aiutarti con discovery, prototipi e test utenti — iniziamo con una breve
-          chiacchierata.
+          Se stai cercando una UX/UI Designer motivata, curiosa e pronta a mettersi in gioco in un contesto stimolante, sarò felice di conoscerti e valutare nuove opportunità di crescita insieme.
         </Intro>
       </Left>
 
       <Right>
         <NeonCard>
-          <h4>Vuoi collaborare con me?</h4>
-          <p>Hai domande sui miei servizi o vuoi propormi una collaborazione?</p>
-          <p>Conosciamoci e creiamo insieme qualcosa di fantastico.</p>
+          <h4>Vuoi conoscermi meglio?</h4>
+          <p>Se pensi che il mio profilo possa essere adatto alla tua azienda, scrivimi!</p>
+          <p>Sono pronta a portare entusiasmo, competenze e voglia di crescere nel tuo team.</p>
 
           <div className="actions">
             <IconActions>
