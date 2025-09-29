@@ -34,7 +34,8 @@ const Visual = styled.div`
  */
 const ProjectOverview = ({ overviewText, overviewImage }) => (
   <Section>
-    <h3>Overview</h3>
+    <h3 style={{ marginBottom: '2rem', fontSize: 'var(--type-title-md)' }}>Overview</h3>
+
     <Grid>
       <Text>
         <p>{overviewText}</p>

@@ -5,10 +5,8 @@ import { Mail, Linkedin } from 'lucide-react';
 const Section = styled.section`
   // background: var(--color-neutral-700);
   border-radius: var(--radius-lg);
-  padding: 4rem 5rem;
   margin-top: 4.5rem;
   @media (max-width: 900px) {
-    padding: 3rem 2rem;
     margin-top: 2.5rem;
   }
 `;
@@ -41,7 +39,7 @@ const Headline = styled.h3`
 const Intro = styled.p`
   color: var(--color-neutral-700);
   margin: 0 0 0.75rem 0;
-  font-size: var(--type-body);
+  font-size: var(--type-body-sm);
   line-height: 1.6;
 `;
 
@@ -110,7 +108,11 @@ const CollabSection = ({ id = 'collab-section' }) => (
     <Grid>
       <Left>
         <Headline>Parliamo del tuo progetto</Headline>
-        <Intro>Offro supporto UX/UI per startup, team e progetti personali.</Intro>
+        <Intro>
+          Offro supporto UX/UI per startup, team e progetti personali. 
+          Collaboro con realtà innovative per trasformare idee in esperienze digitali efficaci e coinvolgenti. 
+          Credo nella forza del design centrato sull’utente e nella comunicazione chiara tra team multidisciplinari.
+        </Intro>
         <Intro>
           Posso aiutarti con discovery, prototipi e test utenti — iniziamo con una breve
           chiacchierata.

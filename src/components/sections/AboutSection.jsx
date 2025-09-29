@@ -4,13 +4,10 @@ import { PrimaryButton } from '../SharedStyles';
 import { Download } from 'lucide-react';
 
 const Section = styled.section`
-  background: var(--color-neutral-700);
-  color: var(--color-neutral-50);
-  padding: 4rem 5rem;
+  color: var(--color-neutral-700);
   margin-top: 4.5rem;
   border-radius: var(--radius-lg);
   @media (max-width: 900px) {
-    padding: 3rem 2rem;
     margin-top: 2.5rem;
   }
 `;
@@ -33,12 +30,12 @@ const Headline = styled.h2`
   font-size: var(--type-title-lg);
   line-height: 1.15;
   margin: 0 0 1.25rem 0;
-  color: var(--color-neutral-50);
+  color: var(--color-neutral-700);
   font-weight: 700;
 `;
 
 const Intro = styled.p`
-  color: var(--color-neutral-300);
+  color: var(--color-neutral-600);
   margin: 0 0 0.75rem 0;
   font-size: var(--type-body-sm);
   line-height: 1.6;
@@ -58,7 +55,7 @@ const SecondaryButton = styled.a`
   padding: 0.65rem 1rem;
   border-radius: var(--radius-md);
   background: rgba(255, 255, 255, 0.04);
-  color: var(--color-accent-100);
+  color: var(--color-neutral-50);
   text-decoration: none;
   font-size: 0.95rem;
   border: 1px solid rgba(255, 255, 255, 0.04);
@@ -89,7 +86,7 @@ const StatNumber = styled.div`
 
 const StatText = styled.div`
   font-size: var(--type-label);
-  color: rgba(0, 0, 0, 0.7);
+  color: var(--color-neutral-100);
 `;
 
 const StatMuted = styled.div`
@@ -113,12 +110,9 @@ const Neon = styled(StatCard)`
 
 const Pink = styled(StatCard)`
   background: var(--color-primary-500);
-  color: var(--color-neutral-700);
-  /* offset to the right to create a staggered look */
+  color: var(--color-neutral-50);
   margin-left: 2.4rem;
-  transition:
-    margin 220ms ease,
-    transform 220ms ease;
+  transition: margin 220ms ease, transform 220ms ease;
   @media (min-width: 1200px) {
     margin-left: 3.2rem;
   }
@@ -129,8 +123,7 @@ const Pink = styled(StatCard)`
 `;
 
 const Outlined = styled(StatCard)`
-  background: transparent;
-  border: 1px solid var(--color-neutral-100);
+  background: var(--color-neutral-700);
   color: var(--color-neutral-100);
 `;
 
@@ -165,7 +158,7 @@ const AboutSection = ({ id = 'about-section' }) => (
         </Intro>
 
         <Ctas>
-          <a href="/documents/progetto-accessibilità.pdf" style={{ textDecoration: 'none' }}>
+          <a href="assets/documents/cv.pdf" download style={{ textDecoration: 'none' }}>
             <PrimaryButton as="span">
               CV completo
               <Download size={18} style={{ marginLeft: 8 }} />
@@ -182,7 +175,7 @@ const AboutSection = ({ id = 'about-section' }) => (
 
         <Pink>
           <StatNumber>Diploma</StatNumber>
-          <StatMuted>Illustrazione — Accademia d'Arte Bianca Cappello</StatMuted>
+          <StatText>Illustrazione — Accademia d'Arte Bianca Cappello</StatText>
         </Pink>
 
         <Outlined>

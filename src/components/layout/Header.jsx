@@ -42,9 +42,12 @@ const LogoTitle = styled.a`
   letter-spacing: 1px;
   text-decoration: none;
   cursor: pointer;
-  &:focus {
+  &:focus-visible {
     outline: 2px solid rgba(226, 96, 217, 0.15);
     outline-offset: 2px;
+  }
+  &:focus:not(:focus-visible) {
+    outline: none;
   }
   @media (max-width: 1024px) {
     display: none;

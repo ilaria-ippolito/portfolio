@@ -28,30 +28,18 @@ export const GoToHome = styled.div`
 `;
 
 export const HomeButton = styled.button`
-  background: none;
-  border: 2px solid var(--color-primary-500);
-  color: var(--color-primary-500);
-  font-size: 1.5rem;
-  font-weight: 700;
-  border-radius: var(--radius-lg);
-  padding: 0.7rem 2.2rem;
-  cursor: pointer;
-  transition: none;
-`;
-
-export const PrimaryButton = styled.button`
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background-color: var(--color-primary-500);
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--radius-lg);
+  background: none;
+  border: 2px solid var(--color-primary-500);
+  color: var(--color-primary-500);
+  font-size: 1.3rem;
   font-weight: 600;
-  border: none;
+  border-radius: var(--radius-lg);
+  padding: 0.75rem 1.5rem;
   cursor: pointer;
   transition: background 0.18s, color 0.18s;
-  font-size: 1.3rem;
 
   &:hover,
   &:focus-visible {
@@ -60,25 +48,78 @@ export const PrimaryButton = styled.button`
   }
 `;
 
+export const PrimaryButton = styled.button`
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--color-primary-500);
+  background-image: radial-gradient(circle at 50% 50%, var(--color-primary-700) 0%, var(--color-primary-700) 40%, transparent 41%);
+  background-repeat: no-repeat;
+  background-size: 0% 0%;
+  background-position: 50% 50%;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: color 0.18s;
+  font-size: 1.3rem;
+  position: relative;
+  overflow: hidden;
+
+  /* Remove ::before pseudo-element, use background instead */
+
+  /* No ::before hover needed */
+
+  &:hover,
+  &:focus-visible {
+    color: white;
+    background-size: 250% 250%;
+    background-position: 50% 50%;
+    transition: background-size 0.4s cubic-bezier(0.4,0,0.2,1), color 0.18s;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+    color: inherit;
+  }
+`;
+
 export const PrimaryLinkButton = styled.a`
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background-color: var(--color-primary-500);
+  background: var(--color-primary-500);
+  background-image: radial-gradient(circle at 50% 50%, var(--color-primary-700) 0%, var(--color-primary-700) 40%, transparent 41%);
+  background-repeat: no-repeat;
+  background-size: 0% 0%;
+  background-position: 50% 50%;
   color: var(--color-accent-50);
   padding: 0.75rem 1.5rem;
   border-radius: var(--radius-lg);
   font-weight: 600;
   text-decoration: none;
-  transition: background 0.18s, color 0.18s;
   border: none;
   cursor: pointer;
   font-size: 1rem;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.18s;
 
   &:hover,
   &:focus-visible {
-    background-color: var(--color-primary-700);
     color: var(--color-accent-50);
+    background-size: 250% 250%;
+    background-position: 50% 50%;
+    transition: background-size 0.4s cubic-bezier(0.4,0,0.2,1), color 0.18s;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+    color: inherit;
   }
 `;
 

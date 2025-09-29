@@ -7,13 +7,14 @@ const MetaItemContainer = styled.div`
 
 const MetaItemLabel = styled.h4`
   font-size: 1.1rem;
-  font-weight: 700;
   margin-bottom: 0.5rem;
+  font-weight: 400;
+  color: var(--color-neutral-500);
 `;
 
 const MetaItemValue = styled.p`
   font-size: 1rem;
-  color: var(--color-accent-700);
+  font-weight: 700;
 `;
 
 const MetaItem = ({ label, value }) => (

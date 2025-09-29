@@ -38,22 +38,22 @@ const ImagesGrid = styled.div`
  * - steps: [{ number, title, description }]
  * - images: array of src strings
  */
-const ProjectProcess = ({ steps = [], images = [] }) => (
+const ProjectProcess = ({ steps = [] }) => (
   <Section>
-    <h3>Processo e Soluzione</h3>
+    <h3 style={{ marginBottom: '2rem', fontSize: 'var(--type-title-md)' }}>Processo e Soluzione</h3>
     <StepsWrapper>
       {steps.map((s, i) => (
         <ProcessStep key={i} {...s} />
       ))}
     </StepsWrapper>
 
-    <ImagesGrid>
+    {/* <ImagesGrid>
       {images.map((src, i) => (
         <div key={i}>
           <img src={src} alt={`Project process ${i + 1}`} />
         </div>
       ))}
-    </ImagesGrid>
+    </ImagesGrid> */}
   </Section>
 );
 

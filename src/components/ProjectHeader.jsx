@@ -1,10 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
 import MetaItem from './MetaItem';
-import { Tag } from './SharedStyles';
+import { Tag, PrimaryLinkButton } from './SharedStyles';
+import { ExternalLink } from 'lucide-react';
 
 const HeaderWrapper = styled.header`
   margin-bottom: 2rem;
+  width: 100%;
+`;
+
+const TitleRow = styled.div`
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 4rem;
+  margin-bottom: 0.5rem;
+  min-width: 0;
 `;
 
 const Title = styled.h1`
@@ -26,11 +37,10 @@ const TimeRange = styled.div`
 `;
 
 const MetaGrid = styled.div`
-  background-color: var(--color-accent-50);
+  background-color: var(--color-neutral-50);
   border-radius: var(--radius-md);
   padding: 1.5rem;
   margin-top: 1.5rem;
-  border: 1px solid var(--color-accent-100);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 1rem;
@@ -42,17 +52,25 @@ const MetaGrid = styled.div`
  * - tags: array of strings
  * - meta: array of { label, value }
  */
-const ProjectHeader = ({ title, tags = [], meta = [], timeRange }) => (
+const ProjectHeader = ({ title, tags = [], meta = [], timeRange, behanceUrl }) => (
   <HeaderWrapper>
     <Tags>
       {tags.map((t, i) => (
         <Tag key={i}>{t}</Tag>
       ))}
     </Tags>
-
-    <Title>{title}</Title>
+    <TitleRow>
+      <Title style={{ minWidth: 0, overflowWrap: 'break-word' }}>{title}</Title>
+      {behanceUrl && (
+        <a href={behanceUrl} target="_blank" rel="noopener noreferrer">
+          <PrimaryLinkButton>
+            <ExternalLink size={18} style={{ marginRight: '0.5rem' }} />
+            Versione completa su Behance
+          </PrimaryLinkButton>
+        </a>
+      )}
+    </TitleRow>
     {timeRange && <TimeRange>{timeRange}</TimeRange>}
-
     <MetaGrid>
       {meta.map((m, i) => (
         <MetaItem key={i} label={m.label} value={m.value} />

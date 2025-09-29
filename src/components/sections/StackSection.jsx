@@ -8,8 +8,8 @@ const StackWrapper = styled.section`
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 1rem 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 2rem;
   align-items: center;
 `;
 
@@ -17,11 +17,12 @@ const Item = styled.div`
   display: flex;
   align-items: center;
   gap: 1rem;
-  background: var(--color-neutral-700);
+  background: transparent;
+  border: 1px solid var(--color-neutral-700);
   box-shadow: var(--shadow-sm);
   padding: 0.8rem 1rem;
   border-radius: var(--radius-md);
-  color: var(--color-neutral-50);
+  color: var(--color-neutral-700);
   min-width: 180px;
   max-width: 180px;
 `;
@@ -35,7 +36,7 @@ const Icon = styled.img`
 const Label = styled.span`
   font-size: var(--type-body);
   font-weight: 600;
-  color: var(--color-neutral-50);
+  color: var(--color-neutral-700);
 `;
 
 const tools = [

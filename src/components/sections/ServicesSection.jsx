@@ -13,21 +13,39 @@ const Grid = styled.div`
   gap: 1.5rem;
   margin-top: 1rem;
 
-  & > :nth-child(1) { margin-top: 0; }
-  & > :nth-child(2) { margin-top: 2.5rem; }
-  & > :nth-child(3) { margin-top: 5rem; }
-  & > :nth-child(4) { margin-top: 7.5rem; }
+  & > :nth-child(1) {
+    margin-top: 0;
+  }
+  & > :nth-child(2) {
+    margin-top: 2.5rem;
+  }
+  & > :nth-child(3) {
+    margin-top: 5rem;
+  }
+  & > :nth-child(4) {
+    margin-top: 7.5rem;
+  }
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1300px) {
     grid-template-columns: repeat(2, 1fr);
-    & > :nth-child(1) { margin-top: 0; }
-    & > :nth-child(2) { margin-top: 2rem; }
-    & > :nth-child(3) { margin-top: 0; }
-    & > :nth-child(4) { margin-top: 2rem; }
+    & > :nth-child(1) {
+      margin-top: 0;
+    }
+    & > :nth-child(2) {
+      margin-top: 2rem;
+    }
+    & > :nth-child(3) {
+      margin-top: 0;
+    }
+    & > :nth-child(4) {
+      margin-top: 2rem;
+    }
   }
   @media (max-width: 600px) {
     grid-template-columns: 1fr;
-    & > * { margin-top: 0 !important; }
+    & > * {
+      margin-top: 0 !important;
+    }
   }
 `;
 
@@ -77,7 +95,7 @@ const Title = styled.h4`
 const Desc = styled.p`
   margin: 0.2rem 0 0.2rem 0;
   color: var(--color-neutral-300);
-  font-size: var(--type-body-sm);
+  font-size: var(--type-body);
   line-height: 1.6;
 `;
 
@@ -85,7 +103,7 @@ const Bullets = styled.ul`
   margin: 0.7rem 0 0 0;
   padding: 0;
   color: var(--color-neutral-50);
-  font-size: var(--type-body);
+  font-size: var(--type-body-sm);
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -160,7 +178,15 @@ const ServicesSection = ({ id }) => (
         const IconComp = s.icon;
         return (
           <Card key={s.name}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '0.2rem', width: '100%' }}>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '1rem',
+                marginBottom: '0.2rem',
+                width: '100%',
+              }}
+            >
               <IconWrapper>
                 <IconComp size={22} />
               </IconWrapper>

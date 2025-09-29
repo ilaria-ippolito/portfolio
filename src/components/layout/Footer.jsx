@@ -69,7 +69,7 @@ const FooterLeft = styled.div`
 `;
 
 const BigText = styled.span`
-  color: var(--color-neutral-50);
+  color: var(--color-neutral-500);
   font-size: var(--type-title-md);
   font-weight: 800;
   letter-spacing: 1px;
@@ -214,7 +214,7 @@ const Footer = () => {
           </ColList>
         </Col>
       </TopGrid>
-      <BottomRow>© {new Date().getFullYear()} Ilaria Ippolito.</BottomRow>
+      <BottomRow>© {new Date().getFullYear()} Tutti i diritti riservati Ilaria Ippolito.</BottomRow>
     </FooterWrapper>
   );
 };

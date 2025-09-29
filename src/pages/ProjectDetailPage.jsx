@@ -9,6 +9,7 @@ import {
   HomeButton,
   PrimaryLinkButton,
 } from '../components/SharedStyles';
+import { ArrowLeft } from 'lucide-react';
 import { projectDetails } from '../data/projectDetailData';
 const ProjectDetailsWrapper = styled.div``;
 
@@ -94,7 +95,10 @@ const ProjectDetailPage = () => {
           <h2>Progetto non trovato</h2>
         <CenteredHomeButtonWrapper>
           <a href="/">
-            <HomeButton>← Torna alla home</HomeButton>
+            <HomeButton>
+              <ArrowLeft size={20} />
+              Torna alla home
+            </HomeButton>
           </a>
         </CenteredHomeButtonWrapper>
         </ProjectDetailsWrapper>
@@ -113,16 +117,17 @@ const ProjectDetailPage = () => {
     projectImages,
     results,
     resultsImage,
-    downloadUrl,
+    behanceUrl,
     timeRange,
+    coverImage,
   } = selectedProject;
 
   return (
     <Layout>
       {/* full-bleed hero */}
       <ProjectHero
-        src="assets/img/copertina-accessibilità.png"
-        alt="Copertina progetto accessibilità"
+        src={coverImage}
+        alt=""
       />
       <ProjectDetailsWrapper>
         <TitleRow>
@@ -131,14 +136,8 @@ const ProjectDetailPage = () => {
             tags={projectTags}
             meta={meta}
             timeRange={timeRange}
+            behanceUrl={behanceUrl}
           />
-          <PrimaryLinkButton
-            href={downloadUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Scarica il progetto completo (PDF)
-          </PrimaryLinkButton>
         </TitleRow>
         <ProjectContent>
           <ProjectOverview overviewText={overviewText} overviewImage={overviewImage} />
@@ -161,7 +160,6 @@ const ProjectDetailPage = () => {
             </HighlightedHeading>
             <ContentGrid>
               <TextContent>
-                <p className="results-content">Qui i risultati principali del progetto:</p>
                 {results.map((r, i) => (
                   <ResultItem key={i}>
                     <h3>{r.split(' ')[0]}</h3>
@@ -177,7 +175,10 @@ const ProjectDetailPage = () => {
         </ProjectContent>
         <CenteredHomeButtonWrapper>
           <a href="/">
-            <HomeButton>← Torna alla home</HomeButton>
+            <HomeButton>
+              <ArrowLeft size={20} />
+              Torna alla home
+            </HomeButton>
           </a>
         </CenteredHomeButtonWrapper>
       </ProjectDetailsWrapper>

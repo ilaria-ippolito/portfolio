@@ -22,6 +22,10 @@ const Title = styled.h1`
   margin: 0;
   color: var(--color-neutral-700);
 
+  @media (max-width: 1300px) {
+    font-size: 9rem;
+  }
+
   @media (max-width: 900px) {
     font-size: 7rem;
   }
