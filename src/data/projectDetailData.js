@@ -48,14 +48,21 @@ export const projectDetails = {
       { label: 'Anno', value: '2025' },
     ],
     coverImage: 'assets/img/projects/ivegan/cover.png',
-  overviewText: 'Restyling completo del sito e-commerce iVegan con l’obiettivo di aumentare le conversioni, migliorare l’usabilità e rafforzare la brand identity. Il progetto ha previsto una revisione della user experience, l’ottimizzazione dei flussi di acquisto e una nuova veste grafica più moderna e accessibile. Particolare attenzione è stata data alla chiarezza delle informazioni e alla semplicità di navigazione, per rendere l’esperienza utente più intuitiva e coinvolgente.',
+    overviewText:
+      'Restyling completo del sito e-commerce iVegan con l’obiettivo di aumentare le conversioni, migliorare l’usabilità e rafforzare la brand identity. Il progetto ha previsto una revisione della user experience, l’ottimizzazione dei flussi di acquisto e una nuova veste grafica più moderna e accessibile. Particolare attenzione è stata data alla chiarezza delle informazioni e alla semplicità di navigazione, per rendere l’esperienza utente più intuitiva e coinvolgente.',
     overviewImage: 'assets/img/projects/ivegan/overview.png',
-  challengeText: 'La sfida principale era semplificare la navigazione di un catalogo molto ampio e migliorare la presentazione dei prodotti, spesso penalizzati da descrizioni poco chiare e immagini non ottimizzate. Era fondamentale ridurre i punti di attrito nel processo di acquisto, rendendo più immediata la ricerca dei prodotti e la comprensione delle offerte. Inoltre, si è lavorato per trasmettere i valori del brand e la qualità dei prodotti attraverso un design coerente e accattivante.',
+    challengeText:
+      'La sfida principale era semplificare la navigazione di un catalogo molto ampio e migliorare la presentazione dei prodotti, spesso penalizzati da descrizioni poco chiare e immagini non ottimizzate. Era fondamentale ridurre i punti di attrito nel processo di acquisto, rendendo più immediata la ricerca dei prodotti e la comprensione delle offerte. Inoltre, si è lavorato per trasmettere i valori del brand e la qualità dei prodotti attraverso un design coerente e accattivante.',
     processSteps: [
       { number: 1, title: 'Ricerca utenti', description: 'Interviste e analisi comportamentale.' },
       { number: 2, title: 'Prototipazione', description: 'Creazione di prototipi e test A/B.' },
       { number: 3, title: 'UI Design', description: 'Aggiornamento visual e branding.' },
-      { number: 4, title: 'User test', description: 'Sessioni di test con utenti reali per validare le soluzioni proposte e raccogliere feedback utili.' },
+      {
+        number: 4,
+        title: 'User test',
+        description:
+          'Sessioni di test con utenti reali per validare le soluzioni proposte e raccogliere feedback utili.',
+      },
     ],
     projectImages: [
       'assets/img/projects/ivegan/project_1.png',
@@ -82,13 +89,19 @@ export const projectDetails = {
     ],
     coverImage: 'assets/img/projects/orizon/cover.png',
     overviewText:
-      'Creazione della nuova brand identity per Orizion, con focus su logo, palette e materiali coordinati.',
+      'Creazione della nuova brand identity per Orizion, con focus su logo, palette e materiali coordinati. Il progetto ha previsto una fase di ricerca approfondita sull’identità del brand, la definizione di una strategia visiva coerente e la realizzazione di tutti gli elementi grafici necessari per la comunicazione aziendale, sia online che offline. Particolare attenzione è stata posta alla versatilità del logo e all’armonia cromatica della palette, per garantire riconoscibilità e coerenza su tutti i canali.',
     overviewImage: 'assets/img/projects/orizon/overview.png',
-    challengeText: 'Definire un’identità visiva distintiva e versatile per diversi canali.',
+    challengeText:
+      'Definire un’identità visiva distintiva e versatile per diversi canali. La sfida principale è stata comprendere a fondo i valori e la missione di Orizion, traducendoli in elementi grafici che potessero adattarsi a molteplici supporti e contesti comunicativi. Era fondamentale creare un’immagine che trasmettesse professionalità e innovazione, mantenendo al tempo stesso semplicità e immediatezza.',
     processSteps: [
       { number: 1, title: 'Analisi', description: 'Studio del mercato e dei competitor.' },
       { number: 2, title: 'Concept', description: 'Sviluppo concept e moodboard.' },
       { number: 3, title: 'Design', description: 'Realizzazione logo e materiali.' },
+      {
+        number: 4,
+        title: 'Consegna',
+        description: 'Presentazione finale e consegna dei materiali al cliente.',
+      },
     ],
     projectImages: [
       'assets/img/projects/orizon/project_1.png',

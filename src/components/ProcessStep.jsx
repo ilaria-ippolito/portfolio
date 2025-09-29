@@ -8,29 +8,37 @@ const ProcessStepContainer = styled.div`
   transition: all 0.3s ease;
 `;
 
+const StepHeader = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+`;
+
 const StepNumber = styled.span`
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: var(--color-primary-500);
   color: var(--color-accent-50);
   width: 36px;
   height: 36px;
-  text-align: center;
-  line-height: 36px;
   border-radius: var(--radius-pill);
   font-size: 1.1rem;
   font-weight: 700;
-  margin-bottom: 1rem;
 `;
 
 const StepTitle = styled.h3`
-  margin-bottom: 0.75rem;
+  margin: 0;
   font-weight: 600;
 `;
 
 const ProcessStep = ({ number, title, description }) => (
   <ProcessStepContainer>
-    <StepNumber>{number}</StepNumber>
-    <StepTitle>{title}</StepTitle>
+    <StepHeader>
+      <StepNumber>{number}</StepNumber>
+      <StepTitle>{title}</StepTitle>
+    </StepHeader>
     <p>{description}</p>
   </ProcessStepContainer>
 );

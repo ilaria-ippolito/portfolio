@@ -60,9 +60,6 @@ const Subtitle = styled.div`
   @media (max-width: 900px) {
     font-size: 2rem;
   }
-  @media (max-width: 600px) {
-    font-size: 1.2rem;
-  }
 `;
 
 const Hero = () => {

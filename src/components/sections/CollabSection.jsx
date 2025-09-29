@@ -135,7 +135,7 @@ const CollabSection = ({ id = 'collab-section' }) => (
               >
                 <Linkedin color="var(--color-accent-50)" size={20} />
               </IconLink>
-              <IconLink href="mailto:info@example.com" aria-label="Email">
+              <IconLink href="mailto:ilariaippolito95@gmail.com" aria-label="Email">
                 <Mail color="var(--color-accent-50)" size={20} />
               </IconLink>
             </IconActions>

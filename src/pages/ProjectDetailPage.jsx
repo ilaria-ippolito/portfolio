@@ -55,6 +55,11 @@ const ContentGrid = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   align-items: start;
+
+  @media (max-width: 700px) {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
 `;
 
 const TextContent = styled.div`

@@ -100,7 +100,8 @@ const StatMuted2 = styled.div`
 `;
 
 const Neon = styled(StatCard)`
-  background: var(--color-accent-500); /* neon-ish */
+  background: var(--color-accent-500);
+  border: 2px solid var(--color-neutral-700);
   color: var(--color-neutral-700);
   transition: transform 220ms ease;
   @media (min-width: 901px) {
@@ -111,6 +112,7 @@ const Neon = styled(StatCard)`
 const Pink = styled(StatCard)`
   background: var(--color-primary-500);
   color: var(--color-neutral-50);
+  border: 2px solid var(--color-neutral-700);
   margin-left: 2.4rem;
   transition: margin 220ms ease, transform 220ms ease;
   @media (min-width: 1200px) {
@@ -124,7 +126,7 @@ const Pink = styled(StatCard)`
 
 const Outlined = styled(StatCard)`
   background: var(--color-neutral-700);
-  color: var(--color-neutral-100);
+  color: var(--color-neutral-50);
 `;
 
 const AboutSection = ({ id = 'about-section' }) => (

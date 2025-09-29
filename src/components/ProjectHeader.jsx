@@ -16,11 +16,21 @@ const TitleRow = styled.div`
   gap: 4rem;
   margin-bottom: 0.5rem;
   min-width: 0;
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    justify-items: start;
+  }
 `;
 
 const Title = styled.h1`
   font-size: 3rem;
   margin-bottom: 0.25rem;
+  word-break: break-word;
+  @media (max-width: 600px) {
+    font-size: 2rem;
+  }
 `;
 
 const Tags = styled.div`
@@ -44,6 +54,12 @@ const MetaGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 1rem;
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    gap: 0.7rem;
+  }
 `;
 
 /**
@@ -62,12 +78,15 @@ const ProjectHeader = ({ title, tags = [], meta = [], timeRange, behanceUrl }) =
     <TitleRow>
       <Title style={{ minWidth: 0, overflowWrap: 'break-word' }}>{title}</Title>
       {behanceUrl && (
-        <a href={behanceUrl} target="_blank" rel="noopener noreferrer">
-          <PrimaryLinkButton>
-            <ExternalLink size={18} style={{ marginRight: '0.5rem' }} />
-            Versione completa su Behance
-          </PrimaryLinkButton>
-        </a>
+        <PrimaryLinkButton
+          as="a"
+          href={behanceUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <ExternalLink size={18} style={{ marginRight: '0.5rem' }} />
+          Versione completa su Behance
+        </PrimaryLinkButton>
       )}
     </TitleRow>
     {timeRange && <TimeRange>{timeRange}</TimeRange>}

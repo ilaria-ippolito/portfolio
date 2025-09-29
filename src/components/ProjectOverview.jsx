@@ -10,6 +10,11 @@ const Grid = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
   align-items: start;
+
+  @media (max-width: 700px) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 `;
 
 const Text = styled.div`

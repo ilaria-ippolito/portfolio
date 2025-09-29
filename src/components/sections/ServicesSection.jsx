@@ -26,7 +26,7 @@ const Grid = styled.div`
     margin-top: 7.5rem;
   }
 
-  @media (max-width: 1300px) {
+  @media (max-width: 1500px) {
     grid-template-columns: repeat(2, 1fr);
     & > :nth-child(1) {
       margin-top: 0;
@@ -53,7 +53,7 @@ const Card = styled.div`
   background: var(--color-neutral-700);
   border: 1px solid var(--color-neutral-500);
   border-radius: var(--radius-lg);
-  padding: 1.2rem 1.2rem 1.1rem 1.2rem;
+  padding: 2rem;
   display: block;
   color: var(--color-neutral-50);
   box-shadow: var(--shadow-sm);
@@ -87,7 +87,6 @@ const IconWrapper = styled.div`
 const Title = styled.h4`
   font-size: var(--type-title-md);
   font-weight: 800;
-  margin: 0;
   letter-spacing: -0.01em;
   color: var(--color-neutral-50);
 `;
@@ -161,7 +160,7 @@ const services = [
     ],
   },
   {
-    name: 'User Interface & Prototyping',
+    name: 'User Interface',
     icon: Monitor,
     desc: 'Design di interfacce e prototipi interattivi ad alta fedeltà.',
     bullets: ['Wireframes', 'Mockup ad alta fedeltà', 'Prototipi interattivi', 'Design systems'],
@@ -183,7 +182,7 @@ const ServicesSection = ({ id }) => (
                 display: 'flex',
                 alignItems: 'center',
                 gap: '1rem',
-                marginBottom: '0.2rem',
+                marginBottom: '1rem',
                 width: '100%',
               }}
             >
