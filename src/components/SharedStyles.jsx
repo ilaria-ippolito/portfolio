@@ -130,5 +130,4 @@ export const Tag = styled.span`
   padding: 0.22rem 0.6rem;
   border-radius: var(--radius-md);
   line-height: 1;
-  box-shadow: var(--shadow-sm);
 `;

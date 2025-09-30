@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { PrimaryButton } from '../SharedStyles';
 import { Download } from 'lucide-react';
+import { HighlightedHeading, SectionTitle } from '../SharedStyles';
 
 const Section = styled.section`
   color: var(--color-neutral-700);
@@ -68,14 +69,6 @@ const Right = styled.div`
   align-items: stretch;
 `;
 
-import { keyframes } from 'styled-components';
-
-const float = keyframes`
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-  100% { transform: translateY(0); }
-`;
-
 const StatCard = styled.div`
   border-radius: var(--radius-md);
   padding: 1.25rem 1.5rem;
@@ -83,8 +76,6 @@ const StatCard = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  box-shadow: var(--shadow-sm);
-  animation: ${float} 2.2s ease-in-out infinite;
 `;
 
 const StatNumber = styled.div`
@@ -110,18 +101,27 @@ const StatMuted2 = styled.div`
 
 const Neon = styled(StatCard)`
   background: var(--color-accent-500);
-  border: 2px solid var(--color-neutral-700);
+  border: 1px solid var(--color-neutral-700);
   color: var(--color-neutral-700);
   transition: transform 220ms ease;
   @media (min-width: 901px) {
     transform: translateY(-6px);
   }
+
+  margin-left: 2.4rem;
+  @media (min-width: 1200px) {
+    margin-left: 3.2rem;
+  }
+  @media (max-width: 900px) {
+    margin-left: 0;
+    transform: none;
+  }
 `;
 
 const Pink = styled(StatCard)`
   background: var(--color-primary-500);
-  color: var(--color-neutral-50);
-  border: 2px solid var(--color-neutral-700);
+  color: var(--color-neutral-100);
+  border: 1px solid var(--color-neutral-700);
   margin-left: 2.4rem;
   transition: margin 220ms ease, transform 220ms ease;
   @media (min-width: 1200px) {
@@ -140,17 +140,21 @@ const Outlined = styled(StatCard)`
 
 const AboutSection = ({ id = 'about-section' }) => (
   <Section id={id}>
+    <HighlightedHeading>
+      <SectionTitle>About me</SectionTitle>
+    </HighlightedHeading>
     <Grid>
       <Left>
-        <Headline><strong>Ilaria</strong> — <strong>UX/UI Designer</strong></Headline>
         <Intro>
           Sono una <strong>UX/UI Designer</strong> e porto con me un percorso creativo che passa
-          dall'<strong>illustrazione</strong> e dalla <strong>fotografia</strong> fino alla comunicazione. Ho una laurea triennale in
-           Discipline dello Spettacolo e della Comunicazione e un diploma in illustrazione; più
-          recentemente ho approfondito lo studio della fotografia.
+          dall'<strong>illustrazione</strong> e dalla <strong>fotografia</strong> fino alla
+          comunicazione. Ho una laurea triennale in Discipline dello Spettacolo e della
+          Comunicazione e un diploma in illustrazione; più recentemente ho approfondito lo studio
+          della fotografia.
         </Intro>
         <Intro>
-          Ho da poco terminato un master intensivodella durata di <strong>900 ore</strong> in UX/UI presso{' '}
+          Ho da poco terminato un master intensivodella durata di <strong>900 ore</strong> in UX/UI
+          presso{' '}
           <a
             href="https://www.start2impact.it/"
             target="_blank"
@@ -159,12 +163,13 @@ const AboutSection = ({ id = 'about-section' }) => (
           >
             <strong>Start2impact</strong>
           </a>{' '}
-          . Mi appassiona progettare esperienze utili e accessibili: dalla fase di <strong>discovery</strong> al
+          . Mi appassiona progettare esperienze utili e accessibili: dalla fase di{' '}
+          <strong>discovery</strong> al
           <strong> wireframing</strong>, fino al <strong>prototipo</strong>.
         </Intro>
         <Intro>
-          Ho esperienza in contesti amministrativi e come fotografa per eventi, e sto
-          cercando ruoli che mi permettano di mettere in pratica le competenze UX e
+          Ho esperienza in contesti amministrativi e come fotografa per eventi, e sto cercando ruoli
+          che mi permettano di mettere in pratica le competenze UX e
           <strong> crescere come designer</strong>.
         </Intro>
 
@@ -184,17 +189,17 @@ const AboutSection = ({ id = 'about-section' }) => (
           <StatMuted>UX/UI Design — Start2impact</StatMuted>
         </Neon>
 
-        <Pink>
-          <StatNumber>Laurea</StatNumber>
-          <StatText>Discipline dello Spettacolo e della Comunicazione — Università di Pisa</StatText>
-        </Pink>
-
         <Outlined>
-          <StatNumber>Diploma</StatNumber>
-          <StatMuted2>
-            Illustrazione — Accademia d'Arte Bianca Cappello
-          </StatMuted2>
+          <StatNumber>Laurea</StatNumber>
+          <StatText>
+            Discipline dello Spettacolo e della Comunicazione — Università di Pisa
+          </StatText>
         </Outlined>
+
+        <Pink>
+          <StatNumber>Diploma</StatNumber>
+          <StatText>Illustrazione — Accademia d'Arte Bianca Cappello</StatText>
+        </Pink>
       </Right>
     </Grid>
   </Section>

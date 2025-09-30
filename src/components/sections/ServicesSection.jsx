@@ -17,13 +17,13 @@ const Grid = styled.div`
     margin-top: 0;
   }
   & > :nth-child(2) {
-    margin-top: 2.5rem;
+    margin-top: 4rem;
   }
   & > :nth-child(3) {
-    margin-top: 5rem;
+    margin-top: 8rem;
   }
   & > :nth-child(4) {
-    margin-top: 7.5rem;
+    margin-top: 12rem;
   }
 
   @media (max-width: 1500px) {
@@ -32,13 +32,13 @@ const Grid = styled.div`
       margin-top: 0;
     }
     & > :nth-child(2) {
-      margin-top: 2rem;
+      margin-top: 4rem;
     }
     & > :nth-child(3) {
       margin-top: 0;
     }
     & > :nth-child(4) {
-      margin-top: 2rem;
+      margin-top: 4rem;
     }
   }
   @media (max-width: 600px) {
@@ -56,7 +56,6 @@ const Card = styled.div`
   padding: 2rem;
   display: block;
   color: var(--color-neutral-50);
-  box-shadow: var(--shadow-sm);
   height: 300px;
   overflow: hidden;
 `;

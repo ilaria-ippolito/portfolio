@@ -72,7 +72,6 @@ const MenuToggleBtn = styled.button`
     border-radius: var(--radius-pill);
     width: 44px;
     height: 44px;
-    box-shadow: var(--shadow-sm);
   }
 `;
 
@@ -91,9 +90,32 @@ const StyledNav = styled.nav`
     letter-spacing: 1px;
     color: var(--color-primary-500);
     text-decoration: none;
-    transition: none;
     box-sizing: border-box;
     display: inline-block;
+    position: relative;
+    transition: color 0.25s cubic-bezier(0.4,0,0.2,1);
+  }
+  a::after {
+    content: '';
+    position: absolute;
+    left: 1.2rem;
+    right: 1.2rem;
+    bottom: 0.7rem;
+    height: 2px;
+    background: var(--color-primary-500);
+    border-radius: 1px;
+    transform: scaleX(0);
+    transition: transform 0.25s cubic-bezier(0.4,0,0.2,1);
+    opacity: 0.7;
+    pointer-events: none;
+  }
+  a:hover,
+  a:focus-visible {
+    color: var(--color-primary-700);
+  }
+  a:hover::after,
+  a:focus-visible::after {
+    transform: scaleX(1);
   }
   @media (max-width: 600px) {
     position: fixed;

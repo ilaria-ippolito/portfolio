@@ -1,12 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
-@import './tailwind-utilities.css';
-@import '../public/assets/css/style.css';
-
-/* Design tokens (CSS variables) available across the app */
+/* Design tokens (CSS variables) */
 :root {
   /* Palette scale */
   --color-primary-50: #fff0fb;
@@ -49,7 +43,7 @@
   --type-title-lg: 1.75rem; /* 28px, was xl */
 
   /* Shadows */
-  --shadow-color: 218deg 49% 7%;
+  --shadow-color: 0deg 0% 63%;
   --shadow-sm: 0.4px 0.5px 0.7px hsl(var(--shadow-color) / 0.33),
     0.7px 0.8px 1.2px -1.2px hsl(var(--shadow-color) / 0.33),
     1.6px 1.8px 2.7px -2.5px hsl(var(--shadow-color) / 0.33);

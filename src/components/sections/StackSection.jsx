@@ -19,7 +19,6 @@ const Item = styled.div`
   gap: 1rem;
   background: transparent;
   border: 1px solid var(--color-neutral-700);
-  // box-shadow: var(--shadow-sm);
   padding: 0.8rem 1rem;
   border-radius: var(--radius-md);
   color: var(--color-neutral-700);
