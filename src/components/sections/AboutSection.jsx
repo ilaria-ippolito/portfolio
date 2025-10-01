@@ -27,14 +27,6 @@ const Left = styled.div`
   max-width: 760px;
 `;
 
-const Headline = styled.h2`
-  font-size: var(--type-title-lg);
-  line-height: 1.15;
-  margin: 0 0 1.25rem 0;
-  color: var(--color-neutral-700);
-  font-weight: 700;
-`;
-
 const Intro = styled.p`
   color: var(--color-neutral-600);
   margin: 0 0 0.75rem 0;
@@ -47,19 +39,6 @@ const Ctas = styled.div`
   display: flex;
   gap: 0.75rem;
   flex-wrap: wrap;
-`;
-
-const SecondaryButton = styled.a`
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  padding: 0.65rem 1rem;
-  border-radius: var(--radius-md);
-  background: rgba(255, 255, 255, 0.04);
-  color: var(--color-neutral-50);
-  text-decoration: none;
-  font-size: 0.95rem;
-  border: 1px solid rgba(255, 255, 255, 0.04);
 `;
 
 const Right = styled.div`
@@ -92,11 +71,6 @@ const StatText = styled.div`
 const StatMuted = styled.div`
   font-size: var(--type-label);
   color: rgba(0, 0, 0, 0.7);
-`;
-
-const StatMuted2 = styled.div`
-  font-size: var(--type-label);
-  color: var(--color-neutral-300);
 `;
 
 const Neon = styled(StatCard)`
@@ -184,22 +158,22 @@ const AboutSection = ({ id = 'about-section' }) => (
       </Left>
 
       <Right>
-        <Neon>
+        <Outlined>
           <StatNumber>Master</StatNumber>
-          <StatMuted>UX/UI Design — Start2impact</StatMuted>
+          <StatText>UX/UI Design — Start2impact</StatText>
+        </Outlined>
+
+        <Neon>
+          <StatNumber>Laurea</StatNumber>
+          <StatMuted>
+            Discipline dello Spettacolo e della Comunicazione — Università di Pisa
+          </StatMuted>
         </Neon>
 
         <Outlined>
-          <StatNumber>Laurea</StatNumber>
-          <StatText>
-            Discipline dello Spettacolo e della Comunicazione — Università di Pisa
-          </StatText>
-        </Outlined>
-
-        <Pink>
           <StatNumber>Diploma</StatNumber>
           <StatText>Illustrazione — Accademia d'Arte Bianca Cappello</StatText>
-        </Pink>
+        </Outlined>
       </Right>
     </Grid>
   </Section>

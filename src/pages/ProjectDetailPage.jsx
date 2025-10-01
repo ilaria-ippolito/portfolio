@@ -44,9 +44,11 @@ const ProjectHero = styled.img`
   margin-top: 7rem;
   margin-bottom: 3rem;
 
-   @media (max-width: 700px) {
-    object-position: right;
-  }
+  ${props => props.projectId !== 'orizon' && `
+    @media (max-width: 700px) {
+      object-position: right;
+    }
+  `}
 `;
 
 const ProjectContent = styled.div``;
@@ -141,7 +143,7 @@ const ProjectDetailPage = () => {
   return (
     <Layout>
       {/* full-bleed hero */}
-      <ProjectHero src={coverImage} alt="" />
+      <ProjectHero src={coverImage} alt="" projectId={projectId} />
       <ProjectDetailsWrapper>
         <TitleRow>
           <ProjectHeader
