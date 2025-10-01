@@ -55,6 +55,7 @@ const BottomRow = styled.div`
 `;
 
 const FooterLeft = styled.div`
+  max-width: 300px;
   color: var(--color-primary-500);
   text-decoration: none;
   display: flex;
@@ -165,25 +166,42 @@ const Footer = () => {
           <ColTitle>Scopri</ColTitle>
           <ColList>
             <ColItem>
-              <NavLink href="#work-section" onClick={(e) => scrollToSection({ event: e, id: 'work-section', location, navigate })}>
+              <NavLink
+                href="#work-section"
+                onClick={(e) =>
+                  scrollToSection({ event: e, id: 'work-section', location, navigate })
+                }
+              >
                 Progetti
               </NavLink>
             </ColItem>
             <ColItem>
-              <NavLink href="#stack-section" onClick={(e) => scrollToSection({ event: e, id: 'stack-section', location, navigate })}>
+              <NavLink
+                href="#stack-section"
+                onClick={(e) =>
+                  scrollToSection({ event: e, id: 'stack-section', location, navigate })
+                }
+              >
                 Stack
               </NavLink>
             </ColItem>
             <ColItem>
               <NavLink
                 href="#services-section"
-                onClick={(e) => scrollToSection({ event: e, id: 'services-section', location, navigate })}
+                onClick={(e) =>
+                  scrollToSection({ event: e, id: 'services-section', location, navigate })
+                }
               >
                 Servizi
               </NavLink>
             </ColItem>
             <ColItem>
-              <NavLink href="#about-section" onClick={(e) => scrollToSection({ event: e, id: 'about-section', location, navigate })}>
+              <NavLink
+                href="#about-section"
+                onClick={(e) =>
+                  scrollToSection({ event: e, id: 'about-section', location, navigate })
+                }
+              >
                 About me
               </NavLink>
             </ColItem>
@@ -214,7 +232,9 @@ const Footer = () => {
           </ColList>
         </Col>
       </TopGrid>
-      <BottomRow>© {new Date().getFullYear()} Tutti i diritti riservati - Ilaria Ippolito.</BottomRow>
+      <BottomRow>
+        © {new Date().getFullYear()} Tutti i diritti riservati - Ilaria Ippolito.
+      </BottomRow>
     </FooterWrapper>
   );
 };

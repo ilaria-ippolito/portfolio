@@ -1,28 +1,49 @@
-
 import React from 'react';
 import Layout from '../components/layout/Layout';
 import { GoToHome, HomeButton } from '../components/SharedStyles';
 import { ArrowLeft } from 'lucide-react';
 
 const NotFoundPage = () => (
-    <Layout>
-  <div style={{ minHeight: '60vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: 'var(--color-accent-50)', background: 'var(--color-neutral-700)', borderRadius: 'var(--radius-lg)', margin: '3rem auto', maxWidth: 700, padding: '2.5rem 1.5rem' }}>
-        <h1 style={{ fontSize: '3rem', marginBottom: '1rem' }}>404</h1>
-        <h2 style={{ fontWeight: 700, marginBottom: '1.5rem' }}>Pagina non trovata</h2>
-  <p style={{ fontSize: '1.2rem', color: 'var(--color-neutral-100)', marginBottom: '2rem', textAlign: 'center' }}>
-          Oops! La pagina che cerchi non esiste o è stata spostata.<br />
-          Torna alla home o scopri i progetti in evidenza!
-        </p>
-        <GoToHome>
-          <a href="/">
-            <HomeButton>
-              <ArrowLeft size={20} />
-              Torna alla home
-            </HomeButton>
-          </a>
-        </GoToHome>
-      </div>
-    </Layout>
+  <Layout>
+    <div
+      style={{
+        // minHeight: '60vh',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: 'var(--color-accent-50)',
+        background: 'var(--color-neutral-700)',
+        borderRadius: 'var(--radius-lg)',
+        margin: '7rem auto',
+        maxWidth: 700,
+        padding: '2.5rem 1.5rem',
+      }}
+    >
+      <h1 style={{ fontSize: '3rem', marginBottom: '1rem' }}>404</h1>
+      <h2 style={{ fontWeight: 700, marginBottom: '1.5rem' }}>Pagina non trovata</h2>
+      <p
+        style={{
+          fontSize: '1.2rem',
+          color: 'var(--color-neutral-100)',
+          marginBottom: '2rem',
+          textAlign: 'center',
+        }}
+      >
+        Oops! La pagina che cerchi non esiste o è stata spostata.
+        <br />
+        Torna alla home o scopri i progetti in evidenza!
+      </p>
+      <GoToHome>
+        <a href="/">
+          <HomeButton>
+            <ArrowLeft size={20} />
+            Torna alla home
+          </HomeButton>
+        </a>
+      </GoToHome>
+    </div>
+  </Layout>
 );
 
 export default NotFoundPage;

@@ -15,9 +15,22 @@ export const SectionTitle = styled.h3`
 `;
 
 export const CustomPaddingX = styled.section`
-  padding: 0 5rem;
-    @media (max-width: 600px) {
-      padding: 0 1rem;
+  padding: 0 25rem;
+
+  @media (max-width: 2000px) {
+    padding: 0 15rem;
+  }
+
+  @media (max-width: 1700px) {
+    padding: 0 10rem;
+  }
+
+  @media (max-width: 1500px) {
+    padding: 0 5rem;
+  }
+
+  @media (max-width: 600px) {
+    padding: 0 1rem;
   }
 `;
 
@@ -36,7 +49,7 @@ export const HomeButton = styled.button`
   color: var(--color-primary-500);
   font-size: 1.3rem;
   font-weight: 600;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   padding: 0.75rem 1.5rem;
   cursor: pointer;
   transition: background 0.18s, color 0.18s;
@@ -53,13 +66,18 @@ export const PrimaryButton = styled.button`
   align-items: center;
   gap: 0.5rem;
   background: var(--color-primary-500);
-  background-image: radial-gradient(circle at 50% 50%, var(--color-primary-700) 0%, var(--color-primary-700) 40%, transparent 41%);
+  background-image: radial-gradient(
+    circle at 50% 50%,
+    var(--color-primary-700) 0%,
+    var(--color-primary-700) 40%,
+    transparent 41%
+  );
   background-repeat: no-repeat;
   background-size: 0% 0%;
   background-position: 50% 50%;
   color: white;
   padding: 0.75rem 1.5rem;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   font-weight: 600;
   border: none;
   cursor: pointer;
@@ -77,7 +95,7 @@ export const PrimaryButton = styled.button`
     color: white;
     background-size: 250% 250%;
     background-position: 50% 50%;
-    transition: background-size 0.4s cubic-bezier(0.4,0,0.2,1), color 0.18s;
+    transition: background-size 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.18s;
   }
 
   > * {
@@ -92,13 +110,18 @@ export const PrimaryLinkButton = styled.a`
   align-items: center;
   gap: 0.5rem;
   background: var(--color-primary-500);
-  background-image: radial-gradient(circle at 50% 50%, var(--color-primary-700) 0%, var(--color-primary-700) 40%, transparent 41%);
+  background-image: radial-gradient(
+    circle at 50% 50%,
+    var(--color-primary-700) 0%,
+    var(--color-primary-700) 40%,
+    transparent 41%
+  );
   background-repeat: no-repeat;
   background-size: 0% 0%;
   background-position: 50% 50%;
   color: var(--color-accent-50);
   padding: 0.75rem 1.5rem;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   font-weight: 600;
   text-decoration: none;
   border: none;
@@ -113,7 +136,7 @@ export const PrimaryLinkButton = styled.a`
     color: var(--color-accent-50);
     background-size: 250% 250%;
     background-position: 50% 50%;
-    transition: background-size 0.4s cubic-bezier(0.4,0,0.2,1), color 0.18s;
+    transition: background-size 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.18s;
   }
 
   > * {

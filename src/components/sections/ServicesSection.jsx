@@ -56,8 +56,12 @@ const Card = styled.div`
   padding: 2rem;
   display: block;
   color: var(--color-neutral-50);
-  height: 300px;
+  height: 350px;
   overflow: hidden;
+
+  @media (max-width: 1500px) {
+    height: 320px;
+  }
 `;
 
 const IconWrapper = styled.div`

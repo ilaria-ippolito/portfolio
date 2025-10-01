@@ -127,7 +127,7 @@ const AboutSection = ({ id = 'about-section' }) => (
           della fotografia.
         </Intro>
         <Intro>
-          Ho da poco terminato un master intensivodella durata di <strong>900 ore</strong> in UX/UI
+          Ho da poco terminato un master intensivo della durata di <strong>900 ore</strong> in UX/UI
           presso{' '}
           <a
             href="https://www.start2impact.it/"
