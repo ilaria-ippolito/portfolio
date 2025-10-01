@@ -13,6 +13,11 @@ const Section = styled.section`
   padding: 3rem 1rem;
   color: var(--color-neutral-700);
   text-align: center;
+
+  @media (max-width: 768px) {
+    align-items: flex-start;
+    text-align: left;
+  }
 `;
 
 const Title = styled.h1`
@@ -31,6 +36,7 @@ const Title = styled.h1`
   }
   @media (max-width: 600px) {
     font-size: 4.5rem;
+    line-height: normal;
   }
 `;
 

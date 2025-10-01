@@ -3,8 +3,6 @@ export const projectDetails = {
     projectTitle: 'Ticketone redesign',
     projectTags: ['Figma', 'Wave', 'Maze'],
     meta: [
-      { label: 'Durata', value: '2 mesi' },
-      { label: 'Ruolo', value: 'UX/UI Designer' },
       { label: 'Cliente', value: 'Ticketone' },
       { label: 'Anno', value: '2025' },
     ],
@@ -42,8 +40,6 @@ export const projectDetails = {
     projectTitle: 'iVegan redesign',
     projectTags: ['Figma', 'Wave', 'Maze'],
     meta: [
-      { label: 'Durata', value: '1 mese' },
-      { label: 'Ruolo', value: 'UX/UI Designer' },
       { label: 'Cliente', value: 'iVegan' },
       { label: 'Anno', value: '2025' },
     ],
@@ -79,20 +75,18 @@ export const projectDetails = {
     timeRange: 'Ago 2025 — Set 2025',
   },
   orizon: {
-    projectTitle: 'Orizion Brand Identity',
+    projectTitle: 'Orizon Brand Identity',
     projectTags: ['Illustrator', 'Photoshop'],
     meta: [
-      { label: 'Durata', value: '1 mese' },
-      { label: 'Ruolo', value: 'Brand Designer' },
-      { label: 'Cliente', value: 'Orizion' },
+      { label: 'Cliente', value: 'Orizon' },
       { label: 'Anno', value: '2024' },
     ],
     coverImage: 'assets/img/projects/orizon/cover.png',
     overviewText:
-      'Creazione della nuova brand identity per Orizion, con focus su logo, palette e materiali coordinati. Il progetto ha previsto una fase di ricerca approfondita sull’identità del brand, la definizione di una strategia visiva coerente e la realizzazione di tutti gli elementi grafici necessari per la comunicazione aziendale, sia online che offline. Particolare attenzione è stata posta alla versatilità del logo e all’armonia cromatica della palette, per garantire riconoscibilità e coerenza su tutti i canali.',
+      'Creazione della nuova brand identity per Orizon, con focus su logo, palette e materiali coordinati. Il progetto ha previsto una fase di ricerca approfondita sull’identità del brand, la definizione di una strategia visiva coerente e la realizzazione di tutti gli elementi grafici necessari per la comunicazione aziendale, sia online che offline. Particolare attenzione è stata posta alla versatilità del logo e all’armonia cromatica della palette, per garantire riconoscibilità e coerenza su tutti i canali.',
     overviewImage: 'assets/img/projects/orizon/overview.png',
     challengeText:
-      'Definire un’identità visiva distintiva e versatile per diversi canali. La sfida principale è stata comprendere a fondo i valori e la missione di Orizion, traducendoli in elementi grafici che potessero adattarsi a molteplici supporti e contesti comunicativi. Era fondamentale creare un’immagine che trasmettesse professionalità e innovazione, mantenendo al tempo stesso semplicità e immediatezza.',
+      'Definire un’identità visiva distintiva e versatile per diversi canali. La sfida principale è stata comprendere a fondo i valori e la missione di Orizon, traducendoli in elementi grafici che potessero adattarsi a molteplici supporti e contesti comunicativi. Era fondamentale creare un’immagine che trasmettesse professionalità e innovazione, mantenendo al tempo stesso semplicità e immediatezza.',
     processSteps: [
       { number: 1, title: 'Analisi', description: 'Studio del mercato e dei competitor.' },
       { number: 2, title: 'Concept', description: 'Sviluppo concept e moodboard.' },

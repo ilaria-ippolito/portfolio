@@ -47,7 +47,7 @@ const TimeRange = styled.div`
 `;
 
 const MetaGrid = styled.div`
-  background-color: var(--color-neutral-50);
+  background-color: var(--color-neutral-100);
   border-radius: var(--radius-md);
   padding: 1.5rem;
   margin-top: 1.5rem;

@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { Mail, Linkedin } from 'lucide-react';
 
 const Section = styled.section`
-  // background: var(--color-neutral-700);
   border-radius: var(--radius-lg);
   margin-top: 4.5rem;
   @media (max-width: 900px) {

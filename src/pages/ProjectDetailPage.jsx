@@ -7,10 +7,11 @@ import {
   HighlightedHeading,
   SectionTitle,
   HomeButton,
-  PrimaryLinkButton,
 } from '../components/SharedStyles';
 import { ArrowLeft } from 'lucide-react';
 import { projectDetails } from '../data/projectDetailData';
+import { useLocation } from 'react-router-dom';
+
 const ProjectDetailsWrapper = styled.div``;
 
 const TitleRow = styled.div`
@@ -44,9 +45,11 @@ const ProjectHero = styled.img`
   margin-top: 7rem;
   margin-bottom: 3rem;
 
-   @media (max-width: 700px) {
-    object-position: right;
-  }
+  ${props => props.projectId !== 'orizon' && `
+    @media (max-width: 700px) {
+      object-position: right;
+    }
+  `}
 `;
 
 const ProjectContent = styled.div``;
@@ -76,6 +79,26 @@ const TextContent = styled.div`
       max-width: 100%;
     }
   }
+
+  ul {
+    padding-left: 1.2rem;
+    margin: 0;
+    list-style-type: disc;
+
+    @media (max-width: 700px) {
+      max-width: 100%;
+    }
+  }
+
+  li {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+    font-size: var(--type-body);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 `;
 
 const ImageContent = styled.div`
@@ -93,7 +116,6 @@ const ResultItem = styled.div`
   margin-bottom: 1rem;
 `;
 
-import { useLocation } from 'react-router-dom';
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
@@ -140,8 +162,7 @@ const ProjectDetailPage = () => {
 
   return (
     <Layout>
-      {/* full-bleed hero */}
-      <ProjectHero src={coverImage} alt="" />
+      <ProjectHero src={coverImage} alt="" projectId={projectId} />
       <ProjectDetailsWrapper>
         <TitleRow>
           <ProjectHeader
@@ -173,12 +194,11 @@ const ProjectDetailPage = () => {
             </HighlightedHeading>
             <ContentGrid>
               <TextContent>
-                {results.map((r, i) => (
-                  <ResultItem key={i}>
-                    <h3>{r.split(' ')[0]}</h3>
-                    <p>{r}</p>
-                  </ResultItem>
-                ))}
+                <ul>
+                  {results.map((r, i) => (
+                    <li key={i}>{r}</li>
+                  ))}
+                </ul>
               </TextContent>
               <ImageContent>
                 <img src={resultsImage} alt="Results visual" />
