@@ -47,7 +47,7 @@ const FeaturedProjects = ({ id }) => (
           img="assets/img/projects/ticketone/card_cover.png"
           title="Ticketone redesign"
           tags={['Figma', 'Wave', 'Maze']}
-          dateRange="Set 2025 — Ott 2025"
+          dateRange="Ago 2025 — Set 2025"
           href="/project-detail?project=ticketone"
         />
       </AreaFull>
@@ -57,7 +57,7 @@ const FeaturedProjects = ({ id }) => (
           img="assets/img/projects/ivegan/card_cover.png"
           title="iVegan redesign"
           tags={['Figma', 'Wave', 'Maze']}
-          dateRange="Ago 2025 — Set 2025"
+          dateRange="Gen 2025 — Ago 2025"
           href="/project-detail?project=ivegan"
         />
       </AreaSplit1>

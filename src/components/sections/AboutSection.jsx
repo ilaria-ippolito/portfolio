@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { PrimaryButton } from '../SharedStyles';
+import { SecondaryButton } from '../SharedStyles';
 import { Download } from 'lucide-react';
 import { HighlightedHeading, SectionTitle } from '../SharedStyles';
 
@@ -115,19 +115,16 @@ const Outlined = styled(StatCard)`
 const AboutSection = ({ id = 'about-section' }) => (
   <Section id={id}>
     <HighlightedHeading>
-      <SectionTitle>About me</SectionTitle>
+      <SectionTitle>Chi sono</SectionTitle>
     </HighlightedHeading>
     <Grid>
       <Left>
         <Intro>
-          Sono una <strong>UX/UI Designer</strong> e porto con me un percorso creativo che passa
-          dall'<strong>illustrazione</strong> e dalla <strong>fotografia</strong> fino alla
-          comunicazione. Ho una laurea triennale in Discipline dello Spettacolo e della
-          Comunicazione e un diploma in illustrazione; più recentemente ho approfondito lo studio
-          della fotografia.
+          Sono una <strong>UX/UI Designer</strong> con un background in discipline dello 
+          <strong> spettacolo e comunicazione</strong>.
         </Intro>
         <Intro>
-          Ho da poco terminato un master intensivo della durata di <strong>900 ore</strong> in UX/UI
+          Ho completato un master intensivo in UX/UI dalla durata di <strong>900 ore </strong> 
           presso{' '}
           <a
             href="https://www.start2impact.it/"
@@ -137,22 +134,22 @@ const AboutSection = ({ id = 'about-section' }) => (
           >
             <strong>Start2impact</strong>
           </a>{' '}
-          . Mi appassiona progettare esperienze utili e accessibili: dalla fase di{' '}
+          , dove ho affinato le mie competenze su tutte le fasi di progettazione: dalla {' '}
           <strong>discovery</strong> al
-          <strong> wireframing</strong>, fino al <strong>prototipo</strong>.
+          <strong> wireframing</strong>, fino alla <strong>prototipazione e test utenti</strong>.
         </Intro>
         <Intro>
-          Ho esperienza in contesti amministrativi e come fotografa per eventi, e sto cercando ruoli
-          che mi permettano di mettere in pratica le competenze UX e
+          Sono alla ricerca di opportunità 
+          che mi permettano di applicare e sviluppare le mie competenze UX/UI, e di
           <strong> crescere come designer</strong>.
         </Intro>
 
         <Ctas>
           <a href="assets/documents/cv.pdf" download style={{ textDecoration: 'none' }}>
-            <PrimaryButton as="span">
+            <SecondaryButton as="span">
               CV completo
               <Download size={18} style={{ marginLeft: 8 }} />
-            </PrimaryButton>
+            </SecondaryButton>
           </a>
         </Ctas>
       </Left>

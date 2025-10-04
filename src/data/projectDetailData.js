@@ -8,19 +8,18 @@ export const projectDetails = {
     ],
     coverImage: 'assets/img/projects/ticketone/cover.png',
     overviewText:
-      'Redesign della piattaforma Ticketone per migliorare l’esperienza utente e l’accessibilità. Il progetto ha previsto una revisione completa dei flussi di acquisto, una nuova architettura dell’informazione e l’adozione di un design system modulare. Particolare attenzione è stata data all’inclusività, con test di accessibilità e ottimizzazione per dispositivi mobili. Il risultato è una piattaforma più intuitiva, veloce e in linea con le esigenze degli utenti moderni e delle best practice UX/UI.\n\nDurante il redesign, sono state condotte sessioni di co-design con stakeholder e utenti reali per individuare criticità e opportunità di miglioramento.\n\nL’interfaccia è stata ripensata per garantire chiarezza, semplicità e coerenza visiva, con un focus su micro-interazioni e feedback immediati.\n\nL’integrazione di strumenti di analisi ha permesso di monitorare costantemente le performance e raccogliere dati utili per iterare rapidamente sulle soluzioni proposte.\n\nGrazie a questo approccio, Ticketone si presenta oggi come una piattaforma accessibile, moderna e orientata alle reali esigenze dei suoi utenti.',
+      'Redesign completo del sito web TicketOne con l’obiettivo di migliorare l’esperienza d’acquisto di biglietti per eventi musicali, teatrali e sportivi. \n TicketOne è la principale piattaforma italiana per la vendita di biglietti. Nonostante la leadership di mercato, il sito attuale presenta criticità in termini di usabilità, navigazione e chiarezza delle informazioni, penalizzando la user experience di un pubblico ampio e variegato.',
     overviewImage: 'assets/img/projects/ticketone/overview.png',
-    challengeText:
-      'Rendere la piattaforma più intuitiva e accessibile, ottimizzando il flusso di acquisto biglietti. La sfida principale era semplificare processi complessi, ridurre i punti di frizione per l’utente e garantire la conformità agli standard di accessibilità. Era fondamentale migliorare la chiarezza delle informazioni, velocizzare la navigazione e offrire un’esperienza coerente su tutti i dispositivi, mantenendo al contempo la sicurezza e l’affidabilità del sistema di acquisto.',
+    challengeText: 'Rendere l’accesso agli eventi live semplice, immediato e sicuro, offrendo agli utenti un’esperienza di acquisto chiara e affidabile.',
     processSteps: [
       {
         number: 1,
         title: 'Analisi UX',
         description: 'Analisi dei flussi esistenti e raccolta feedback utenti.',
       },
-      { number: 2, title: 'Wireframing', description: 'Progettazione wireframe e prototipi.' },
-      { number: 3, title: 'Test', description: 'Test di usabilità e iterazione.' },
-      { number: 4, title: 'UI Design', description: 'Design finale e handoff.' },
+      { number: 2, title: 'Wireframing', description: 'Progettazione wireframe.' },
+      { number: 3, title: 'UI Design', description: 'Progettazione e prototipazione dell’interfaccia utente.' },
+      { number: 4, title: 'User Test', description: 'Test di usabilità e iterazione.' },
     ],
     projectImages: [
       'assets/img//projects/ticketone/project_1.png',
@@ -28,9 +27,10 @@ export const projectDetails = {
       'assets/img/projects/ticketone/project_3.png',
     ],
     results: [
-      'Riduzione del tempo di acquisto del 30%.',
-      'Aumento del punteggio di accessibilità a 98/100.',
-      'Feedback positivi dagli utenti.',
+      'Interfaccia più moderna.',
+      'Migliore gerarchia delle informazioni.',
+      'Aggiunta di due nuove feature richieste dagli utenti.',
+      'Flusso di checkout più intuitivo.',
     ],
     resultsImage: 'assets/img/projects/ticketone/result.png',
     behanceUrl: 'https://www.behance.net/ilariaippolito1',
@@ -45,19 +45,36 @@ export const projectDetails = {
     ],
     coverImage: 'assets/img/projects/ivegan/cover.png',
     overviewText:
-      'Restyling completo del sito e-commerce iVegan con l’obiettivo di aumentare le conversioni, migliorare l’usabilità e rafforzare la brand identity. Il progetto ha previsto una revisione della user experience, l’ottimizzazione dei flussi di acquisto e una nuova veste grafica più moderna e accessibile. Particolare attenzione è stata data alla chiarezza delle informazioni e alla semplicità di navigazione, per rendere l’esperienza utente più intuitiva e coinvolgente.',
+      'Redesign completo del sito e-commerce iVegan con l’obiettivo di migliorare l’usabilità, l’accessibilità e l’interfaccia utente. Particolare attenzione è stata data alla chiarezza delle informazioni e alla semplicità di navigazione, per rendere l’esperienza utente più intuitiva e coinvolgente per chi acquista prodotti vegani online.',
     overviewImage: 'assets/img/projects/ivegan/overview.png',
     challengeText:
-      'La sfida principale era semplificare la navigazione di un catalogo molto ampio e migliorare la presentazione dei prodotti, spesso penalizzati da descrizioni poco chiare e immagini non ottimizzate. Era fondamentale ridurre i punti di attrito nel processo di acquisto, rendendo più immediata la ricerca dei prodotti e la comprensione delle offerte. Inoltre, si è lavorato per trasmettere i valori del brand e la qualità dei prodotti attraverso un design coerente e accattivante.',
+      'La sfida principale era semplificare la navigazione di un catalogo molto ampio e migliorare la presentazione dei prodotti. Era fondamentale ridurre i punti di attrito nel processo di acquisto e rendere il sito più accessibile per un target più inclusivo.',
     processSteps: [
-      { number: 1, title: 'Ricerca utenti', description: 'Interviste e analisi comportamentale.' },
-      { number: 2, title: 'Prototipazione', description: 'Creazione di prototipi e test A/B.' },
-      { number: 3, title: 'UI Design', description: 'Aggiornamento visual e branding.' },
+      { 
+        number: 1, 
+        title: 'Discovery', 
+        description: 'Analisi del sito e dei competitor, definizione di utenti e journey, ridefinizione di architettura e flussi.' 
+      },
+      { 
+        number: 2, 
+        title: 'Accessibilità', 
+        description: 'Applicazione dei criteri WCAG per garantire usabilità a tutti gli utenti.' 
+      },
+      { 
+        number: 3, 
+        title: 'Wireframing', 
+        description: 'Progettazione di layout e flussi principali con prototipi mid-fi.' 
+      },
+      { 
+        number: 4, 
+        title: 'User Interface', 
+        description: 'Definizione del design system e progettazione dell’interfaccia finale.' 
+      },
       {
-        number: 4,
+        number: 5,
         title: 'User test',
         description:
-          'Sessioni di test con utenti reali per validare le soluzioni proposte e raccogliere feedback utili.',
+          'Test del prototipo finale con utenti per iterare le soluzioni proposte e raccogliere feedback.',
       },
     ],
     projectImages: [
@@ -66,9 +83,10 @@ export const projectDetails = {
       'assets/img/projects/ivegan/project_3.png',
     ],
     results: [
-      'Aumento conversioni del 22%.',
-      'Riduzione bounce rate del 15%.',
-      'Migliore percezione del brand.',
+      'Miglioramento della soddisfazione utente (feedback, test, survey).',
+      'Accessibilità più alta.',
+      'riduzione degli ostacoli nei flussi utente.',
+      'scalabilità futura del design (design system, componenti riusabili)'
     ],
     resultsImage: 'assets/img/projects/ivegan/result.png',
     behanceUrl: 'https://www.behance.net/ilariaippolito1',
@@ -76,26 +94,21 @@ export const projectDetails = {
   },
   orizon: {
     projectTitle: 'Orizon Brand Identity',
-    projectTags: ['Illustrator', 'Photoshop'],
+    projectTags: ['Illustrator', 'Photoshop', 'Affinity Designer'],
     meta: [
       { label: 'Cliente', value: 'Orizon' },
       { label: 'Anno', value: '2024' },
     ],
     coverImage: 'assets/img/projects/orizon/cover.png',
     overviewText:
-      'Creazione della nuova brand identity per Orizon, con focus su logo, palette e materiali coordinati. Il progetto ha previsto una fase di ricerca approfondita sull’identità del brand, la definizione di una strategia visiva coerente e la realizzazione di tutti gli elementi grafici necessari per la comunicazione aziendale, sia online che offline. Particolare attenzione è stata posta alla versatilità del logo e all’armonia cromatica della palette, per garantire riconoscibilità e coerenza su tutti i canali.',
+      'Creazione della nuova brand identity per Orizon, con focus su logo, palette e icone. Il progetto ha previsto una fase di ricerca approfondita sull’identità del brand, la definizione di una strategia visiva coerente e la realizzazione di tutti gli elementi grafici necessari per la comunicazione aziendale online. Particolare attenzione è stata posta alla versatilità del logo e all’armonia cromatica della palette, per garantire riconoscibilità e coerenza su tutti i canali.',
     overviewImage: 'assets/img/projects/orizon/overview.png',
     challengeText:
-      'Definire un’identità visiva distintiva e versatile per diversi canali. La sfida principale è stata comprendere a fondo i valori e la missione di Orizon, traducendoli in elementi grafici che potessero adattarsi a molteplici supporti e contesti comunicativi. Era fondamentale creare un’immagine che trasmettesse professionalità e innovazione, mantenendo al tempo stesso semplicità e immediatezza.',
+      'La sfida principale è stata comprendere a fondo i valori e la missione di Orizon, traducendoli in elementi grafici che potessero adattarsi a molteplici supporti e contesti comunicativi.',
     processSteps: [
-      { number: 1, title: 'Analisi', description: 'Studio del mercato e dei competitor.' },
-      { number: 2, title: 'Concept', description: 'Sviluppo concept e moodboard.' },
-      { number: 3, title: 'Design', description: 'Realizzazione logo e materiali.' },
-      {
-        number: 4,
-        title: 'Consegna',
-        description: 'Presentazione finale e consegna dei materiali al cliente.',
-      },
+      { number: 1, title: 'Analisi', description: 'Studio del target e dei competitor.' },
+      { number: 2, title: 'Design', description: 'Realizzazione logo, icone, font e color palette.' },
+      { number: 3, title: 'Comunicazione', description: 'Realizzazione di banner social per diversi dispositivi.' },
     ],
     projectImages: [
       'assets/img/projects/orizon/project_1.png',
@@ -105,7 +118,7 @@ export const projectDetails = {
     results: [
       'Brand identity riconoscibile.',
       'Materiali coordinati per stampa e digital.',
-      'Cliente soddisfatto.',
+      'Coerenza visiva su tutti i canali.',
     ],
     resultsImage: 'assets/img/projects/orizon/result.png',
     behanceUrl: 'https://www.behance.net/ilariaippolito1',

@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../components/layout/Layout';
-import { GoToHome, HomeButton } from '../components/SharedStyles';
+import { GoToHome, SecondaryButton } from '../components/SharedStyles';
 import { ArrowLeft } from 'lucide-react';
 
 const NotFoundPage = () => (
@@ -36,10 +36,10 @@ const NotFoundPage = () => (
       </p>
       <GoToHome>
         <a href="/">
-          <HomeButton>
+          <SecondaryButton>
             <ArrowLeft size={20} />
             Torna alla home
-          </HomeButton>
+          </SecondaryButton>
         </a>
       </GoToHome>
     </div>

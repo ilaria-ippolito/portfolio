@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import {
   HighlightedHeading,
   SectionTitle,
-  HomeButton,
+  SecondaryButton,
 } from '../components/SharedStyles';
 import { ArrowLeft } from 'lucide-react';
 import { projectDetails } from '../data/projectDetailData';
@@ -133,10 +133,10 @@ const ProjectDetailPage = () => {
           <h2>Progetto non trovato</h2>
           <CenteredHomeButtonWrapper>
             <a href="/">
-              <HomeButton>
+              <SecondaryButton>
                 <ArrowLeft size={20} />
                 Torna alla home
-              </HomeButton>
+              </SecondaryButton>
             </a>
           </CenteredHomeButtonWrapper>
         </ProjectDetailsWrapper>
@@ -208,10 +208,10 @@ const ProjectDetailPage = () => {
         </ProjectContent>
         <CenteredHomeButtonWrapper>
           <a href="/">
-            <HomeButton>
+            <SecondaryButton>
               <ArrowLeft size={20} />
               Torna alla home
-            </HomeButton>
+            </SecondaryButton>
           </a>
         </CenteredHomeButtonWrapper>
       </ProjectDetailsWrapper>
