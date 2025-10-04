@@ -130,26 +130,10 @@ const Bullets = styled.ul`
 
 const services = [
   {
-    name: 'UX Strategy',
-    icon: Compass,
-    desc: 'Pianificazione e definizione degli obiettivi di prodotto e roadmap di UX.',
-    bullets: [
-      'Workshop con stakeholder',
-      'Visione prodotto e obiettivi',
-      'Experience strategy',
-      'KPI e metriche di successo',
-    ],
-  },
-  {
     name: 'User Research',
     icon: Users,
-    desc: 'Ricerche qualitative e quantitative per comprendere utenti e bisogni.',
-    bullets: [
-      'Interviste utente',
-      'Test di usabilità',
-      'Survey e analytics',
-      'Personas e user journeys',
-    ],
+    desc: 'Ricerche qualitative e quantitative per comprendere i bisogni degli utenti.',
+    bullets: ['Interviste utente', 'Analisi di usabilità', 'Survey', 'Personas e user journeys'],
   },
   {
     name: 'Accessibilità',
@@ -167,6 +151,17 @@ const services = [
     icon: Monitor,
     desc: 'Design di interfacce e prototipi interattivi ad alta fedeltà.',
     bullets: ['Wireframes', 'Mockup ad alta fedeltà', 'Prototipi interattivi', 'Design systems'],
+  },
+  {
+    name: 'User test',
+    icon: Compass,
+    desc: 'Test di usabilità per iterare e migliorare le esperienze digitali.',
+    bullets: [
+      'Interviste agli utenti',
+      'Report degli insight',
+      'A/B testing',
+      'Five second test',
+    ],
   },
 ];
 

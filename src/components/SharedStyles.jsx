@@ -21,7 +21,7 @@ export const CustomPaddingX = styled.section`
     padding: 0 15rem;
   }
 
-  @media (max-width: 1700px) {
+  @media (max-width: 1800px) {
     padding: 0 10rem;
   }
 
@@ -40,7 +40,7 @@ export const GoToHome = styled.div`
   align-items: center;
 `;
 
-export const HomeButton = styled.button`
+export const SecondaryButton = styled.button`
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;

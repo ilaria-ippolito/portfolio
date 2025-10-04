@@ -18,7 +18,7 @@ const Item = styled.div`
   align-items: center;
   gap: 1rem;
   background: transparent;
-  border: 1px solid var(--color-neutral-700);
+  border: 1px solid var(--color-neutral-300);
   padding: 0.8rem 1rem;
   border-radius: var(--radius-md);
   color: var(--color-neutral-700);

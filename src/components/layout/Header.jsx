@@ -57,7 +57,7 @@ const LogoTitle = styled.a`
 const MenuToggleBtn = styled.button`
   background: none;
   border: none;
-  padding: 0;
+  padding: 0.5rem;
   display: none;
   position: static;
   z-index: 200;
@@ -222,7 +222,7 @@ const Header = () => {
               </li>
               <li>
                 <a href="#about-section" onClick={(e) => scrollToSection({ event: e, id: 'about-section', setMenuOpen, location, navigate })}>
-                  About me
+                  Chi sono
                 </a>
               </li>
             </ul>

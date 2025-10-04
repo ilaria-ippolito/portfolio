@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Mail, Linkedin } from 'lucide-react';
+import { HighlightedHeading, SectionTitle } from '../SharedStyles';
 
 const Section = styled.section`
   border-radius: var(--radius-lg);
@@ -103,15 +104,20 @@ const IconLink = styled.a`
 
 const CollabSection = ({ id = 'collab-section' }) => (
   <Section id={id}>
+    <HighlightedHeading>
+      <SectionTitle>Lavoriamo insieme</SectionTitle>
+    </HighlightedHeading>
     <Grid>
       <Left>
-        <Headline>Incontra la tua prossima UX/UI Designer</Headline>
         <Intro>
-          Sono alla ricerca di una realtà aziendale dove poter crescere come professionista UX/UI, contribuendo con passione e competenze a progetti innovativi e di valore. 
-          Mi rivolgo a recruiter, CEO e team leader che desiderano rafforzare il proprio team con una figura orientata all’utente, alla collaborazione e al miglioramento continuo.
+          Sono alla ricerca di un contesto aziendale strutturato 
+          in cui poter contribuire attivamente allo sviluppo di progetti innovativi 
+          all'interno di team multidisciplinari, mettendo a disposizione competenze 
+          consolidate in ambito UX/UI.
         </Intro>
-        <Intro>
-          Se stai cercando una UX/UI Designer motivata, curiosa e pronta a mettersi in gioco in un contesto stimolante, sarò felice di conoscerti e valutare nuove opportunità di crescita insieme.
+        <Intro> 
+          Valuto opportunità che favoriscano crescita, confronto costruttivo e obiettivi condivisi, 
+          in contesti dove la UX guida decisioni e risultati.
         </Intro>
       </Left>
 

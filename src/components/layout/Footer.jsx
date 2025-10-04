@@ -43,7 +43,7 @@ const BottomRow = styled.div`
   margin-top: 48px;
   padding-top: 12px;
   color: var(--color-neutral-50);
-  font-size: var(--type-sm);
+  font-size: var(--type-label);
   text-align: center;
   @media (max-width: 900px) {
     margin-top: 36px;
@@ -75,6 +75,10 @@ const BigText = styled.span`
   font-weight: 800;
   letter-spacing: 1px;
   line-height: 1;
+
+  @media (max-width: 600px) {
+    text-align: left;
+  }
 `;
 
 const Col = styled.div`
@@ -82,10 +86,6 @@ const Col = styled.div`
   flex-direction: column;
   gap: 0.6rem;
   align-items: flex-start;
-
-  @media (max-width: 900px) {
-    // align-items: center;
-  }
 `;
 
 const ColTitle = styled.h4`
@@ -202,14 +202,14 @@ const Footer = () => {
                   scrollToSection({ event: e, id: 'about-section', location, navigate })
                 }
               >
-                About me
+                Chi sono
               </NavLink>
             </ColItem>
           </ColList>
         </Col>
 
         <Col>
-          <ColTitle>Info & contatti</ColTitle>
+          <ColTitle>Contatti</ColTitle>
           <ColList>
             <ColItem>
               <SocialIcons>
