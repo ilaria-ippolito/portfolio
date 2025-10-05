@@ -12,15 +12,11 @@ const HeaderWrapper = styled.header`
   width: 100%;
   z-index: 100;
   padding: 0;
-  background: ${({ scrolled }) =>
-    scrolled
-      ? 'rgba(255,255,255,0.95)'
-      : 'transparent'};
-  box-shadow: ${({ scrolled }) =>
-    scrolled
-      ? '0 2px 16px 0 rgba(0,0,0,0.06)'
-      : 'none'};
-  transition: background 0.25s, box-shadow 0.25s;
+  background: ${({ $scrolled }) => ($scrolled ? 'rgba(255,255,255,0.95)' : 'transparent')};
+  box-shadow: ${({ $scrolled }) => ($scrolled ? '0 2px 16px 0 rgba(0,0,0,0.06)' : 'none')};
+  transition:
+    background 0.25s,
+    box-shadow 0.25s;
 `;
 
 const HeaderInner = styled.div`
@@ -68,7 +64,7 @@ const MenuToggleBtn = styled.button`
     position: fixed;
     top: 1.2rem;
     right: 1.2rem;
-    background: var(--color-neutral-700, rgba(0,0,0,0.85));
+    background: var(--color-neutral-700, rgba(0, 0, 0, 0.85));
     border-radius: var(--radius-pill);
     width: 44px;
     height: 44px;
@@ -93,7 +89,7 @@ const StyledNav = styled.nav`
     box-sizing: border-box;
     display: inline-block;
     position: relative;
-    transition: color 0.25s cubic-bezier(0.4,0,0.2,1);
+    transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   }
   a::after {
     content: '';
@@ -105,7 +101,7 @@ const StyledNav = styled.nav`
     background: var(--color-primary-500);
     border-radius: 1px;
     transform: scaleX(0);
-    transition: transform 0.25s cubic-bezier(0.4,0,0.2,1);
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     opacity: 0.7;
     pointer-events: none;
   }
@@ -123,9 +119,15 @@ const StyledNav = styled.nav`
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: var(--color-neutral-700);
+    background: rgba(36, 36, 36, 0.85);
+    backdrop-filter: blur(12px) saturate(1.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
     transform: translateX(${({ open }) => (open ? '0' : '100%')});
-    transition: transform 0.3s ease;
+    opacity: ${({ open }) => (open ? 1 : 0)};
+    pointer-events: ${({ open }) => (open ? 'auto' : 'none')};
+    transition:
+      transform 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 150;
     display: flex;
     flex-direction: column;
@@ -146,10 +148,29 @@ const StyledNav = styled.nav`
       font-size: var(--type-title-md);
       padding: 1rem 0;
       text-align: center;
+      opacity: ${({ open }) => (open ? 1 : 0)};
+      transform: ${({ open }) => (open ? 'translateY(0)' : 'translateY(40px)')};
+      transition:
+        opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
   }
 `;
-
+// Overlay for mobile menu
+const Overlay = styled.div`
+  @media (max-width: 600px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.32);
+    opacity: ${({ open }) => (open ? 1 : 0)};
+    pointer-events: ${({ open }) => (open ? 'auto' : 'none')};
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 120;
+  }
+`;
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -188,7 +209,7 @@ const Header = () => {
   };
 
   return (
-    <HeaderWrapper scrolled={scrolled}>
+    <HeaderWrapper $scrolled={scrolled}>
       <CustomPaddingX>
         <HeaderInner>
           <div className="logo d-inline">
@@ -196,32 +217,87 @@ const Header = () => {
               <Panda size={26} style={{ verticalAlign: 'middle', marginRight: '0.5rem' }} />
             </LogoTitle>
           </div>
+          {/* Overlay for mobile menu */}
+          <Overlay open={menuOpen} onClick={() => setMenuOpen(false)} />
           <MenuToggleBtn
             aria-label={menuOpen ? 'Chiudi menu' : 'Apri menu'}
             onClick={() => setMenuOpen((open) => !open)}
             type="button"
+            style={{
+              boxShadow: menuOpen ? '0 2px 12px 0 rgba(0,0,0,0.18)' : undefined,
+              background: menuOpen ? 'rgba(255,255,255,0.92)' : undefined,
+              transition: 'background 0.25s, box-shadow 0.25s',
+            }}
           >
-            {menuOpen ? <X size={32} color="var(--color-primary-500)" /> : <Menu size={32} color="var(--color-primary-500)" />}
+            {menuOpen ? (
+              <X size={32} color="var(--color-primary-500)" />
+            ) : (
+              <Menu size={32} color="var(--color-primary-500)" />
+            )}
           </MenuToggleBtn>
           <StyledNav open={menuOpen}>
             <ul>
               <li>
-                <a href="#work-section" onClick={(e) => scrollToSection({ event: e, id: 'work-section', setMenuOpen, location, navigate })}>
+                <a
+                  href="#work-section"
+                  onClick={(e) =>
+                    scrollToSection({
+                      event: e,
+                      id: 'work-section',
+                      setMenuOpen,
+                      location,
+                      navigate,
+                    })
+                  }
+                >
                   Progetti
                 </a>
               </li>
               <li>
-                <a href="#stack-section" onClick={(e) => scrollToSection({ event: e, id: 'stack-section', setMenuOpen, location, navigate })}>
+                <a
+                  href="#stack-section"
+                  onClick={(e) =>
+                    scrollToSection({
+                      event: e,
+                      id: 'stack-section',
+                      setMenuOpen,
+                      location,
+                      navigate,
+                    })
+                  }
+                >
                   Stack
                 </a>
               </li>
               <li>
-                <a href="#services-section" onClick={(e) => scrollToSection({ event: e, id: 'services-section', setMenuOpen, location, navigate })}>
+                <a
+                  href="#services-section"
+                  onClick={(e) =>
+                    scrollToSection({
+                      event: e,
+                      id: 'services-section',
+                      setMenuOpen,
+                      location,
+                      navigate,
+                    })
+                  }
+                >
                   Servizi
                 </a>
               </li>
               <li>
-                <a href="#about-section" onClick={(e) => scrollToSection({ event: e, id: 'about-section', setMenuOpen, location, navigate })}>
+                <a
+                  href="#about-section"
+                  onClick={(e) =>
+                    scrollToSection({
+                      event: e,
+                      id: 'about-section',
+                      setMenuOpen,
+                      location,
+                      navigate,
+                    })
+                  }
+                >
                   Chi sono
                 </a>
               </li>

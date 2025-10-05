@@ -3,7 +3,6 @@ import styled, { keyframes } from 'styled-components';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { scrollToSection } from '../../utils/scrollToSection';
 
-
 const Section = styled.section`
   display: flex;
   flex-direction: column;

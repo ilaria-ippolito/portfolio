@@ -97,7 +97,9 @@ const Pink = styled(StatCard)`
   color: var(--color-neutral-100);
   border: 1px solid var(--color-neutral-700);
   margin-left: 2.4rem;
-  transition: margin 220ms ease, transform 220ms ease;
+  transition:
+    margin 220ms ease,
+    transform 220ms ease;
   @media (min-width: 1200px) {
     margin-left: 3.2rem;
   }
@@ -120,11 +122,11 @@ const AboutSection = ({ id = 'about-section' }) => (
     <Grid>
       <Left>
         <Intro>
-          Sono una <strong>UX/UI Designer</strong> con un background in discipline dello 
+          Sono una <strong>UX/UI Designer</strong> con un background in discipline dello
           <strong> spettacolo e comunicazione</strong>.
         </Intro>
         <Intro>
-          Ho completato un master intensivo in UX/UI dalla durata di <strong>900 ore </strong> 
+          Ho completato un master intensivo in UX/UI dalla durata di <strong>900 ore </strong>
           presso{' '}
           <a
             href="https://www.start2impact.it/"
@@ -134,13 +136,13 @@ const AboutSection = ({ id = 'about-section' }) => (
           >
             <strong>Start2impact</strong>
           </a>{' '}
-          , dove ho affinato le mie competenze su tutte le fasi di progettazione: dalla {' '}
+          , dove ho affinato le mie competenze su tutte le fasi di progettazione: dalla{' '}
           <strong>discovery</strong> al
           <strong> wireframing</strong>, fino alla <strong>prototipazione e test utenti</strong>.
         </Intro>
         <Intro>
-          Sono alla ricerca di opportunità 
-          che mi permettano di applicare e sviluppare le mie competenze UX/UI, e di
+          Sono alla ricerca di opportunità che mi permettano di applicare e sviluppare le mie
+          competenze UX/UI, e di
           <strong> crescere come designer</strong>.
         </Intro>
 

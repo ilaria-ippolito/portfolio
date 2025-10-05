@@ -8,22 +8,32 @@ const StackWrapper = styled.section`
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 2rem;
   align-items: center;
+
+  @media (max-width: 350px) {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
 `;
 
 const Item = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 1rem;
   background: transparent;
   border: 1px solid var(--color-neutral-300);
-  padding: 0.8rem 1rem;
+  padding: 1rem;
   border-radius: var(--radius-md);
   color: var(--color-neutral-700);
-  min-width: 180px;
-  max-width: 180px;
+  min-width: 140px;
+  max-width: 140px;
+
+  @media (max-width: 350px) {
+    min-width: 120px;
+    max-width: 120px;
+  }
 `;
 
 const Icon = styled.img`
@@ -57,7 +67,7 @@ const StackSection = ({ id }) => (
     <Grid>
       {tools.map((t) => (
         <Item key={t.name}>
-          <Icon src={t.src} alt={t.name} />
+          <Icon src={t.src} alt={t.name} loading="lazy" />
           <Label>{t.name}</Label>
         </Item>
       ))}

@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const HighlightedHeading = styled.div`
-  margin-bottom: 2rem;
   display: inline-block;
 `;
 
@@ -40,6 +39,33 @@ export const GoToHome = styled.div`
   align-items: center;
 `;
 
+export const CheckMarkBullets = styled.ul`
+  margin: 0.7rem 0 0 0;
+  padding: 0;
+  color: ${({ color }) => color || 'var(--color-neutral-50)'};
+  font-size: var(--type-body-sm);
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  svg {
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
+    color: var(--color-success); /* green check */
+    margin-top: 2px;
+  }
+`;
+
 export const SecondaryButton = styled.button`
   display: inline-flex;
   align-items: center;
@@ -52,7 +78,9 @@ export const SecondaryButton = styled.button`
   border-radius: var(--radius-md);
   padding: 0.75rem 1.5rem;
   cursor: pointer;
-  transition: background 0.18s, color 0.18s;
+  transition:
+    background 0.18s,
+    color 0.18s;
 
   &:hover,
   &:focus-visible {
@@ -95,7 +123,9 @@ export const PrimaryButton = styled.button`
     color: white;
     background-size: 250% 250%;
     background-position: 50% 50%;
-    transition: background-size 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.18s;
+    transition:
+      background-size 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+      color 0.18s;
   }
 
   > * {
@@ -136,7 +166,9 @@ export const PrimaryLinkButton = styled.a`
     color: var(--color-accent-50);
     background-size: 250% 250%;
     background-position: 50% 50%;
-    transition: background-size 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.18s;
+    transition:
+      background-size 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+      color 0.18s;
   }
 
   > * {

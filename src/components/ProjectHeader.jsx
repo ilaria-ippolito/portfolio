@@ -78,12 +78,7 @@ const ProjectHeader = ({ title, tags = [], meta = [], timeRange, behanceUrl }) =
     <TitleRow>
       <Title style={{ minWidth: 0, overflowWrap: 'break-word' }}>{title}</Title>
       {behanceUrl && (
-        <PrimaryLinkButton
-          as="a"
-          href={behanceUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <PrimaryLinkButton as="a" href={behanceUrl} target="_blank" rel="noopener noreferrer">
           <ExternalLink size={18} style={{ marginRight: '0.5rem' }} />
           Versione completa
         </PrimaryLinkButton>

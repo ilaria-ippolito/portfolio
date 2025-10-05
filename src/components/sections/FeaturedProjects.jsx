@@ -44,7 +44,7 @@ const FeaturedProjects = ({ id }) => (
     <Container>
       <AreaFull>
         <FullBleedCard
-          img="assets/img/projects/ticketone/card_cover.png"
+          img="assets/img/projects/ticketone/card_cover.webp"
           title="Ticketone redesign"
           tags={['Figma', 'Wave', 'Maze']}
           dateRange="Ago 2025 — Set 2025"
@@ -54,7 +54,7 @@ const FeaturedProjects = ({ id }) => (
 
       <AreaSplit1>
         <SplitCard
-          img="assets/img/projects/ivegan/card_cover.png"
+          img="assets/img/projects/ivegan/card_cover.webp"
           title="iVegan redesign"
           tags={['Figma', 'Wave', 'Maze']}
           dateRange="Gen 2025 — Ago 2025"
@@ -64,7 +64,7 @@ const FeaturedProjects = ({ id }) => (
 
       <AreaSplit2>
         <SplitCard
-          img="assets/img/projects/orizon/card_cover.png"
+          img="assets/img/projects/orizon/card_cover.webp"
           title="Orizion Brand Identity"
           tags={['Illustrator', 'Photoshop']}
           dateRange="Nov 2024 — Dic 2024"
