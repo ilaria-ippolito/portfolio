@@ -1,32 +1,66 @@
-# Portfolio di Ilaria Ippolito
 
-Visita il mio portfolio online: [Portfolio Ilaria Ippolito](https://ilaria-ippolito.github.io/portfolio/)
+# Ilaria Ippolito – UX/UI Designer Portfolio
 
-Benvenuti nel mio portfolio! Questo sito è stato creato per presentare i miei lavori nel campo del design UX/UI come parte del corso HTML e CSS di start2impact.
+Benvenuto nel repository del portfolio di Ilaria Ippolito! Questo sito web è una vetrina professionale per progetti di UX/UI design, realizzata con tecnologie moderne per garantire velocità, accessibilità e una user experience di alto livello.
 
-## Descrizione
+🌐 [Portfolio Online](https://ilaria-ippolito.github.io/portfolio/)
 
-Il mio portfolio online è progettato per mostrare le mie competenze e i progetti su cui ho lavorato. Ho creato un'esperienza utente intuitiva e accattivante, che consente ai visitatori di esplorare i miei lavori e contattarmi facilmente per collaborazioni o domande.
+## Descrizione del Progetto
 
-## Tecnologie Utilizzate
+Questa applicazione mostra i progetti, le competenze e il percorso professionale di Ilaria Ippolito. Il sito è stato sviluppato per essere estremamente veloce, responsive e facilmente navigabile, con particolare attenzione all'accessibilità e alle performance.
 
-- **HTML**: per la struttura e la semantica delle pagine.
-- **SASS**: per la gestione dei fogli di stile in modo modulare e organizzato.
-- **Bootstrap**: per garantire un design responsivo e una rapida implementazione dei componenti.
+## Stack Tecnologico
 
-## Palette Colori
+- **React 19** – UI component-based
+- **Vite** – Build tool per sviluppo e deploy ultra-rapido
+- **Styled Components** – CSS-in-JS per uno stile modulare e dinamico
+- **React Router v7** – Routing client-side
+- **Lucide React** – Icone moderne
 
-La palette colori scelta per il mio portfolio include:
-- **Primario**: ![#20f94b](https://placehold.co/15x15/20f94b/20f94b.png) `#20f94b`
-- **Secondario**: ![#e25fda](https://placehold.co/15x15/e25fda/e25fda.png) `#e25fda`
-- **Complementare**: ![#f920ce](https://placehold.co/15x15/f920ce/f920ce.png) `#f920ce`
+## Struttura del Progetto
 
-## Font
+- `/src/components` – Componenti riutilizzabili (layout, sezioni, card, ecc.)
+- `/src/pages` – Pagine principali (Home, Dettaglio Progetto, 404)
+- `/src/data` – Dati statici dei progetti
+- `/public/assets` – Immagini, documenti e risorse statiche
 
-Ho scelto il font **DM Serif Display** per i titoli, che conferisce un aspetto elegante e moderno, perfetto per il design del mio portfolio.
+## Ottimizzazioni Performance
+
+- Code splitting e lazy loading delle pagine principali
+- Lazy loading delle immagini
+- Google Fonts precaricati per rendering istantaneo
+- Immagini ottimizzate in formato WebP
+
+## Come Avviare il Progetto
+
+1. Clona il repository:
+	```bash
+	git clone https://github.com/ilaria-ippolito/portfolio.git
+	cd portfolio
+	```
+2. Installa le dipendenze:
+	```bash
+	npm install
+	```
+3. Avvia l'ambiente di sviluppo:
+	```bash
+	npm run dev
+	```
+4. Per build di produzione:
+	```bash
+	npm run build
+	```
+
+## Deploy
+
+Il sito è deployato su GitHub Pages tramite build statica Vite.
 
 ## Contatti
 
-Se desideri contattarmi per collaborazioni, progetti o domande, puoi farlo compilando il modulo nella sezione "Contatti" del sito.
+- [LinkedIn](https://www.linkedin.com/in/ilaria-ippolito/)
+- [Behance](https://www.behance.net/ilariaippolito1)
+- Email: ilariaippolito95@gmail.com
 
-Grazie per aver visitato il mio portfolio! Spero che ti piaccia!
+---
+
+© 2025 Ilaria Ippolito. Tutti i diritti riservati.

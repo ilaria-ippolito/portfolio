@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { HighlightedHeading, SectionTitle } from '../SharedStyles';
-import { Compass, Users, Eye, Monitor, Check } from 'lucide-react';
+import { HighlightedHeading, SectionTitle, CheckMarkBullets } from '../SharedStyles';
+import { Compass, Users, Eye, Monitor, Check, TestTubeDiagonal } from 'lucide-react';
 
 const ServicesWrapper = styled.section`
   margin-top: 3rem;
@@ -95,37 +95,9 @@ const Title = styled.h4`
 `;
 
 const Desc = styled.p`
-  margin: 0.2rem 0 0.2rem 0;
   color: var(--color-neutral-300);
-  font-size: var(--type-body);
-  line-height: 1.6;
-`;
-
-const Bullets = styled.ul`
-  margin: 0.7rem 0 0 0;
-  padding: 0;
-  color: var(--color-neutral-50);
   font-size: var(--type-body-sm);
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-
-  li {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.6rem;
-    margin: 0;
-    line-height: 1.5;
-  }
-
-  svg {
-    width: 18px;
-    height: 18px;
-    flex: 0 0 18px;
-    color: var(--color-success); /* green check */
-    margin-top: 2px;
-  }
+  line-height: 1.6;
 `;
 
 const services = [
@@ -154,14 +126,9 @@ const services = [
   },
   {
     name: 'User test',
-    icon: Compass,
+    icon: TestTubeDiagonal,
     desc: 'Test di usabilità per iterare e migliorare le esperienze digitali.',
-    bullets: [
-      'Interviste agli utenti',
-      'Report degli insight',
-      'A/B testing',
-      'Five second test',
-    ],
+    bullets: ['Interviste agli utenti', 'Report degli insight', 'A/B testing', 'Five second test'],
   },
 ];
 
@@ -190,14 +157,14 @@ const ServicesSection = ({ id }) => (
               <Title>{s.name}</Title>
             </div>
             <Desc>{s.desc}</Desc>
-            <Bullets>
+            <CheckMarkBullets>
               {s.bullets.map((b) => (
                 <li key={b}>
                   <Check />
                   <span>{b}</span>
                 </li>
               ))}
-            </Bullets>
+            </CheckMarkBullets>
           </Card>
         );
       })}

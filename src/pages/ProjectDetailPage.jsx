@@ -7,8 +7,9 @@ import {
   HighlightedHeading,
   SectionTitle,
   SecondaryButton,
+  CheckMarkBullets,
 } from '../components/SharedStyles';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Check } from 'lucide-react';
 import { projectDetails } from '../data/projectDetailData';
 import { useLocation } from 'react-router-dom';
 
@@ -45,7 +46,9 @@ const ProjectHero = styled.img`
   margin-top: 7rem;
   margin-bottom: 3rem;
 
-  ${props => props.projectId !== 'orizon' && `
+  ${(props) =>
+    props.$projectId !== 'orizon' &&
+    `
     @media (max-width: 700px) {
       object-position: right;
     }
@@ -116,7 +119,6 @@ const ResultItem = styled.div`
   margin-bottom: 1rem;
 `;
 
-
 function useQuery() {
   return new URLSearchParams(useLocation().search);
 }
@@ -162,7 +164,7 @@ const ProjectDetailPage = () => {
 
   return (
     <Layout>
-      <ProjectHero src={coverImage} alt="" projectId={projectId} />
+      <ProjectHero src={coverImage} alt="" $projectId={projectId} loading="lazy" />
       <ProjectDetailsWrapper>
         <TitleRow>
           <ProjectHeader
@@ -193,15 +195,16 @@ const ProjectDetailPage = () => {
               <SectionTitle>Risultati</SectionTitle>
             </HighlightedHeading>
             <ContentGrid>
-              <TextContent>
-                <ul>
-                  {results.map((r, i) => (
-                    <li key={i}>{r}</li>
-                  ))}
-                </ul>
-              </TextContent>
+              <CheckMarkBullets color="var(--color-neutral-700)">
+                {results.map((b, i) => (
+                  <li key={i}>
+                    <Check />
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </CheckMarkBullets>
               <ImageContent>
-                <img src={resultsImage} alt="Results visual" />
+                <img src={resultsImage} alt="Results visual" loading="lazy" />
               </ImageContent>
             </ContentGrid>
           </ProjectSection>

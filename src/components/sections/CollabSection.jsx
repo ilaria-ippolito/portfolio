@@ -110,21 +110,24 @@ const CollabSection = ({ id = 'collab-section' }) => (
     <Grid>
       <Left>
         <Intro>
-          Sono alla ricerca di un contesto aziendale strutturato 
-          in cui poter contribuire attivamente allo sviluppo di progetti innovativi 
-          all'interno di team multidisciplinari, mettendo a disposizione competenze 
-          consolidate in ambito UX/UI.
+          Sono alla ricerca di un contesto aziendale strutturato in cui poter contribuire
+          attivamente allo sviluppo di progetti innovativi all'interno di team{' '}
+          <strong>multidisciplinari</strong>, mettendo a disposizione competenze consolidate in
+          ambito UX/UI.
         </Intro>
-        <Intro> 
-          Valuto opportunità che favoriscano crescita, confronto costruttivo e obiettivi condivisi, 
-          in contesti dove la UX guida decisioni e risultati.
+        <Intro>
+          Valuto opportunità che favoriscano crescita, confronto costruttivo e obiettivi condivisi,
+          in <strong>contesti dove la UX guida decisioni e risultati </strong>.
         </Intro>
       </Left>
 
       <Right>
         <NeonCard>
           <h4>Vuoi conoscermi meglio?</h4>
-          <p>Se pensi che il mio profilo possa essere adatto alla tua azienda, scrivimi!</p>
+          <p>
+            Se pensi che il mio profilo possa essere adatto alla tua azienda,{' '}
+            <strong>scrivimi!</strong>
+          </p>
           <p>Sono pronta a portare entusiasmo, competenze e voglia di crescere nel tuo team.</p>
 
           <div className="actions">

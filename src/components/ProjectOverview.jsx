@@ -45,7 +45,9 @@ const ProjectOverview = ({ overviewText, overviewImage }) => (
       <Text>
         <p>{overviewText}</p>
       </Text>
-      <Visual>{overviewImage ? <img src={overviewImage} alt="Overview visual" /> : null}</Visual>
+      <Visual>
+        {overviewImage ? <img src={overviewImage} alt="Overview visual" loading="lazy" /> : null}
+      </Visual>
     </Grid>
   </Section>
 );

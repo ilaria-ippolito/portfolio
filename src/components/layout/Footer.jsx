@@ -93,6 +93,7 @@ const ColTitle = styled.h4`
   color: var(--color-primary-500); /* use brand accent instead of yellow */
   font-size: var(--type-body-sm);
   font-weight: 700;
+  text-transform: uppercase;
 `;
 
 const ColList = styled.ul`
@@ -124,7 +125,7 @@ const SocialLink = styled.a`
   transition: none;
 `;
 
-const SocialImg = styled.img`
+const SocialImg = styled.img.attrs({ loading: 'lazy' })`
   width: 36px;
   height: 36px;
   max-width: 100%;

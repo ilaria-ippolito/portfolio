@@ -16,7 +16,7 @@ const Wrapper = styled.a`
     content: '';
     position: absolute;
     inset: 0;
-    background-image: url(${(p) => p.img});
+    background-image: url(${(p) => p.$img});
     background-size: cover;
     background-position: top;
     z-index: 0;
@@ -33,7 +33,7 @@ const Wrapper = styled.a`
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.45);
+    background: rgba(0, 0, 0, 0.45);
     z-index: 1;
     pointer-events: none;
   }
@@ -94,7 +94,9 @@ const Tag = styled.span`
 const FullBleedCard = ({ img, title, tags = [], tools = [], dateRange, href = '#' }) => {
   const chips = (tools && tools.length ? tools : tags).slice(0, 3);
   return (
-    <Wrapper img={img} href={href}>
+    <Wrapper $img={img} href={href}>
+      {/* Decorative background, but add a hidden img for lazy loading */}
+      <img src={img} alt="" loading="lazy" style={{ display: 'none' }} />
       <Content>
         {chips.length > 0 && (
           <Meta>

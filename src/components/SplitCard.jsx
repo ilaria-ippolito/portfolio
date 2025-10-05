@@ -24,7 +24,7 @@ const ImageSide = styled.div`
     content: '';
     position: absolute;
     inset: 0;
-    background-image: url(${(p) => p.img});
+    background-image: url(${(p) => p.$img});
     background-size: cover;
     background-position: top;
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -82,7 +82,10 @@ const SplitCard = ({ img, title, tags = [], tools = [], dateRange, href = '#' })
   const chips = (tools && tools.length ? tools : tags).slice(0, 3);
   return (
     <Wrapper href={href}>
-      <ImageSide img={img} />
+      {/* Decorative background, but add a hidden img for lazy loading */}
+      <ImageSide $img={img}>
+        <img src={img} alt="" loading="lazy" style={{ display: 'none' }} />
+      </ImageSide>
       <InfoSide>
         {chips.length > 0 && (
           <Meta aria-hidden={false}>
