@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { TagSmall } from './SharedStyles';
 
 const Wrapper = styled.a`
   display: block;
@@ -82,15 +83,6 @@ const Meta = styled.div`
   margin-bottom: 0.25rem;
 `;
 
-const Tag = styled.span`
-  font-size: var(--type-label);
-  color: var(--color-neutral-50);
-  background: var(--color-primary-500, rgba(226, 96, 217, 0.85));
-  padding: 0.22rem 0.6rem;
-  border-radius: var(--radius-md);
-  line-height: 1;
-`;
-
 const FullBleedCard = ({ img, title, tags = [], tools = [], dateRange, href = '#' }) => {
   const chips = (tools && tools.length ? tools : tags).slice(0, 3);
   return (
@@ -101,7 +93,7 @@ const FullBleedCard = ({ img, title, tags = [], tools = [], dateRange, href = '#
         {chips.length > 0 && (
           <Meta>
             {chips.map((t) => (
-              <Tag key={t}>{t}</Tag>
+              <TagSmall key={t}>{t}</TagSmall>
             ))}
           </Meta>
         )}

@@ -30,7 +30,7 @@ const Left = styled.div`
 const Intro = styled.p`
   color: var(--color-neutral-600);
   margin: 0 0 0.75rem 0;
-  font-size: var(--type-body-sm);
+  font-size: var(--type-body);
   line-height: 1.6;
 `;
 
@@ -64,12 +64,12 @@ const StatNumber = styled.div`
 `;
 
 const StatText = styled.div`
-  font-size: var(--type-label);
+  font-size: var(--type-body-sm);
   color: var(--color-neutral-100);
 `;
 
 const StatMuted = styled.div`
-  font-size: var(--type-label);
+  font-size: var(--type-body-sm);
   color: rgba(0, 0, 0, 0.7);
 `;
 

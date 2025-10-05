@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { TagSmall } from './SharedStyles';
 
 const Wrapper = styled.a`
   display: flex;
@@ -62,15 +63,6 @@ const Meta = styled.div`
   flex-wrap: wrap;
 `;
 
-const Tag = styled.span`
-  font-size: var(--type-label);
-  color: var(--color-primary-500);
-  background: trasparent;
-  border: 1px solid var(--color-primary-500);
-  padding: 0.2rem 0.5rem;
-  border-radius: var(--radius-md);
-  line-height: 1;
-`;
 
 const DateRange = styled.span`
   font-size: var(--type-body-sm);
@@ -90,7 +82,7 @@ const SplitCard = ({ img, title, tags = [], tools = [], dateRange, href = '#' })
         {chips.length > 0 && (
           <Meta aria-hidden={false}>
             {chips.map((t) => (
-              <Tag key={t}>{t}</Tag>
+              <TagSmall key={t}>{t}</TagSmall>
             ))}
           </Meta>
         )}
@@ -98,8 +90,6 @@ const SplitCard = ({ img, title, tags = [], tools = [], dateRange, href = '#' })
         {title && <Title>{title}</Title>}
 
         {dateRange && <DateRange>{dateRange}</DateRange>}
-
-        {/* description intentionally removed and not rendered */}
       </InfoSide>
     </Wrapper>
   );

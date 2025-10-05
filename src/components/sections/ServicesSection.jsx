@@ -87,7 +87,7 @@ const IconWrapper = styled.div`
   }
 `;
 
-const Title = styled.h4`
+const Title = styled.h3`
   font-size: var(--type-title-md);
   font-weight: 800;
   letter-spacing: -0.01em;
