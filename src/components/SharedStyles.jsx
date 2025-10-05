@@ -4,7 +4,7 @@ export const HighlightedHeading = styled.div`
   display: inline-block;
 `;
 
-export const SectionTitle = styled.h3`
+export const SectionTitle = styled.h2`
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
@@ -71,8 +71,8 @@ export const SecondaryButton = styled.button`
   align-items: center;
   gap: 0.5rem;
   background: none;
-  border: 2px solid var(--color-primary-500);
-  color: var(--color-primary-500);
+  border: 2px solid var(--color-primary-700);
+  color: var(--color-primary-700);
   font-size: 1.3rem;
   font-weight: 600;
   border-radius: var(--radius-md);
@@ -179,10 +179,19 @@ export const PrimaryLinkButton = styled.a`
 `;
 
 export const Tag = styled.span`
-  font-size: 0.78rem;
+  font-size: var(--type-body);
   color: var(--color-accent-50);
-  background: var(--color-primary-500);
-  padding: 0.22rem 0.6rem;
-  border-radius: var(--radius-md);
+  background: var(--color-primary-700);
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius-pill);
+  line-height: 1;
+`;
+
+export const TagSmall = styled.span`
+  font-size: var(--type-body-sm);
+  color: var(--color-primary-50);
+  background: var(--color-primary-700);
+  padding: 0.3rem 0.6rem;
+  border-radius: var(--radius-pill);
   line-height: 1;
 `;

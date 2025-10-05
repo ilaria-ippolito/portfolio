@@ -5,11 +5,11 @@ const MetaItemContainer = styled.div`
   padding: 1rem 0;
 `;
 
-const MetaItemLabel = styled.h4`
+const MetaItemLabel = styled.h2`
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
   font-weight: 400;
-  color: var(--color-neutral-500);
+  color: var(--color-neutral-700);
 `;
 
 const MetaItemValue = styled.p`

@@ -4,19 +4,17 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { scrollToSection } from '../../utils/scrollToSection';
 
 const FooterWrapper = styled.footer`
-  /* make footer full-bleed across the viewport even when inside a centered root */
   position: relative;
   width: 100%;
   box-sizing: border-box;
   background-color: var(--color-neutral-700);
   overflow-x: hidden;
-  /* responsive horizontal padding to avoid overflow */
   padding-inline: 16px;
+  padding-block: 28px 18px;
+
   @media (min-width: 900px) {
     padding-inline: 60px;
   }
-  /* increase vertical padding to make the footer taller */
-  padding-block: 28px 18px;
 
   @media (max-width: 600px) {
     padding-block: 18px 12px;
@@ -56,7 +54,6 @@ const BottomRow = styled.div`
 
 const FooterLeft = styled.div`
   max-width: 300px;
-  color: var(--color-primary-500);
   text-decoration: none;
   display: flex;
   flex-direction: column;
@@ -70,7 +67,7 @@ const FooterLeft = styled.div`
 `;
 
 const BigText = styled.span`
-  color: var(--color-neutral-500);
+  color: var(--color-neutral-100);
   font-size: var(--type-title-md);
   font-weight: 800;
   letter-spacing: 1px;
@@ -88,9 +85,9 @@ const Col = styled.div`
   align-items: flex-start;
 `;
 
-const ColTitle = styled.h4`
+const ColTitle = styled.h3`
   margin: 0 0 0.5rem 0;
-  color: var(--color-primary-500); /* use brand accent instead of yellow */
+  color: var(--color-primary-50);
   font-size: var(--type-body-sm);
   font-weight: 700;
   text-transform: uppercase;
@@ -106,7 +103,6 @@ const ColList = styled.ul`
 `;
 
 const ColItem = styled.li`
-  color: var(--color-neutral-500);
   font-size: var(--type-body);
   display: flex;
   align-items: center;
@@ -143,7 +139,7 @@ const SocialImg = styled.img.attrs({ loading: 'lazy' })`
 `;
 
 const NavLink = styled.a`
-  color: var(--color-neutral-500);
+  color: var(--color-neutral-300);
   text-decoration: none;
   font-weight: 700;
   font-size: var(--type-body-sm);

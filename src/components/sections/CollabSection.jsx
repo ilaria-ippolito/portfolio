@@ -39,7 +39,7 @@ const Headline = styled.h3`
 const Intro = styled.p`
   color: var(--color-neutral-700);
   margin: 0 0 0.75rem 0;
-  font-size: var(--type-body-sm);
+  font-size: var(--type-body);
   line-height: 1.6;
 `;
 
@@ -123,7 +123,7 @@ const CollabSection = ({ id = 'collab-section' }) => (
 
       <Right>
         <NeonCard>
-          <h4>Vuoi conoscermi meglio?</h4>
+          <h3>Vuoi conoscermi meglio?</h3>
           <p>
             Se pensi che il mio profilo possa essere adatto alla tua azienda,{' '}
             <strong>scrivimi!</strong>
