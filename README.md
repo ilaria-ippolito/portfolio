@@ -3,7 +3,7 @@
 
 Benvenuto nel repository del portfolio di Ilaria Ippolito! Questo sito web è una vetrina professionale per progetti di UX/UI design, realizzata con tecnologie moderne per garantire velocità, accessibilità e una user experience di alto livello.
 
-🌐 [Portfolio Online](https://ilaria-ippolito.github.io/portfolio/](https://portfolio-ilaria-ippolito.web.app/)
+🌐 [Portfolio Online](https://portfolio-ilaria-ippolito.web.app/)
 
 ## Descrizione del Progetto
 
