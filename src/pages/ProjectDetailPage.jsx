@@ -157,7 +157,7 @@ const ProjectDetailPage = () => {
     projectImages,
     results,
     resultsImage,
-    behanceUrl,
+    projectUrl,
     timeRange,
     coverImage,
   } = selectedProject;
@@ -172,7 +172,7 @@ const ProjectDetailPage = () => {
             tags={projectTags}
             meta={meta}
             timeRange={timeRange}
-            behanceUrl={behanceUrl}
+            projectUrl={projectUrl}
           />
         </TitleRow>
         <ProjectContent>
