@@ -38,7 +38,7 @@ export const projectDetails = {
       'Flusso di checkout più intuitivo.',
     ],
     resultsImage: 'assets/img/projects/ticketone/result.webp',
-    behanceUrl: 'https://www.behance.net/ilariaippolito1',
+    projectUrl: 'https://www.figma.com/design/Q9FH539hxiO5cYFt1gW61Z/TicketOne?node-id=0-1&t=Xa1VAYLQqqdoWph1-1',
     timeRange: 'Set 2025 — Ott 2025',
   },
   ivegan: {
@@ -95,7 +95,7 @@ export const projectDetails = {
       'scalabilità futura del design (design system, componenti riusabili)',
     ],
     resultsImage: 'assets/img/projects/ivegan/result.webp',
-    behanceUrl: 'https://www.behance.net/ilariaippolito1',
+    projectUrl: 'https://www.figma.com/design/QlPAGNoiykPhG94sDKnqNm/iVegan?node-id=2421-1038&t=Z3YBWQFALOM03Tbw-1',
     timeRange: 'Ago 2025 — Set 2025',
   },
   orizon: {
@@ -135,7 +135,7 @@ export const projectDetails = {
       'Coerenza visiva su tutti i canali.',
     ],
     resultsImage: 'assets/img/projects/orizon/result.webp',
-    behanceUrl: 'https://www.behance.net/ilariaippolito1',
+    projectUrl: '',
     timeRange: 'Nov 2024 — Dic 2024',
   },
 };

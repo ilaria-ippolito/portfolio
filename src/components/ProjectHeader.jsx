@@ -68,7 +68,7 @@ const MetaGrid = styled.div`
  * - tags: array of strings
  * - meta: array of { label, value }
  */
-const ProjectHeader = ({ title, tags = [], meta = [], timeRange, behanceUrl }) => (
+const ProjectHeader = ({ title, tags = [], meta = [], timeRange, projectUrl }) => (
   <HeaderWrapper>
     <Tags>
       {tags.map((t, i) => (
@@ -77,10 +77,10 @@ const ProjectHeader = ({ title, tags = [], meta = [], timeRange, behanceUrl }) =
     </Tags>
     <TitleRow>
       <Title style={{ minWidth: 0, overflowWrap: 'break-word' }}>{title}</Title>
-      {behanceUrl && (
-        <PrimaryLinkButton as="a" href={behanceUrl} target="_blank" rel="noopener noreferrer">
+      {projectUrl && (
+        <PrimaryLinkButton as="a" href={projectUrl} target="_blank" rel="noopener noreferrer">
           <ExternalLink size={18} style={{ marginRight: '0.5rem' }} />
-          Versione completa
+          Guarda su Figma
         </PrimaryLinkButton>
       )}
     </TitleRow>
