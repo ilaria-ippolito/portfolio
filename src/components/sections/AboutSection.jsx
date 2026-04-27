@@ -147,7 +147,7 @@ const AboutSection = ({ id = 'about-section' }) => (
         </Intro>
 
         <Ctas>
-          <a href="assets/documents/cv.pdf" download style={{ textDecoration: 'none' }}>
+          <a href="assets/documents/Ilaria_Ippolito_Resume.pdf" download style={{ textDecoration: 'none' }}>
             <SecondaryButton as="span">
               CV completo
               <Download size={18} style={{ marginLeft: 8 }} />
