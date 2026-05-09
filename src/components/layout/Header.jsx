@@ -17,6 +17,21 @@ const HeaderWrapper = styled.header`
     border-color 0.25s ease,
     box-shadow 0.25s ease;
   box-shadow: ${({ $scrolled }) => ($scrolled ? '0 10px 28px rgba(47, 54, 61, 0.08)' : 'none')};
+
+  @media (max-width: 760px) {
+    ${({ $menuOpen }) =>
+      $menuOpen &&
+      `
+        inset: 0;
+        min-height: 100vh;
+        min-height: 100dvh;
+        background: #111315;
+        backdrop-filter: none;
+        border-bottom-color: transparent;
+        box-shadow: none;
+        overflow-y: auto;
+      `}
+  }
 `;
 
 const HeaderInner = styled.div`
@@ -34,6 +49,10 @@ const Brand = styled.a`
   color: var(--color-neutral-700);
   text-decoration: none;
   min-width: 0;
+
+  @media (max-width: 760px) {
+    color: ${({ $menuOpen }) => ($menuOpen ? 'var(--color-accent-50)' : 'var(--color-neutral-700)')};
+  }
 `;
 
 const BrandMark = styled.span`
@@ -48,6 +67,14 @@ const BrandMark = styled.span`
   color: var(--color-primary-700);
   font-weight: 800;
   letter-spacing: 0.04em;
+
+  @media (max-width: 760px) {
+    background: ${({ $menuOpen }) =>
+      $menuOpen ? 'rgba(255, 255, 255, 0.08)' : 'var(--color-primary-50)'};
+    border-color: ${({ $menuOpen }) =>
+      $menuOpen ? 'rgba(255, 255, 255, 0.14)' : 'rgba(167, 44, 161, 0.18)'};
+    color: ${({ $menuOpen }) => ($menuOpen ? 'var(--color-accent-50)' : 'var(--color-primary-700)')};
+  }
 `;
 
 const BrandText = styled.span`
@@ -66,6 +93,10 @@ const BrandRole = styled.span`
   color: var(--color-neutral-500);
   letter-spacing: 0.04em;
   text-transform: uppercase;
+
+  @media (max-width: 760px) {
+    color: ${({ $menuOpen }) => ($menuOpen ? 'rgba(255, 255, 255, 0.72)' : 'var(--color-neutral-500)')};
+  }
 `;
 
 const MenuToggleBtn = styled.button`
@@ -82,6 +113,12 @@ const MenuToggleBtn = styled.button`
 
   @media (max-width: 760px) {
     display: inline-flex;
+    position: relative;
+    z-index: 101;
+    background: ${({ $menuOpen }) => ($menuOpen ? 'rgba(255, 255, 255, 0.06)' : 'var(--color-neutral-0)')};
+    border-color: ${({ $menuOpen }) =>
+      $menuOpen ? 'rgba(255, 255, 255, 0.14)' : 'var(--color-neutral-300)'};
+    color: ${({ $menuOpen }) => ($menuOpen ? 'var(--color-accent-50)' : 'var(--color-neutral-700)')};
   }
 `;
 
@@ -119,10 +156,14 @@ const StyledNav = styled.nav`
   }
 
   @media (max-width: 760px) {
-    position: fixed;
+    position: absolute;
     inset: 0;
-    padding: 6.5rem 1.5rem 2rem;
-    background: rgba(47, 54, 61, 0.96);
+    z-index: 100;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: calc(6.5rem + env(safe-area-inset-top, 0px)) 1.5rem calc(2rem + env(safe-area-inset-bottom, 0px));
+    background: #111315;
+    overflow-y: auto;
     transform: translateX(${({ $open }) => ($open ? '0' : '100%')});
     opacity: ${({ $open }) => ($open ? 1 : 0)};
     pointer-events: ${({ $open }) => ($open ? 'auto' : 'none')};
@@ -133,7 +174,7 @@ const StyledNav = styled.nav`
     ul {
       flex-direction: column;
       align-items: stretch;
-      gap: 0.75rem;
+      gap: 1rem;
     }
 
     a {
@@ -162,7 +203,7 @@ const Overlay = styled.button`
     position: fixed;
     inset: 0;
     border: 0;
-    background: rgba(0, 0, 0, 0.28);
+    background: transparent;
     opacity: ${({ $open }) => ($open ? 1 : 0)};
     pointer-events: ${({ $open }) => ($open ? 'auto' : 'none')};
     transition: opacity 0.28s ease;
@@ -211,14 +252,16 @@ const Header = () => {
   };
 
   return (
-    <HeaderWrapper $scrolled={scrolled}>
+    <HeaderWrapper $scrolled={scrolled} $menuOpen={menuOpen}>
       <CustomPaddingX>
         <HeaderInner>
-          <Brand href="/" onClick={handleLogoClick} aria-label="Go to homepage">
-            <BrandMark aria-hidden="true">II</BrandMark>
+          <Brand href="/" onClick={handleLogoClick} aria-label="Go to homepage" $menuOpen={menuOpen}>
+            <BrandMark aria-hidden="true" $menuOpen={menuOpen}>
+              II
+            </BrandMark>
             <BrandText>
               <BrandName>Ilaria Ippolito</BrandName>
-              <BrandRole>UX/UI Designer</BrandRole>
+              <BrandRole $menuOpen={menuOpen}>UX/UI Designer</BrandRole>
             </BrandText>
           </Brand>
 
@@ -233,6 +276,7 @@ const Header = () => {
             type="button"
             aria-label={menuOpen ? 'Close navigation' : 'Open navigation'}
             onClick={() => setMenuOpen((open) => !open)}
+            $menuOpen={menuOpen}
           >
             {menuOpen ? <X size={24} /> : <Menu size={24} />}
           </MenuToggleBtn>

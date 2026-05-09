@@ -49,10 +49,24 @@ const Tags = styled.div`
 `;
 
 const Actions = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.9rem;
   margin-top: 2rem;
+
+  @media (max-width: 640px) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+`;
+
+const ActionLink = styled.a`
+  display: flex;
+  width: 100%;
+  text-decoration: none;
+
+  span {
+    width: 100%;
+  }
 `;
 
 const Hero = () => {
@@ -78,29 +92,27 @@ const Hero = () => {
         </Tags>
 
         <Actions>
-          <a
+          <ActionLink
             href="#projects-section"
             onClick={(event) =>
               scrollToSection({ event, id: 'projects-section', location, navigate })
             }
-            style={{ textDecoration: 'none' }}
           >
             <PrimaryButton as="span">
               View case studies
               <ArrowRight size={18} aria-hidden="true" />
             </PrimaryButton>
-          </a>
-          <a
+          </ActionLink>
+          <ActionLink
             href="/assets/documents/Ilaria_Ippolito_Resume.pdf"
             download
             aria-label="Download Ilaria Ippolito CV as PDF"
-            style={{ textDecoration: 'none' }}
           >
             <SecondaryButton as="span">
               Download CV
               <Download size={18} aria-hidden="true" />
             </SecondaryButton>
-          </a>
+          </ActionLink>
         </Actions>
       </Content>
     </Section>
