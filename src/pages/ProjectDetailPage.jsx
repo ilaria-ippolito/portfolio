@@ -14,7 +14,13 @@ import {
 } from '../components/SharedStyles';
 import { projectDetails } from '../data/projectDetailData';
 
-const ProjectDetailsWrapper = styled.div``;
+const ProjectDetailsWrapper = styled.div`
+  --project-flow-space: clamp(2.75rem, 5vw, 4rem);
+  --project-section-gap: clamp(1.25rem, 2.2vw, 1.75rem);
+
+  display: grid;
+  gap: var(--project-flow-space);
+`;
 
 const CenteredHomeButtonWrapper = styled.div`
   display: flex;
@@ -22,31 +28,35 @@ const CenteredHomeButtonWrapper = styled.div`
   align-items: center;
   gap: 1rem;
   flex-wrap: wrap;
-  margin-top: 3rem;
 `;
 
 const ProjectHero = styled.img`
   border-radius: var(--radius-lg);
-  border: 1px solid var(--color-neutral-300);
+  border: 1px solid var(--color-border-soft);
   display: block;
   width: 100%;
   max-height: 640px;
   object-fit: cover;
   object-position: center;
-  margin-top: 1rem;
-  margin-bottom: 2.5rem;
+  margin-top: 1.25rem;
+  margin-bottom: clamp(2.75rem, 5vw, 4rem);
+  box-shadow: var(--shadow-md);
 `;
 
-const ProjectContent = styled.div``;
+const ProjectContent = styled.div`
+  display: grid;
+  gap: var(--project-flow-space);
+`;
 
 const ProjectSection = styled.section`
-  margin-bottom: 3rem;
+  display: grid;
+  gap: var(--project-section-gap);
 `;
 
 const ContentGrid = styled.div`
   display: grid;
   grid-template-columns: minmax(0, 0.95fr) minmax(280px, 1fr);
-  gap: 1.5rem;
+  gap: var(--project-section-gap);
   align-items: start;
 
   @media (max-width: 780px) {
@@ -54,10 +64,15 @@ const ContentGrid = styled.div`
   }
 `;
 
+const DetailSectionTitle = styled(SectionTitle)`
+  margin-bottom: 0;
+`;
+
 const TextContent = styled.div`
+  max-width: 44rem;
+
   p {
     margin: 0;
-    max-width: 44rem;
     line-height: 1.75;
     color: var(--color-neutral-500);
   }
@@ -69,8 +84,12 @@ const ImageContent = styled.div`
     width: 100%;
     height: auto;
     border-radius: var(--radius-md);
-    border: 1px solid var(--color-neutral-300);
+    border: 1px solid var(--color-border-soft);
   }
+`;
+
+const ResultList = styled(CheckMarkBullets)`
+  margin: 0;
 `;
 
 function useQuery() {
@@ -140,7 +159,7 @@ const ProjectDetailPage = () => {
 
           <ProjectSection>
             <HighlightedHeading>
-              <SectionTitle>Challenge</SectionTitle>
+              <DetailSectionTitle>Challenge</DetailSectionTitle>
             </HighlightedHeading>
             <TextContent>
               <p>{challengeText}</p>
@@ -151,17 +170,17 @@ const ProjectDetailPage = () => {
 
           <ProjectSection>
             <HighlightedHeading>
-              <SectionTitle>Results</SectionTitle>
+              <DetailSectionTitle>Results</DetailSectionTitle>
             </HighlightedHeading>
             <ContentGrid>
-              <CheckMarkBullets color="var(--color-neutral-700)">
+              <ResultList color="var(--color-neutral-700)">
                 {results.map((result) => (
                   <li key={result}>
                     <Check aria-hidden="true" />
                     <span>{result}</span>
                   </li>
                 ))}
-              </CheckMarkBullets>
+              </ResultList>
 
               <ImageContent>
                 <img src={resultsImage} alt={resultsAlt} loading="lazy" />

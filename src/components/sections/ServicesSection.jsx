@@ -29,11 +29,12 @@ const Card = styled.article`
   flex-direction: column;
   gap: 1rem;
   min-height: 100%;
-  background: var(--color-neutral-900);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--color-neutral-0);
+  border: 1px solid var(--color-border-soft);
   border-radius: var(--radius-lg);
   padding: 1.6rem;
-  color: var(--color-accent-50);
+  color: var(--color-neutral-700);
+  box-shadow: var(--shadow-sm);
 `;
 
 const CardHeader = styled.div`
@@ -48,21 +49,21 @@ const IconWrapper = styled.div`
   justify-content: center;
   width: 50px;
   height: 50px;
-  border-radius: 16px;
-  background: rgba(217, 70, 209, 0.12);
-  color: var(--color-primary-300);
+  border-radius: var(--radius-md);
+  background: var(--color-icon-soft);
+  color: var(--color-primary-700);
   flex-shrink: 0;
 `;
 
 const Title = styled.h3`
   margin: 0;
   font-size: 1.25rem;
-  color: var(--color-accent-50);
+  color: var(--color-neutral-700);
 `;
 
 const Desc = styled.p`
   margin: 0;
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--color-neutral-500);
   font-size: var(--type-body-sm);
   line-height: 1.65;
 `;
@@ -71,25 +72,25 @@ const skills = [
   {
     name: 'Product Design',
     icon: Route,
-    desc: 'I map user journeys and structure flows so product experiences feel clear, usable, and ready to scale across features and screens.',
+    desc: 'I define journeys, flows, and page structure so complex products feel easier to navigate and easier to extend.',
     bullets: ['User Flows', 'Information Architecture', 'Wireframes', 'Responsive patterns'],
   },
   {
     name: 'High-fidelity UI',
     icon: MonitorSmartphone,
-    desc: 'I turn product requirements into polished web and mobile interfaces with consistency, hierarchy, and reusable component thinking.',
+    desc: 'I translate requirements into interface systems with clear hierarchy, reusable components, and responsive behavior.',
     bullets: ['UI components', 'Design System foundations', 'High-fidelity mockups', 'Interactive prototypes'],
   },
   {
     name: 'Accessibility',
     icon: Eye,
-    desc: 'Accessibility is part of how I design, from contrast and hierarchy to keyboard-friendly interaction patterns and clearer content structure.',
+    desc: 'I bring accessibility into the design process through readable contrast, inclusive interactions, and stronger content structure.',
     bullets: ['WCAG-aware reviews', 'Contrast checks', 'Keyboard focus states', 'Accessible UI patterns'],
   },
   {
     name: 'Collaboration',
     icon: Users,
-    desc: 'I enjoy working with product managers and engineers to refine requirements, document decisions, and move designs into implementation.',
+    desc: 'I work closely with product managers and engineers to align decisions, document intent, and support implementation.',
     bullets: ['Design handoff', 'Prototype walkthroughs', 'Shared feedback loops', 'Usability testing insights'],
   },
 ];
@@ -100,8 +101,8 @@ const ServicesSection = ({ id }) => (
       <SectionTitle>Skills</SectionTitle>
     </HighlightedHeading>
     <Intro>
-      My strongest areas sit at the intersection of product thinking, interface design,
-      accessibility, and team collaboration.
+      My strongest areas sit across product structure, interface systems, accessibility, and
+      close collaboration with delivery teams.
     </Intro>
     <Grid>
       {skills.map((skill) => {
@@ -116,7 +117,7 @@ const ServicesSection = ({ id }) => (
               <Title>{skill.name}</Title>
             </CardHeader>
             <Desc>{skill.desc}</Desc>
-            <CheckMarkBullets>
+            <CheckMarkBullets color="var(--color-neutral-500)">
               {skill.bullets.map((bullet) => (
                 <li key={bullet}>
                   <Check aria-hidden="true" />

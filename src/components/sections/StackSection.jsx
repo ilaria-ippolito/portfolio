@@ -27,10 +27,10 @@ const Item = styled.div`
   gap: 0.9rem;
   min-height: 156px;
   background: var(--color-neutral-0);
-  border: 1px solid var(--color-neutral-300);
+  border: 1px solid var(--color-border-soft);
   border-radius: var(--radius-md);
   padding: 1rem;
-  box-shadow: 0 10px 20px rgba(47, 54, 61, 0.03);
+  box-shadow: var(--shadow-sm);
 `;
 
 const Icon = styled.img`

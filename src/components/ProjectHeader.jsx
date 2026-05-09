@@ -20,6 +20,7 @@ const TitleRow = styled.div`
   grid-template-columns: 1fr auto;
   align-items: start;
   gap: 1.5rem;
+  margin-bottom: 1.5rem;
 
   @media (max-width: 720px) {
     grid-template-columns: 1fr;
@@ -41,14 +42,15 @@ const TimeRange = styled.p`
 `;
 
 const MetaGrid = styled.dl`
-  background-color: var(--color-neutral-100);
-  border: 1px solid var(--color-neutral-300);
-  border-radius: var(--radius-md);
-  padding: 1.2rem;
-  margin: 1.5rem 0 0;
+  background: var(--color-surface-soft);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-lg);
+  padding: 1.35rem;
+  margin: 0;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem 1.2rem;
+  box-shadow: var(--shadow-sm);
 
   @media (max-width: 720px) {
     grid-template-columns: 1fr;

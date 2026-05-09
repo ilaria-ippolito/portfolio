@@ -53,6 +53,13 @@ export const CheckMarkBullets = styled.ul`
   }
 `;
 
+export const SurfaceCard = styled.div`
+  background: var(--color-neutral-0);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+`;
+
 export const SecondaryButton = styled.button`
   display: inline-flex;
   align-items: center;
@@ -60,7 +67,7 @@ export const SecondaryButton = styled.button`
   justify-content: center;
   min-height: 48px;
   background: var(--color-neutral-0);
-  border: 1px solid var(--color-neutral-300);
+  border: 1px solid var(--color-border-soft);
   color: var(--color-neutral-700);
   font-size: 1rem;
   font-weight: 600;
@@ -76,8 +83,8 @@ export const SecondaryButton = styled.button`
 
   &:hover,
   &:focus-visible {
-    background-color: var(--color-accent-500);
-    border-color: var(--color-primary-500);
+    background-color: var(--color-surface-tint);
+    border-color: var(--color-border-accent);
     color: var(--color-neutral-700);
     transform: translateY(-1px);
     box-shadow: var(--shadow-sm);
@@ -143,7 +150,7 @@ export const Tag = styled.span`
   font-size: var(--type-body-sm);
   color: var(--color-primary-700);
   background: var(--color-primary-50);
-  border: 1px solid rgba(167, 44, 161, 0.18);
+  border: 1px solid var(--color-border-accent);
   padding: 0.45rem 0.85rem;
   border-radius: var(--radius-pill);
   line-height: 1;
@@ -156,7 +163,7 @@ export const TagSmall = styled.span`
   text-transform: uppercase;
   color: var(--color-primary-700);
   background: var(--color-primary-50);
-  border: 1px solid rgba(167, 44, 161, 0.18);
+  border: 1px solid var(--color-border-accent);
   padding: 0.35rem 0.6rem;
   border-radius: var(--radius-pill);
   line-height: 1;

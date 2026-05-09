@@ -3,13 +3,14 @@ import styled from 'styled-components';
 import { HighlightedHeading, SectionTitle } from './SharedStyles';
 
 const Section = styled.section`
-  margin-bottom: 3rem;
+  display: grid;
+  gap: var(--project-section-gap, clamp(1.25rem, 2.2vw, 1.75rem));
 `;
 
 const Grid = styled.div`
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(280px, 1fr);
-  gap: 1.5rem;
+  gap: var(--project-section-gap, clamp(1.25rem, 2.2vw, 1.75rem));
   align-items: start;
 
   @media (max-width: 780px) {
@@ -17,7 +18,13 @@ const Grid = styled.div`
   }
 `;
 
+const OverviewTitle = styled(SectionTitle)`
+  margin-bottom: 0;
+`;
+
 const Text = styled.div`
+  max-width: 44rem;
+
   p {
     margin: 0;
     line-height: 1.75;
@@ -38,7 +45,7 @@ const Visual = styled.div`
 const ProjectOverview = ({ overviewText, overviewImage, overviewAlt }) => (
   <Section>
     <HighlightedHeading>
-      <SectionTitle>Overview</SectionTitle>
+      <OverviewTitle>Overview</OverviewTitle>
     </HighlightedHeading>
 
     <Grid>

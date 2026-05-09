@@ -33,14 +33,8 @@ const projects = [
     imageAlt: 'Preview of the TicketOne case study interface redesign',
     title: 'TicketOne Redesign',
     summary:
-      'A product redesign focused on a clearer purchase flow, responsive UI, and accessibility improvements for a high-traffic entertainment platform.',
+      'A product redesign focused on a smoother purchase flow, responsive UI, and accessibility improvements for a high-traffic entertainment platform.',
     tags: ['B2B', 'Responsive UI', 'Accessibility'],
-    metaItems: [
-      { label: 'Role', value: 'UX/UI Designer' },
-      { label: 'Timeline', value: 'Aug 2025 - Sep 2025' },
-      { label: 'Tools', value: 'Figma, Maze, WAVE' },
-      { label: 'Focus', value: 'Purchase flow, responsive UI, accessibility' },
-    ],
     href: '/project-detail?project=ticketone',
   },
   {
@@ -51,12 +45,6 @@ const projects = [
     summary:
       'An e-commerce UX redesign that simplified product discovery and supported more accessible, test-informed shopping flows.',
     tags: ['E-commerce UX', 'Usability Testing', 'Accessibility'],
-    metaItems: [
-      { label: 'Role', value: 'UX/UI Designer' },
-      { label: 'Timeline', value: 'Jan 2025 - Aug 2025' },
-      { label: 'Tools', value: 'Figma, Maze, WAVE' },
-      { label: 'Focus', value: 'E-commerce UX, accessibility, usability testing' },
-    ],
     href: '/project-detail?project=ivegan',
   },
   {
@@ -67,12 +55,6 @@ const projects = [
     summary:
       'A visual identity project centered on a cohesive brand system, reusable assets, and digital consistency across touchpoints.',
     tags: ['Visual Identity', 'Brand System', 'UI Assets'],
-    metaItems: [
-      { label: 'Role', value: 'Visual Designer' },
-      { label: 'Timeline', value: 'Nov 2024 - Dec 2024' },
-      { label: 'Tools', value: 'Illustrator, Photoshop' },
-      { label: 'Focus', value: 'Brand identity, visual system, reusable assets' },
-    ],
     href: '/project-detail?project=orizon',
   },
 ];
@@ -80,11 +62,11 @@ const projects = [
 const FeaturedProjects = ({ id }) => (
   <Section id={id}>
     <HighlightedHeading>
-      <SectionTitle>Selected Case Studies</SectionTitle>
+      <SectionTitle>Case studies</SectionTitle>
     </HighlightedHeading>
     <Intro>
-      A selection of UX/UI and visual design work focused on product clarity, scalable
-      interfaces, and thoughtful execution across web and mobile touchpoints.
+      A selection of product, e-commerce, and brand work shaped around structure, interface
+      quality, and thoughtful execution across digital touchpoints.
     </Intro>
     <Container>
       {projects.map((project) => {

@@ -20,10 +20,16 @@
   --color-neutral-700: #2f363d;
   --color-neutral-900: #303941;
 
+  --color-surface-soft: #f8f9fb;
+  --color-surface-tint: #fdf3fb;
+  --color-border-soft: rgba(47, 54, 61, 0.1);
+  --color-border-accent: rgba(167, 44, 161, 0.22);
+  --color-icon-soft: rgba(167, 44, 161, 0.1);
+
   /* Radii */
-  --radius-sm: 8px;
-  --radius-md: 18px;
-  --radius-lg: 28px;
+  --radius-sm: 6px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
   --radius-pill: 999px;
 
   --section-space: clamp(3.5rem, 6vw, 6rem);
@@ -64,7 +70,7 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #f8f9fb 100%);
   color: var(--color-neutral-700);
 }
 

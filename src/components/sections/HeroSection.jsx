@@ -27,8 +27,8 @@ const Eyebrow = styled.p`
 
 const Title = styled.h1`
   margin: 0;
-  font-size: clamp(3rem, 8vw, 6.25rem);
-  line-height: 0.95;
+  font-size: clamp(2.85rem, 5.8vw, 5.4rem);
+  line-height: 0.98;
   letter-spacing: -0.06em;
   color: var(--color-neutral-700);
 `;
@@ -36,8 +36,8 @@ const Title = styled.h1`
 const Summary = styled.p`
   margin: 1.5rem 0 0;
   max-width: 44rem;
-  font-size: clamp(1.05rem, 2vw, 1.3rem);
-  line-height: 1.7;
+  font-size: clamp(1rem, 1.8vw, 1.22rem);
+  line-height: 1.75;
   color: var(--color-neutral-500);
 `;
 
@@ -63,11 +63,11 @@ const Hero = () => {
     <Section>
       <Content>
         <Eyebrow>Ilaria Ippolito</Eyebrow>
-        <Title>UX/UI Designer for clear, scalable digital products.</Title>
+        <Title>UX/UI designer for digital products that feel clear and ready to scale.</Title>
         <Summary>
-          Focused on B2B and product design, I create web and mobile experiences with strong
-          User Flows, Accessibility, Design System thinking, high-fidelity UI, prototyping,
-          usability testing, and collaboration with product and engineering teams.
+          I design web and mobile experiences with strong structure, accessible patterns, and
+          polished UI systems that help product teams move from concept to release with
+          confidence.
         </Summary>
 
         <Tags aria-label="Core strengths">

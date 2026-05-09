@@ -50,7 +50,7 @@ const InfoCard = styled.div`
   border-radius: var(--radius-md);
   padding: 1.35rem 1.4rem;
   border: 1px solid
-    ${({ $tone }) => ($tone === 'dark' ? 'rgba(255, 255, 255, 0.08)' : 'var(--color-neutral-300)')};
+    ${({ $tone }) => ($tone === 'dark' ? 'rgba(255, 255, 255, 0.08)' : 'var(--color-border-soft)')};
   background:
     ${({ $tone }) =>
       $tone === 'dark'
@@ -59,6 +59,7 @@ const InfoCard = styled.div`
           ? 'var(--color-primary-50)'
           : 'var(--color-neutral-0)'};
   color: ${({ $tone }) => ($tone === 'dark' ? 'var(--color-accent-50)' : 'var(--color-neutral-700)')};
+  box-shadow: var(--shadow-sm);
 `;
 
 const InfoTitle = styled.h3`
@@ -86,8 +87,8 @@ const AboutSection = ({ id = 'about-section' }) => (
         </Intro>
         <Intro>
           My background combines communication, visual culture, and an intensive UX/UI design
-          program, which helps me turn complex requirements into interfaces that feel clear,
-          structured, and ready to evolve.
+          program, which helps me turn complex requirements into interfaces that feel structured,
+          intentional, and ready to evolve.
         </Intro>
         <Intro>
           I work in <strong>Figma</strong> across User Flows, high-fidelity UI, prototyping,
@@ -122,7 +123,7 @@ const AboutSection = ({ id = 'about-section' }) => (
           <InfoTitle>Focus</InfoTitle>
           <InfoText $tone="dark">
             B2B and product experiences for web and mobile, with special attention to structure,
-            clarity, and scalability.
+            direction, and scalability.
           </InfoText>
         </InfoCard>
 

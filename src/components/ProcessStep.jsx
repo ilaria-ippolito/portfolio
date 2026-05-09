@@ -3,9 +3,10 @@ import styled from 'styled-components';
 
 const ProcessStepContainer = styled.div`
   border-radius: var(--radius-md);
-  border: 1px solid var(--color-neutral-300);
+  border: 1px solid var(--color-border-soft);
   padding: 1.5rem;
   background: var(--color-neutral-0);
+  box-shadow: var(--shadow-sm);
 `;
 
 const StepHeader = styled.div`
@@ -23,7 +24,7 @@ const StepNumber = styled.span`
   color: var(--color-accent-50);
   width: 36px;
   height: 36px;
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius-md);
   font-size: 1rem;
   font-weight: 700;
 `;

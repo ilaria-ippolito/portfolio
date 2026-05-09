@@ -24,9 +24,9 @@ const Left = styled.div`
 
 const Headline = styled.h3`
   margin: 0 0 1rem;
-  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  font-size: clamp(1.3rem, 2.2vw, 1.75rem);
   color: var(--color-neutral-700);
-  line-height: 1.15;
+  line-height: 1.3;
 `;
 
 const Intro = styled.p`
@@ -42,6 +42,7 @@ const ContactCard = styled.div`
   border-radius: var(--radius-lg);
   padding: 1.5rem;
   border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow-sm);
 `;
 
 const CardTitle = styled.h3`
@@ -118,23 +119,23 @@ const CollabSection = ({ id = 'contact-section' }) => (
     </HighlightedHeading>
     <Grid>
       <Left>
-        <Headline>Open to product teams that care about clarity, usability, and craft.</Headline>
+        <Headline>Open to product teams that value thoughtful product design and strong execution.</Headline>
         <Intro>
-          I'm interested in UX/UI and product design opportunities where I can contribute to
-          scalable digital experiences, collaborate with multidisciplinary teams, and keep
-          improving the quality of product decisions through design.
+          I’m interested in UX/UI and product design opportunities where I can help shape
+          scalable digital experiences, collaborate across disciplines, and bring steady design
+          thinking into the product process.
         </Intro>
         <Intro>
-          If you'd like to discuss a role, a collaboration, or simply connect, you can reach me
-          through email, LinkedIn, Behance, or my CV below.
+          If you’d like to discuss a role, a freelance collaboration, or a future opportunity,
+          you can reach me through email, LinkedIn, Behance, or my CV below.
         </Intro>
       </Left>
 
       <ContactCard>
         <CardTitle>Let's talk</CardTitle>
         <CardText>
-          The fastest way to reach me is by email. You can also explore my profiles or download
-          my CV for a quick overview of my background.
+          Email is the fastest way to reach me. You can also browse my profiles or download my
+          CV for a quick overview of my background.
         </CardText>
         <Actions>
           <ContactButton href="mailto:ilariaippolito95@gmail.com" aria-label="Send an email to Ilaria">

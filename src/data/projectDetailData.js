@@ -11,11 +11,11 @@ export const projectDetails = {
     coverImage: 'assets/img/projects/ticketone/cover.webp',
     coverAlt: 'TicketOne redesign cover showing the updated ticket purchase interface',
     overviewText:
-      'This case study rethinks the TicketOne browsing and checkout experience with a stronger focus on information clarity, responsive behavior, and user confidence. The goal was to simplify how people discover events and move through the purchase flow without losing context along the way.',
+      'This case study revisits the TicketOne browsing and checkout experience with a stronger focus on information hierarchy, responsive behavior, and buyer confidence. The work aimed to simplify how people discover events and move through the purchase flow without losing context.',
     overviewImage: 'assets/img/projects/ticketone/overview.webp',
     overviewAlt: 'TicketOne overview screens from the redesign case study',
     challengeText:
-      'The main challenge was reducing friction in a high-intent journey: users need to compare events, understand details quickly, and complete the purchase flow smoothly across desktop and mobile.',
+      'The main challenge was reducing friction in a high-intent journey. Users need to compare events, scan key details quickly, and complete the purchase flow smoothly across desktop and mobile.',
     processSteps: [
       {
         number: 1,
@@ -44,10 +44,10 @@ export const projectDetails = {
     ],
     projectImages: [],
     results: [
-      'Clearer purchase flow with stronger information hierarchy.',
-      'Responsive layouts designed to support desktop and mobile browsing.',
-      'Accessibility improvements applied to contrast, structure, and navigation clarity.',
-      'A prototype ready for review, iteration, and product discussion.',
+      'A purchase flow with stronger hierarchy and clearer next steps.',
+      'Responsive layouts built to support browsing across desktop and mobile.',
+      'Accessibility improvements across contrast, structure, and navigation patterns.',
+      'A prototype ready for review, iteration, and stakeholder discussion.',
     ],
     resultsImage: 'assets/img/projects/ticketone/result.webp',
     resultsAlt: 'TicketOne redesign result screens',
@@ -67,11 +67,11 @@ export const projectDetails = {
     coverImage: 'assets/img/projects/ivegan/cover.webp',
     coverAlt: 'iVegan redesign cover showing the updated e-commerce experience',
     overviewText:
-      'This redesign focused on improving the iVegan e-commerce experience through better product discovery, clearer content structure, and more accessible interaction patterns. The aim was to make browsing and buying feel simpler for users navigating a large catalog.',
+      'This redesign focused on improving the iVegan e-commerce experience through better product discovery, stronger content structure, and more accessible interaction patterns. The aim was to make browsing and buying feel simpler for people navigating a large catalog.',
     overviewImage: 'assets/img/projects/ivegan/overview.webp',
     overviewAlt: 'iVegan overview screens from the redesign case study',
     challengeText:
-      'The key challenge was balancing a broad product offering with a smoother shopping flow. The interface needed to support quick exploration, clearer product understanding, and fewer points of friction before checkout.',
+      'The key challenge was balancing a broad product offering with a smoother shopping flow. The interface needed to support quick exploration, better product understanding, and fewer points of friction before checkout.',
     processSteps: [
       {
         number: 1,
@@ -106,10 +106,10 @@ export const projectDetails = {
     ],
     projectImages: [],
     results: [
-      'Simplified product discovery and clearer catalog navigation.',
-      'More accessible interface patterns across key shopping moments.',
-      'Reduced friction in browsing, filtering, and product evaluation.',
-      'A more scalable UI foundation for future e-commerce growth.',
+      'Simplified product discovery and more intuitive catalog navigation.',
+      'More accessible interaction patterns across key shopping moments.',
+      'Less friction across browsing, filtering, and product evaluation.',
+      'A UI foundation that can support future e-commerce growth.',
     ],
     resultsImage: 'assets/img/projects/ivegan/result.webp',
     resultsAlt: 'iVegan redesign result screens',
@@ -129,7 +129,7 @@ export const projectDetails = {
     coverImage: 'assets/img/projects/orizon/cover.webp',
     coverAlt: 'Orizon brand identity cover with logo and color system',
     overviewText:
-      'For Orizon, the work focused on building a cohesive visual identity that could translate clearly across digital touchpoints. The project included logo exploration, color definition, and reusable brand assets designed to support consistency over time.',
+      'For Orizon, the work focused on building a cohesive visual identity that could translate across digital touchpoints. The project included logo exploration, color definition, and reusable brand assets designed to support consistency over time.',
     overviewImage: 'assets/img/projects/orizon/overview.webp',
     overviewAlt: 'Orizon overview screens showing the visual identity system',
     challengeText:
@@ -158,7 +158,7 @@ export const projectDetails = {
     results: [
       'A more cohesive and recognizable visual identity.',
       'Reusable assets for digital communication and presentation.',
-      'A clearer visual foundation that supports future brand consistency.',
+      'A flexible visual foundation that supports future brand consistency.',
     ],
     resultsImage: 'assets/img/projects/orizon/result.webp',
     resultsAlt: 'Orizon brand identity result screens',
