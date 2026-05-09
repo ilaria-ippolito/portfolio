@@ -1,167 +1,126 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Check, Eye, MonitorSmartphone, Route, Users } from 'lucide-react';
 import { HighlightedHeading, SectionTitle, CheckMarkBullets } from '../SharedStyles';
-import { Compass, Users, Eye, Monitor, Check, TestTubeDiagonal } from 'lucide-react';
 
-const ServicesWrapper = styled.section`
-  margin-top: 3rem;
+const SkillsWrapper = styled.section`
+  margin-top: var(--section-space);
+`;
+
+const Intro = styled.p`
+  margin: 0 0 2rem;
+  max-width: 44rem;
+  color: var(--color-neutral-500);
+  line-height: 1.7;
 `;
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-  margin-top: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
 
-  & > :nth-child(1) {
-    margin-top: 0;
-  }
-  & > :nth-child(2) {
-    margin-top: 4rem;
-  }
-  & > :nth-child(3) {
-    margin-top: 8rem;
-  }
-  & > :nth-child(4) {
-    margin-top: 12rem;
-  }
-
-  @media (max-width: 1500px) {
-    grid-template-columns: repeat(2, 1fr);
-    & > :nth-child(1) {
-      margin-top: 0;
-    }
-    & > :nth-child(2) {
-      margin-top: 4rem;
-    }
-    & > :nth-child(3) {
-      margin-top: 0;
-    }
-    & > :nth-child(4) {
-      margin-top: 4rem;
-    }
-  }
-  @media (max-width: 600px) {
+  @media (max-width: 820px) {
     grid-template-columns: 1fr;
-    & > * {
-      margin-top: 0 !important;
-    }
   }
 `;
 
-const Card = styled.div`
-  background: var(--color-neutral-700);
-  border: 1px solid var(--color-neutral-500);
+const Card = styled.article`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-height: 100%;
+  background: var(--color-neutral-900);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-lg);
-  padding: 2rem;
-  display: block;
-  color: var(--color-neutral-50);
-  height: 350px;
-  overflow: hidden;
+  padding: 1.6rem;
+  color: var(--color-accent-50);
+`;
 
-  @media (max-width: 1500px) {
-    height: 320px;
-  }
+const CardHeader = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.95rem;
 `;
 
 const IconWrapper = styled.div`
-  width: 48px;
-  height: 48px;
-  min-width: 48px;
-  min-height: 48px;
-  max-width: 48px;
-  max-height: 48px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: rgba(226, 96, 217, 0.09);
-  border-radius: var(--radius-md);
-  color: var(--color-primary-500);
-  flex: 0 0 48px;
-
-  /* Ensure SVG icons are constrained to the wrapper */
-  svg {
-    width: 22px;
-    height: 22px;
-    display: block;
-  }
+  width: 50px;
+  height: 50px;
+  border-radius: 16px;
+  background: rgba(217, 70, 209, 0.12);
+  color: var(--color-primary-300);
+  flex-shrink: 0;
 `;
 
 const Title = styled.h3`
-  font-size: var(--type-title-md);
-  font-weight: 800;
-  letter-spacing: -0.01em;
-  color: var(--color-neutral-50);
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--color-accent-50);
 `;
 
 const Desc = styled.p`
-  color: var(--color-neutral-300);
+  margin: 0;
+  color: rgba(255, 255, 255, 0.78);
   font-size: var(--type-body-sm);
-  line-height: 1.6;
+  line-height: 1.65;
 `;
 
-const services = [
+const skills = [
   {
-    name: 'User Research',
-    icon: Users,
-    desc: 'Ricerche qualitative e quantitative per comprendere i bisogni degli utenti.',
-    bullets: ['Interviste utente', 'Analisi di usabilità', 'Survey', 'Personas e user journeys'],
+    name: 'Product Design',
+    icon: Route,
+    desc: 'I map user journeys and structure flows so product experiences feel clear, usable, and ready to scale across features and screens.',
+    bullets: ['User Flows', 'Information Architecture', 'Wireframes', 'Responsive patterns'],
   },
   {
-    name: 'Accessibilità',
+    name: 'High-fidelity UI',
+    icon: MonitorSmartphone,
+    desc: 'I turn product requirements into polished web and mobile interfaces with consistency, hierarchy, and reusable component thinking.',
+    bullets: ['UI components', 'Design System foundations', 'High-fidelity mockups', 'Interactive prototypes'],
+  },
+  {
+    name: 'Accessibility',
     icon: Eye,
-    desc: 'Valutazioni e miglioramenti per l’accessibilità digitale (WCAG).',
-    bullets: [
-      'Audit WCAG',
-      'Test con tecnologie assistive',
-      'Linee guida e remediation',
-      'Design inclusivo',
-    ],
+    desc: 'Accessibility is part of how I design, from contrast and hierarchy to keyboard-friendly interaction patterns and clearer content structure.',
+    bullets: ['WCAG-aware reviews', 'Contrast checks', 'Keyboard focus states', 'Accessible UI patterns'],
   },
   {
-    name: 'User Interface',
-    icon: Monitor,
-    desc: 'Design di interfacce e prototipi interattivi ad alta fedeltà.',
-    bullets: ['Wireframes', 'Mockup ad alta fedeltà', 'Prototipi interattivi', 'Design systems'],
-  },
-  {
-    name: 'User test',
-    icon: TestTubeDiagonal,
-    desc: 'Test di usabilità per iterare e migliorare le esperienze digitali.',
-    bullets: ['Interviste agli utenti', 'Report degli insight', 'A/B testing', 'Five second test'],
+    name: 'Collaboration',
+    icon: Users,
+    desc: 'I enjoy working with product managers and engineers to refine requirements, document decisions, and move designs into implementation.',
+    bullets: ['Design handoff', 'Prototype walkthroughs', 'Shared feedback loops', 'Usability testing insights'],
   },
 ];
 
 const ServicesSection = ({ id }) => (
-  <ServicesWrapper id={id}>
+  <SkillsWrapper id={id}>
     <HighlightedHeading>
-      <SectionTitle>I mie servizi</SectionTitle>
+      <SectionTitle>Skills</SectionTitle>
     </HighlightedHeading>
+    <Intro>
+      My strongest areas sit at the intersection of product thinking, interface design,
+      accessibility, and team collaboration.
+    </Intro>
     <Grid>
-      {services.map((s) => {
-        const IconComp = s.icon;
+      {skills.map((skill) => {
+        const IconComp = skill.icon;
+
         return (
-          <Card key={s.name}>
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '1rem',
-                marginBottom: '1rem',
-                width: '100%',
-              }}
-            >
+          <Card key={skill.name}>
+            <CardHeader>
               <IconWrapper>
-                <IconComp size={22} />
+                <IconComp size={22} aria-hidden="true" />
               </IconWrapper>
-              <Title>{s.name}</Title>
-            </div>
-            <Desc>{s.desc}</Desc>
+              <Title>{skill.name}</Title>
+            </CardHeader>
+            <Desc>{skill.desc}</Desc>
             <CheckMarkBullets>
-              {s.bullets.map((b) => (
-                <li key={b}>
-                  <Check />
-                  <span>{b}</span>
+              {skill.bullets.map((bullet) => (
+                <li key={bullet}>
+                  <Check aria-hidden="true" />
+                  <span>{bullet}</span>
                 </li>
               ))}
             </CheckMarkBullets>
@@ -169,7 +128,7 @@ const ServicesSection = ({ id }) => (
         );
       })}
     </Grid>
-  </ServicesWrapper>
+  </SkillsWrapper>
 );
 
 export default ServicesSection;

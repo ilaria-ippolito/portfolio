@@ -5,32 +5,19 @@ export const HighlightedHeading = styled.div`
 `;
 
 export const SectionTitle = styled.h2`
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 3vw, 2.6rem);
   font-weight: 700;
-  margin-bottom: 1.5rem;
-  letter-spacing: 1px;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.03em;
   position: relative;
   display: inline-block;
+  color: var(--color-neutral-700);
 `;
 
 export const CustomPaddingX = styled.section`
-  padding: 0 25rem;
-
-  @media (max-width: 2000px) {
-    padding: 0 15rem;
-  }
-
-  @media (max-width: 1800px) {
-    padding: 0 10rem;
-  }
-
-  @media (max-width: 1500px) {
-    padding: 0 5rem;
-  }
-
-  @media (max-width: 600px) {
-    padding: 0 1rem;
-  }
+  width: min(100%, var(--container-max));
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 4vw, 3rem);
 `;
 
 export const GoToHome = styled.div`
@@ -61,7 +48,7 @@ export const CheckMarkBullets = styled.ul`
     width: 18px;
     height: 18px;
     flex: 0 0 18px;
-    color: var(--color-success); /* green check */
+    color: var(--color-primary-500);
     margin-top: 2px;
   }
 `;
@@ -70,22 +57,30 @@ export const SecondaryButton = styled.button`
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: none;
-  border: 2px solid var(--color-primary-700);
-  color: var(--color-primary-700);
-  font-size: 1.3rem;
+  justify-content: center;
+  min-height: 48px;
+  background: var(--color-neutral-0);
+  border: 1px solid var(--color-neutral-300);
+  color: var(--color-neutral-700);
+  font-size: 1rem;
   font-weight: 600;
   border-radius: var(--radius-md);
-  padding: 0.75rem 1.5rem;
+  padding: 0.8rem 1.25rem;
   cursor: pointer;
   transition:
     background 0.18s,
-    color 0.18s;
+    color 0.18s,
+    border-color 0.18s,
+    transform 0.18s,
+    box-shadow 0.18s;
 
   &:hover,
   &:focus-visible {
-    background-color: var(--color-primary-700);
-    color: var(--color-accent-50);
+    background-color: var(--color-accent-500);
+    border-color: var(--color-primary-500);
+    color: var(--color-neutral-700);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
   }
 `;
 
@@ -93,45 +88,26 @@ export const PrimaryButton = styled.button`
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: var(--color-primary-500);
-  background-image: radial-gradient(
-    circle at 50% 50%,
-    var(--color-primary-700) 0%,
-    var(--color-primary-700) 40%,
-    transparent 41%
-  );
-  background-repeat: no-repeat;
-  background-size: 0% 0%;
-  background-position: 50% 50%;
+  justify-content: center;
+  min-height: 48px;
+  background: var(--color-primary-700);
   color: white;
-  padding: 0.75rem 1.5rem;
+  padding: 0.8rem 1.25rem;
   border-radius: var(--radius-md);
   font-weight: 600;
-  border: none;
+  border: 1px solid transparent;
   cursor: pointer;
-  transition: color 0.18s;
-  font-size: 1.3rem;
-  position: relative;
-  overflow: hidden;
-
-  /* Remove ::before pseudo-element, use background instead */
-
-  /* No ::before hover needed */
+  transition:
+    background 0.18s,
+    transform 0.18s,
+    box-shadow 0.18s;
+  font-size: 1rem;
 
   &:hover,
   &:focus-visible {
-    color: white;
-    background-size: 250% 250%;
-    background-position: 50% 50%;
-    transition:
-      background-size 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-      color 0.18s;
-  }
-
-  > * {
-    position: relative;
-    z-index: 1;
-    color: inherit;
+    background: var(--color-primary-500);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
   }
 `;
 
@@ -139,59 +115,49 @@ export const PrimaryLinkButton = styled.a`
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: var(--color-primary-500);
-  background-image: radial-gradient(
-    circle at 50% 50%,
-    var(--color-primary-700) 0%,
-    var(--color-primary-700) 40%,
-    transparent 41%
-  );
-  background-repeat: no-repeat;
-  background-size: 0% 0%;
-  background-position: 50% 50%;
+  justify-content: center;
+  min-height: 48px;
+  background: var(--color-primary-700);
   color: var(--color-accent-50);
-  padding: 0.75rem 1.5rem;
+  padding: 0.8rem 1.25rem;
   border-radius: var(--radius-md);
   font-weight: 600;
   text-decoration: none;
-  border: none;
+  border: 1px solid transparent;
   cursor: pointer;
   font-size: 1rem;
-  position: relative;
-  overflow: hidden;
-  transition: color 0.18s;
+  transition:
+    background 0.18s,
+    transform 0.18s,
+    box-shadow 0.18s;
 
   &:hover,
   &:focus-visible {
-    color: var(--color-accent-50);
-    background-size: 250% 250%;
-    background-position: 50% 50%;
-    transition:
-      background-size 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-      color 0.18s;
-  }
-
-  > * {
-    position: relative;
-    z-index: 1;
-    color: inherit;
+    background: var(--color-primary-500);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
   }
 `;
 
 export const Tag = styled.span`
-  font-size: var(--type-body);
-  color: var(--color-accent-50);
-  background: var(--color-primary-700);
-  padding: 0.6rem 1.2rem;
+  font-size: var(--type-body-sm);
+  color: var(--color-primary-700);
+  background: var(--color-primary-50);
+  border: 1px solid rgba(167, 44, 161, 0.18);
+  padding: 0.45rem 0.85rem;
   border-radius: var(--radius-pill);
   line-height: 1;
 `;
 
 export const TagSmall = styled.span`
-  font-size: var(--type-body-sm);
-  color: var(--color-primary-50);
-  background: var(--color-primary-700);
-  padding: 0.3rem 0.6rem;
+  font-size: var(--type-label);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--color-primary-700);
+  background: var(--color-primary-50);
+  border: 1px solid rgba(167, 44, 161, 0.18);
+  padding: 0.35rem 0.6rem;
   border-radius: var(--radius-pill);
   line-height: 1;
 `;

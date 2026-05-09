@@ -1,95 +1,96 @@
 import React from 'react';
 import styled from 'styled-components';
-import MetaItem from './MetaItem';
-import { Tag, PrimaryLinkButton } from './SharedStyles';
 import { ExternalLink } from 'lucide-react';
+import MetaItem from './MetaItem';
+import { PrimaryLinkButton, Tag } from './SharedStyles';
 
 const HeaderWrapper = styled.header`
-  margin-bottom: 2rem;
   width: 100%;
+`;
+
+const Tags = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 `;
 
 const TitleRow = styled.div`
   display: grid;
   grid-template-columns: 1fr auto;
-  align-items: center;
-  gap: 4rem;
-  margin-bottom: 0.5rem;
-  min-width: 0;
+  align-items: start;
+  gap: 1.5rem;
 
-  @media (max-width: 600px) {
+  @media (max-width: 720px) {
     grid-template-columns: 1fr;
-    gap: 1.2rem;
-    justify-items: start;
   }
 `;
 
 const Title = styled.h1`
-  font-size: 3rem;
-  margin-bottom: 0.25rem;
-  word-break: break-word;
-  @media (max-width: 600px) {
-    font-size: 2rem;
-  }
-`;
-
-const Tags = styled.div`
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  margin-bottom: 0.5rem;
-`;
-
-const TimeRange = styled.div`
+  margin: 0;
+  font-size: clamp(2.1rem, 4vw, 3.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
   color: var(--color-neutral-700);
-  font-size: 1rem;
-  margin-bottom: 1rem;
 `;
 
-const MetaGrid = styled.div`
-  background-color: var(--color-neutral-100);
-  border-radius: var(--radius-md);
-  padding: 1.5rem;
-  margin-top: 1.5rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 1rem;
+const TimeRange = styled.p`
+  margin: 0.8rem 0 0;
+  color: var(--color-neutral-500);
+  font-size: var(--type-body);
+`;
 
-  @media (max-width: 600px) {
+const MetaGrid = styled.dl`
+  background-color: var(--color-neutral-100);
+  border: 1px solid var(--color-neutral-300);
+  border-radius: var(--radius-md);
+  padding: 1.2rem;
+  margin: 1.5rem 0 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 1.2rem;
+
+  @media (max-width: 720px) {
     grid-template-columns: 1fr;
-    padding: 1rem;
-    gap: 0.7rem;
   }
 `;
 
-/**
- * ProjectHeader
- * - title: string
- * - tags: array of strings
- * - meta: array of { label, value }
- */
 const ProjectHeader = ({ title, tags = [], meta = [], timeRange, projectUrl }) => (
   <HeaderWrapper>
-    <Tags>
-      {tags.map((t, i) => (
-        <Tag key={i}>{t}</Tag>
-      ))}
-    </Tags>
+    {tags.length > 0 && (
+      <Tags>
+        {tags.map((tag) => (
+          <Tag key={tag}>{tag}</Tag>
+        ))}
+      </Tags>
+    )}
+
     <TitleRow>
-      <Title style={{ minWidth: 0, overflowWrap: 'break-word' }}>{title}</Title>
-      {projectUrl && (
-        <PrimaryLinkButton as="a" href={projectUrl} target="_blank" rel="noopener noreferrer">
-          <ExternalLink size={18} style={{ marginRight: '0.5rem' }} />
-          Guarda su Figma
+      <div>
+        <Title>{title}</Title>
+        {timeRange ? <TimeRange>{timeRange}</TimeRange> : null}
+      </div>
+
+      {projectUrl ? (
+        <PrimaryLinkButton
+          href={projectUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Open ${title} in Figma`}
+        >
+          <ExternalLink size={18} aria-hidden="true" />
+          Open in Figma
         </PrimaryLinkButton>
-      )}
+      ) : null}
     </TitleRow>
-    {timeRange && <TimeRange>{timeRange}</TimeRange>}
-    <MetaGrid>
-      {meta.map((m, i) => (
-        <MetaItem key={i} label={m.label} value={m.value} />
-      ))}
-    </MetaGrid>
+
+    {meta.length > 0 && (
+      <MetaGrid>
+        {meta.map((item) => (
+          <MetaItem key={item.label} label={item.label} value={item.value} />
+        ))}
+      </MetaGrid>
+    )}
   </HeaderWrapper>
 );
 

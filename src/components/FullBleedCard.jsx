@@ -1,107 +1,160 @@
 import React from 'react';
 import styled from 'styled-components';
+import { ArrowUpRight } from 'lucide-react';
 import { TagSmall } from './SharedStyles';
 
 const Wrapper = styled.a`
-  display: block;
-  position: relative;
-  overflow: hidden;
-  border-radius: var(--radius-md);
-  text-decoration: none;
-  color: inherit;
-  height: 100%;
-  min-height: 20rem;
-
-  /* main image as background (for zoom effect) */
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: url(${(p) => p.$img});
-    background-size: cover;
-    background-position: top;
-    z-index: 0;
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    will-change: transform;
-    transform: scale(1);
-  }
-  &:hover::before {
-    transform: scale(1.08);
-  }
-
-  /* black overlay for text visibility */
-  &::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.45);
-    z-index: 1;
-    pointer-events: none;
-  }
-
-  /* gradient overlay for extra contrast at the bottom */
-  &::after {
-    background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.45) 0%,
-      rgba(0, 0, 0, 0.55) 60%,
-      rgba(0, 0, 0, 0.7) 100%
-    );
-  }
-`;
-
-const Content = styled.div`
-  position: absolute;
-  z-index: 2;
-  left: 2rem;
-  top: 2rem;
-  right: 2rem;
-  bottom: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  color: var(--color-accent-50);
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+  background: var(--color-neutral-0);
+  border: 1px solid var(--color-neutral-300);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+
+  ${({ $interactive }) =>
+    $interactive &&
+    `
+    &:hover,
+    &:focus-visible {
+      transform: translateY(-3px);
+      border-color: rgba(167, 44, 161, 0.28);
+      box-shadow: 0 18px 36px rgba(47, 54, 61, 0.08);
+    }
+  `}
+`;
+
+const Image = styled.img`
+  width: 100%;
+  height: clamp(16rem, 30vw, 24rem);
+  object-fit: cover;
+  object-position: top center;
+`;
+
+const Body = styled.div`
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.35rem;
+`;
+
+const Header = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 `;
 
 const Title = styled.h3`
-  margin: 0 0 0.4rem 0;
-  font-size: var(--type-title-md);
-  line-height: 1.05;
+  margin: 0;
+  font-size: clamp(1.45rem, 2vw, 1.85rem);
+  line-height: 1.15;
+  color: var(--color-neutral-700);
 `;
 
-const DateRange = styled.span`
-  display: block;
-  margin-top: 0.25rem;
-  font-size: var(--type-body-sm);
-  color: rgba(255, 255, 255, 0.9);
+const Summary = styled.p`
+  margin: 0;
+  color: var(--color-neutral-500);
+  line-height: 1.65;
 `;
 
-const Meta = styled.div`
+const MetaGrid = styled.dl`
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem 1rem;
+  margin: 0;
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+const MetaItem = styled.div`
   display: flex;
-  gap: 0.4rem;
-  flex-wrap: wrap;
-  margin-bottom: 0.25rem;
+  flex-direction: column;
+  gap: 0.2rem;
 `;
 
-const FullBleedCard = ({ img, title, tags = [], tools = [], dateRange, href = '#' }) => {
-  const chips = (tools && tools.length ? tools : tags).slice(0, 3);
+const MetaLabel = styled.dt`
+  margin: 0;
+  font-size: var(--type-label);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-neutral-500);
+`;
+
+const MetaValue = styled.dd`
+  margin: 0;
+  color: var(--color-neutral-700);
+  font-size: var(--type-body-sm);
+  line-height: 1.5;
+`;
+
+const Footer = styled.div`
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: var(--type-body-sm);
+  font-weight: 700;
+  color: var(--color-primary-700);
+`;
+
+const FullBleedCard = ({
+  img,
+  imageAlt,
+  title,
+  summary,
+  tags = [],
+  metaItems = [],
+  href,
+}) => {
+  const interactive = Boolean(href);
+
   return (
-    <Wrapper $img={img} href={href}>
-      {/* Decorative background, but add a hidden img for lazy loading */}
-      <img src={img} alt="" loading="lazy" style={{ display: 'none' }} />
-      <Content>
-        {chips.length > 0 && (
-          <Meta>
-            {chips.map((t) => (
-              <TagSmall key={t}>{t}</TagSmall>
+    <Wrapper
+      as={interactive ? 'a' : 'article'}
+      href={interactive ? href : undefined}
+      aria-label={interactive ? `Open ${title} case study` : undefined}
+      $interactive={interactive}
+    >
+      <Image src={img} alt={imageAlt} loading="lazy" />
+      <Body>
+        {tags.length > 0 && (
+          <Header>
+            {tags.map((tag) => (
+              <TagSmall key={tag}>{tag}</TagSmall>
             ))}
-          </Meta>
+          </Header>
         )}
-
-        {title && <Title>{title}</Title>}
-
-        {dateRange && <DateRange>{dateRange}</DateRange>}
-      </Content>
+        <div>
+          <Title>{title}</Title>
+        </div>
+        {summary ? <Summary>{summary}</Summary> : null}
+        {metaItems.length > 0 && (
+          <MetaGrid>
+            {metaItems.map((item) => (
+              <MetaItem key={item.label}>
+                <MetaLabel>{item.label}</MetaLabel>
+                <MetaValue>{item.value}</MetaValue>
+              </MetaItem>
+            ))}
+          </MetaGrid>
+        )}
+        {interactive ? (
+          <Footer>
+            View case study
+            <ArrowUpRight size={16} aria-hidden="true" />
+          </Footer>
+        ) : null}
+      </Body>
     </Wrapper>
   );
 };

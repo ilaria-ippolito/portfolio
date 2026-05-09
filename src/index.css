@@ -1,35 +1,33 @@
 /* Design tokens (CSS variables) */
 :root {
-  /* Palette scale */
-  --color-primary-50: #fff0fb;
-  --color-primary-100: #fde6f6;
-  --color-primary-300: #f4a6e0;
-  --color-primary-500: #e260d9; /* main primary */
-  --color-primary-700: #b02a9f;
+  --color-primary-50: #fce7f8;
+  --color-primary-100: #f8d5f3;
+  --color-primary-300: #ea86e0;
+  --color-primary-500: #d946d1;
+  --color-primary-700: #a72ca1;
 
-  --color-accent-50: #f6fff1;
-  --color-accent-100: #e6ffd9;
-  --color-accent-300: #b7ff8f;
-  --color-accent-500: #8cfb3a; /* accent/positive */
-  --color-accent-700: #54d200;
+  --color-accent-50: #ffffff;
+  --color-accent-100: #fafafa;
+  --color-accent-300: #f3f4f6;
+  --color-accent-500: #fce7f8;
+  --color-accent-700: #f6cbe9;
 
+  --color-neutral-0: #ffffff;
   --color-neutral-50: #fafafa;
-  --color-neutral-100: #f0f2f4;
-  --color-neutral-300: #c9d1d6;
-  --color-neutral-500: #8f99a3; /* muted text */
-  --color-neutral-700: #343a40; /* main neutral */
-
-  /* Semantic */
-  --color-success: #16a34a;
-  --color-warning: #f59e0b;
-  --color-danger: #ef4444;
-  --color-info: #0ea5e9;
+  --color-neutral-100: #f4f5f7;
+  --color-neutral-300: #d8dee4;
+  --color-neutral-500: #5f6872;
+  --color-neutral-700: #2f363d;
+  --color-neutral-900: #303941;
 
   /* Radii */
-  --radius-sm: 6px;
-  --radius-md: 12px;
-  --radius-lg: 24px;
+  --radius-sm: 8px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
   --radius-pill: 999px;
+
+  --section-space: clamp(3.5rem, 6vw, 6rem);
+  --container-max: 1280px;
 
   /* Type scale */
   --type-caption: 0.65rem; /* 10.4px, was xxs */
@@ -66,6 +64,8 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+  color: var(--color-neutral-700);
 }
 
 /* 1. Use a more-intuitive box-sizing model */
@@ -85,6 +85,7 @@ body {
   line-height: 1.5;
   /* 4. Improve text rendering */
   -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
 }
 
 /* 5. Improve media defaults */
@@ -127,4 +128,26 @@ h4,
 h5,
 h6 {
   text-wrap: balance;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 3px solid rgba(217, 70, 209, 0.35);
+  outline-offset: 3px;
+}
+
+[id] {
+  scroll-margin-top: 7rem;
 }

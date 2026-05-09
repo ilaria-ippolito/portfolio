@@ -1,86 +1,108 @@
-import { PrimaryButton } from '../SharedStyles';
-import styled, { keyframes } from 'styled-components';
+import { PrimaryButton, SecondaryButton, TagSmall } from '../SharedStyles';
+import styled from 'styled-components';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { ArrowRight, Download } from 'lucide-react';
 import { scrollToSection } from '../../utils/scrollToSection';
 
 const Section = styled.section`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
   align-items: center;
-  justify-content: center;
-  min-height: 70vh;
-  padding: 3rem 1rem;
-  color: var(--color-neutral-700);
-  text-align: center;
+  min-height: calc(100vh - 9rem);
+  padding: clamp(2.5rem, 8vw, 6rem) 0 var(--section-space);
+`;
 
-  @media (max-width: 768px) {
-    align-items: flex-start;
-    text-align: left;
-  }
+const Content = styled.div`
+  max-width: 56rem;
+`;
+
+const Eyebrow = styled.p`
+  margin: 0 0 1rem;
+  font-size: var(--type-body-sm);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary-700);
 `;
 
 const Title = styled.h1`
-  font-size: 12rem;
-  font-weight: 700;
-  letter-spacing: 1px;
   margin: 0;
+  font-size: clamp(3rem, 8vw, 6.25rem);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
   color: var(--color-neutral-700);
-
-  @media (max-width: 1300px) {
-    font-size: 9rem;
-  }
-
-  @media (max-width: 900px) {
-    font-size: 7rem;
-  }
-  @media (max-width: 600px) {
-    font-size: 4.5rem;
-    line-height: normal;
-  }
 `;
 
-const reveal = keyframes`
-  from {
-    width: 0;
-    opacity: 1;
-  }
-  to {
-    width: 100%;
-    opacity: 1;
-  }
+const Summary = styled.p`
+  margin: 1.5rem 0 0;
+  max-width: 44rem;
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  line-height: 1.7;
+  color: var(--color-neutral-500);
 `;
 
-const Subtitle = styled.div`
-  font-size: 3rem;
-  font-weight: 200;
-  letter-spacing: 2px;
-  opacity: 0.9;
-  color: var(--color-neutral-700);
-  margin: 1rem 0 2.5rem 0;
-  overflow: hidden;
-  white-space: nowrap;
-  width: 0;
-  animation: ${reveal} 2.5s cubic-bezier(0.4, 0, 0.2, 1) 0.2s forwards;
+const Tags = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1.75rem;
+`;
 
-  @media (max-width: 900px) {
-    font-size: 2rem;
-  }
+const Actions = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 2rem;
 `;
 
 const Hero = () => {
   const location = useLocation();
   const navigate = useNavigate();
+
   return (
     <Section>
-      <Title>ilaria ippolito</Title>
-      <Subtitle>UX/UI designer</Subtitle>
-      <a
-        href="#work-section"
-        onClick={(e) => scrollToSection({ event: e, id: 'work-section', location, navigate })}
-        style={{ textDecoration: 'none' }}
-      >
-        <PrimaryButton>guarda i miei progetti</PrimaryButton>
-      </a>
+      <Content>
+        <Eyebrow>Ilaria Ippolito</Eyebrow>
+        <Title>UX/UI Designer for clear, scalable digital products.</Title>
+        <Summary>
+          Focused on B2B and product design, I create web and mobile experiences with strong
+          User Flows, Accessibility, Design System thinking, high-fidelity UI, prototyping,
+          usability testing, and collaboration with product and engineering teams.
+        </Summary>
+
+        <Tags aria-label="Core strengths">
+          <TagSmall>B2B</TagSmall>
+          <TagSmall>Product Design</TagSmall>
+          <TagSmall>Web + Mobile</TagSmall>
+          <TagSmall>Accessibility</TagSmall>
+        </Tags>
+
+        <Actions>
+          <a
+            href="#projects-section"
+            onClick={(event) =>
+              scrollToSection({ event, id: 'projects-section', location, navigate })
+            }
+            style={{ textDecoration: 'none' }}
+          >
+            <PrimaryButton as="span">
+              View case studies
+              <ArrowRight size={18} aria-hidden="true" />
+            </PrimaryButton>
+          </a>
+          <a
+            href="/assets/documents/Ilaria_Ippolito_Resume.pdf"
+            download
+            aria-label="Download Ilaria Ippolito CV as PDF"
+            style={{ textDecoration: 'none' }}
+          >
+            <SecondaryButton as="span">
+              Download CV
+              <Download size={18} aria-hidden="true" />
+            </SecondaryButton>
+          </a>
+        </Actions>
+      </Content>
     </Section>
   );
 };

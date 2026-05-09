@@ -1,73 +1,87 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import { Menu, X, Panda } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { scrollToSection } from '../../utils/scrollToSection';
 import { CustomPaddingX } from '../SharedStyles';
 
 const HeaderWrapper = styled.header`
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+  inset: 0 0 auto 0;
   z-index: 100;
-  padding: 0;
-  background: ${({ $scrolled }) => ($scrolled ? 'rgba(255,255,255,0.95)' : 'transparent')};
-  box-shadow: ${({ $scrolled }) => ($scrolled ? '0 2px 16px 0 rgba(0,0,0,0.06)' : 'none')};
+  background: ${({ $scrolled }) => ($scrolled ? 'rgba(255, 255, 255, 0.94)' : 'rgba(255, 255, 255, 0.78)')};
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid ${({ $scrolled }) => ($scrolled ? 'rgba(216, 222, 228, 0.95)' : 'transparent')};
   transition:
-    background 0.25s,
-    box-shadow 0.25s;
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+  box-shadow: ${({ $scrolled }) => ($scrolled ? '0 10px 28px rgba(47, 54, 61, 0.08)' : 'none')};
 `;
 
 const HeaderInner = styled.div`
-  width: 100%;
-  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: space-between;
   min-height: 80px;
-  padding: 0.5rem 0;
+  gap: 1rem;
 `;
 
-const LogoTitle = styled.a`
-  padding-inline: 1rem;
-  vertical-align: middle;
-  color: var(--color-primary-500);
-  font-size: var(--type-title-lg);
-  font-weight: 700;
-  letter-spacing: 1px;
+const Brand = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  color: var(--color-neutral-700);
   text-decoration: none;
-  cursor: pointer;
-  &:focus-visible {
-    outline: 2px solid rgba(226, 96, 217, 0.15);
-    outline-offset: 2px;
-  }
-  &:focus:not(:focus-visible) {
-    outline: none;
-  }
-  @media (max-width: 1024px) {
-    display: none;
-  }
+  min-width: 0;
+`;
+
+const BrandMark = styled.span`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  background: var(--color-primary-50);
+  border: 1px solid rgba(167, 44, 161, 0.18);
+  color: var(--color-primary-700);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+`;
+
+const BrandText = styled.span`
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+`;
+
+const BrandName = styled.span`
+  font-size: 0.98rem;
+  font-weight: 700;
+`;
+
+const BrandRole = styled.span`
+  font-size: var(--type-label);
+  color: var(--color-neutral-500);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 `;
 
 const MenuToggleBtn = styled.button`
-  background: none;
-  border: none;
-  padding: 0.5rem;
   display: none;
-  position: static;
-  z-index: 200;
-  @media (max-width: 600px) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    top: 1.2rem;
-    right: 1.2rem;
-    background: var(--color-neutral-700, rgba(0, 0, 0, 0.85));
-    border-radius: var(--radius-pill);
-    width: 44px;
-    height: 44px;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  border: 1px solid var(--color-neutral-300);
+  background: var(--color-neutral-0);
+  color: var(--color-neutral-700);
+  cursor: pointer;
+
+  @media (max-width: 760px) {
+    display: inline-flex;
   }
 `;
 
@@ -75,102 +89,94 @@ const StyledNav = styled.nav`
   ul {
     list-style: none;
     display: flex;
+    align-items: center;
+    gap: 0.35rem;
     margin: 0;
     padding: 0;
   }
+
   a {
-    margin-right: 0;
-    padding: 1.2rem;
-    font-size: var(--type-body);
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0.7rem 0.95rem;
+    border-radius: 999px;
+    color: var(--color-neutral-700);
+    font-size: var(--type-body-sm);
     font-weight: 700;
-    letter-spacing: 1px;
-    color: var(--color-primary-500);
     text-decoration: none;
-    box-sizing: border-box;
-    display: inline-block;
-    position: relative;
-    transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    transition:
+      background 0.18s ease,
+      color 0.18s ease,
+      transform 0.18s ease;
   }
-  a::after {
-    content: '';
-    position: absolute;
-    left: 1.2rem;
-    right: 1.2rem;
-    bottom: 0.7rem;
-    height: 2px;
-    background: var(--color-primary-500);
-    border-radius: 1px;
-    transform: scaleX(0);
-    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    opacity: 0.7;
-    pointer-events: none;
-  }
+
   a:hover,
   a:focus-visible {
+    background: var(--color-primary-50);
     color: var(--color-primary-700);
+    transform: translateY(-1px);
   }
-  a:hover::after,
-  a:focus-visible::after {
-    transform: scaleX(1);
-  }
-  @media (max-width: 600px) {
+
+  @media (max-width: 760px) {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(36, 36, 36, 0.85);
-    backdrop-filter: blur(12px) saturate(1.2);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
-    transform: translateX(${({ open }) => (open ? '0' : '100%')});
-    opacity: ${({ open }) => (open ? 1 : 0)};
-    pointer-events: ${({ open }) => (open ? 'auto' : 'none')};
+    inset: 0;
+    padding: 6.5rem 1.5rem 2rem;
+    background: rgba(47, 54, 61, 0.96);
+    transform: translateX(${({ $open }) => ($open ? '0' : '100%')});
+    opacity: ${({ $open }) => ($open ? 1 : 0)};
+    pointer-events: ${({ $open }) => ($open ? 'auto' : 'none')};
     transition:
-      transform 0.45s cubic-bezier(0.4, 0, 0.2, 1),
-      opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 150;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
+      transform 0.28s ease,
+      opacity 0.28s ease;
+
     ul {
       flex-direction: column;
       align-items: stretch;
-      gap: 2.5rem;
-      width: 100%;
-      padding: 0;
+      gap: 0.75rem;
     }
+
     a {
-      display: block;
+      justify-content: center;
       width: 100%;
-      max-width: 100%;
-      font-size: var(--type-title-md);
-      padding: 1rem 0;
-      text-align: center;
-      opacity: ${({ open }) => (open ? 1 : 0)};
-      transform: ${({ open }) => (open ? 'translateY(0)' : 'translateY(40px)')};
-      transition:
-        opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-        transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      min-height: 52px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--color-accent-50);
+      font-size: 1.05rem;
+    }
+
+    a:hover,
+    a:focus-visible {
+      background: var(--color-primary-500);
+      color: var(--color-accent-50);
     }
   }
 `;
-// Overlay for mobile menu
-const Overlay = styled.div`
-  @media (max-width: 600px) {
+
+const Overlay = styled.button`
+  display: none;
+
+  @media (max-width: 760px) {
+    display: block;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.32);
-    opacity: ${({ open }) => (open ? 1 : 0)};
-    pointer-events: ${({ open }) => (open ? 'auto' : 'none')};
-    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 120;
+    inset: 0;
+    border: 0;
+    background: rgba(0, 0, 0, 0.28);
+    opacity: ${({ $open }) => ($open ? 1 : 0)};
+    pointer-events: ${({ $open }) => ($open ? 'auto' : 'none')};
+    transition: opacity 0.28s ease;
+    z-index: 90;
   }
 `;
+
+const navItems = [
+  { id: 'projects-section', label: 'Projects' },
+  { id: 'skills-section', label: 'Skills' },
+  { id: 'tools-section', label: 'Tools' },
+  { id: 'about-section', label: 'About' },
+  { id: 'contact-section', label: 'Contact' },
+];
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -179,128 +185,78 @@ const Header = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (menuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
+    document.body.style.overflow = menuOpen ? 'hidden' : '';
     return () => {
       document.body.style.overflow = '';
     };
   }, [menuOpen]);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 12);
     window.addEventListener('scroll', handleScroll);
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleLogoClick = (e) => {
-    e.preventDefault();
+  const handleLogoClick = (event) => {
+    event.preventDefault();
     setMenuOpen(false);
+
     if (location.pathname !== '/') {
       navigate('/');
-    } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
     }
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
     <HeaderWrapper $scrolled={scrolled}>
       <CustomPaddingX>
         <HeaderInner>
-          <div className="logo d-inline">
-            <LogoTitle href="/" onClick={handleLogoClick}>
-              <Panda size={26} style={{ verticalAlign: 'middle', marginRight: '0.5rem' }} />
-            </LogoTitle>
-          </div>
-          {/* Overlay for mobile menu */}
-          <Overlay open={menuOpen} onClick={() => setMenuOpen(false)} />
-          <MenuToggleBtn
-            aria-label={menuOpen ? 'Chiudi menu' : 'Apri menu'}
-            onClick={() => setMenuOpen((open) => !open)}
+          <Brand href="/" onClick={handleLogoClick} aria-label="Go to homepage">
+            <BrandMark aria-hidden="true">II</BrandMark>
+            <BrandText>
+              <BrandName>Ilaria Ippolito</BrandName>
+              <BrandRole>UX/UI Designer</BrandRole>
+            </BrandText>
+          </Brand>
+
+          <Overlay
             type="button"
-            style={{
-              boxShadow: menuOpen ? '0 2px 12px 0 rgba(0,0,0,0.18)' : undefined,
-              background: menuOpen ? 'rgba(255,255,255,0.92)' : undefined,
-              transition: 'background 0.25s, box-shadow 0.25s',
-            }}
+            aria-label="Close navigation"
+            $open={menuOpen}
+            onClick={() => setMenuOpen(false)}
+          />
+
+          <MenuToggleBtn
+            type="button"
+            aria-label={menuOpen ? 'Close navigation' : 'Open navigation'}
+            onClick={() => setMenuOpen((open) => !open)}
           >
-            {menuOpen ? (
-              <X size={32} color="var(--color-primary-500)" />
-            ) : (
-              <Menu size={32} color="var(--color-primary-500)" />
-            )}
+            {menuOpen ? <X size={24} /> : <Menu size={24} />}
           </MenuToggleBtn>
-          <StyledNav open={menuOpen}>
+
+          <StyledNav $open={menuOpen} aria-label="Primary">
             <ul>
-              <li>
-                <a
-                  href="#work-section"
-                  onClick={(e) =>
-                    scrollToSection({
-                      event: e,
-                      id: 'work-section',
-                      setMenuOpen,
-                      location,
-                      navigate,
-                    })
-                  }
-                >
-                  Progetti
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#stack-section"
-                  onClick={(e) =>
-                    scrollToSection({
-                      event: e,
-                      id: 'stack-section',
-                      setMenuOpen,
-                      location,
-                      navigate,
-                    })
-                  }
-                >
-                  Stack
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#services-section"
-                  onClick={(e) =>
-                    scrollToSection({
-                      event: e,
-                      id: 'services-section',
-                      setMenuOpen,
-                      location,
-                      navigate,
-                    })
-                  }
-                >
-                  Servizi
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#about-section"
-                  onClick={(e) =>
-                    scrollToSection({
-                      event: e,
-                      id: 'about-section',
-                      setMenuOpen,
-                      location,
-                      navigate,
-                    })
-                  }
-                >
-                  Chi sono
-                </a>
-              </li>
+              {navItems.map((item) => (
+                <li key={item.id}>
+                  <a
+                    href={`#${item.id}`}
+                    onClick={(event) =>
+                      scrollToSection({
+                        event,
+                        id: item.id,
+                        setMenuOpen,
+                        location,
+                        navigate,
+                      })
+                    }
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </StyledNav>
         </HeaderInner>

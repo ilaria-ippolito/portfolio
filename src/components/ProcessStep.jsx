@@ -5,7 +5,7 @@ const ProcessStepContainer = styled.div`
   border-radius: var(--radius-md);
   border: 1px solid var(--color-neutral-300);
   padding: 1.5rem;
-  transition: all 0.3s ease;
+  background: var(--color-neutral-0);
 `;
 
 const StepHeader = styled.div`
@@ -19,18 +19,19 @@ const StepNumber = styled.span`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--color-primary-500);
+  background-color: var(--color-primary-700);
   color: var(--color-accent-50);
   width: 36px;
   height: 36px;
   border-radius: var(--radius-pill);
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 700;
 `;
 
 const StepTitle = styled.h3`
   margin: 0;
-  font-weight: 600;
+  font-weight: 700;
+  color: var(--color-neutral-700);
 `;
 
 const ProcessStep = ({ number, title, description }) => (
@@ -39,7 +40,7 @@ const ProcessStep = ({ number, title, description }) => (
       <StepNumber>{number}</StepNumber>
       <StepTitle>{title}</StepTitle>
     </StepHeader>
-    <p>{description}</p>
+    <p style={{ margin: 0, lineHeight: 1.7, color: 'var(--color-neutral-500)' }}>{description}</p>
   </ProcessStepContainer>
 );
 

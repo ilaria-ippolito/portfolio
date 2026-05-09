@@ -1,25 +1,27 @@
 import React from 'react';
 import styled from 'styled-components';
+import { HighlightedHeading, SectionTitle } from './SharedStyles';
 
 const Section = styled.section`
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
 `;
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 1fr);
   gap: 1.5rem;
   align-items: start;
 
-  @media (max-width: 700px) {
+  @media (max-width: 780px) {
     grid-template-columns: 1fr;
-    gap: 1rem;
   }
 `;
 
 const Text = styled.div`
   p {
-    line-height: 1.6;
+    margin: 0;
+    line-height: 1.75;
+    color: var(--color-neutral-500);
   }
 `;
 
@@ -29,24 +31,22 @@ const Visual = styled.div`
     width: 100%;
     height: auto;
     border-radius: var(--radius-md);
+    border: 1px solid var(--color-neutral-300);
   }
 `;
 
-/**
- * ProjectOverview
- * - overviewText: string
- * - overviewImage: string (src)
- */
-const ProjectOverview = ({ overviewText, overviewImage }) => (
+const ProjectOverview = ({ overviewText, overviewImage, overviewAlt }) => (
   <Section>
-    <h3 style={{ marginBottom: '2rem', fontSize: 'var(--type-title-md)' }}>Overview</h3>
+    <HighlightedHeading>
+      <SectionTitle>Overview</SectionTitle>
+    </HighlightedHeading>
 
     <Grid>
       <Text>
         <p>{overviewText}</p>
       </Text>
       <Visual>
-        {overviewImage ? <img src={overviewImage} alt="Overview visual" loading="lazy" /> : null}
+        {overviewImage ? <img src={overviewImage} alt={overviewAlt} loading="lazy" /> : null}
       </Visual>
     </Grid>
   </Section>

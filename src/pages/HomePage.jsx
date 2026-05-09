@@ -10,11 +10,11 @@ const HomePage = () => {
   return (
     <Layout>
       <HeroSection />
-      <FeaturedProjects id="work-section" />
-      <StackSection id="stack-section" />
+      <FeaturedProjects id="projects-section" />
+      <ServicesSection id="skills-section" />
+      <StackSection id="tools-section" />
       <AboutSection id="about-section" />
-      <ServicesSection id="services-section" />
-      <CollabSection id="collab-section" />
+      <CollabSection id="contact-section" />
     </Layout>
   );
 };

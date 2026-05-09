@@ -1,44 +1,44 @@
 import React from 'react';
+import { ArrowLeft } from 'lucide-react';
 import Layout from '../components/layout/Layout';
 import { GoToHome, SecondaryButton } from '../components/SharedStyles';
-import { ArrowLeft } from 'lucide-react';
 
 const NotFoundPage = () => (
   <Layout>
     <div
       style={{
-        // minHeight: '60vh',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        color: 'var(--color-accent-50)',
-        background: 'var(--color-neutral-700)',
+        color: 'var(--color-neutral-700)',
+        background: 'var(--color-neutral-0)',
+        border: '1px solid var(--color-neutral-300)',
         borderRadius: 'var(--radius-lg)',
-        margin: '7rem auto',
-        maxWidth: 700,
-        padding: '2.5rem 1.5rem',
+        margin: '5rem auto',
+        maxWidth: 720,
+        padding: '3rem 1.5rem',
+        textAlign: 'center',
       }}
     >
-      <h1 style={{ fontSize: '3rem', marginBottom: '1rem' }}>404</h1>
-      <h2 style={{ fontWeight: 700, marginBottom: '1.5rem' }}>Pagina non trovata</h2>
+      <h1 style={{ fontSize: '3rem', marginBottom: '0.75rem' }}>404</h1>
+      <h2 style={{ fontWeight: 700, marginBottom: '1rem' }}>Page not found</h2>
       <p
         style={{
-          fontSize: '1.2rem',
-          color: 'var(--color-neutral-100)',
-          marginBottom: '2rem',
-          textAlign: 'center',
+          fontSize: '1.05rem',
+          color: 'var(--color-neutral-500)',
+          marginBottom: '1.5rem',
+          lineHeight: 1.7,
         }}
       >
-        Oops! La pagina che cerchi non esiste o è stata spostata.
-        <br />
-        Torna alla home o scopri i progetti in evidenza!
+        The page you're looking for doesn't exist or may have moved. You can head back to the
+        homepage and continue browsing the portfolio.
       </p>
       <GoToHome>
-        <a href="/">
-          <SecondaryButton>
-            <ArrowLeft size={20} />
-            Torna alla home
+        <a href="/" style={{ textDecoration: 'none' }}>
+          <SecondaryButton as="span">
+            <ArrowLeft size={18} aria-hidden="true" />
+            Back to home
           </SecondaryButton>
         </a>
       </GoToHome>

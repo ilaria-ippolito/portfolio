@@ -6,7 +6,7 @@ import { CustomPaddingX } from '../SharedStyles';
 const Layout = ({ children }) => (
   <>
     <Header />
-    <main style={{ marginTop: '3rem', marginBottom: '3rem' }}>
+    <main style={{ marginTop: '5.5rem', marginBottom: '4rem' }}>
       <CustomPaddingX>{children}</CustomPaddingX>
     </main>
     <Footer />

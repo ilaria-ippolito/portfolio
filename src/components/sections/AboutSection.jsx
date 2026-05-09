@@ -1,178 +1,146 @@
 import React from 'react';
 import styled from 'styled-components';
-import { SecondaryButton } from '../SharedStyles';
 import { Download } from 'lucide-react';
-import { HighlightedHeading, SectionTitle } from '../SharedStyles';
+import { HighlightedHeading, SectionTitle, SecondaryButton } from '../SharedStyles';
 
 const Section = styled.section`
   color: var(--color-neutral-700);
-  margin-top: 4.5rem;
-  border-radius: var(--radius-lg);
-  @media (max-width: 900px) {
-    margin-top: 2.5rem;
-  }
+  margin-top: var(--section-space);
 `;
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: 1fr 420px;
-  gap: 3rem;
+  grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.9fr);
+  gap: 2rem;
   align-items: start;
+
   @media (max-width: 900px) {
     grid-template-columns: 1fr;
   }
 `;
 
 const Left = styled.div`
-  max-width: 760px;
+  max-width: 48rem;
 `;
 
 const Intro = styled.p`
-  color: var(--color-neutral-600);
-  margin: 0 0 0.75rem 0;
+  margin: 0 0 1rem;
   font-size: var(--type-body);
-  line-height: 1.6;
+  line-height: 1.75;
+  color: var(--color-neutral-500);
+
+  strong {
+    color: var(--color-neutral-700);
+  }
 `;
 
 const Ctas = styled.div`
-  margin-top: 1.5rem;
+  margin-top: 1.75rem;
   display: flex;
-  gap: 0.75rem;
   flex-wrap: wrap;
+  gap: 0.75rem;
 `;
 
 const Right = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  align-items: stretch;
+  display: grid;
+  gap: 1rem;
 `;
 
-const StatCard = styled.div`
+const InfoCard = styled.div`
   border-radius: var(--radius-md);
-  padding: 1.25rem 1.5rem;
-  min-height: 72px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  padding: 1.35rem 1.4rem;
+  border: 1px solid
+    ${({ $tone }) => ($tone === 'dark' ? 'rgba(255, 255, 255, 0.08)' : 'var(--color-neutral-300)')};
+  background:
+    ${({ $tone }) =>
+      $tone === 'dark'
+        ? 'var(--color-neutral-900)'
+        : $tone === 'soft'
+          ? 'var(--color-primary-50)'
+          : 'var(--color-neutral-0)'};
+  color: ${({ $tone }) => ($tone === 'dark' ? 'var(--color-accent-50)' : 'var(--color-neutral-700)')};
 `;
 
-const StatNumber = styled.div`
-  font-weight: 700;
-  font-size: var(--type-body-lg);
-  margin-bottom: 0.25rem;
+const InfoTitle = styled.h3`
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
 `;
 
-const StatText = styled.div`
-  font-size: var(--type-body-sm);
-  color: var(--color-neutral-100);
-`;
-
-const StatMuted = styled.div`
-  font-size: var(--type-body-sm);
-  color: rgba(0, 0, 0, 0.7);
-`;
-
-const Neon = styled(StatCard)`
-  background: var(--color-accent-500);
-  border: 1px solid var(--color-neutral-700);
-  color: var(--color-neutral-700);
-  transition: transform 220ms ease;
-  @media (min-width: 901px) {
-    transform: translateY(-6px);
-  }
-
-  margin-left: 2.4rem;
-  @media (min-width: 1200px) {
-    margin-left: 3.2rem;
-  }
-  @media (max-width: 900px) {
-    margin-left: 0;
-    transform: none;
-  }
-`;
-
-const Pink = styled(StatCard)`
-  background: var(--color-primary-500);
-  color: var(--color-neutral-100);
-  border: 1px solid var(--color-neutral-700);
-  margin-left: 2.4rem;
-  transition:
-    margin 220ms ease,
-    transform 220ms ease;
-  @media (min-width: 1200px) {
-    margin-left: 3.2rem;
-  }
-  @media (max-width: 900px) {
-    margin-left: 0;
-    transform: none;
-  }
-`;
-
-const Outlined = styled(StatCard)`
-  background: var(--color-neutral-700);
-  color: var(--color-neutral-50);
+const InfoText = styled.p`
+  margin: 0;
+  line-height: 1.65;
+  color: ${({ $tone }) => ($tone === 'dark' ? 'rgba(255, 255, 255, 0.78)' : 'var(--color-neutral-500)')};
 `;
 
 const AboutSection = ({ id = 'about-section' }) => (
   <Section id={id}>
     <HighlightedHeading>
-      <SectionTitle>Chi sono</SectionTitle>
+      <SectionTitle>About</SectionTitle>
     </HighlightedHeading>
     <Grid>
       <Left>
         <Intro>
-          Sono una <strong>UX/UI Designer</strong> con un background in discipline dello
-          <strong> spettacolo e comunicazione</strong>.
+          I'm a <strong>UX/UI Designer</strong> focused on <strong>B2B</strong> and
+          <strong> Product Design</strong>, with a growing body of work across scalable web and
+          mobile experiences.
         </Intro>
         <Intro>
-          Ho completato un master intensivo in UX/UI dalla durata di <strong>900 ore </strong>
-          presso{' '}
-          <a
-            href="https://www.start2impact.it/"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ color: 'inherit' }}
-          >
-            <strong>Start2impact</strong>
+          My background combines communication, visual culture, and an intensive UX/UI design
+          program, which helps me turn complex requirements into interfaces that feel clear,
+          structured, and ready to evolve.
+        </Intro>
+        <Intro>
+          I work in <strong>Figma</strong> across User Flows, high-fidelity UI, prototyping,
+          Accessibility checks, and usability testing. I also enjoy collaborating closely with
+          product managers and engineers to move ideas from exploration to implementation.
+        </Intro>
+        <Intro>
+          I completed a UX/UI design program at{' '}
+          <a href="https://www.start2impact.it/" target="_blank" rel="noopener noreferrer">
+            Start2impact
           </a>{' '}
-          , dove ho affinato le mie competenze su tutte le fasi di progettazione: dalla{' '}
-          <strong>discovery</strong> al
-          <strong> wireframing</strong>, fino alla <strong>prototipazione e test utenti</strong>.
-        </Intro>
-        <Intro>
-          Sono alla ricerca di opportunità che mi permettano di applicare e sviluppare le mie
-          competenze UX/UI, e di
-          <strong> crescere come designer</strong>.
+          after earlier studies in communication and visual disciplines.
         </Intro>
 
         <Ctas>
-          <a href="assets/documents/Ilaria_Ippolito_Resume.pdf" download style={{ textDecoration: 'none' }}>
+          <a
+            href="/assets/documents/Ilaria_Ippolito_Resume.pdf"
+            download
+            aria-label="Download Ilaria Ippolito CV as PDF"
+            style={{ textDecoration: 'none' }}
+          >
             <SecondaryButton as="span">
-              CV completo
-              <Download size={18} style={{ marginLeft: 8 }} />
+              Download CV
+              <Download size={18} aria-hidden="true" />
             </SecondaryButton>
           </a>
         </Ctas>
       </Left>
 
       <Right>
-        <Outlined>
-          <StatNumber>Master</StatNumber>
-          <StatText>UX/UI Design — Start2impact</StatText>
-        </Outlined>
+        <InfoCard $tone="dark">
+          <InfoTitle>Focus</InfoTitle>
+          <InfoText $tone="dark">
+            B2B and product experiences for web and mobile, with special attention to structure,
+            clarity, and scalability.
+          </InfoText>
+        </InfoCard>
 
-        <Neon>
-          <StatNumber>Laurea</StatNumber>
-          <StatMuted>
-            Discipline dello Spettacolo e della Comunicazione — Università di Pisa
-          </StatMuted>
-        </Neon>
+        <InfoCard $tone="soft">
+          <InfoTitle>Strengths</InfoTitle>
+          <InfoText>
+            User Flows, Accessibility, Design System thinking, high-fidelity UI, prototyping,
+            and usability testing.
+          </InfoText>
+        </InfoCard>
 
-        <Outlined>
-          <StatNumber>Diploma</StatNumber>
-          <StatText>Illustrazione — Accademia d'Arte Bianca Cappello</StatText>
-        </Outlined>
+        <InfoCard>
+          <InfoTitle>Collaboration</InfoTitle>
+          <InfoText>
+            Comfortable working with PMs and engineers through iteration, feedback, and handoff
+            to keep product decisions grounded and buildable.
+          </InfoText>
+        </InfoCard>
       </Right>
     </Grid>
   </Section>
