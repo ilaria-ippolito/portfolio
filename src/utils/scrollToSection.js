@@ -1,4 +1,3 @@
-// src/utils/scrollToSection.js
 export function scrollToSection({ event, id, setMenuOpen, location, navigate }) {
   event.preventDefault();
   if (setMenuOpen) setMenuOpen(false);

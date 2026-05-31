@@ -27,8 +27,18 @@ const Container = styled.div`
 `;
 
 const projects = [
-  {
+	  {
     component: FullBleedCard,
+    img: 'assets/img/projects/bindex/card_cover.webp',
+    imageAlt: 'Preview of the Bindex book reading social app',
+    title: 'Bindex',
+    summary:
+      'A social book tracking app designed to help readers organize their books, follow reading activity, and keep their reading experience sorted.',
+    tags: ['Social App', 'Book Tracking', 'Design System'],
+    href: '/project-detail?project=bindex',
+  },
+  {
+    component: SplitCard,
     img: 'assets/img/projects/ticketone/card_cover.webp',
     imageAlt: 'Preview of the TicketOne case study interface redesign',
     title: 'TicketOne Redesign',
@@ -47,16 +57,7 @@ const projects = [
     tags: ['E-commerce UX', 'Usability Testing', 'Accessibility'],
     href: '/project-detail?project=ivegan',
   },
-  {
-    component: SplitCard,
-    img: 'assets/img/projects/orizon/card_cover.webp',
-    imageAlt: 'Preview of the Orizon brand identity project',
-    title: 'Orizon Brand Identity',
-    summary:
-      'A visual identity project centered on a cohesive brand system, reusable assets, and digital consistency across touchpoints.',
-    tags: ['Visual Identity', 'Brand System', 'UI Assets'],
-    href: '/project-detail?project=orizon',
-  },
+
 ];
 
 const FeaturedProjects = ({ id }) => (
@@ -65,8 +66,8 @@ const FeaturedProjects = ({ id }) => (
       <SectionTitle>Case studies</SectionTitle>
     </HighlightedHeading>
     <Intro>
-      A selection of product, e-commerce, and brand work shaped around structure, interface
-      quality, and thoughtful execution across digital touchpoints.
+      A selection of product, e-commerce, and brand work shaped around structure, interface quality,
+      and thoughtful execution across digital touchpoints.
     </Intro>
     <Container>
       {projects.map((project) => {
