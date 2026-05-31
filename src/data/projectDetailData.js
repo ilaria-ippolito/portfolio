@@ -117,52 +117,54 @@ export const projectDetails = {
       'https://www.figma.com/design/QlPAGNoiykPhG94sDKnqNm/iVegan?node-id=2421-1038&t=Z3YBWQFALOM03Tbw-1',
     timeRange: 'Jan 2025 - Aug 2025',
   },
-  orizon: {
-    projectTitle: 'Orizon Brand Identity',
-    projectTags: ['Visual Identity', 'Brand System', 'Reusable Assets'],
+  bindex: {
+    projectTitle: 'Bindex',
+    projectTags: ['Social App', 'Book Tracking', 'Design System'],
     meta: [
-      { label: 'Role', value: 'Visual Designer' },
-      { label: 'Timeline', value: 'Nov 2024 - Dec 2024' },
-      { label: 'Tools', value: 'Illustrator, Photoshop' },
-      { label: 'Focus', value: 'Brand identity, visual system, reusable assets' },
+      { label: 'Role', value: 'UX/UI Designer' },
+      { label: 'Timeline', value: 'May 2026' },
+      { label: 'Tools', value: 'Figma' },
+      { label: 'Focus', value: 'Book tracking, social reading, design system' },
     ],
-    coverImage: 'assets/img/projects/orizon/cover.webp',
-    coverAlt: 'Orizon brand identity cover with logo and color system',
+    coverImage: 'assets/img/projects/bindex/cover.webp',
+    coverAlt: 'Bindex cover showing the book reading social app interface',
     overviewText:
-      'For Orizon, the work focused on building a cohesive visual identity that could translate across digital touchpoints. The project included logo exploration, color definition, and reusable brand assets designed to support consistency over time.',
-    overviewImage: 'assets/img/projects/orizon/overview.webp',
-    overviewAlt: 'Orizon overview screens showing the visual identity system',
+      'Bindex is a social book tracking app designed to help readers organize their books, follow reading activity, and keep their reading experience sorted. The project focused on building a consistent visual and interactive system for a product centered on books, personal libraries, and social discovery.',
+    overviewImage: 'assets/img/projects/bindex/overview.webp',
+    overviewAlt: 'Bindex overview screens from the book reading social app',
     challengeText:
-      'The challenge was to create a recognizable identity system that felt flexible enough for different applications while staying coherent, distinctive, and easy to extend.',
+      'The challenge was to create a reading experience that feels organized, social, and easy to navigate, while keeping the interface consistent through reusable foundations, components, and patterns.',
     processSteps: [
       {
         number: 1,
-        title: 'Brand Review',
+        title: 'Product Structure',
         description:
-          'Defined the core visual direction through brand values, references, and audience considerations.',
+          'Defined the core experience around book tracking, reading organization, and social discovery.',
       },
       {
         number: 2,
-        title: 'Visual System',
+        title: 'Design System',
         description:
-          'Designed the logo, color palette, typography choices, and core supporting assets.',
+          'Built foundations, components, and interface patterns to keep the product consistent and scalable.',
       },
       {
         number: 3,
-        title: 'Application',
+        title: 'High-fidelity UI',
         description:
-          'Applied the system across digital touchpoints to check consistency and reusability.',
+          'Designed polished app screens with a clear hierarchy, reusable components, and a focused visual language.',
       },
     ],
     projectImages: [],
     results: [
-      'A more cohesive and recognizable visual identity.',
-      'Reusable assets for digital communication and presentation.',
-      'A flexible visual foundation that supports future brand consistency.',
+      'A clear product direction for a social book tracking experience.',
+      'A consistent design system covering foundations, components, and patterns.',
+      'Reusable UI assets that support faster product iteration.',
+      'A visual language aligned with book organization and social reading.',
     ],
-    resultsImage: 'assets/img/projects/orizon/result.webp',
-    resultsAlt: 'Orizon brand identity result screens',
-    projectUrl: '',
-    timeRange: 'Nov 2024 - Dec 2024',
+    resultsImage: 'assets/img/projects/bindex/result.webp',
+    resultsAlt: 'Bindex book reading social app result screens',
+    projectUrl:
+      'https://www.figma.com/design/qe2DUhI8sMMqB3tmXPeWJj/Bindex?node-id=350-274&p=f&t=glGwEwRetAj8SE8g-0',
+    timeRange: 'May 2026',
   },
 };
