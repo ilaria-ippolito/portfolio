@@ -9,7 +9,7 @@ const Section = styled.section`
   grid-template-columns: minmax(0, 1fr);
   align-items: center;
   min-height: calc(100vh - 9rem);
-  padding: clamp(2.5rem, 8vw, 6rem) 0 var(--section-space);
+  padding: clamp(1rem, 3vw, 2.25rem) 0 var(--section-space);
 `;
 
 const Content = styled.div`
