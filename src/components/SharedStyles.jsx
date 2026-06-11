@@ -67,7 +67,7 @@ export const SecondaryButton = styled.button`
   justify-content: center;
   min-height: 48px;
   background: var(--color-neutral-0);
-  border: 1px solid var(--color-border-soft);
+  border: 2px solid var(--color-neutral-700);
   color: var(--color-neutral-700);
   font-size: 1rem;
   font-weight: 600;
@@ -84,7 +84,7 @@ export const SecondaryButton = styled.button`
   &:hover,
   &:focus-visible {
     background-color: var(--color-surface-tint);
-    border-color: var(--color-border-accent);
+    border-color: var(--color-neutral-700);
     color: var(--color-neutral-700);
     transform: translateY(-1px);
     box-shadow: var(--shadow-sm);

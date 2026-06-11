@@ -1,5 +1,4 @@
 import Layout from '../components/layout/Layout';
-import StackSection from '../components/sections/StackSection';
 import ServicesSection from '../components/sections/ServicesSection';
 import FeaturedProjects from '../components/sections/FeaturedProjects';
 import AboutSection from '../components/sections/AboutSection';
@@ -12,7 +11,6 @@ const HomePage = () => {
       <HeroSection />
       <FeaturedProjects id="projects-section" />
       <ServicesSection id="skills-section" />
-      <StackSection id="tools-section" />
       <AboutSection id="about-section" />
       <CollabSection id="contact-section" />
     </Layout>

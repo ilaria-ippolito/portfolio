@@ -22,13 +22,6 @@ const Left = styled.div`
   max-width: 45rem;
 `;
 
-const Headline = styled.h3`
-  margin: 0 0 1rem;
-  font-size: clamp(1.3rem, 2.2vw, 1.75rem);
-  color: var(--color-neutral-700);
-  line-height: 1.3;
-`;
-
 const Intro = styled.p`
   margin: 0 0 0.9rem;
   color: var(--color-neutral-500);
@@ -119,7 +112,6 @@ const CollabSection = ({ id = 'contact-section' }) => (
     </HighlightedHeading>
     <Grid>
       <Left>
-        <Headline>Open to product teams that value thoughtful product design and strong execution.</Headline>
         <Intro>
           I’m interested in UX/UI and product design opportunities where I can help shape
           scalable digital experiences, collaborate across disciplines, and bring steady design

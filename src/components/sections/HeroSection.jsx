@@ -16,15 +16,6 @@ const Content = styled.div`
   max-width: 56rem;
 `;
 
-const Eyebrow = styled.p`
-  margin: 0 0 1rem;
-  font-size: var(--type-body-sm);
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-primary-700);
-`;
-
 const Title = styled.h1`
   margin: 0;
   font-size: clamp(2.85rem, 5.8vw, 5.4rem);
@@ -76,7 +67,6 @@ const Hero = () => {
   return (
     <Section>
       <Content>
-        <Eyebrow>Ilaria Ippolito</Eyebrow>
         <Title>UX/UI designer for digital products that feel clear and ready to scale.</Title>
         <Summary>
           I design web and mobile experiences with strong structure, accessible patterns, and

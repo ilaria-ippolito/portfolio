@@ -10,11 +10,11 @@ const Section = styled.section`
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.9fr);
+  grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.9fr);
   gap: 2rem;
   align-items: start;
 
-  @media (max-width: 900px) {
+  @media (max-width: 980px) {
     grid-template-columns: 1fr;
   }
 `;
@@ -43,35 +43,56 @@ const Ctas = styled.div`
 
 const Right = styled.div`
   display: grid;
-  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+
+  @media (max-width: 980px) {
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  }
+
+  @media (max-width: 420px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 `;
 
-const InfoCard = styled.div`
+const ToolCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  min-height: 116px;
   border-radius: var(--radius-md);
-  padding: 1.35rem 1.4rem;
-  border: 1px solid
-    ${({ $tone }) => ($tone === 'dark' ? 'rgba(255, 255, 255, 0.08)' : 'var(--color-border-soft)')};
-  background:
-    ${({ $tone }) =>
-      $tone === 'dark'
-        ? 'var(--color-neutral-900)'
-        : $tone === 'soft'
-          ? 'var(--color-primary-50)'
-          : 'var(--color-neutral-0)'};
-  color: ${({ $tone }) => ($tone === 'dark' ? 'var(--color-accent-50)' : 'var(--color-neutral-700)')};
+  padding: 0.9rem;
+  border: 1px solid var(--color-border-soft);
+  background: var(--color-neutral-0);
   box-shadow: var(--shadow-sm);
 `;
 
-const InfoTitle = styled.h3`
-  margin: 0 0 0.35rem;
-  font-size: 1.05rem;
+const ToolIcon = styled.img`
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
 `;
 
-const InfoText = styled.p`
+const ToolLabel = styled.span`
   margin: 0;
-  line-height: 1.65;
-  color: ${({ $tone }) => ($tone === 'dark' ? 'rgba(255, 255, 255, 0.78)' : 'var(--color-neutral-500)')};
+  color: var(--color-neutral-700);
+  font-size: var(--type-body-sm);
+  font-weight: 700;
+  text-align: center;
 `;
+
+const tools = [
+  { name: 'Figma', src: 'assets/img/icons/Figma.svg' },
+  { name: 'Maze', src: 'assets/img/icons/Maze.svg' },
+  { name: 'WAVE', src: 'assets/img/icons/Wave.svg' },
+  { name: 'Miro', src: 'assets/img/icons/Miro.svg' },
+  { name: 'Illustrator', src: 'assets/img/icons/Adobe_Illustrator.svg' },
+  { name: 'Photoshop', src: 'assets/img/icons/Adobe_Photoshop.svg' },
+  { name: 'HTML', src: 'assets/img/icons/HTML5.svg' },
+  { name: 'CSS', src: 'assets/img/icons/CSS3.svg' },
+];
 
 const AboutSection = ({ id = 'about-section' }) => (
   <Section id={id}>
@@ -118,30 +139,13 @@ const AboutSection = ({ id = 'about-section' }) => (
         </Ctas>
       </Left>
 
-      <Right>
-        <InfoCard $tone="dark">
-          <InfoTitle>Focus</InfoTitle>
-          <InfoText $tone="dark">
-            B2B and product experiences for web and mobile, with special attention to structure,
-            direction, and scalability.
-          </InfoText>
-        </InfoCard>
-
-        <InfoCard $tone="soft">
-          <InfoTitle>Strengths</InfoTitle>
-          <InfoText>
-            User Flows, Accessibility, Design System thinking, high-fidelity UI, prototyping,
-            and usability testing.
-          </InfoText>
-        </InfoCard>
-
-        <InfoCard>
-          <InfoTitle>Collaboration</InfoTitle>
-          <InfoText>
-            Comfortable working with PMs and engineers through iteration, feedback, and handoff
-            to keep product decisions grounded and buildable.
-          </InfoText>
-        </InfoCard>
+      <Right aria-label="Design and prototyping tools">
+        {tools.map((tool) => (
+          <ToolCard key={tool.name}>
+            <ToolIcon src={tool.src} alt="" loading="lazy" aria-hidden="true" />
+            <ToolLabel>{tool.name}</ToolLabel>
+          </ToolCard>
+        ))}
       </Right>
     </Grid>
   </Section>

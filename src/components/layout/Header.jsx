@@ -55,28 +55,6 @@ const Brand = styled.a`
   }
 `;
 
-const BrandMark = styled.span`
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 42px;
-  height: 42px;
-  border-radius: 14px;
-  background: var(--color-primary-50);
-  border: 1px solid rgba(167, 44, 161, 0.18);
-  color: var(--color-primary-700);
-  font-weight: 800;
-  letter-spacing: 0.04em;
-
-  @media (max-width: 760px) {
-    background: ${({ $menuOpen }) =>
-      $menuOpen ? 'rgba(255, 255, 255, 0.08)' : 'var(--color-primary-50)'};
-    border-color: ${({ $menuOpen }) =>
-      $menuOpen ? 'rgba(255, 255, 255, 0.14)' : 'rgba(167, 44, 161, 0.18)'};
-    color: ${({ $menuOpen }) => ($menuOpen ? 'var(--color-accent-50)' : 'var(--color-primary-700)')};
-  }
-`;
-
 const BrandText = styled.span`
   display: flex;
   flex-direction: column;
@@ -214,7 +192,6 @@ const Overlay = styled.button`
 const navItems = [
   { id: 'projects-section', label: 'Projects' },
   { id: 'skills-section', label: 'Skills' },
-  { id: 'tools-section', label: 'Tools' },
   { id: 'about-section', label: 'About' },
   { id: 'contact-section', label: 'Contact' },
 ];
@@ -256,9 +233,6 @@ const Header = () => {
       <CustomPaddingX>
         <HeaderInner>
           <Brand href="/" onClick={handleLogoClick} aria-label="Go to homepage" $menuOpen={menuOpen}>
-            <BrandMark aria-hidden="true" $menuOpen={menuOpen}>
-              II
-            </BrandMark>
             <BrandText>
               <BrandName>Ilaria Ippolito</BrandName>
               <BrandRole $menuOpen={menuOpen}>UX/UI Designer</BrandRole>

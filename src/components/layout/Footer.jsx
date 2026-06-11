@@ -123,7 +123,6 @@ const BottomRow = styled.div`
 const navItems = [
   { id: 'projects-section', label: 'Projects' },
   { id: 'skills-section', label: 'Skills' },
-  { id: 'tools-section', label: 'Tools' },
   { id: 'about-section', label: 'About' },
   { id: 'contact-section', label: 'Contact' },
 ];
