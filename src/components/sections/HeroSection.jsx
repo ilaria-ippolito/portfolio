@@ -1,4 +1,4 @@
-import { PrimaryButton, SecondaryButton, TagSmall } from '../SharedStyles';
+import { PrimaryButton, SecondaryButton } from '../SharedStyles';
 import styled from 'styled-components';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { ArrowRight, Download } from 'lucide-react';
@@ -24,6 +24,10 @@ const Title = styled.h1`
   color: var(--color-neutral-700);
 `;
 
+const Highlight = styled.span`
+  color: var(--color-primary-500);
+`;
+
 const Summary = styled.p`
   margin: 1.5rem 0 0;
   max-width: 44rem;
@@ -32,31 +36,28 @@ const Summary = styled.p`
   color: var(--color-neutral-500);
 `;
 
-const Tags = styled.div`
+const Actions = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 0.65rem;
-  margin-top: 1.75rem;
-`;
-
-const Actions = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.9rem;
   margin-top: 2rem;
 
   @media (max-width: 640px) {
+    display: grid;
     grid-template-columns: minmax(0, 1fr);
   }
 `;
 
 const ActionLink = styled.a`
   display: flex;
-  width: 100%;
   text-decoration: none;
 
-  span {
+  @media (max-width: 640px) {
     width: 100%;
+
+    span {
+      width: 100%;
+    }
   }
 `;
 
@@ -67,19 +68,13 @@ const Hero = () => {
   return (
     <Section>
       <Content>
-        <Title>UX/UI designer for digital products that feel clear and ready to scale.</Title>
+        <Title>
+          Design that brings <Highlight>clarity</Highlight> to complex products.
+        </Title>
         <Summary>
-          I design web and mobile experiences with strong structure, accessible patterns, and
-          polished UI systems that help product teams move from concept to release with
-          confidence.
+          I help product teams simplfy flows, shape, meaningfull experiences, and build UI
+          systems that scale for users and teams.
         </Summary>
-
-        <Tags aria-label="Core strengths">
-          <TagSmall>B2B</TagSmall>
-          <TagSmall>Product Design</TagSmall>
-          <TagSmall>Web + Mobile</TagSmall>
-          <TagSmall>Accessibility</TagSmall>
-        </Tags>
 
         <Actions>
           <ActionLink
